@@ -4,4 +4,4 @@ The following directories and their contents are Copyright Simon Weber. You may 
 
 * _posts/
 
-Everything else is MIT licensed (including the fantastic [Skeleton](https://github.com/dhgamache/Skeleton) framework).
+Everything else - except the .icos - is MIT licensed (including the fantastic [Skeleton](https://github.com/dhgamache/Skeleton) framework).
