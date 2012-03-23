@@ -1,7 +1,4 @@
-Source for my personal site and blog.
-http://simonmweber.com
-
-###License
+### License
 
 The following directories and their contents are Copyright Simon Weber. You may not reuse anything therein without my permission:
 
