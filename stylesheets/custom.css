@@ -1,3 +1,6 @@
+/*
+Sitewide default layout:
+*/
 body {
     background: url('../images/furley_bg.png') repeat top left;
 }
@@ -5,7 +8,6 @@ body {
 div.container {
     padding-top: 60px; }
 
-/* nav from skeleton */
 nav {
     position: fixed;
     /*width: 170px;*/ }
@@ -34,6 +36,7 @@ nav ul li a:focus {
     width:16px; height:16px;
 }
 
+
 .sidebar{
     text-align:center;
 }
@@ -44,6 +47,9 @@ nav ul li a:focus {
     margin:0;padding:0;
 }
 
+/*
+landing page:
+*/
 
 .landing{/*width:900px;*/}
 .landing h1{font-size:24px;text-align:left;}
@@ -52,3 +58,17 @@ nav ul li a:focus {
 .header-year{margin:20px 0 20px 0;}
 .landing-item ul,.landing-item p{margin-top:10px;}
 .landing-item ul li{text-align:left;margin-bottom:5px;}
+
+/*
+Posts:
+*/
+
+.meta{
+    color: #AAA;
+}
+
+
+.disqus h3{
+    /* h3 -> h4 for "showing # comments" */
+    font-size: 21px; line-height: 30px; margin-bottom: 4px;
+}
