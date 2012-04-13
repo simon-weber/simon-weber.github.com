@@ -91,6 +91,14 @@ div.figure img {
   width: 100%
 }
 
+#subscribe {
+  margin-left: auto;
+  margin-right: auto;    
+}
+#subscribe p{
+  text-align: center;
+}
+
 /* .disqus h3{ */
 /*     /\* h3 -> h4 for "showing # comments" *\/ */
 /*     font-size: 21px; line-height: 30px; margin-bottom: 4px; */
