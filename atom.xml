@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2012-04-13T02:51:40-04:00</updated>
+ <updated>2012-04-13T02:56:35-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -17,18 +17,14 @@
    <link href="http://www.simonmweber.com/2012/04/12/email-vps-and-publish-in-phrack.html"/>
    <updated>2012-04-12T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/04/12/email-vps-and-publish-in-phrack</id>
-   <content type="html">&lt;h2 id=&quot;cold-email-a-vp-publish-in-phrack&quot;&gt;Cold-email a VP, Publish in Phrack&lt;/h2&gt;
-
-&lt;p class=&quot;meta&quot;&gt;12 April 2012&lt;/p&gt;
-
-&lt;p&gt;In the popular sense of the word, I’m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
-
-&lt;div class=&quot;figure&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;/images/hackers-trenchcoat.jpg&quot; alt=&quot;Acid Burn (Hackers 1995) in a trench coat&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;My collection of sexy trenchcoats is also lacking. (&lt;a href=&quot;http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3&quot;&gt;credit&lt;/a&gt;)&lt;/p&gt;
+   <content type="html">&lt;h2 id='coldemail_a_vp_publish_in_phrack'&gt;Cold-email a VP, Publish in Phrack&lt;/h2&gt;
+&lt;p class='meta'&gt;12 April 2012&lt;/p&gt;
+&lt;p&gt;In the popular sense of the word, I&amp;#8217;m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
+&lt;div class='figure'&gt;
+&lt;p&gt;&lt;img alt='Acid Burn (Hackers 1995) in a trench coat' src='/images/hackers-trenchcoat.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;My collection of sexy trenchcoats is also lacking. (&lt;a href='http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3'&gt;credit&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
-
-&lt;p&gt;Despite these disadvantages, back in September I discovered a &lt;a href=&quot;https://github.com/simon-weber/XSS-over-NBNS&quot;&gt;vulnerability&lt;/a&gt; in the web interface of a Netgear wireless router. Now &lt;a href=&quot;http://www.phrack.com&quot;&gt;published in Phrack&lt;/a&gt;, my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.&lt;/p&gt;
+&lt;p&gt;Despite these disadvantages, back in September I discovered a &lt;a href='https://github.com/simon-weber/XSS-over-NBNS'&gt;vulnerability&lt;/a&gt; in the web interface of a Netgear wireless router. Now &lt;a href='http://www.phrack.com'&gt;published in Phrack&lt;/a&gt;, my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately, that was the easy part. A Netgear security email was nowhere to be found. In fact, I couldn’t even find a way to submit a support ticket (this has since changed).&lt;/p&gt;
 
@@ -38,10 +34,9 @@
 
 &lt;p&gt;Ten more minutes of searching got me everything I needed: the direct emails of five random support staff, plus the most executive position I could muster: the VP of engineering. Brazenly dumping them all in the recipient box, I tried again.&lt;/p&gt;
 
-&lt;p&gt;Within 10 minutes, one of the support staff got back to me, eagerly CC’ing his boss’s boss. I apologized, and my ensuing communication with Netgear was pleasant and to the point.&lt;/p&gt;
+&lt;p&gt;Within 10 minutes, one of the support staff got back to me, eagerly CC&amp;#8217;ing his boss&amp;#8217;s boss. I apologized, and my ensuing communication with Netgear was pleasant and to the point.&lt;/p&gt;
 
-&lt;p&gt;My takeaway: it’s easier to beg for forgiveness than to ask for permission. Well, that, and don’t let a lack of fingerless gloves keep you from submitting to Phrack.&lt;/p&gt;
-</content>
+&lt;p&gt;My takeaway: it’s easier to beg for forgiveness than to ask for permission. Well, that, and don’t let a lack of fingerless gloves keep you from submitting to Phrack.&lt;/p&gt;</content>
  </entry>
  
  
