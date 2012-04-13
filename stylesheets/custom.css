@@ -1,6 +1,13 @@
 /*
 Sitewide default layout:
 */
+
+/* don't flick when overflowing viewport */
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
 body {
     background: url('../images/furley_bg.png') repeat top left;
 }
