@@ -6,7 +6,7 @@ title: Cold-email a VP, Publish in Phrack
 {{ page.title }}
 ----------------
 
-<p class="meta">12 April 2012</p>
+<p class="meta">14 April 2012</p>
 
 In the popular sense of the word, I'm no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.
 
