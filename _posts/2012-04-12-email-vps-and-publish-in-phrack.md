@@ -15,7 +15,7 @@ In the popular sense of the word, I'm no super-hacker. While coding, my sunglass
 <p>My collection of sexy trenchcoats is also lacking. (<a href="http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3">credit</a>)</p>
 </div>
 
-Despite these disadvantages, back in September I discovered a [vulnerability](https://github.com/simon-weber/XSS-over-NBNS) in the web interface of a Netgear wireless router. Now [published in Phrack](http://www.phrack.com), my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.
+Despite these disadvantages, back in September I discovered a [vulnerability](https://github.com/simon-weber/XSS-over-NBNS) in the web interface of a Netgear wireless router. Now [published in Phrack](http://www.phrack.com/issues.html?issue=68&id=4#article), my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.
 
 Unfortunately, that was the easy part. A Netgear security email was nowhere to be found. In fact, I couldn’t even find a way to submit a support ticket (this has since changed).
 
