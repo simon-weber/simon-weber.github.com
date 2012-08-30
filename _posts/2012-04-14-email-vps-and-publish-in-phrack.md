@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cold-email a VP, Publish in Phrack
+description: The story of how I published in Phrack.
 ---
 
 {{ page.title }}

@@ -9,7 +9,11 @@
   ================================================== -->
 	<meta charset="utf-8">
 	<meta name="author" content="Simon Weber">
-	<meta name="description" content="The personal site of Simon Weber">
+    {% if page.description %}
+    <meta name="description" content="{{page.description}}" />
+    {% else %}
+    <meta name="description" content="{{site.description}}" />
+    {% endif %}
 	<link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
 	<title>{{ page.title }}</title>
 

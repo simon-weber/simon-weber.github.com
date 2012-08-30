@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Returning to the East
+description: A reflection on my summer on the west coast.
 ---
 
 {{ page.title }}
