@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2012-08-29T22:19:45-04:00</updated>
+ <updated>2012-08-29T22:22:50-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -32,7 +32,7 @@
 &lt;p&gt;&lt;img alt='Alan Eustace and Simon Weber dancing' src='/images/alan_eustace_dancing.jpg' /&gt;&lt;/p&gt;
 &lt;p&gt;No, seriously: this is Alan and me on the dance floor.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;All these people had a common feature: real passion for their work. Being around this energy has inspired me, so - with my Google legal restrictions lifted - I’m ready to jump into my side projects again. I’ll be maintaining my &lt;span&gt;Google Music api&lt;/span&gt;, but probably won’t implement any huge new features. Instead, my time will likely be spent dogfooding it in a project to sync 3rd party media players to Google Music. I’ve already finished a &lt;a href='https://github.com/simon-weber/Mirror-MediaMonkey-to-Google-Music'&gt;proof of concept&lt;/a&gt;; now it’s time to buckle down and ship something. That is, if this unacceptable (read: not absolutely perfect) east coast weather doesn’t kill me first.&lt;/p&gt;</content>
+&lt;p&gt;All these people had a common feature: real passion for their work. Being around this energy has inspired me, so - with my Google legal restrictions lifted - I’m ready to jump into my side projects again. I’ll be maintaining my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API'&gt;Google Music api&lt;/a&gt;, but probably won’t implement any huge new features. Instead, my time will likely be spent dogfooding it in a project to sync 3rd party media players to Google Music. I’ve already finished a &lt;a href='https://github.com/simon-weber/Mirror-MediaMonkey-to-Google-Music'&gt;proof of concept&lt;/a&gt;; now it’s time to buckle down and ship something. That is, if this unacceptable (read: not absolutely perfect) east coast weather doesn’t kill me first.&lt;/p&gt;</content>
  </entry>
  
  <entry>
