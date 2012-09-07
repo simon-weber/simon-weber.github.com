@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="I briefly analyze the genres in my Google Music library" />
+    
+	<link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+	<title>What's in a genre?</title>
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="/stylesheets/base.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/layout.css">
+
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<div class="container">
+
+	  <div class="four columns sidebar">
+	    <ul>
+	      <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+	      <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+	      <li>
+		
+		<div class="favicon five-spaced row">
+		  <span><a href="https://github.com/simon-weber"><img alt="simon-weber" src="/images/github.ico"></a></span>
+		  <span><a href="http://www.facebook.com/simon.weber1"> <img alt="simon.weber1" src="/images/facebook.ico"></a></span>
+		  <span><a href="https://plus.google.com/103350848301234480355"> <img alt="Simon Weber" src="/images/plus.ico"></a></span>
+		  <span><a href="http://news.ycombinator.com/user?id=simon_weber"> <img alt="simon_weber" src="/images/hn.ico"></a></span>
+		  <span><a href="https://twitter.com/#!/simonmweber"> <img alt="simonmweber" src="/images/twitter.ico"></a></span>
+		</div>
+	      </li>
+	    </ul>
+
+	    &nbsp;
+	  </div>
+
+	  
+	  <div class="eleven columns offset-by-one content">
+	    <div id="post">
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'>
+</script><script src='https://www.google.com/jsapi' type='text/javascript'>
+</script><script type='text/javascript'>
+$(document).ready(function(){
+  google.load('visualization', '1.0', {
+    'packages':['corechart'],
+    'callback': drawOccurrenceChart
+  });
+
+  function drawOccurrenceChart(){
+    $.getJSON('/data/occurrences.json', function(data) {
+      data.unshift(['Word', 'Occurrences']);
+      var table = google.visualization.arrayToDataTable(data);
+      var options = { 
+        title: 'Frequency of words in genres',
+        backgroundColor: {fill:'transparent'}
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('words_chart'));
+      chart.draw(table, options);
+    });
+  }
+});
+</script>
+<h2 id='whats_in_a_genre'>What&#8217;s in a genre?</h2>
+<p class='meta'>September 07 2012</p>
+<p>I&#8217;m taking a course on data mining this semester. Our first assignment: mine some data. The dataset and techniques don&#8217;t matter; the point is to extract meaning in any way possible. I&#8217;m greenhorn data miner; hopefully I&#8217;ll be able to look back at this post and laugh at my own naivete.</p>
+
+<p>For my dataset I chose my own Google Music library. It&#8217;s unique, big enough (7600+ songs), and well organized. Plus, it&#8217;s a cinch to access with my <a href='https://github.com/simon-weber/Unofficial-Google-Music-API'>Google Music api</a>.</p>
+
+<p>My analysis was simple: I investigated the occurrences of words in genres. I figured the most frequent words would be genres themselves (eg &#8216;metal&#8217; in &#8216;power metal&#8217;), but there was also the chance of exposing common adjectives (eg &#8216;post&#8217; in &#8216;post-rock&#8217; and &#8216;post-metal&#8217;).</p>
+
+<p>A few lines of Python later, and I had my results. The first thing I noticed: I listen to a lot of metal. A third of my songs are some kind of metal. If you put all the genre words into a hat, you&#8217;d pick &#8216;metal&#8217; almost a quarter of the time. Next up: &#8216;rock&#8217; and &#8216;jazz&#8217;. Rounding out the top six are two adjectives - &#8216;alternative&#8217; and &#8216;progressive&#8217; - as well as &#8216;accompaniment&#8217; (as in <a href='http://en.wikipedia.org/wiki/Jamey_Aebersold'>Jamey Aebersold</a>).</p>
+
+<p>Metal bands also claim the longest genres in my library. <a href='http://en.wikipedia.org/wiki/Novembre_(band)'>Novembre</a> is the champion, boasting this mouthful: &#8216;Progressive atmospheric doom metal&#8217;.</p>
+
+<p>Now that we&#8217;ve figured out I&#8217;m a jazz-playing metalhead, let&#8217;s take a look at the least common words. &#8216;Country&#8217; appears only once (and at the risk of sounding one-sided, it labels the fantastic <a href='http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass'>Slaughter of the Bluegrass</a>). There&#8217;s a bunch of mispellings, too, like &#8216;reggaer&#8217; and &#8216;sountrack&#8217;.</p>
+
+<p>Here&#8217;s a quick chart of all the words I found:</p>
+<div class='eleven columns alpha' id='words_chart'> </div>
+<p>This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I&#8217;ve got the <a href='https://github.com/simon-weber/Google-Music-genre-analysis'>source on GitHub</a>.</p>
+</div>
+
+<div id="post-footer">
+  <hr>
+  <div id="subscribe">
+    <p>
+      <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+    </p>
+  </div>
+</div>
+
+	  </div>
+	</div><!-- container -->
+
+
+
+	<!-- JS
+	     ================================================== -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="/javascripts/tabs.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-29570993-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
