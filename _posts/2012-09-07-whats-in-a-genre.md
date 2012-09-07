@@ -53,6 +53,6 @@ Now that we've figured out I'm a jazz-playing metalhead, let's take a look at th
 
 Here's a quick chart of all the words I found:
 
-<div id="words_chart" class="eleven columns alpha"> </div>
+<div id="words_chart" class="eleven columns" style="height: 400px;"> </div>
 
 This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I've got the [source on GitHub](https://github.com/simon-weber/Google-Music-genre-analysis).
