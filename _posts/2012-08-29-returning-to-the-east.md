@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Returning to the East
+title: Returning to the east
 description: A reflection on my summer on the west coast.
 ---
 
