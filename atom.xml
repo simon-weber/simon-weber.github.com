@@ -4,13 +4,123 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-02-05T17:58:42-05:00</updated>
+ <updated>2013-02-14T20:29:18-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Tough cookies: a debugging story</title>
+   <link href="http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story.html"/>
+   <updated>2013-02-14T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story</id>
+   <content type="html">&lt;h2 id='tough_cookies_a_debugging_story'&gt;Tough cookies: a debugging story&lt;/h2&gt;
+&lt;p class='meta'&gt;February 14 2012&lt;/p&gt;
+&lt;p&gt;I used to think of (web) cookies as simple key/value pairs. That was before I spent an hour tracking down a bug in &lt;a href='github.com/simon-weber/Unofficial-Google-Music-API'&gt;gmusicapi&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The symptoms were simple. The user would successfully log in. Then, on their first request to a web service endpoint (eg music.google.com/loadalltracks), Google would reject their request and redirect them to a login page.&lt;/p&gt;
+
+&lt;p&gt;The auth code was immediately suspect. However, there were a few complications:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I could not recreate the issue&lt;/li&gt;
+
+&lt;li&gt;that code hadn’t changed much since last known-good version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information. Here&amp;#8217;s what we found out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the login was successful; calls to Music Manager endpoints succeeded&lt;/li&gt;
+
+&lt;li&gt;the user was outside of the US&lt;/li&gt;
+
+&lt;li&gt;normal login to music.google.com through a browser was fine&lt;/li&gt;
+
+&lt;li&gt;the bug did not depend on multiple login status, locale assumptions or current login status&lt;/li&gt;
+
+&lt;li&gt;the user had all the proper session cookies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Throughout all this, I still could not recreate the issue. In a lucky guess, I used a test account from outside the US: bingo! This only affected non-US logins!&lt;/p&gt;
+
+&lt;p&gt;Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a &lt;a href='http://docs.python-requests.org/en/latest/'&gt;Requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_xt&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_web_cookie&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+
+&lt;span class='c'&gt;# web_cookies is a CookieJar&lt;/span&gt;
+&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;
+
+&lt;span class='n'&gt;prep_request&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;prepare&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='n'&gt;s&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;requests&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;Session&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='n'&gt;res&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;prep_request&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+
+&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='n'&gt;res&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and after:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;None&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{}&lt;/span&gt;
+
+&lt;span class='c'&gt;#Attach auth.&lt;/span&gt;
+&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_xt&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_web_cookie&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+
+&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_clientlogin&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;SID&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;client&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_sid_token&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+
+&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_sso&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
+    &lt;span class='c'&gt;#dict &amp;lt;- CookieJar&lt;/span&gt;
+    &lt;span class='n'&gt;web_cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;name&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;value&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt; &lt;span class='ow'&gt;in&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;update&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+
+&lt;span class='n'&gt;prepped&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;prepare&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='n'&gt;s&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;requests&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;Session&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+
+&lt;span class='n'&gt;res&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;prepped&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='o'&gt;**&lt;/span&gt;&lt;span class='n'&gt;session_options&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='n'&gt;res&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The commit was some refactoring from two separate request-sending functions (eg send_web_request and send_musicmanager_request) to one. Do you see the bug? Here’s a hint, changing:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;name&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;value&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt; &lt;span class='ow'&gt;in&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;update&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;solves the problem (hackily, since then clientlogin and sso auth can’t be sent together, but that never happens anyway - and this will all be rewritten soon).&lt;/p&gt;
+
+&lt;p&gt;If you didn&amp;#8217;t figure it out, here&amp;#8217;s the issue: auth was stored in Python &lt;a href='http://docs.python.org/2/library/cookie.html#module-Cookie'&gt;Cookie objects&lt;/a&gt;, but I had attached them to the request as a name/value dictionary. In doing so, there was information loss:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in the case of cookies with identical names, only one would be sent&lt;/li&gt;
+
+&lt;li&gt;Cookie-specific fields like secure and domain were dropped&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In their Python form, Cookies are not simple name/value pairs! Attaching Cookies directly to the request kept all the relevant information and solved the problem.&lt;/p&gt;
+
+&lt;p&gt;I’d like to thank Lukasa and SigmaVirus24 on #python-requests for pointing me to the relevant Requests internals, and for generally putting up with my mad raving. Lukasa also had what I thought was some sharp insight into the situation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;simon_weber&lt;/strong&gt;: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies [using Requests]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: I think more than that, we want to discourage it. Cookies are complicated and easy to get wrong (as this entire discussion shows)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: And so we&amp;#8217;d rather that people use the known-good code in Requests&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He’s exactly right, of course, and I already have an entry on my todo list for this (I’ve just got &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/issues'&gt;a lot on my plate&lt;/a&gt; at the moment).&lt;/p&gt;
+
+&lt;p&gt;At least this story has a happy ending: despite the confusion, gmusicapi soldiers on with &lt;a href='https://twitter.com/thiloleibelt/status/302159032922296322'&gt;happy international users&lt;/a&gt;. As for me, having learned from this bug hunt, hopefully I’ll never be suckered into disrespecting the surprising complexity of the cookie - nor their internet cousins of the same name.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>What's in a genre?</title>
@@ -61,11 +171,11 @@ $(document).ready(function(){
  </entry>
  
  <entry>
-   <title>Returning to the East</title>
+   <title>Returning to the east</title>
    <link href="http://www.simonmweber.com/2012/08/29/returning-to-the-east.html"/>
    <updated>2012-08-29T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/08/29/returning-to-the-east</id>
-   <content type="html">&lt;h2 id='returning_to_the_east'&gt;Returning to the East&lt;/h2&gt;
+   <content type="html">&lt;h2 id='returning_to_the_east'&gt;Returning to the east&lt;/h2&gt;
 &lt;p class='meta'&gt;August 29 2012&lt;/p&gt;
 &lt;p&gt;I spent the summer as a Google intern at their Mountain View headquarters. Having recently returned to the east, the California sun has now melted into Pennsylvania rain; it’s an anticlimactic end to an otherwise fantastic summer.&lt;/p&gt;
 
@@ -84,11 +194,11 @@ $(document).ready(function(){
  </entry>
  
  <entry>
-   <title>Cold-email a VP, Publish in Phrack</title>
+   <title>Cold-email a VP, publish in Phrack</title>
    <link href="http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack.html"/>
    <updated>2012-04-14T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack</id>
-   <content type="html">&lt;h2 id='coldemail_a_vp_publish_in_phrack'&gt;Cold-email a VP, Publish in Phrack&lt;/h2&gt;
+   <content type="html">&lt;h2 id='coldemail_a_vp_publish_in_phrack'&gt;Cold-email a VP, publish in Phrack&lt;/h2&gt;
 &lt;p class='meta'&gt;14 April 2012&lt;/p&gt;
 &lt;p&gt;In the popular sense of the word, I&amp;#8217;m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
 &lt;div class='figure'&gt;
