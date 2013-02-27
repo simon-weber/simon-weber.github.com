@@ -33,7 +33,7 @@ In a lucky guess, I used a test account from outside the US: bingo!
 This only affected non-US logins!
 
 Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it.
-Inside a function to take a [Requests.Request](http://docs.python-requests.org/en/latest/) and send it off to Google, here’s the relevant code before:
+Inside a function to take a [requests.Request](http://docs.python-requests.org/en/latest/) and send it off to Google, here’s the relevant code before:
 
 {% highlight python %}
 if send_xt:
