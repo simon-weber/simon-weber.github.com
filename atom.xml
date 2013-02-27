@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-02-14T20:29:18-05:00</updated>
+ <updated>2013-02-27T15:59:30-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -47,7 +47,7 @@
 
 &lt;p&gt;Throughout all this, I still could not recreate the issue. In a lucky guess, I used a test account from outside the US: bingo! This only affected non-US logins!&lt;/p&gt;
 
-&lt;p&gt;Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a &lt;a href='http://docs.python-requests.org/en/latest/'&gt;Requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
+&lt;p&gt;Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a &lt;a href='http://docs.python-requests.org/en/latest/'&gt;requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_xt&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
     &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;
     &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_web_cookie&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;

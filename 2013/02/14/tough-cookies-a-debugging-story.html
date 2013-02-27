@@ -99,7 +99,7 @@
 
 <p>Throughout all this, I still could not recreate the issue. In a lucky guess, I used a test account from outside the US: bingo! This only affected non-US logins!</p>
 
-<p>Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a <a href='http://docs.python-requests.org/en/latest/'>Requests.Request</a> and send it off to Google, here’s the relevant code before:</p>
+<p>Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a <a href='http://docs.python-requests.org/en/latest/'>requests.Request</a> and send it off to Google, here’s the relevant code before:</p>
 <div class='highlight'><pre><code class='python'><span class='k'>if</span> <span class='n'>send_xt</span><span class='p'>:</span>
     <span class='n'>request</span><span class='o'>.</span><span class='n'>params</span><span class='p'>[</span><span class='s'>&#39;u&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='mi'>0</span>
     <span class='n'>request</span><span class='o'>.</span><span class='n'>params</span><span class='p'>[</span><span class='s'>&#39;xt&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='bp'>self</span><span class='o'>.</span><span class='n'>get_web_cookie</span><span class='p'>(</span><span class='s'>&#39;xt&#39;</span><span class='p'>)</span>
