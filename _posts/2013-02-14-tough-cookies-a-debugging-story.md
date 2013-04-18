@@ -10,7 +10,7 @@ description: "How a simple oversight broke gmusicapi logins"
 <p class="meta">February 14 2012</p>
 
 I used to think of (web) cookies as simple key/value pairs.
-That was before I spent an hour tracking down a bug in [gmusicapi](github.com/simon-weber/Unofficial-Google-Music-API).
+That was before I spent an hour tracking down a bug in [gmusicapi](http://github.com/simon-weber/Unofficial-Google-Music-API).
 
 The symptoms were simple.
 The user would successfully log in.
