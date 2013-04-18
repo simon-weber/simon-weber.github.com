@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-02-27T15:59:30-05:00</updated>
+ <updated>2013-04-18T12:30:02-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -19,7 +19,7 @@
    <id>http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story</id>
    <content type="html">&lt;h2 id='tough_cookies_a_debugging_story'&gt;Tough cookies: a debugging story&lt;/h2&gt;
 &lt;p class='meta'&gt;February 14 2012&lt;/p&gt;
-&lt;p&gt;I used to think of (web) cookies as simple key/value pairs. That was before I spent an hour tracking down a bug in &lt;a href='github.com/simon-weber/Unofficial-Google-Music-API'&gt;gmusicapi&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I used to think of (web) cookies as simple key/value pairs. That was before I spent an hour tracking down a bug in &lt;a href='http://github.com/simon-weber/Unofficial-Google-Music-API'&gt;gmusicapi&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The symptoms were simple. The user would successfully log in. Then, on their first request to a web service endpoint (eg music.google.com/loadalltracks), Google would reject their request and redirect them to a login page.&lt;/p&gt;
 
