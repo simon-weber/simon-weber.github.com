@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-04-20T15:32:12-04:00</updated>
+ <updated>2013-04-20T17:01:42-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -89,7 +89,9 @@
 
 &lt;p&gt;In the future, you probably won’t need crouton to use mosh: &lt;a href='https://github.com/davidben/mosh-chrome'&gt;there’s a NaCl port on GitHub&lt;/a&gt; that mostly works. I’m hoping to get it ready for Web Store deployment during &lt;a href='https://www.hackerschool.com/'&gt;Hacker School&lt;/a&gt; this summer.&lt;/p&gt;
 
-&lt;p&gt;If you’re a fellow Chromebook hacker and think I missed something, definitely let me know. I’ll do my best to keep this guide updated as better tools arrive.&lt;/p&gt;</content>
+&lt;p&gt;If you’re a fellow Chromebook hacker and think I missed something, definitely let me know. I’ll do my best to keep this guide updated as better tools arrive.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: here&amp;#8217;s a link to the &lt;a href='https://news.ycombinator.com/item?id=5582531'&gt;hn discussion&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
  <entry>
