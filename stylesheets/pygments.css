@@ -1,8 +1,12 @@
-.highlight {
+code {
     background: #f8f8f8;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
 
     overflow: auto;
+}
+
+.highlight {
+    background: #f8f8f8;
     margin-bottom: 20px;
     padding-top: 6px;
     padding-right: 10px;
