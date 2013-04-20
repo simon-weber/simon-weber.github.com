@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-04-20T17:01:42-04:00</updated>
+ <updated>2013-04-20T18:43:09-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;First, a disclaimer: the device was given to me as part of the &lt;a href='http://www.google.com/intl/en/jobs/students/proscho/programs/uscanada/ambassador/'&gt;Google Student Ambassador Program&lt;/a&gt;, and Google pays me for brand advocacy at my school. That said, I’m &lt;em&gt;not&lt;/em&gt; getting paid to write this, and this is my advice, not Google’s. I’m a hacker, not a shill (and I’ll even save hn the work of linking &lt;a href='http://www.paulgraham.com/submarine.html'&gt;pg’s submarine essay&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;Anyway: let’s get started. It’s easiest to work over ssh, so I’ll cover this first. Later, I’ll get to working offline. I won’t talk about cloud development webapps because I don’t find them useful. Also, I don’t have any advice if you prefer heavy IDEs; my usual tools are a terminal and web browser.&lt;/p&gt;
+&lt;p&gt;Anyway: let’s get started. It’s easiest to work over ssh, so I’ll cover this first. Later, I’ll get to working offline. I won’t talk about cloud development webapps (maybe check out &lt;a href='https://www.nitrous.io'&gt;Nitrous.IO&lt;/a&gt;?). Also, I don’t have any advice if you prefer heavy IDEs; my usual tools are a terminal and web browser.&lt;/p&gt;
 
 &lt;h3 id='for_when_you_have_a_good_connection'&gt;For when you have a good connection&lt;/h3&gt;
 
@@ -88,6 +88,10 @@
 &lt;p&gt;You can use Secure Shell’s ‘SSH Arguments’ to save some typing if you often mosh into a particular machine.&lt;/p&gt;
 
 &lt;p&gt;In the future, you probably won’t need crouton to use mosh: &lt;a href='https://github.com/davidben/mosh-chrome'&gt;there’s a NaCl port on GitHub&lt;/a&gt; that mostly works. I’m hoping to get it ready for Web Store deployment during &lt;a href='https://www.hackerschool.com/'&gt;Hacker School&lt;/a&gt; this summer.&lt;/p&gt;
+
+&lt;h3 id='parting_words'&gt;Parting words&lt;/h3&gt;
+
+&lt;p&gt;You probably want to &lt;a href='http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/'&gt;enable zRAM&lt;/a&gt;. This will prevent you from running out of memory. For the technical details, see &lt;a href='https://groups.google.com/d/msg/chromebook-central/r27r3ZcchhM/V8Y5S0fy4bAJ'&gt;this post&lt;/a&gt;; the feature will be enabled by default in r27.&lt;/p&gt;
 
 &lt;p&gt;If you’re a fellow Chromebook hacker and think I missed something, definitely let me know. I’ll do my best to keep this guide updated as better tools arrive.&lt;/p&gt;
 
