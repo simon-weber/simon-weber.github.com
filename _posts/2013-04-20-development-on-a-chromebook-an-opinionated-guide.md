@@ -151,3 +151,5 @@ this summer.
 If you’re a fellow Chromebook hacker and think I missed something,
 definitely let me know. I’ll do my best to keep this guide updated
 as better tools arrive.
+
+_edit_: here's a link to the [hn discussion](https://news.ycombinator.com/item?id=5582531).
