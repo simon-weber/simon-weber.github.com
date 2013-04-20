@@ -30,7 +30,7 @@ of linking
 
 Anyway: let’s get started. It’s easiest to work over ssh, so I’ll
 cover this first. Later, I’ll get to working offline. I won’t talk
-about cloud development webapps because I don’t find them useful.
+about cloud development webapps (maybe check out [Nitrous.IO](https://www.nitrous.io)?).
 Also, I don’t have any advice if you prefer heavy IDEs; my usual
 tools are a terminal and web browser.
 
@@ -147,6 +147,13 @@ In the future, you probably won’t need crouton to use mosh:
 that mostly works. I’m hoping to get it ready for Web Store
 deployment during [Hacker School](https://www.hackerschool.com/)
 this summer.
+
+
+### Parting words
+
+You probably want to [enable zRAM](http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/).
+This will prevent you from running out of memory.
+For the technical details, see [this post](https://groups.google.com/d/msg/chromebook-central/r27r3ZcchhM/V8Y5S0fy4bAJ); the feature will be enabled by default in r27.
 
 If you’re a fellow Chromebook hacker and think I missed something,
 definitely let me know. I’ll do my best to keep this guide updated
