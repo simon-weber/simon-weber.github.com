@@ -4,13 +4,81 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-04-20T20:15:57-04:00</updated>
+ <updated>2013-05-14T21:33:27-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>gmusicapi retrospective</title>
+   <link href="http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective.html"/>
+   <updated>2013-05-14T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective</id>
+   <content type="html">&lt;h2 id='gmusicapi_retrospective'&gt;gmusicapi retrospective&lt;/h2&gt;
+&lt;p class='meta'&gt;14 May 2013&lt;/p&gt;
+&lt;p&gt;gmusicapi has come a long way since I pushed my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a'&gt;first commit&lt;/a&gt; back in January 2012.&lt;/p&gt;
+
+&lt;p&gt;The project has grown more than usual during this semester, since &amp;#8211; for the first time &amp;#8211; I worked on it for school credit. Here&amp;#8217;s what I spent my time on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a number of big features: scan-and-match support, album art operations, Music Manager OAuth support, python 2.6 compatibility&amp;#8230;&lt;/li&gt;
+
+&lt;li&gt;a new dynamic testing system for my end-to-end tests&lt;/li&gt;
+
+&lt;li&gt;a huge rewrite to allow for more flexible protocol declarations&lt;/li&gt;
+
+&lt;li&gt;continuous integration that also catches protocol changes&lt;/li&gt;
+
+&lt;li&gt;documentation improvements and a new irc support channel&lt;/li&gt;
+
+&lt;li&gt;version 1.0!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/graphs'&gt;Github&amp;#8217;s graphs&lt;/a&gt; provide a quick overview of what I&amp;#8217;ve been up to. Here are a few other metrics:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;documentation visits x5, bounce rate halved&lt;/li&gt;
+
+&lt;li&gt;PyPi download rate x2&lt;/li&gt;
+
+&lt;li&gt;use in a couple of real-world products&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I figure this is a good chance to reflect on some of the decisions I&amp;#8217;ve made, both for my sake and for those who might come this way in the future.&lt;/p&gt;
+
+&lt;h3 id='dont_count_out_endtoend_testing'&gt;Don&amp;#8217;t count out end-to-end testing&lt;/h3&gt;
+
+&lt;p&gt;I have a few unit tests, but the majority of my tests are end-to-end black-box tests that exercise my clients against actual Google servers. Naturally, they violate core unit test principles: they&amp;#8217;re stateful, cannot be run offline, and run slowly.&lt;/p&gt;
+
+&lt;p&gt;One thing I&amp;#8217;ve learned while coming to this solution: there&amp;#8217;s a lot of dogma surrounding test strategies.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s not that I&amp;#8217;m against unit testing. I&amp;#8217;d love to have more unit tests! Unfortunately, writing them isn&amp;#8217;t free, and in my case, end-to-end tests offer more bang for my buck. I get more coverage with less code and get to test my expectations about Google&amp;#8217;s servers. gmusicapi is also pretty small, so the loss of granularity when bug-hunting isn&amp;#8217;t a huge deal.&lt;/p&gt;
+
+&lt;p&gt;Of course, there&amp;#8217;s some extra work required to make your end-to-end tests robust. Backend flakiness can be addressed with retry and backoff. Test dependence and state management can be handled with TestNG-like frameworks (I use &lt;a href='http://pythonhosted.org/proboscis/'&gt;Proboscis&lt;/a&gt;). Protocol changes can be caught by validating responses against a schema.&lt;/p&gt;
+
+&lt;p&gt;Currently, I have a few Google accounts I use exclusively for testing, and I keep their credentials in TravisCI encrypted variables. There&amp;#8217;s one big downside to this: encrypted variables can&amp;#8217;t be used with other folks&amp;#8217; pull requests. In the future, I hope to figure out a way to safely manage a public test account (I think it&amp;#8217;s possible with 2-factor auth).&lt;/p&gt;
+
+&lt;h3 id='invest_in_support'&gt;Invest in support&lt;/h3&gt;
+
+&lt;p&gt;I have trouble saying no to requests for help. Interestingly, gmusicapi also seems to attract many users who are new to Python. Because of these factors, I used to spend a fair amount of time answering support emails. I didn&amp;#8217;t mind this, but after receiving a few emails on the same topics, I figured it&amp;#8217;d be better to flesh out the &lt;a href='http://unofficial-google-music-api.readthedocs.org'&gt;gmusicapi documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Basic questions were addressed with installation and getting starting sections. These were no-brainers, and I should have added them earlier.&lt;/p&gt;
+
+&lt;p&gt;I also added a section for a less obvious topic: people want the reverse-engineered protocols I&amp;#8217;m using. So far, I&amp;#8217;ve thrown together a hack that introspects my protocol declaration code, but I&amp;#8217;ve got plenty of room to improve this.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href='http://webchat.freenode.net/?channels=gmusicapi'&gt;#gmusicapi irc channel on Freenode&lt;/a&gt; is another recent support addition. I wish I&amp;#8217;d set it up earlier! Recently, devs building on gmusicapi have started hanging out and answering questions, which has been a huge help.&lt;/p&gt;
+
+&lt;p&gt;I still go the extra mile when I do direct support. Helping users out is its own reward, but I&amp;#8217;m also flattered to have received thank-you emails after irc chats, money, and &amp;#8211; once &amp;#8211; even a gift in the mail!&lt;/p&gt;
+
+&lt;h3 id='looking_forward'&gt;Looking forward&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#8217;m very pleased with what I&amp;#8217;ve learned and accomplished so far. My next step is to get the project into a self-sustaining state. I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, I&amp;#8217;ll have plenty of time this summer at &lt;a href='http://hackerschool.com'&gt;Hacker School&lt;/a&gt;!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Development on a Chromebook: an opinionated guide</title>
