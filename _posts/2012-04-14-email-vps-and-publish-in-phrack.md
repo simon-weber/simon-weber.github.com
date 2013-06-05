@@ -7,7 +7,7 @@ description: The story of how I published in Phrack.
 {{ page.title }}
 ----------------
 
-<p class="meta">14 April 2012</p>
+<p class="meta">April 14 2012</p>
 
 In the popular sense of the word, I'm no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.
 

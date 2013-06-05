@@ -7,7 +7,7 @@ description: I look back on my work on gmusicapi.
 {{ page.title }}
 ----------------
 
-<p class="meta">14 May 2013</p>
+<p class="meta">May 14 2013</p>
 
 
 gmusicapi has come a long way since I pushed my [first commit](https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a) back in January 2012.
