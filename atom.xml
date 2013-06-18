@@ -4,13 +4,50 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-06-05T15:54:29-04:00</updated>
+ <updated>2013-06-18T16:48:54-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Python protobuf on Google App Engine</title>
+   <link href="http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine.html"/>
+   <updated>2013-06-18T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine</id>
+   <content type="html">&lt;h2 id='python_protobuf_on_google_app_engine'&gt;Python protobuf on Google App Engine&lt;/h2&gt;
+&lt;p class='meta'&gt;June 18 2013&lt;/p&gt;
+&lt;p&gt;Today, if you try to use Google Protocol Buffers on App Engine, you&amp;#8217;ll run into an error like this one:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='nn'&gt;google.protobuf&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='n'&gt;descriptor&lt;/span&gt; 
+&lt;span class='ne'&gt;ImportError&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;No&lt;/span&gt; &lt;span class='n'&gt;module&lt;/span&gt; &lt;span class='n'&gt;named&lt;/span&gt; &lt;span class='n'&gt;protobuf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The problem is that Google&amp;#8217;s own App Engine apis also use the &lt;code&gt;google&lt;/code&gt; package namespace, and they don&amp;#8217;t include the protobuf package.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, there&amp;#8217;s a simple way to fix this. First, vendorize the library as you normally would. I just ripped the &lt;code&gt;site-packages&lt;/code&gt; folder from a virtualenv into the application root:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;app.py
+app.yaml
+vendor
+├── google
+│   └── protobuf...
+└── httplib2...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, just add your google directory to the google namespace, and add your vendor directory to the system path. I used this bit of code:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;os&lt;/span&gt;
+&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;sys&lt;/span&gt;
+
+&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;google&lt;/span&gt;  &lt;span class='c'&gt;# provided by GAE&lt;/span&gt;
+
+&lt;span class='c'&gt;# add vendorized protobuf to google namespace package&lt;/span&gt;
+&lt;span class='n'&gt;vendor_dir&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;dirname&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;__file__&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;vendor&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='n'&gt;google&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;__path__&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;append&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;vendor_dir&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;google&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;))&lt;/span&gt;
+
+&lt;span class='c'&gt;# add vendor path&lt;/span&gt;
+&lt;span class='n'&gt;sys&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;insert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;0&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;vendor_dir&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That&amp;#8217;s it! There&amp;#8217;s no need for &lt;a href='https://code.google.com/p/protobuf-gae-hack'&gt;weird hacks&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Chrome extension hacks: Google Music to turntable</title>
@@ -460,7 +497,7 @@ $(document).ready(function(){
 
 &lt;p&gt;Silicon Valley boasts perfect weather, but the best part was the people. I hung out with a posse of interns from various tech companies. I danced in Google’s SF Pride contingent. I watched classic demoscene while discussing phreaker war stories at &lt;a href='http://www.hackerdojo.com'&gt;Hacker Dojo&lt;/a&gt;. I ate donut burgers with Zuck, &lt;a href='http://www.youtube.com/watch?v=SNdcgVTTaS8'&gt;partied&lt;/a&gt; with PJ Hyett, and boogied with Alan Eustace.&lt;/p&gt;
 &lt;div class='figure'&gt;
-&lt;p&gt;&lt;img alt='Alan Eustace and Simon Weber dancing' src='/images/alan_eustace_dancing.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src='/images/alan_eustace_dancing.jpg' alt='Alan Eustace and Simon Weber dancing' /&gt;&lt;/p&gt;
 &lt;p&gt;No, seriously: this is Alan and me on the dance floor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;All these people had a common feature: real passion for their work. Being around this energy has inspired me, so - with my Google legal restrictions lifted - I’m ready to jump into my side projects again. I’ll be maintaining my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API'&gt;Google Music api&lt;/a&gt;, but probably won’t implement any huge new features. Instead, my time will likely be spent dogfooding it in a project to sync 3rd party media players to Google Music. I’ve already finished a &lt;a href='https://github.com/simon-weber/Mirror-MediaMonkey-to-Google-Music'&gt;proof of concept&lt;/a&gt;; now it’s time to buckle down and ship something. That is, if this unacceptable (read: not absolutely perfect) east coast weather doesn’t kill me first.&lt;/p&gt;</content>
@@ -475,7 +512,7 @@ $(document).ready(function(){
 &lt;p class='meta'&gt;April 14 2012&lt;/p&gt;
 &lt;p&gt;In the popular sense of the word, I&amp;#8217;m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
 &lt;div class='figure'&gt;
-&lt;p&gt;&lt;img alt='Acid Burn (Hackers 1995) in a trench coat' src='/images/hackers-trenchcoat.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src='/images/hackers-trenchcoat.jpg' alt='Acid Burn (Hackers 1995) in a trench coat' /&gt;&lt;/p&gt;
 &lt;p&gt;My collection of sexy trenchcoats is also lacking. (&lt;a href='http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3'&gt;credit&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Despite these disadvantages, back in September I discovered a &lt;a href='https://github.com/simon-weber/XSS-over-NBNS'&gt;vulnerability&lt;/a&gt; in the web interface of a Netgear wireless router. Now &lt;a href='http://www.phrack.com/issues.html?issue=68&amp;amp;id=4#article'&gt;published in Phrack&lt;/a&gt;, my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.&lt;/p&gt;

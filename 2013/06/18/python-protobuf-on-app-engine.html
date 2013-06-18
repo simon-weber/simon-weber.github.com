@@ -10,10 +10,10 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Simon Weber">
     
-    <meta name="description" content="The personal site of Simon Weber." />
+    <meta name="description" content="How to get the Python protobuf package working on App Engine." />
     
 	<link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
-	<title>Simon Weber</title>
+	<title>Python protobuf on Google App Engine</title>
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -68,71 +68,47 @@
 
 	  
     <div class="eleven columns offset-by-one content">
-        <div class="landing-item">
-    <h3>About</h3>
-    I'm a hacker and jazz sax player hailing from Hershey, Pennsylvania.
-    I spent last summer working for Google, and now I'm about to graduate from the University of Rochester.
-    This summer, I'm excited to be attending <a href="http://hackerschool.com">Hacker School</a>!
+        <div id="post">
+    <h2 id='python_protobuf_on_google_app_engine'>Python protobuf on Google App Engine</h2>
+<p class='meta'>June 18 2013</p>
+<p>Today, if you try to use Google Protocol Buffers on App Engine, you&#8217;ll run into an error like this one:</p>
+<div class='highlight'><pre><code class='python'><span class='kn'>from</span> <span class='nn'>google.protobuf</span> <span class='kn'>import</span> <span class='n'>descriptor</span> 
+<span class='ne'>ImportError</span><span class='p'>:</span> <span class='n'>No</span> <span class='n'>module</span> <span class='n'>named</span> <span class='n'>protobuf</span>
+</code></pre></div>
+<p>The problem is that Google&#8217;s own App Engine apis also use the <code>google</code> package namespace, and they don&#8217;t include the protobuf package.</p>
+
+<p>Thankfully, there&#8217;s a simple way to fix this. First, vendorize the library as you normally would. I just ripped the <code>site-packages</code> folder from a virtualenv into the application root:</p>
+<div class='highlight'><pre><code class='bash'>app.py
+app.yaml
+vendor
+├── google
+│   └── protobuf...
+└── httplib2...
+</code></pre></div>
+<p>Then, just add your google directory to the google namespace, and add your vendor directory to the system path. I used this bit of code:</p>
+<div class='highlight'><pre><code class='python'><span class='kn'>import</span> <span class='nn'>os</span>
+<span class='kn'>import</span> <span class='nn'>sys</span>
+
+<span class='kn'>import</span> <span class='nn'>google</span>  <span class='c'># provided by GAE</span>
+
+<span class='c'># add vendorized protobuf to google namespace package</span>
+<span class='n'>vendor_dir</span> <span class='o'>=</span> <span class='n'>os</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='n'>os</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>dirname</span><span class='p'>(</span><span class='n'>__file__</span><span class='p'>),</span> <span class='s'>&#39;vendor&#39;</span><span class='p'>)</span>
+<span class='n'>google</span><span class='o'>.</span><span class='n'>__path__</span><span class='o'>.</span><span class='n'>append</span><span class='p'>(</span><span class='n'>os</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='n'>vendor_dir</span><span class='p'>,</span> <span class='s'>&#39;google&#39;</span><span class='p'>))</span>
+
+<span class='c'># add vendor path</span>
+<span class='n'>sys</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>insert</span><span class='p'>(</span><span class='mi'>0</span><span class='p'>,</span> <span class='n'>vendor_dir</span><span class='p'>)</span>
+</code></pre></div>
+<p>That&#8217;s it! There&#8217;s no need for <a href='https://code.google.com/p/protobuf-gae-hack'>weird hacks</a>.</p>
 </div>
 
-
-<div class="landing-item">
-    <h3>Some Projects</h3>
-    <ul>
-        <li>
-        <a href="https://github.com/simon-weber/Predicting-Code-Popularity">Code popularity prediction</a> &raquo; Classifies GitHub code to a star range.
-        </li>
-        <li>
-        <a href="http://thelistservearchive.com/">The Listserve Archive</a> &raquo; An automatic archive of <a href="http://thelistserve.com">The Listserve</a>.
-        </li>
-        <li>
-        <a href="https://github.com/simon-weber/Unofficial-Google-Music-API">Unofficial Google Music Api</a> &raquo; Actively maintained. 15k+ downloads.
-        </li>
-        <li>
-        <a href="https://github.com/simon-weber/XSS-over-NBNS">Router exploitation</a> &raquo; XSS in common routers. Published with <a href="http://www.phrack.com/issues.html?issue=68&amp;id=4#article">Phrack</a>. <a href="https://docs.google.com/presentation/d/1grp9hLaYnegWN0rfkZHSfqtYmBme9vtaAoinZmIIqKI/edit">Slides</a> from a recent talk.
-        </li>
-    </ul>
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+        </p>
+    </div>
 </div>
-
-<div class="landing-item">
-    <h3>Blog Posts</h3>
-    <ul>
-        
-        <li>
-        <span>Jun 18, 2013</span> &raquo; <a href="/2013/06/18/python-protobuf-on-app-engine.html">Python protobuf on Google App Engine</a>
-        </li>
-        
-        <li>
-        <span>Jun 05, 2013</span> &raquo; <a href="/2013/06/05/chrome-extension-hacks.html">Chrome extension hacks: Google Music to turntable</a>
-        </li>
-        
-        <li>
-        <span>May 14, 2013</span> &raquo; <a href="/2013/05/14/gmusicapi-retrospective.html">gmusicapi retrospective</a>
-        </li>
-        
-        <li>
-        <span>Apr 20, 2013</span> &raquo; <a href="/2013/04/20/development-on-a-chromebook-an-opinionated-guide.html">Development on a Chromebook: an opinionated guide</a>
-        </li>
-        
-        <li>
-        <span>Feb 14, 2013</span> &raquo; <a href="/2013/02/14/tough-cookies-a-debugging-story.html">Tough cookies: a debugging story</a>
-        </li>
-        
-        <li>
-        <span>Sep 07, 2012</span> &raquo; <a href="/2012/09/07/whats-in-a-genre.html">What's in a genre?</a>
-        </li>
-        
-        <li>
-        <span>Aug 29, 2012</span> &raquo; <a href="/2012/08/29/returning-to-the-east.html">Returning to the east</a>
-        </li>
-        
-        <li>
-        <span>Apr 14, 2012</span> &raquo; <a href="/2012/04/14/email-vps-and-publish-in-phrack.html">Cold-email a VP, publish in Phrack</a>
-        </li>
-        
-    </ul>
-</div>
-
 
     </div>
 </div><!-- container -->
