@@ -25,7 +25,7 @@ My extension lets me do this right in turntable.
 Now, all I do is click “Upload from Google Music”, find the song and hit upload.
 The extension does the same thing behind the scenes.
 
-If this sounds useful, you can get it on [my GitHub](https://github.com/simon-weber/Google-Music-Turntable-Uploader).
+If this sounds useful, you can get it here: [Turntable Uploader for Google Music™](https://chrome.google.com/webstore/detail/turntable-uploader-for-go/akchbpaepakjnaihbgkdgjjgpdcckapb).
 But, this blog post isn't about advertising: I wanted to document all the weird hacks that went into making this work.
 If you're already a Chrome extension guru, you may already know this stuff;
 it's intended as a post I would have wanted before writing a line of code.
