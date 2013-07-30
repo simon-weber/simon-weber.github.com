@@ -4,13 +4,91 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-07-06T18:17:21-04:00</updated>
+ <updated>2013-07-30T17:47:26-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Strangers, Go, and Openshift</title>
+   <link href="http://www.simonmweber.com/2013/07/29/go-openshift-and-strangers.html"/>
+   <updated>2013-07-29T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2013/07/29/go-openshift-and-strangers</id>
+   <content type="html">&lt;h2 id='strangers_go_and_openshift'&gt;Strangers, Go, and Openshift&lt;/h2&gt;
+&lt;p class='meta'&gt;July 30 2013&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve always liked the idea of &lt;a href='http://omegle.com'&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers. I also hang out in irc a lot, and thought it&amp;#8217;d be fun to enable pulling a stranger into a channel. This wasn&amp;#8217;t a new idea, but since Hacker School is all about learning by exploring, I built an &lt;a href='https://github.com/simon-weber/omegle-to-irc'&gt;omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
+
+&lt;p&gt;When I hooked it up in &lt;a href='http://rochack.org/'&gt;#rochack&lt;/a&gt;, someone had the idea to pipe the stranger&amp;#8217;s input to our resident markov chain bot. Hilarity ensued.&lt;/p&gt;
+
+&lt;p&gt;I wanted to be able to share this and had been itching to try Go&amp;#8217;s CSP-influenced concurrency support, so I built &lt;a href='http://strangerbotting-simonmweber.rhcloud.com'&gt;Strangerbotting&lt;/a&gt;. There are a few pieces to it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomegle'&gt;gomegle&lt;/a&gt;: a go client library for Omegle&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomarkov'&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/simon-weber/strangerbotting-backend'&gt;strangerbotting-backend&lt;/a&gt;: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/simon-weber/strangerbotting-frontend'&gt;strangerbotting-frontend&lt;/a&gt;: a simple webclient to display conversations. Also runs on Openshift.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There&amp;#8217;s nothing too magical going on in the code, so I won&amp;#8217;t bother talking about it. However, I have some new opinions on Go and Openshift that I wanted to write down.&lt;/p&gt;
+
+&lt;h3 id='golang'&gt;Golang&lt;/h3&gt;
+
+&lt;p&gt;Before getting started with Go, I&amp;#8217;d seen a lot of folks complain about the more pedantic parts of the language (eg &amp;#8220;why is an unused import a compile error!?&amp;#8221;). To me, this indicates one of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;disagreement with Google&amp;#8217;s engineering culture&lt;/li&gt;
+
+&lt;li&gt;unfamiliarity with Go&amp;#8217;s design goals&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First, it&amp;#8217;s important to realize that Go is a language by Google, for Google; of course their conservative engineering tendencies show through. Second, the language was designed to compile quickly, and disallowing unused imports supports this goal (see &lt;a href='http://talks.golang.org/2012/splash.article#TOC_7.'&gt;this&lt;/a&gt; for details).&lt;/p&gt;
+
+&lt;p&gt;However, in spite of my Google indoctrination, I still found error handling a bit wonky. For those unfamiliar with the language, here&amp;#8217;s the relevant part of the Go faq:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+Why does Go not have exceptions?
+&lt;/p&gt;
+
+&lt;p&gt;
+We believe that coupling exceptions to a control structure, as in the try-catch-finally idiom, results in convoluted code.
+It also tends to encourage programmers to label too many ordinary errors, such as failing to open a file, as exceptional.
+&lt;/p&gt;
+
+&lt;p&gt;
+Go takes a different approach.
+For plain error handling, Go's multi-value returns make it easy to report an error without overloading the return value.
+A canonical error type, coupled with Go's other features, makes error handling pleasant but quite different from that in other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+Go also has a couple of built-in functions to signal and recover from truly exceptional conditions.
+The recovery mechanism is executed only as part of a function's state being torn down after an error, which is sufficient to handle catastrophe but requires no extra control structures and, when used well, can result in clean error-handling code.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Coming from Python, this philosophy stuck out. The majority of function calls get wrapped in a conditional check on a returned error, which seems overly verbose and tedious. This certainly required some getting used to, but now doesn&amp;#8217;t bother me much. After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
+
+&lt;p&gt;What does bother me is the loss of debugging information without exceptions. For example, here&amp;#8217;s an error I received from Go&amp;#8217;s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;. The unclear message and lack of a stacktrace left me guessing: is my code broken? Is Go&amp;#8217;s? Maybe it was the server? I ended up reluctantly grepping the stdlib source, since I didn&amp;#8217;t even have a line number to go off of.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, Go&amp;#8217;s concurrency support makes up for this and then some. Goroutines and selection over channels make reasoning about concurrency super easy. Sorry, Twisted: I&amp;#8217;m a convert.&lt;/p&gt;
+
+&lt;p&gt;The stdlib is pretty decent, but can feel somewhat inconsistent. Deques? Nope. &lt;a href='http://golang.org/pkg/index/suffixarray/'&gt;Suffix arrays&lt;/a&gt;? &amp;#8230;Yes? Huh. For now, I&amp;#8217;m willing to write this off a combination of Python spoiling me and Go being relatively new.&lt;/p&gt;
+
+&lt;p&gt;However, despite its youth, Go&amp;#8217;s community is fantastic. I&amp;#8217;ve had nothing but good experiences in &lt;code&gt;#go-nuts&lt;/code&gt;, and &lt;a href='http://play.golang.org'&gt;play.golang.org&lt;/a&gt; is a big win when sharing code.&lt;/p&gt;
+
+&lt;p&gt;Overall, I came away pleased with Go, and I think I&amp;#8217;ll definitely favor it for backend work in the future.&lt;/p&gt;
+
+&lt;h3 id='openshift'&gt;Openshift&lt;/h3&gt;
+
+&lt;p&gt;Openshift left me with more mixed feelings. On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem. On the other, their docs are pretty bad. Then again, the free tier is generous&amp;#8230;but custom buildpack development is painful. And, while the community is there, it has a distinct Java/.NET flavor to it.&lt;/p&gt;
+
+&lt;p&gt;I feel like I could pick positives and negatives all day long, and in the end it just about cancels out. I&amp;#8217;ll be rooting for them, but I don&amp;#8217;t see myself paying for the service any time soon.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Python protobuf on Google App Engine</title>
@@ -438,7 +516,7 @@ other code on the page
    <updated>2012-09-07T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/09/07/whats-in-a-genre</id>
    <content type="html">&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'&gt;
-&lt;/script&gt;&lt;script src='https://www.google.com/jsapi' type='text/javascript'&gt;
+&lt;/script&gt;&lt;script type='text/javascript' src='https://www.google.com/jsapi'&gt;
 &lt;/script&gt;&lt;script type='text/javascript'&gt;
 $(document).ready(function(){
   google.load('visualization', '1.0', {
