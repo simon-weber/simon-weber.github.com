@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="My thoughts on Golang and Openshift after finishing Strangerbotting." />
+    
+	<link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+	<title>Strangers, Go, and Openshift</title>
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="/stylesheets/base.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/layout.css">
+
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+	<link rel="stylesheet" href="/stylesheets/pygments.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+
+
+    <!-- Primary Page Layout
+    ================================================== -->
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon five-spaced row">
+                    <span><a href="https://github.com/simon-weber"><img alt="simon-weber" src="/images/github.ico"></a></span>
+                    <span><a href="http://www.facebook.com/simon.weber1"> <img alt="simon.weber1" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"> <img alt="Simon Weber" src="/images/plus.ico"></a></span>
+		  <span><a href="http://news.ycombinator.com/user?id=simon_weber"> <img alt="simon_weber" src="/images/hn.ico"></a></span>
+          <span><a href="https://twitter.com/#!/simonmweber"> <img alt="simonmweber" src="/images/twitter.ico"></a></span>
+      </div>
+      </li>
+  </ul>
+
+	    &nbsp;
+    </div>
+
+	  
+    <div class="eleven columns offset-by-one content">
+        <div id="post">
+    <h2 id='strangers_go_and_openshift'>Strangers, Go, and Openshift</h2>
+<p class='meta'>July 31 2013</p>
+<p>I&#8217;ve always liked the idea of <a href='http://omegle.com'>Omegle</a>: one-on-one text chats with strangers. I also hang out in irc a lot, and thought it&#8217;d be fun to combine the two. This wasn&#8217;t a new idea, but since Hacker School is all about learning by exploring, I built an <a href='https://github.com/simon-weber/omegle-to-irc'>Omegle to irc bridge</a> with Twisted.</p>
+
+<p>When I hooked it up in <a href='http://rochack.org/'>#rochack</a>, someone had the idea to have the stranger talk to our resident markov chain bot. The stranger had no way to know they were talking to a bot, and hilarity ensued.</p>
+
+<p>The thing was, only folks in our channel could watch. To share this, I built <a href='http://strangerbotting-simonmweber.rhcloud.com'>Strangerbotting</a>. It&#8217;s written in Go, and runs on Openshift, Red Hat&#8217;s newish open source PaaS. There are a couple of pieces to the app:</p>
+
+<ul>
+<li><a href='https://github.com/simon-weber/gomegle'>gomegle</a>: a client library for Omegle</li>
+
+<li><a href='https://github.com/simon-weber/gomarkov'>gomarkov</a>: simple, fast, in-memory markov chains for text generation</li>
+
+<li><a href='https://github.com/simon-weber/strangerbotting-backend'>strangerbotting-backend</a>: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.</li>
+
+<li><a href='https://github.com/simon-weber/strangerbotting-frontend'>strangerbotting-frontend</a>: a simple webclient to display conversations. Also runs on Openshift.</li>
+</ul>
+
+<p>There&#8217;s nothing too magical going on in the code, so I won&#8217;t bother talking about it. However, I have some new opinions on Go and Openshift that I wanted to write down.</p>
+
+<h3 id='golang'>Golang</h3>
+
+<p>Before getting started with Go, I&#8217;d seen a lot of folks complain about the more pedantic parts of the language. To me, this indicates some combination of:</p>
+
+<ul>
+<li>disagreement with Google&#8217;s engineering culture</li>
+
+<li>unfamiliarity with Go&#8217;s design goals</li>
+</ul>
+
+<p>For example, unused imports in Go raise a compile error. This reflects both Google&#8217;s conservative engineering tendencies (they wouldn&#8217;t want such code checked in), and the goal of fast compilation (see <a href='http://talks.golang.org/2012/splash.article#TOC_7.'>here</a> for details).</p>
+
+<p>Maybe it&#8217;s last summer&#8217;s Google indoctrination speaking, but I&#8217;m fine with these parts of the language. That said, I still find Go&#8217;s error handling - which eschews exceptions for multi-value returns - a bit wonky. For those unfamiliar with the language, here&#8217;s the relevant part of the Go faq:</p>
+<blockquote>
+<p>
+Why does Go not have exceptions?
+</p>
+
+<p>
+We believe that coupling exceptions to a control structure, as in the try-catch-finally idiom, results in convoluted code.
+It also tends to encourage programmers to label too many ordinary errors, such as failing to open a file, as exceptional.
+</p>
+
+<p>
+Go takes a different approach.
+For plain error handling, Go's multi-value returns make it easy to report an error without overloading the return value.
+A canonical error type, coupled with Go's other features, makes error handling pleasant but quite different from that in other languages.
+</p>
+
+<p>
+Go also has a couple of built-in functions to signal and recover from truly exceptional conditions.
+The recovery mechanism is executed only as part of a function's state being torn down after an error, which is sufficient to handle catastrophe but requires no extra control structures and, when used well, can result in clean error-handling code.
+</p>
+</blockquote>
+<p>This means that the majority of function calls get wrapped in a conditional check on a returned error, which can seem verbose and tedious. While this certainly required some getting used to, it doesn&#8217;t bother me anymore. After all, I end up using a similar number of try/except blocks when writing robust Python code.</p>
+
+<p>What does bother me is the loss of debugging information. For example, here&#8217;s an error I received from Go&#8217;s http client: <code>Post http://front2.omegle.com/events: EOF</code>. The unclear message and lack of a stacktrace left me guessing: is my code broken? Is Go&#8217;s? Maybe it was the server? I ended up reluctantly grepping the stdlib source, since I didn&#8217;t even have a line number to go off of.</p>
+
+<p>Thankfully, there&#8217;s enough to like in Go that I&#8217;ll put up with some debugging annoyances. First off, goroutines and selection over channels make for really easy concurrent code. As somebody who was new to both Twisted- and CSP-style concurrency a month ago, I now greatly prefer the latter.</p>
+
+<p>The stdlib is also pretty decent, even if it can feel somewhat inconsistent. For example, there&#8217;s no deque implementation, but there is a one for <a href='http://golang.org/pkg/index/suffixarray/'>suffix arrays</a>. I&#8217;m willing to write this off as a combination of Python spoiling me and Go being relatively new.</p>
+
+<p>However, despite its youth, Go&#8217;s community is fantastic. The <a href='http://irc.lc/freenode/go-nuts'>#go-nuts</a> channel and <a href='http://blog.golang.org/'>official blog</a> are informative and active, and <a href='http://play.golang.org'>play.golang.org</a> makes sharing code a breeze.</p>
+
+<p>Overall, I came away pleased with Go, and I&#8217;ll definitely consider it for backend work in the future.</p>
+
+<h3 id='openshift'>Openshift</h3>
+
+<p>Openshift, however, left me with mixed feelings. On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem. Rather than futz around with custom buildpacks, I just downloaded and compiled Nginx to host the <a href='http://github.com/simon-weber/strangerbotting-frontend'>Strangerbotting frontend</a>. Their free tier is generous, too; I wouldn&#8217;t have to pay for a three node host/reverse-proxy to redundant backend setup.</p>
+
+<p>However, there&#8217;s not much else to like. In particular, their bizarre naming choices are a constant source of confusion. Apps are the top-level construct. They are made up of gears (VMs), which run cartridges (buildpacks).</p>
+
+<p>To run the three node architecture I referred to earlier, you don&#8217;t make an application with three gears, though; that&#8217;d be too easy. Instead, you need to make three applications, each with one gear. You see, you only get one &#8220;web gear&#8221; per application, which the other gears then support (by eg hosting a database or build system).</p>
+
+<p>Since their docs don&#8217;t make any of this clear, expect to dig around the forums for answers. Be warned, they&#8217;ve got a very &#8220;googling for .NET answers on SO&#8221; kind of vibe to them.</p>
+
+<p>I ran into all sorts of other minor difficulties. For one, there&#8217;s no official Go cartridge. There is a Red Hat community catridge, but that&#8217;s been broken for months now, apparently. After spending a half a day trying to fix it and cursing at their slow cartridge development system, I gave up. I&#8217;m currently deploying a binary over git, which I&#8217;m not too happy about.</p>
+
+<p>These kinds of problems left me with the impression that the service isn&#8217;t quite there yet. So, while I won&#8217;t be paying for Openshift any time soon, I will be rooting for them. An open source PaaS is a noble goal, and more I always welcome competition for my dollars.</p>
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+        </p>
+    </div>
+</div>
+
+    </div>
+</div><!-- container -->
+
+
+
+	<!-- JS
+	     ================================================== -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="/javascripts/tabs.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-29570993-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+<!-- End Document
+================================================== -->
+</body>
+</html>

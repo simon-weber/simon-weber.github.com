@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-07-30T17:47:26-04:00</updated>
+ <updated>2013-07-31T17:19:49-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -14,19 +14,19 @@
  
  <entry>
    <title>Strangers, Go, and Openshift</title>
-   <link href="http://www.simonmweber.com/2013/07/29/go-openshift-and-strangers.html"/>
-   <updated>2013-07-29T00:00:00-04:00</updated>
-   <id>http://www.simonmweber.com/2013/07/29/go-openshift-and-strangers</id>
+   <link href="http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers.html"/>
+   <updated>2013-07-31T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers</id>
    <content type="html">&lt;h2 id='strangers_go_and_openshift'&gt;Strangers, Go, and Openshift&lt;/h2&gt;
-&lt;p class='meta'&gt;July 30 2013&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;ve always liked the idea of &lt;a href='http://omegle.com'&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers. I also hang out in irc a lot, and thought it&amp;#8217;d be fun to enable pulling a stranger into a channel. This wasn&amp;#8217;t a new idea, but since Hacker School is all about learning by exploring, I built an &lt;a href='https://github.com/simon-weber/omegle-to-irc'&gt;omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
+&lt;p class='meta'&gt;July 31 2013&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve always liked the idea of &lt;a href='http://omegle.com'&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers. I also hang out in irc a lot, and thought it&amp;#8217;d be fun to combine the two. This wasn&amp;#8217;t a new idea, but since Hacker School is all about learning by exploring, I built an &lt;a href='https://github.com/simon-weber/omegle-to-irc'&gt;Omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
 
-&lt;p&gt;When I hooked it up in &lt;a href='http://rochack.org/'&gt;#rochack&lt;/a&gt;, someone had the idea to pipe the stranger&amp;#8217;s input to our resident markov chain bot. Hilarity ensued.&lt;/p&gt;
+&lt;p&gt;When I hooked it up in &lt;a href='http://rochack.org/'&gt;#rochack&lt;/a&gt;, someone had the idea to have the stranger talk to our resident markov chain bot. The stranger had no way to know they were talking to a bot, and hilarity ensued.&lt;/p&gt;
 
-&lt;p&gt;I wanted to be able to share this and had been itching to try Go&amp;#8217;s CSP-influenced concurrency support, so I built &lt;a href='http://strangerbotting-simonmweber.rhcloud.com'&gt;Strangerbotting&lt;/a&gt;. There are a few pieces to it:&lt;/p&gt;
+&lt;p&gt;The thing was, only folks in our channel could watch. To share this, I built &lt;a href='http://strangerbotting-simonmweber.rhcloud.com'&gt;Strangerbotting&lt;/a&gt;. It&amp;#8217;s written in Go, and runs on Openshift, Red Hat&amp;#8217;s newish open source PaaS. There are a couple of pieces to the app:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomegle'&gt;gomegle&lt;/a&gt;: a go client library for Omegle&lt;/li&gt;
+&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomegle'&gt;gomegle&lt;/a&gt;: a client library for Omegle&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='https://github.com/simon-weber/gomarkov'&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation&lt;/li&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;h3 id='golang'&gt;Golang&lt;/h3&gt;
 
-&lt;p&gt;Before getting started with Go, I&amp;#8217;d seen a lot of folks complain about the more pedantic parts of the language (eg &amp;#8220;why is an unused import a compile error!?&amp;#8221;). To me, this indicates one of:&lt;/p&gt;
+&lt;p&gt;Before getting started with Go, I&amp;#8217;d seen a lot of folks complain about the more pedantic parts of the language. To me, this indicates some combination of:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;disagreement with Google&amp;#8217;s engineering culture&lt;/li&gt;
@@ -47,9 +47,9 @@
 &lt;li&gt;unfamiliarity with Go&amp;#8217;s design goals&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;First, it&amp;#8217;s important to realize that Go is a language by Google, for Google; of course their conservative engineering tendencies show through. Second, the language was designed to compile quickly, and disallowing unused imports supports this goal (see &lt;a href='http://talks.golang.org/2012/splash.article#TOC_7.'&gt;this&lt;/a&gt; for details).&lt;/p&gt;
+&lt;p&gt;For example, unused imports in Go raise a compile error. This reflects both Google&amp;#8217;s conservative engineering tendencies (they wouldn&amp;#8217;t want such code checked in), and the goal of fast compilation (see &lt;a href='http://talks.golang.org/2012/splash.article#TOC_7.'&gt;here&lt;/a&gt; for details).&lt;/p&gt;
 
-&lt;p&gt;However, in spite of my Google indoctrination, I still found error handling a bit wonky. For those unfamiliar with the language, here&amp;#8217;s the relevant part of the Go faq:&lt;/p&gt;
+&lt;p&gt;Maybe it&amp;#8217;s last summer&amp;#8217;s Google indoctrination speaking, but I&amp;#8217;m fine with these parts of the language. That said, I still find Go&amp;#8217;s error handling - which eschews exceptions for multi-value returns - a bit wonky. For those unfamiliar with the language, here&amp;#8217;s the relevant part of the Go faq:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;
 Why does Go not have exceptions?
@@ -71,23 +71,31 @@ Go also has a couple of built-in functions to signal and recover from truly exce
 The recovery mechanism is executed only as part of a function's state being torn down after an error, which is sufficient to handle catastrophe but requires no extra control structures and, when used well, can result in clean error-handling code.
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Coming from Python, this philosophy stuck out. The majority of function calls get wrapped in a conditional check on a returned error, which seems overly verbose and tedious. This certainly required some getting used to, but now doesn&amp;#8217;t bother me much. After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
+&lt;p&gt;This means that the majority of function calls get wrapped in a conditional check on a returned error, which can seem verbose and tedious. While this certainly required some getting used to, it doesn&amp;#8217;t bother me anymore. After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
 
-&lt;p&gt;What does bother me is the loss of debugging information without exceptions. For example, here&amp;#8217;s an error I received from Go&amp;#8217;s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;. The unclear message and lack of a stacktrace left me guessing: is my code broken? Is Go&amp;#8217;s? Maybe it was the server? I ended up reluctantly grepping the stdlib source, since I didn&amp;#8217;t even have a line number to go off of.&lt;/p&gt;
+&lt;p&gt;What does bother me is the loss of debugging information. For example, here&amp;#8217;s an error I received from Go&amp;#8217;s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;. The unclear message and lack of a stacktrace left me guessing: is my code broken? Is Go&amp;#8217;s? Maybe it was the server? I ended up reluctantly grepping the stdlib source, since I didn&amp;#8217;t even have a line number to go off of.&lt;/p&gt;
 
-&lt;p&gt;Thankfully, Go&amp;#8217;s concurrency support makes up for this and then some. Goroutines and selection over channels make reasoning about concurrency super easy. Sorry, Twisted: I&amp;#8217;m a convert.&lt;/p&gt;
+&lt;p&gt;Thankfully, there&amp;#8217;s enough to like in Go that I&amp;#8217;ll put up with some debugging annoyances. First off, goroutines and selection over channels make for really easy concurrent code. As somebody who was new to both Twisted- and CSP-style concurrency a month ago, I now greatly prefer the latter.&lt;/p&gt;
 
-&lt;p&gt;The stdlib is pretty decent, but can feel somewhat inconsistent. Deques? Nope. &lt;a href='http://golang.org/pkg/index/suffixarray/'&gt;Suffix arrays&lt;/a&gt;? &amp;#8230;Yes? Huh. For now, I&amp;#8217;m willing to write this off a combination of Python spoiling me and Go being relatively new.&lt;/p&gt;
+&lt;p&gt;The stdlib is also pretty decent, even if it can feel somewhat inconsistent. For example, there&amp;#8217;s no deque implementation, but there is a one for &lt;a href='http://golang.org/pkg/index/suffixarray/'&gt;suffix arrays&lt;/a&gt;. I&amp;#8217;m willing to write this off as a combination of Python spoiling me and Go being relatively new.&lt;/p&gt;
 
-&lt;p&gt;However, despite its youth, Go&amp;#8217;s community is fantastic. I&amp;#8217;ve had nothing but good experiences in &lt;code&gt;#go-nuts&lt;/code&gt;, and &lt;a href='http://play.golang.org'&gt;play.golang.org&lt;/a&gt; is a big win when sharing code.&lt;/p&gt;
+&lt;p&gt;However, despite its youth, Go&amp;#8217;s community is fantastic. The &lt;a href='http://irc.lc/freenode/go-nuts'&gt;#go-nuts&lt;/a&gt; channel and &lt;a href='http://blog.golang.org/'&gt;official blog&lt;/a&gt; are informative and active, and &lt;a href='http://play.golang.org'&gt;play.golang.org&lt;/a&gt; makes sharing code a breeze.&lt;/p&gt;
 
-&lt;p&gt;Overall, I came away pleased with Go, and I think I&amp;#8217;ll definitely favor it for backend work in the future.&lt;/p&gt;
+&lt;p&gt;Overall, I came away pleased with Go, and I&amp;#8217;ll definitely consider it for backend work in the future.&lt;/p&gt;
 
 &lt;h3 id='openshift'&gt;Openshift&lt;/h3&gt;
 
-&lt;p&gt;Openshift left me with more mixed feelings. On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem. On the other, their docs are pretty bad. Then again, the free tier is generous&amp;#8230;but custom buildpack development is painful. And, while the community is there, it has a distinct Java/.NET flavor to it.&lt;/p&gt;
+&lt;p&gt;Openshift, however, left me with mixed feelings. On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem. Rather than futz around with custom buildpacks, I just downloaded and compiled Nginx to host the &lt;a href='http://github.com/simon-weber/strangerbotting-frontend'&gt;Strangerbotting frontend&lt;/a&gt;. Their free tier is generous, too; I wouldn&amp;#8217;t have to pay for a three node host/reverse-proxy to redundant backend setup.&lt;/p&gt;
 
-&lt;p&gt;I feel like I could pick positives and negatives all day long, and in the end it just about cancels out. I&amp;#8217;ll be rooting for them, but I don&amp;#8217;t see myself paying for the service any time soon.&lt;/p&gt;</content>
+&lt;p&gt;However, there&amp;#8217;s not much else to like. In particular, their bizarre naming choices are a constant source of confusion. Apps are the top-level construct. They are made up of gears (VMs), which run cartridges (buildpacks).&lt;/p&gt;
+
+&lt;p&gt;To run the three node architecture I referred to earlier, you don&amp;#8217;t make an application with three gears, though; that&amp;#8217;d be too easy. Instead, you need to make three applications, each with one gear. You see, you only get one &amp;#8220;web gear&amp;#8221; per application, which the other gears then support (by eg hosting a database or build system).&lt;/p&gt;
+
+&lt;p&gt;Since their docs don&amp;#8217;t make any of this clear, expect to dig around the forums for answers. Be warned, they&amp;#8217;ve got a very &amp;#8220;googling for .NET answers on SO&amp;#8221; kind of vibe to them.&lt;/p&gt;
+
+&lt;p&gt;I ran into all sorts of other minor difficulties. For one, there&amp;#8217;s no official Go cartridge. There is a Red Hat community catridge, but that&amp;#8217;s been broken for months now, apparently. After spending a half a day trying to fix it and cursing at their slow cartridge development system, I gave up. I&amp;#8217;m currently deploying a binary over git, which I&amp;#8217;m not too happy about.&lt;/p&gt;
+
+&lt;p&gt;These kinds of problems left me with the impression that the service isn&amp;#8217;t quite there yet. So, while I won&amp;#8217;t be paying for Openshift any time soon, I will be rooting for them. An open source PaaS is a noble goal, and more I always welcome competition for my dollars.&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -516,7 +524,7 @@ other code on the page
    <updated>2012-09-07T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/09/07/whats-in-a-genre</id>
    <content type="html">&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'&gt;
-&lt;/script&gt;&lt;script type='text/javascript' src='https://www.google.com/jsapi'&gt;
+&lt;/script&gt;&lt;script src='https://www.google.com/jsapi' type='text/javascript'&gt;
 &lt;/script&gt;&lt;script type='text/javascript'&gt;
 $(document).ready(function(){
   google.load('visualization', '1.0', {
@@ -554,7 +562,7 @@ $(document).ready(function(){
 &lt;p&gt;Now that we&amp;#8217;ve figured out I&amp;#8217;m a jazz-playing metalhead, let&amp;#8217;s take a look at the least common words. &amp;#8216;Country&amp;#8217; appears only once (and at the risk of sounding one-sided, it labels the fantastic &lt;a href='http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass'&gt;Slaughter of the Bluegrass&lt;/a&gt;). There&amp;#8217;s a bunch of mispellings, too, like &amp;#8216;reggaer&amp;#8217; and &amp;#8216;sountrack&amp;#8217;.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#8217;s a quick chart of all the words I found:&lt;/p&gt;
-&lt;div class='eleven columns' style='height: 400px;' id='words_chart'&gt; &lt;/div&gt;
+&lt;div id='words_chart' class='eleven columns' style='height: 400px;'&gt; &lt;/div&gt;
 &lt;p&gt;This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I&amp;#8217;ve got the &lt;a href='https://github.com/simon-weber/Google-Music-genre-analysis'&gt;source on GitHub&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
