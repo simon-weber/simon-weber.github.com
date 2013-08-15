@@ -4,48 +4,34 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<meta name="author" content="Simon Weber">
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
     
     <meta name="description" content="I briefly analyze the genres in my Google Music library" />
     
-	<link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
-	<title>What's in a genre?</title>
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>What's in a genre?</title>
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
 
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="/stylesheets/base.css">
-	<link rel="stylesheet" href="/stylesheets/skeleton.css">
-	<link rel="stylesheet" href="/stylesheets/layout.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
 
-	<link rel="stylesheet" href="/stylesheets/custom.css">
-	<link rel="stylesheet" href="/stylesheets/pygments.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
 </head>
 <body>
-
-
-
-    <!-- Primary Page Layout
-    ================================================== -->
     <div class="container">
         <div class="four columns sidebar">
             <ul>
@@ -54,23 +40,23 @@
                 <li>
 
                 <div class="favicon five-spaced row">
-                    <span><a href="https://github.com/simon-weber"><img alt="simon-weber" src="/images/github.ico"></a></span>
-                    <span><a href="http://www.facebook.com/simon.weber1"> <img alt="simon.weber1" src="/images/facebook.ico"></a></span>
-                    <span><a href="https://plus.google.com/103350848301234480355"> <img alt="Simon Weber" src="/images/plus.ico"></a></span>
-		  <span><a href="http://news.ycombinator.com/user?id=simon_weber"> <img alt="simon_weber" src="/images/hn.ico"></a></span>
-          <span><a href="https://twitter.com/#!/simonmweber"> <img alt="simonmweber" src="/images/twitter.ico"></a></span>
-      </div>
-      </li>
-  </ul>
+                    <span><a href="http://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="http://www.linkedin.com/in/simonmweber"><img alt="LinkedIn" src="/images/linkedin.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"><img alt="Google+" src="/images/plus.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
 
-	    &nbsp;
-    </div>
+            &nbsp;
+        </div>
 
-	  
-    <div class="eleven columns offset-by-one content">
-        <div id="post">
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'>
-</script><script src='https://www.google.com/jsapi' type='text/javascript'>
+</script><script type='text/javascript' src='https://www.google.com/jsapi'>
 </script><script type='text/javascript'>
 $(document).ready(function(){
   google.load('visualization', '1.0', {
@@ -108,7 +94,7 @@ $(document).ready(function(){
 <p>Now that we&#8217;ve figured out I&#8217;m a jazz-playing metalhead, let&#8217;s take a look at the least common words. &#8216;Country&#8217; appears only once (and at the risk of sounding one-sided, it labels the fantastic <a href='http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass'>Slaughter of the Bluegrass</a>). There&#8217;s a bunch of mispellings, too, like &#8216;reggaer&#8217; and &#8216;sountrack&#8217;.</p>
 
 <p>Here&#8217;s a quick chart of all the words I found:</p>
-<div id='words_chart' class='eleven columns' style='height: 400px;'> </div>
+<div class='eleven columns' id='words_chart' style='height: 400px;'> </div>
 <p>This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I&#8217;ve got the <a href='https://github.com/simon-weber/Google-Music-genre-analysis'>source on GitHub</a>.</p>
 </div>
 
@@ -121,30 +107,21 @@ $(document).ready(function(){
     </div>
 </div>
 
-    </div>
-</div><!-- container -->
+        </div>
+    </div><!-- container -->
 
+    <script type="text/javascript">
 
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
 
-	<!-- JS
-	     ================================================== -->
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="/javascripts/tabs.js"></script>
-	<script type="text/javascript">
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-29570993-2']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
-
-<!-- End Document
-================================================== -->
+  </script>
 </body>
 </html>
