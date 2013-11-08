@@ -2,48 +2,52 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2012/08/29/returning-to-the-east.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2012/09/07/whats-in-a-genre.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.simonmweber.com/2013/04/20/development-on-a-chromebook-an-opinionated-guide.html
         </loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2013/06/05/chrome-extension-hacks.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.simonmweber.com/2013/11/07/google-helpouts-first-impressions.html</loc>
+        <lastmod>2013-11-07T23:21:28-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/</loc>
-        <lastmod>2013-10-04T15:39:21-04:00</lastmod>
+        <lastmod>2013-11-07T23:21:28-05:00</lastmod>
     </url>
     <url>
         <loc>http://www.simonmweber.com/404.html</loc>
-        <lastmod>2013-09-08T14:53:31-04:00</lastmod>
+        <lastmod>2013-11-07T23:20:31-05:00</lastmod>
     </url>
 </urlset>
