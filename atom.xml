@@ -4,13 +4,45 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2014-04-17T09:49:10-04:00</updated>
+ <updated>2014-04-17T10:24:18-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Staying Busy</title>
+   <link href="http://www.simonmweber.com/2014/04/17/staying-busy.html"/>
+   <updated>2014-04-17T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2014/04/17/staying-busy</id>
+   <content type="html">&lt;h2 id=&quot;staying-busy&quot;&gt;Staying Busy&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;April 17 2014&lt;/p&gt;
+
+&lt;p&gt;I’ve been with Venmo for about six months now, and everything has been great!
+I’ve worked on all sorts of things - security fixes, features and performance improvements among them -
+but my main concern has been our test suite.&lt;/p&gt;
+
+&lt;p&gt;When I first showed up, our builds were flaky and took nearly an hour to run.
+Now they’re much more stable and run in five minutes.
+I’ve got some Venmo blog posts in the works about how we acheived this
+(which I’ll be sure to cross-post or link here).&lt;/p&gt;
+
+&lt;p&gt;This work has been fulfilling, so my personal projects have been a bit neglected.
+However, I’ve been open-sourcing a lot of Venmo code lately:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.thomasboyt.com&quot;&gt;Thomas Boyt&lt;/a&gt; and I &lt;a href=&quot;https://github.com/gittip/www.gittip.com/pull/1857&quot;&gt;added Venmo to Gittip&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A few of us wrote &lt;a href=&quot;https://github.com/venmo/btnamespace&quot;&gt;btnamespace&lt;/a&gt;,
+a library to make Braintree integration testing easier&lt;/li&gt;
+  &lt;li&gt;I’m about to release &lt;a href=&quot;https://gist.github.com/simon-weber/b0683e27285dc9ec8efa&quot;&gt;a nose plugin to detect unmocked integration tests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ve got some more detailed updates in the works – stay tuned!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Google Helpouts first impressions</title>
