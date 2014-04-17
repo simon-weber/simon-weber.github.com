@@ -55,9 +55,13 @@
 
         <div class="eleven columns offset-by-one content">
             <div id="post">
-    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'>
-</script><script type='text/javascript' src='https://www.google.com/jsapi'>
-</script><script type='text/javascript'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js">
+</script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript">
 $(document).ready(function(){
   google.load('visualization', '1.0', {
     'packages':['corechart'],
@@ -79,23 +83,29 @@ $(document).ready(function(){
   }
 });
 </script>
-<h2 id='whats_in_a_genre'>What&#8217;s in a genre?</h2>
-<p class='meta'>September 07 2012</p>
-<p>I&#8217;m taking a course on data mining this semester. Our first assignment: mine some data. The dataset and techniques don&#8217;t matter; the point is to extract meaning in any way possible. I&#8217;m greenhorn data miner; hopefully I&#8217;ll be able to look back at this post and laugh at my own naivete.</p>
 
-<p>For my dataset I chose my own Google Music library. It&#8217;s unique, big enough (7600+ songs), and well organized. Plus, it&#8217;s a cinch to access with my <a href='https://github.com/simon-weber/Unofficial-Google-Music-API'>Google Music api</a>.</p>
+<h2 id="whats-in-a-genre">What’s in a genre?</h2>
 
-<p>My analysis was simple: I investigated the occurrences of words in genres. I figured the most frequent words would be genres themselves (eg &#8216;metal&#8217; in &#8216;power metal&#8217;), but there was also the chance of exposing common adjectives (eg &#8216;post&#8217; in &#8216;post-rock&#8217; and &#8216;post-metal&#8217;).</p>
+<p class="meta">September 07 2012</p>
 
-<p>A few lines of Python later, and I had my results. The first thing I noticed: I listen to a lot of metal. A third of my songs are some kind of metal. If you put all the genre words into a hat, you&#8217;d pick &#8216;metal&#8217; almost a quarter of the time. Next up: &#8216;rock&#8217; and &#8216;jazz&#8217;. Rounding out the top six are two adjectives - &#8216;alternative&#8217; and &#8216;progressive&#8217; - as well as &#8216;accompaniment&#8217; (as in <a href='http://en.wikipedia.org/wiki/Jamey_Aebersold'>Jamey Aebersold</a>).</p>
+<p>I’m taking a course on data mining this semester. Our first assignment: mine some data. The dataset and techniques don’t matter; the point is to extract meaning in any way possible. I’m greenhorn data miner; hopefully I’ll be able to look back at this post and laugh at my own naivete.</p>
 
-<p>Metal bands also claim the longest genres in my library. <a href='http://en.wikipedia.org/wiki/Novembre_(band)'>Novembre</a> is the champion, boasting this mouthful: &#8216;Progressive atmospheric doom metal&#8217;.</p>
+<p>For my dataset I chose my own Google Music library. It’s unique, big enough (7600+ songs), and well organized. Plus, it’s a cinch to access with my <a href="https://github.com/simon-weber/Unofficial-Google-Music-API">Google Music api</a>.</p>
 
-<p>Now that we&#8217;ve figured out I&#8217;m a jazz-playing metalhead, let&#8217;s take a look at the least common words. &#8216;Country&#8217; appears only once (and at the risk of sounding one-sided, it labels the fantastic <a href='http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass'>Slaughter of the Bluegrass</a>). There&#8217;s a bunch of mispellings, too, like &#8216;reggaer&#8217; and &#8216;sountrack&#8217;.</p>
+<p>My analysis was simple: I investigated the occurrences of words in genres. I figured the most frequent words would be genres themselves (eg ‘metal’ in ‘power metal’), but there was also the chance of exposing common adjectives (eg ‘post’ in ‘post-rock’ and ‘post-metal’).</p>
 
-<p>Here&#8217;s a quick chart of all the words I found:</p>
-<div id='words_chart' class='eleven columns' style='height: 400px;'> </div>
-<p>This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I&#8217;ve got the <a href='https://github.com/simon-weber/Google-Music-genre-analysis'>source on GitHub</a>.</p>
+<p>A few lines of Python later, and I had my results. The first thing I noticed: I listen to a lot of metal. A third of my songs are some kind of metal. If you put all the genre words into a hat, you’d pick ‘metal’ almost a quarter of the time. Next up: ‘rock’ and ‘jazz’. Rounding out the top six are two adjectives - ‘alternative’ and ‘progressive’ - as well as ‘accompaniment’ (as in <a href="http://en.wikipedia.org/wiki/Jamey_Aebersold">Jamey Aebersold</a>).</p>
+
+<p>Metal bands also claim the longest genres in my library. <a href="http://en.wikipedia.org/wiki/Novembre_(band)">Novembre</a> is the champion, boasting this mouthful: ‘Progressive atmospheric doom metal’.</p>
+
+<p>Now that we’ve figured out I’m a jazz-playing metalhead, let’s take a look at the least common words. ‘Country’ appears only once (and at the risk of sounding one-sided, it labels the fantastic <a href="http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass">Slaughter of the Bluegrass</a>). There’s a bunch of mispellings, too, like ‘reggaer’ and ‘sountrack’.</p>
+
+<p>Here’s a quick chart of all the words I found:</p>
+
+<div id="words_chart" class="eleven columns" style="height: 400px;"> </div>
+
+<p>This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I’ve got the <a href="https://github.com/simon-weber/Google-Music-genre-analysis">source on GitHub</a>.</p>
+
 </div>
 
 <div id="post-footer">

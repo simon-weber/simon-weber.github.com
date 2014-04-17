@@ -55,118 +55,145 @@
 
         <div class="eleven columns offset-by-one content">
             <div id="post">
-    <h2 id='chrome_extension_hacks_google_music_to_turntable'>Chrome extension hacks: Google Music to turntable</h2>
-<p class='meta'>June 5 2013</p>
-<p>I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch. I use <a href='http://turntable.fm'>turntable.fm</a> every now and then, which lets me dj music with friends. There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear. If turntable doesn&#8217;t have a song, I can upload a file from my computer.</p>
+    <h2 id="chrome-extension-hacks-google-music-to-turntable">Chrome extension hacks: Google Music to turntable</h2>
 
-<p>However, I don&#8217;t normally have music files on my laptop; my library is kept in Google Music. So, if turntable was missing a song, I used to:</p>
+<p class="meta">June 5 2013</p>
 
-<ul>
-<li>open Google Music and sign in</li>
+<p>I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch.
+I use <a href="http://turntable.fm">turntable.fm</a> every now and then, which lets me dj music with friends.
+There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear.
+If turntable doesn’t have a song, I can upload a file from my computer.</p>
 
-<li>find and download the song</li>
+<p>However, I don’t normally have music files on my laptop; my library is kept in Google Music.
+So, if turntable was missing a song, I used to:
+* open Google Music and sign in
+* find and download the song
+* switch to turntable and upload it
+* delete the file</p>
 
-<li>switch to turntable and upload it</li>
+<p>My extension lets me do this right in turntable.
+Now, all I do is click “Upload from Google Music”, find the song and hit upload.
+The extension does the same thing behind the scenes.</p>
 
-<li>delete the file</li>
-</ul>
+<p>If this sounds useful, you can get it here: <a href="https://chrome.google.com/webstore/detail/turntable-uploader-for-go/akchbpaepakjnaihbgkdgjjgpdcckapb">Turntable Uploader for Google Music™</a>.
+But, this blog post isn’t about advertising: I wanted to document all the weird hacks that went into making this work.
+If you’re already a Chrome extension guru, you may already know this stuff;
+it’s intended as a post I would have wanted before writing a line of code.</p>
 
-<p>My extension lets me do this right in turntable. Now, all I do is click “Upload from Google Music”, find the song and hit upload. The extension does the same thing behind the scenes.</p>
+<p>First, a brief intro to Chrome extensions.
+If you’ve written one before, you can probably skip this part.</p>
 
-<p>If this sounds useful, you can get it here: <a href='https://chrome.google.com/webstore/detail/turntable-uploader-for-go/akchbpaepakjnaihbgkdgjjgpdcckapb'>Turntable Uploader for Google Music™</a>. But, this blog post isn&#8217;t about advertising: I wanted to document all the weird hacks that went into making this work. If you&#8217;re already a Chrome extension guru, you may already know this stuff; it&#8217;s intended as a post I would have wanted before writing a line of code.</p>
+<h3 id="intro-to-chrome-extensions">Intro to Chrome extensions</h3>
 
-<p>First, a brief intro to Chrome extensions. If you&#8217;ve written one before, you can probably skip this part.</p>
+<p>Chrome extensions are just normal javascript and html, but with optional extra permissions.
+For example, cross domain requests and cookie access are kosher – you just need the user to approve them.</p>
 
-<h3 id='intro_to_chrome_extensions'>Intro to Chrome extensions</h3>
+<p>Your extension can be made up of two different kinds of scripts.
+The first is the <em>background script</em> (or <em>event script</em>; the same thing but not always running).
+This does the heavy lifting, since it gets access to special <code>chrome.*</code> apis.
+These enable stuff like the cookie access I mentioned earlier.</p>
 
-<p>Chrome extensions are just normal javascript and html, but with optional extra permissions. For example, cross domain requests and cookie access are kosher &#8211; you just need the user to approve them.</p>
+<p>You can also run a bunch of <em>content scripts</em>.
+Unlike the background script, these are specific to a certain page.
+They get triggered when a tab matches a url pattern you specify (eg <code>http://turntable.com/*</code>).
+They don’t get <code>chrome.*</code> access.
+They can access the DOM, but run in an <em>isolated world</em> –
+basically, they can modify the DOM, but can’t mess with other code running on the page.
+For example, my content script can’t remove an event handler that a turntable script has set up.</p>
 
-<p>Your extension can be made up of two different kinds of scripts. The first is the <em>background script</em> (or <em>event script</em>; the same thing but not always running). This does the heavy lifting, since it gets access to special <code>chrome.*</code> apis. These enable stuff like the cookie access I mentioned earlier.</p>
+<p>At a first glance, content scripts sound pretty limited.
+However, you can get around all of the restrictions above with a bit of hackery.
+To access <code>chrome.*</code> apis, there’s a two-way messaging interface to the background script:
+you just offload the work there.
+Anything json-encodable is fair game for transport.
+Even the isolated world isn’t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.</p>
 
-<p>You can also run a bunch of <em>content scripts</em>. Unlike the background script, these are specific to a certain page. They get triggered when a tab matches a url pattern you specify (eg <code>http://turntable.com/*</code>). They don&#8217;t get <code>chrome.*</code> access. They can access the DOM, but run in an <em>isolated world</em> &#8211; basically, they can modify the DOM, but can&#8217;t mess with other code running on the page. For example, my content script can&#8217;t remove an event handler that a turntable script has set up.</p>
+<p>My extension uses all three pieces mentioned above: background, content, and injected scripts.
+All together, they communicate like this:</p>
 
-<p>At a first glance, content scripts sound pretty limited. However, you can get around all of the restrictions above with a bit of hackery. To access <code>chrome.*</code> apis, there&#8217;s a two-way messaging interface to the background script: you just offload the work there. Anything json-encodable is fair game for transport. Even the isolated world isn&#8217;t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.</p>
-
-<p>My extension uses all three pieces mentioned above: background, content, and injected scripts. All together, they communicate like this:</p>
-<div class='highlight'><pre><code class='bash'>our background script
+<div class="highlight"><pre><code class="bash">our background script
      ^
-     |
-     |
-   <span class='o'>(</span>chrome message passing<span class='o'>)</span>
-     |
+     <span class="p">|</span>
+     <span class="p">|</span>
+   <span class="o">(</span>chrome message passing<span class="o">)</span>
+     <span class="p">|</span>
      v
 our content script
      ^
-     |
-     |
-   <span class='o'>(</span>the dom<span class='o'>)</span>
-     |
+     <span class="p">|</span>
+     <span class="p">|</span>
+   <span class="o">(</span>the dom<span class="o">)</span>
+     <span class="p">|</span>
      v
 our injected code
-     |
-     |
-   <span class='o'>(</span>global namespace<span class='o'>)</span>
-     |
+     <span class="p">|</span>
+     <span class="p">|</span>
+   <span class="o">(</span>global namespace<span class="o">)</span>
+     <span class="p">|</span>
      v
 other code on the page
 </code></pre></div>
-<p>Now that we know what we have to work with, I&#8217;ll go over how I addressed each of the big pieces of my solution.</p>
 
-<h3 id='getting_the_google_music_library_and_downloading_songs'>Getting the Google Music library and downloading songs</h3>
+<p>Now that we know what we have to work with, I’ll go over how I addressed each of the big pieces of my solution.</p>
 
-<p>I&#8217;ve spent far too much time with the Google Music protocol from my work on <a href='http://github.com/simon-weber/Unofficial-Google-Music-API'>gmusicapi</a>, so I already knew which endpoints to hit.</p>
+<h3 id="getting-the-google-music-library-and-downloading-songs">Getting the Google Music library and downloading songs</h3>
 
-<p>Auth presented a hurdle, though, since it requires either plaintext credentials (yuck) or OAuth (annoying). I got around this with my extra Chrome host and cookies permissions: I just have the user open Google Music in another tab, then piggyback on that session. My requests will automatically send Google cookies, and I just have to grab an xsrf cookie for use in the url.</p>
+<p>I’ve spent far too much time with the Google Music protocol from my work on <a href="http://github.com/simon-weber/Unofficial-Google-Music-API">gmusicapi</a>, so I already knew which endpoints to hit.</p>
 
-<h3 id='uploading_to_turntable'>Uploading to turntable</h3>
+<p>Auth presented a hurdle, though, since it requires either plaintext credentials (yuck) or OAuth (annoying).
+I got around this with my extra Chrome host and cookies permissions:
+I just have the user open Google Music in another tab, then piggyback on that session.
+My requests will automatically send Google cookies, and I just have to grab an xsrf cookie for use in the url.</p>
 
-<p>This was the toughest nut to crack. I considered reverse engineering the endpoints that turntable&#8217;s client page used for uploading, but this had a number of disadvantages:</p>
+<h3 id="uploading-to-turntable">Uploading to turntable</h3>
 
-<ul>
-<li>the user wouldn&#8217;t see the upload in the turntable interface</li>
+<p>This was the toughest nut to crack.
+I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:
+* the user wouldn’t see the upload in the turntable interface
+* I don’t have the javascript chops to implement a complicated upload protocol
+* future protocol changes would break stuff</p>
 
-<li>I don&#8217;t have the javascript chops to implement a complicated upload protocol</li>
+<p>A better approach: tricking turntable’s own clientside code into believing the user had initiated a normal upload.
+This makes turntable do all the work, and is business as usual for the user.</p>
 
-<li>future protocol changes would break stuff</li>
-</ul>
+<p>After some quality time in the DevTools debugger, a friend of mine (thanks, <a href="https://github.com/clehner">Charlie</a>!) figured out a way to do this.
+turntable uses a third party library called <a href="http://plupload.com">plupload</a>.
+Unfortunately, a high level <code>window.plupload.upload(File)</code> function isn’t accessible; it’s hidden inside turntable closures.
+However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like <code>$('..input[file]..').onchange.call(our_File)</code>.</p>
 
-<p>A better approach: tricking turntable&#8217;s own clientside code into believing the user had initiated a normal upload. This makes turntable do all the work, and is business as usual for the user.</p>
+<p>Since injected code gets around the isolated world restriction, this is totally possible:
+we just need to also inject an html5 File containing the desired mp3.</p>
 
-<p>After some quality time in the DevTools debugger, a friend of mine (thanks, <a href='https://github.com/clehner'>Charlie</a>!) figured out a way to do this. turntable uses a third party library called <a href='http://plupload.com'>plupload</a>. Unfortunately, a high level <code>window.plupload.upload(File)</code> function isn&#8217;t accessible; it&#8217;s hidden inside turntable closures. However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like <code>$(&#39;..input[file]..&#39;).onchange.call(our_File)</code>.</p>
+<h3 id="getting-a-file-from-a-blob">Getting a File from a Blob</h3>
 
-<p>Since injected code gets around the isolated world restriction, this is totally possible: we just need to also inject an html5 File containing the desired mp3.</p>
+<p>Html5 Blobs are easy to create, and just represent binary data.
+Html5 Files, though, can only be created when a user interacts with a file input (here’s the <a href="http://www.w3.org/TR/FileAPI/">File api docs</a>, if you want the details).</p>
 
-<h3 id='getting_a_file_from_a_blob'>Getting a File from a Blob</h3>
+<p>Luckily, Files aren’t much different from Blobs: they just add a filename and date of modification.
+Duck typing to the rescue!</p>
 
-<p>Html5 Blobs are easy to create, and just represent binary data. Html5 Files, though, can only be created when a user interacts with a file input (here&#8217;s the <a href='http://www.w3.org/TR/FileAPI/'>File api docs</a>, if you want the details).</p>
-
-<p>Luckily, Files aren&#8217;t much different from Blobs: they just add a filename and date of modification. Duck typing to the rescue!</p>
-<div class='highlight'><pre><code class='javascript'><span class='c1'>//b is our Blob</span>
-<span class='nx'>b</span><span class='p'>.</span><span class='nx'>name</span> <span class='o'>=</span> <span class='s1'>&#39;myfile.mp3&#39;</span><span class='p'>;</span>
-<span class='nx'>b</span><span class='p'>.</span><span class='nx'>lastModifiedDate</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nb'>Date</span><span class='p'>();</span>
-<span class='c1'>// tada!</span>
+<div class="highlight"><pre><code class="javascript"><span class="c1">//b is our Blob</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;myfile.mp3&#39;</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">lastModifiedDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="c1">// tada!</span>
 </code></pre></div>
-<h3 id='putting_it_all_together'>Putting it all together</h3>
 
-<p>Those are the main hacks. Combining everything, this is about what happens when an upload is requested:</p>
+<h3 id="putting-it-all-together">Putting it all together</h3>
 
-<ul>
-<li>content script messages the background script with a file id to upload</li>
+<p>Those are the main hacks. Combining everything, this is about what happens when an upload is requested:
+* content script messages the background script with a file id to upload
+* background script performs a cross domain request to Google and retrieves a Blob
+* background script encodes the Blob as a base64 dataurl
+* Blob dataurl (now json-compatible) is messaged back to the content script
+* content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done</p>
 
-<li>background script performs a cross domain request to Google and retrieves a Blob</li>
-
-<li>background script encodes the Blob as a base64 dataurl</li>
-
-<li>Blob dataurl (now json-compatible) is messaged back to the content script</li>
-
-<li>content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done</li>
-</ul>
-
-<p>From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library. You can grab my ugly code on <a href='https://github.com/simon-weber/Google-Music-Turntable-Uploader'>my GitHub</a>.</p>
+<p>From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
+You can grab my ugly code on <a href="https://github.com/simon-weber/Google-Music-Turntable-Uploader">my GitHub</a>.</p>
 
 <p>I plan to write continue writing posts like these during my time at Hacker School, so if you dug this, Twitter or RSS are the best ways to get more.</p>
 
-<p>Many thanks to my fellow Hacker Schoolers who read over this post: <a href='http://lfranchi.com'>Leo Franchi</a> and <a href='https://github.com/eriktaubeneck'>Erik Taubeneck</a>.</p>
+<p>Many thanks to my fellow Hacker Schoolers who read over this post: <a href="http://lfranchi.com">Leo Franchi</a> and <a href="https://github.com/eriktaubeneck">Erik Taubeneck</a>.</p>
+
 </div>
 
 <div id="post-footer">

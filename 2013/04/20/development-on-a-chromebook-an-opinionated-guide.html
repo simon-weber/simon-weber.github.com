@@ -55,85 +55,154 @@
 
         <div class="eleven columns offset-by-one content">
             <div id="post">
-    <h2 id='development_on_a_chromebook_an_opinionated_guide'>Development on a Chromebook: an opinionated guide</h2>
-<p class='meta'>April 20 2013</p>
-<p>I started using a <a href='http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html'>Samsung 550 Chromebook</a> as my on-the-go machine two semesters ago. It worked nicely for taking notes, but I remained a skeptic: how could I ever write code from a glorified web browser?</p>
+    <h2 id="development-on-a-chromebook-an-opinionated-guide">Development on a Chromebook: an opinionated guide</h2>
 
-<p>Fast forward 6 months: today, I love hacking on my Chromebook, and I have no problems working offline. It took some effort to get everything set up, so I’ve put together my recommendations to get other folks up to speed.</p>
+<p class="meta">April 20 2013, updated April 17 2014</p>
 
-<p>First, a disclaimer: the device was given to me as part of the <a href='http://www.google.com/intl/en/jobs/students/proscho/programs/uscanada/ambassador/'>Google Student Ambassador Program</a>, and Google pays me for brand advocacy at my school. That said, I’m <em>not</em> getting paid to write this, and this is my advice, not Google’s. I’m a hacker, not a shill (and I’ll even save hn the work of linking <a href='http://www.paulgraham.com/submarine.html'>pg’s submarine essay</a>).</p>
+<p>I started using a
+<a href="http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html">Samsung 550 Chromebook</a>
+as my on-the-go machine two semesters ago. It worked nicely for
+taking notes, but I remained a skeptic: how could I ever write code
+from a glorified web browser?</p>
 
-<p>Anyway: let’s get started. It’s easiest to work over ssh, so I’ll cover this first. Later, I’ll get to working offline. I won’t talk about cloud development webapps (maybe check out <a href='https://www.nitrous.io'>Nitrous.IO</a>?). Also, I don’t have any advice if you prefer heavy IDEs; my usual tools are a terminal and web browser.</p>
+<p>Fast forward 6 months: today, I love hacking on my Chromebook, and
+I have no problems working offline. It took some effort to get
+everything set up, so I’ve put together my recommendations to get
+other folks up to speed.</p>
 
-<h3 id='for_when_you_have_a_good_connection'>For when you have a good connection</h3>
+<p>First, a disclaimer: the device was given to me as part of the
+<a href="http://www.google.com/intl/en/jobs/students/proscho/programs/uscanada/ambassador/">Google Student Ambassador Program</a>,
+and Google pays me for brand advocacy at my school. That said, I’m
+<em>not</em> getting paid to write this, and this is my advice, not
+Google’s. I’m a hacker, not a shill (and I’ll even save hn the work
+of linking
+<a href="http://www.paulgraham.com/submarine.html">pg’s submarine essay</a>).</p>
 
-<h4 id='ssh'>ssh</h4>
+<p>Anyway: let’s get started. It’s easiest to work over ssh, so I’ll
+cover this first. Later, I’ll get to working offline. I won’t talk
+about cloud development webapps (maybe check out <a href="https://www.nitrous.io">Nitrous.IO</a>?).
+Also, I don’t have any advice if you prefer heavy IDEs; my usual
+tools are a terminal and web browser.</p>
 
-<p>You want <a href='https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo'>Secure Shell</a> as your ssh client. It’s basically openssh wrapped for <a href='https://developers.google.com/native-client/'>NaCl</a>, with <a href='https://groups.google.com/a/chromium.org/group/chromium-hterm'>hterm</a> powering the ui.</p>
+<h3 id="for-when-you-have-a-good-connection">For when you have a good connection</h3>
 
-<p>It supports everything you’d expect, like key authentication, per-connection profiles, port forwarding, custom color schemes, and even your <code>~/.ssh/config</code> file (well, probably; mine is simple).</p>
+<h4 id="ssh">ssh</h4>
 
-<p>The <a href='http://goo.gl/RYHiK'>chromium-hterm mailing list</a> is where updates are posted. If you need an upcoming feature <em>now</em>, there’s also a hidden <a href='http://goo.gl/cFZlv'>dev channel</a> (you need to be logged into an account that’s on the mailing list for this link to work).</p>
+<p>You want
+<a href="https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo">Secure Shell</a>
+as your ssh client. It’s basically openssh wrapped for
+<a href="https://developers.google.com/native-client/">NaCl</a>, with
+<a href="https://groups.google.com/a/chromium.org/group/chromium-hterm">hterm</a>
+powering the ui.</p>
 
-<p>A quick tip: set Secure Shell to ‘Open as Window’, otherwise Chrome will intercept keyboard shortcuts (which e.g. makes Control-W close your terminal). You’ll probably also want to set TERM to xterm. The FAQ (linked below) has the details and is worth reading through:</p>
+<p>It supports everything you’d expect, like key authentication,
+per-connection profiles, port forwarding, custom color schemes, and
+even your <code>~/.ssh/config</code> file (well, probably; mine is simple).</p>
+
+<p>The <a href="http://goo.gl/RYHiK">chromium-hterm mailing list</a> is where
+updates are posted. If you need an upcoming feature <em>now</em>, there’s
+also a hidden <a href="http://goo.gl/cFZlv">dev channel</a> (you need to be
+logged into an account that’s on the mailing list for this link to
+work).</p>
+
+<p>A quick tip: set Secure Shell to ‘Open as Window’, otherwise Chrome
+will intercept keyboard shortcuts (which e.g. makes Control-W close
+your terminal). You’ll probably also want to set TERM to xterm. The
+FAQ (linked below) has the details and is worth reading through:</p>
 
 <ul>
-<li><a href='http://goo.gl/3i5AJ'>Secure Shell FAQ</a></li>
-
-<li><a href='https://gist.github.com/johnbender/5018685'>Solarized colors</a> (run the commands in a DevTools javascript console)</li>
+  <li><a href="http://goo.gl/3i5AJ">Secure Shell FAQ</a></li>
+  <li><a href="https://gist.github.com/johnbender/5018685">Solarized colors</a>
+(run the commands in a DevTools javascript console)</li>
 </ul>
 
-<h4 id='vpn'>vpn</h4>
+<h4 id="vpn">vpn</h4>
 
-<p><a href='http://support.google.com/chromeos/bin/answer.py?hl=en&amp;answer=1282338'>Legend has it</a> that CrOS supports OpenVPN and L2TP/IPsec. However, I couldn’t get either to work. If you really need vpn as part of your workflow, be prepared to jump through some hoops.</p>
+<p><a href="http://support.google.com/chromeos/bin/answer.py?hl=en&amp;answer=1282338">Legend has it</a>
+that CrOS supports OpenVPN and L2TP/IPsec. However, they’re notoriously difficult
+to get working in some configurations; I never got mine working.</p>
 
-<p>Granted, my attempts were a few months ago. The team is working on this, but I haven’t seen real progress; for OpenVPN updates, star <a href='https://code.google.com/p/chromium/issues/detail?id=217624'>this issue</a>.</p>
+<p><em>edit</em>: I haven’t tried this for about a year, and it seems like 
+<a href="https://code.google.com/p/chromium/issues/detail?id=217624">the team is making progress</a>.</p>
 
-<h4 id='remote_desktop'>remote desktop</h4>
+<h4 id="remote-desktop">remote desktop</h4>
 
-<p>If you need a graphical environment, you can use <a href='https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp'>Chrome Remote Desktop</a>. This provides vnc-like functionality across Windows, Mac and Linux, and can be set up for repeated or one-off access. Note that you cannot currently remote <em>into</em> a Chromebook.</p>
+<p>If you need a graphical environment, you can use
+<a href="https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp">Chrome Remote Desktop</a>.
+This provides vnc-like functionality across Windows, Mac and Linux,
+and can be set up for repeated or one-off access. Note that you
+cannot currently remote <em>into</em> a Chromebook.</p>
 
 <p>I rarely need this.</p>
 
-<h4 id='crosh_window'>Crosh Window</h4>
+<h4 id="crosh-window">Crosh Window</h4>
 
-<p>Crosh, the built-in CrOS shell, can (and should) usually be avoided. If you find yourself using it, <a href='https://chrome.google.com/webstore/detail/crosh-window/nhbmpbdladcchdhkemlojfjdknjadhmh?hl=en-US'>Crosh Window</a> takes away some of the pain; it fixes the Control-W problem mentioned earlier and gets you an up-to-date version of hterm.</p>
+<p>Crosh, the built-in CrOS shell, can (and should) usually be
+avoided. If you find yourself using it,
+<a href="https://chrome.google.com/webstore/detail/crosh-window/nhbmpbdladcchdhkemlojfjdknjadhmh?hl=en-US">Crosh Window</a>
+takes away some of the pain; it fixes the Control-W problem
+mentioned earlier and gets you an up-to-date version of hterm.</p>
 
-<h3 id='for_when_youre_offline_or_on_a_terrible_connection'>For when you’re offline or on a terrible connection</h3>
+<h3 id="for-when-youre-offline-or-on-a-terrible-connection">For when you’re offline or on a terrible connection</h3>
 
-<h4 id='crouton'>crouton</h4>
+<h4 id="crouton">crouton</h4>
 
-<p>For offline work, you’ll want root access to a local Linux install. <a href='https://github.com/dnschneid/crouton'>crouton</a> is <em>by far</em> the best way to go about this: it runs Ubuntu in a chroot. This has security implications (check the README), but you avoid the performance hit of virtualization, and keep all the CrOS functionality.</p>
+<p>For offline work, you’ll want root access to a local Linux install.
+<a href="https://github.com/dnschneid/crouton">crouton</a> is <em>by far</em> the
+best way to go about this: it runs Ubuntu in a chroot. This has
+security implications (check the README), but you avoid the
+performance hit of virtualization, and keep all the CrOS
+functionality.</p>
 
-<p>You’ll need to have your Chromebook in developer mode (i.e. rooted) to use it, which is easy: you flip a hardware switch and wipe your device. The specifics for going about this vary by model, so just search for instructions. Once in dev mode, you’ll want to hit Control-D on each boot to skip the “you’re in developer mode” warning (there’s a 30-second wait otherwise). Have faith: this isn’t nearly as annoying as it sounds.</p>
+<p>You’ll need to have your Chromebook in developer mode (i.e. rooted)
+to use it, which is easy: I just flipped a hardware switch.
+The specifics for going about this vary by model, so just
+search for instructions. Once in dev mode, you’ll want to hit
+Control-D on each boot to skip the “you’re in developer mode”
+warning (there’s a 30-second wait otherwise). Have faith: this
+isn’t nearly as annoying as it sounds.</p>
 
-<p>The crouton README has all the information you need to get started. Note that you can run a normal graphical environment (e.g. Xfce) alongside CrOS. I prefer using Secure Shell to ssh into localhost so I can keep my terminal customizations and stay in CrOS. If this sounds appealing, here’s what I did:</p>
+<p>The crouton README has all the information you need to get started.
+Note that you can run a normal graphical environment (e.g. Xfce)
+alongside CrOS. I prefer using Secure Shell to ssh into localhost
+so I can keep my terminal customizations and stay in CrOS. If this
+sounds appealing, here’s what I did:</p>
 
 <ul>
-<li>used the crouton cli-extra target (eg <code>crouton -t cli-extra ...</code>).</li>
-
-<li>installed openssh in my chroot</li>
-
-<li>start sshd, then use Secure Shell to connect to my-user@localhost</li>
+  <li>used the crouton cli-extra target (eg
+<code>crouton -t cli-extra ...</code>).</li>
+  <li>installed openssh in my chroot</li>
+  <li>start sshd, then use Secure Shell to connect to
+my-user@localhost</li>
 </ul>
 
-<p>To make life a bit easier, I stuck <code>/etc/init.d/ssh start</code> into my chroot’s <code>/etc/rc.local</code> (which crouton runs upon mounting). Now, when I want to work locally, I just Control-Alt-Forward to get my local shell, <code>$ sudo enter-chroot</code>, Control-Alt-Back to CrOS and then run Secure Shell. You could probably get your chroot to mount and run sshd on boot if you use it all the time.</p>
+<p>To make life a bit easier, I stuck <code>/etc/init.d/ssh start</code> into my
+chroot’s <code>/etc/rc.local</code> (which crouton runs upon mounting). Now,
+when I want to work locally, I just Control-Alt-Forward to get my
+local shell, <code>$ sudo enter-chroot</code>, Control-Alt-Back to CrOS and
+then run Secure Shell. You could probably get your chroot to mount
+and run sshd on boot if you use it all the time.</p>
 
-<h4 id='mosh'>mosh</h4>
+<h4 id="mosh">mosh</h4>
 
-<p>To deal with flaky connections, install <a href='http://mosh.mit.edu/'>mosh</a> on your chroot. You might have to compile it from source to get the most recent features (e.g. <code>--ssh</code>), but this isn’t a big deal. You’ll need to install it on your server, too (it doesn’t require root).</p>
+<p>As an alternative to ssh on flaky connections, you can use <a href="http://mosh.mit.edu/">mosh</a>.
+It’ll need to be installed on your server to use it.</p>
 
-<p>You can use Secure Shell’s ‘SSH Arguments’ to save some typing if you often mosh into a particular machine.</p>
+<p><em>edit</em>: I used to recommend running it inside crouton, but
+there’s now a proper
+<a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj?hl=en">mosh Chrome packaged app</a>.</p>
 
-<p>In the future, you probably won’t need crouton to use mosh: <a href='https://github.com/davidben/mosh-chrome'>there’s a NaCl port on GitHub</a> that mostly works. I’m hoping to get it ready for Web Store deployment during <a href='https://www.hackerschool.com/'>Hacker School</a> this summer.</p>
+<h3 id="parting-words">Parting words</h3>
 
-<h3 id='parting_words'>Parting words</h3>
+<p><em>edit</em>: <a href="http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/">zRAM</a>
+is now enabled by default, so you don’t need to worry about turning it on yourself.</p>
 
-<p>You probably want to <a href='http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/'>enable zRAM</a>. This will prevent you from running out of memory. For the technical details, see <a href='https://groups.google.com/d/msg/chromebook-central/r27r3ZcchhM/V8Y5S0fy4bAJ'>this post</a>; the feature will be enabled by default in r27.</p>
+<p>If you’re a fellow Chromebook hacker and think I missed something,
+definitely let me know. I’ll do my best to keep this guide updated
+as better tools arrive.</p>
 
-<p>If you’re a fellow Chromebook hacker and think I missed something, definitely let me know. I’ll do my best to keep this guide updated as better tools arrive.</p>
+<p><em>edit</em>: here’s a link to the <a href="https://news.ycombinator.com/item?id=5582531">hn discussion</a>.</p>
 
-<p><em>edit</em>: here&#8217;s a link to the <a href='https://news.ycombinator.com/item?id=5582531'>hn discussion</a>.</p>
 </div>
 
 <div id="post-footer">

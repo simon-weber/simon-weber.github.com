@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2013-11-07T23:22:26-05:00</updated>
+ <updated>2014-04-17T09:49:10-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -17,41 +17,70 @@
    <link href="http://www.simonmweber.com/2013/11/07/google-helpouts-first-impressions.html"/>
    <updated>2013-11-07T00:00:00-05:00</updated>
    <id>http://www.simonmweber.com/2013/11/07/google-helpouts-first-impressions</id>
-   <content type="html">&lt;h2 id='google_helpouts_first_impressions'&gt;Google Helpouts first impressions&lt;/h2&gt;
-&lt;p class='meta'&gt;November 7 2013&lt;/p&gt;
-&lt;p&gt;&lt;a href='https://helpouts.google.com'&gt;Google Helpouts&lt;/a&gt; launched on Tuesday. If you haven&amp;#8217;t heard of it, it&amp;#8217;s a peer-to-peer platform for getting expert help. Naturally, Google Hangouts are used for the actual sessions.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;google-helpouts-first-impressions&quot;&gt;Google Helpouts first impressions&lt;/h2&gt;
 
-&lt;p&gt;I used to provide free computer science tutoring when I was in school, so I figured this might be a nice way to keep giving back. After getting into the private beta a few weeks ago, I whipped up a free CS help listing &amp;#8211; you can see the new version of it &lt;a href='https://helpouts.google.com/103350848301234480355'&gt;here&lt;/a&gt;. The Helpouts team looked it over and scheduled me for a one-on-one chat, which lead to my listing being accepted for the launch. I set my availability for 7:45pm - 10pm, thinking that I&amp;#8217;d be lucky to get one or two hits.&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;November 7 2013&lt;/p&gt;
 
-&lt;p&gt;To my complete surprise, I ended up being booked for nearly the entire night! Here&amp;#8217;s how my sessions went:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://helpouts.google.com&quot;&gt;Google Helpouts&lt;/a&gt; launched on Tuesday.
+If you haven’t heard of it, it’s a peer-to-peer platform for getting expert help.
+Naturally, Google Hangouts are used for the actual sessions.&lt;/p&gt;
 
-&lt;h3 id='call_one_ideal'&gt;call one: ideal&lt;/h3&gt;
+&lt;p&gt;I used to provide free computer science tutoring when I was in school, so I figured this might be a nice way to keep giving back.
+After getting into the private beta a few weeks ago, I whipped up a free CS help listing – you can see the new version of it &lt;a href=&quot;https://helpouts.google.com/103350848301234480355&quot;&gt;here&lt;/a&gt;.
+The Helpouts team looked it over and scheduled me for a one-on-one chat, which lead to my listing being accepted for the launch.
+I set my availability for 7:45pm - 10pm, thinking that I’d be lucky to get one or two hits.&lt;/p&gt;
 
-&lt;p&gt;I joined the first Hangout 5 minutes early. After an awkward 10 minute wait, my first user showed up. We exchanging greetings, then paired on a Python program. Setting up a reasonable way to share code wasn&amp;#8217;t super easy, but we eventually made good use of the Hangout&amp;#8217;s screen sharing. The allotted 15 minutes gave us just enough time to work out a solution before he signed off. Success!&lt;/p&gt;
+&lt;p&gt;To my complete surprise, I ended up being booked for nearly the entire night!
+Here’s how my sessions went:&lt;/p&gt;
 
-&lt;p&gt;Honestly, my first Helpout couldn&amp;#8217;t have gone much better. I was able to be immediately helpful, the Hangout worked perfectly, and I even got a nice review.&lt;/p&gt;
+&lt;h3 id=&quot;call-one-ideal&quot;&gt;call one: ideal&lt;/h3&gt;
 
-&lt;h3 id='call_two_no_help_needed'&gt;call two: no help needed&lt;/h3&gt;
+&lt;p&gt;I joined the first Hangout 5 minutes early.
+After an awkward 10 minute wait, my first user showed up.
+We exchanging greetings, then paired on a Python program.
+Setting up a reasonable way to share code wasn’t super easy, but we eventually made good use of the Hangout’s screen sharing.
+The allotted 15 minutes gave us just enough time to work out a solution before he signed off.
+Success!&lt;/p&gt;
 
-&lt;p&gt;My second user was also about five minutes late. To my surprise, he didn&amp;#8217;t need any help; he was just a developer who wanted to chat. So, we talked shop. While this wasn&amp;#8217;t what the platform was intended for, it was still fun.&lt;/p&gt;
+&lt;p&gt;Honestly, my first Helpout couldn’t have gone much better.
+I was able to be immediately helpful, the Hangout worked perfectly, and I even got a nice review.&lt;/p&gt;
 
-&lt;h3 id='calls_three_through_seven_no_shows'&gt;calls three through seven: no shows&lt;/h3&gt;
+&lt;h3 id=&quot;call-two-no-help-needed&quot;&gt;call two: no help needed&lt;/h3&gt;
 
-&lt;p&gt;Unfortunately, I soon found that my first experiences may have been flukes. My next five users either didn&amp;#8217;t show or cancelled at the last minute.&lt;/p&gt;
+&lt;p&gt;My second user was also about five minutes late.
+To my surprise, he didn’t need any help; he was just a developer who wanted to chat.
+So, we talked shop.
+While this wasn’t what the platform was intended for, it was still fun.&lt;/p&gt;
 
-&lt;h3 id='call_eight_offtopic'&gt;call eight: off-topic&lt;/h3&gt;
+&lt;h3 id=&quot;calls-three-through-seven-no-shows&quot;&gt;calls three through seven: no shows&lt;/h3&gt;
 
-&lt;p&gt;A user showed up for my final slot of the night. However, English wasn&amp;#8217;t his first language, and we had some trouble communicating. I eventually discovered that he was interested in programming for the job opportunities, so I provided some resources off the top of my head: Cousera, Udacity, Codecademy, etc. I also spent some time explaining CS as a discipline and attempting to separate it from software engineering.&lt;/p&gt;
+&lt;p&gt;Unfortunately, I soon found that my first experiences may have been flukes.
+My next five users either didn’t show or cancelled at the last minute.&lt;/p&gt;
 
-&lt;p&gt;I disconnected with the feeling that my time wasn&amp;#8217;t well spent. But, hey, at least someone showed up.&lt;/p&gt;
+&lt;h3 id=&quot;call-eight-off-topic&quot;&gt;call eight: off-topic&lt;/h3&gt;
 
-&lt;h2 id='impressions'&gt;Impressions&lt;/h2&gt;
+&lt;p&gt;A user showed up for my final slot of the night.
+However, English wasn’t his first language, and we had some trouble communicating.
+I eventually discovered that he was interested in programming for the job opportunities, so I provided some resources off the top of my head: Cousera, Udacity, Codecademy, etc.
+I also spent some time explaining CS as a discipline and attempting to separate it from software engineering.&lt;/p&gt;
 
-&lt;p&gt;Obviously, the no-shows were a huge problem. Not only did it waste my time, but it may have prevented me from helping actual users. To mitigate this, my listing now charges a dollar upfront, but promises to refund it if the user shows. So far this hasn&amp;#8217;t gotten any takers, so it&amp;#8217;s hard to tell if it&amp;#8217;s working or just scaring everyone off.&lt;/p&gt;
+&lt;p&gt;I disconnected with the feeling that my time wasn’t well spent.
+But, hey, at least someone showed up.&lt;/p&gt;
 
-&lt;p&gt;I got in touch with the Helpouts team about my problem - over a Helpout - and they told me there wasn&amp;#8217;t anything in the pipeline to fix it. However, they did seem aware of the problem. I do hope it&amp;#8217;s addressed; it&amp;#8217;s absolutely sapped some of my enthusiasm for the platform.&lt;/p&gt;
+&lt;h2 id=&quot;impressions&quot;&gt;Impressions&lt;/h2&gt;
 
-&lt;p&gt;No-shows aside, my first Helpout really showed the potential of the platform: fifteen minutes of my time made a real difference! I&amp;#8217;ll definitely keep some timeslots open on the platform, and hope to have better experiences to share in the future.&lt;/p&gt;</content>
+&lt;p&gt;Obviously, the no-shows were a huge problem.
+Not only did it waste my time, but it may have prevented me from helping actual users.
+To mitigate this, my listing now charges a dollar upfront, but promises to refund it if the user shows.
+So far this hasn’t gotten any takers, so it’s hard to tell if it’s working or just scaring everyone off.&lt;/p&gt;
+
+&lt;p&gt;I got in touch with the Helpouts team about my problem - over a Helpout - and they told me there wasn’t anything in the pipeline to fix it.
+However, they did seem aware of the problem.
+I do hope it’s addressed; it’s absolutely sapped some of my enthusiasm for the platform.&lt;/p&gt;
+
+&lt;p&gt;No-shows aside, my first Helpout really showed the potential of the platform: fifteen minutes of my time made a real difference!
+I’ll definitely keep some timeslots open on the platform, and hope to have better experiences to share in the future. &lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -59,39 +88,46 @@
    <link href="http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers.html"/>
    <updated>2013-07-31T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers</id>
-   <content type="html">&lt;h2 id='strangers_go_and_openshift'&gt;Strangers, Go, and Openshift&lt;/h2&gt;
-&lt;p class='meta'&gt;July 31 2013&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;ve always liked the idea of &lt;a href='http://omegle.com'&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers. I also hang out in irc a lot, and thought it&amp;#8217;d be fun to combine the two. This wasn&amp;#8217;t a new idea, but since Hacker School is all about learning by exploring, I built an &lt;a href='https://github.com/simon-weber/omegle-to-irc'&gt;Omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;strangers-go-and-openshift&quot;&gt;Strangers, Go, and Openshift&lt;/h2&gt;
 
-&lt;p&gt;When I hooked it up in &lt;a href='http://rochack.org/'&gt;#rochack&lt;/a&gt;, someone had the idea to have the stranger talk to our resident markov chain bot. The stranger had no way to know they were talking to a bot, and hilarity ensued.&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;July 31 2013&lt;/p&gt;
 
-&lt;p&gt;The thing was, only folks in our channel could watch. To share this, I built &lt;a href='http://strangerbotting-simonmweber.rhcloud.com'&gt;Strangerbotting&lt;/a&gt;. It&amp;#8217;s written in Go, and runs on Openshift, Red Hat&amp;#8217;s newish open source PaaS. There are a couple of pieces to the app:&lt;/p&gt;
+&lt;p&gt;I’ve always liked the idea of &lt;a href=&quot;http://omegle.com&quot;&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers.
+I also hang out in irc a lot, and thought it’d be fun to combine the two.
+This wasn’t a new idea, but since Hacker School is all about learning by exploring,
+I built an &lt;a href=&quot;https://github.com/simon-weber/omegle-to-irc&quot;&gt;Omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomegle'&gt;gomegle&lt;/a&gt;: a client library for Omegle&lt;/li&gt;
+&lt;p&gt;When I hooked it up in &lt;a href=&quot;http://rochack.org/&quot;&gt;#rochack&lt;/a&gt;,
+someone had the idea to have the stranger talk to our resident markov chain bot.
+The stranger had no way to know they were talking to a bot, and hilarity ensued.&lt;/p&gt;
 
-&lt;li&gt;&lt;a href='https://github.com/simon-weber/gomarkov'&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation&lt;/li&gt;
+&lt;p&gt;The thing was, only folks in our channel could watch.
+To share this, I built &lt;a href=&quot;http://strangerbotting-simonmweber.rhcloud.com&quot;&gt;Strangerbotting&lt;/a&gt;.
+It’s written in Go, and runs on Openshift, Red Hat’s newish open source PaaS.
+There are a couple of pieces to the app:
+* &lt;a href=&quot;https://github.com/simon-weber/gomegle&quot;&gt;gomegle&lt;/a&gt;: a client library for Omegle
+* &lt;a href=&quot;https://github.com/simon-weber/gomarkov&quot;&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation
+* &lt;a href=&quot;https://github.com/simon-weber/strangerbotting-backend&quot;&gt;strangerbotting-backend&lt;/a&gt;: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.
+* &lt;a href=&quot;https://github.com/simon-weber/strangerbotting-frontend&quot;&gt;strangerbotting-frontend&lt;/a&gt;: a simple webclient to display conversations. Also runs on Openshift.&lt;/p&gt;
 
-&lt;li&gt;&lt;a href='https://github.com/simon-weber/strangerbotting-backend'&gt;strangerbotting-backend&lt;/a&gt;: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.&lt;/li&gt;
+&lt;p&gt;There’s nothing too magical going on in the code, so I won’t bother talking about it.
+However, I have some new opinions on Go and Openshift that I wanted to write down.&lt;/p&gt;
 
-&lt;li&gt;&lt;a href='https://github.com/simon-weber/strangerbotting-frontend'&gt;strangerbotting-frontend&lt;/a&gt;: a simple webclient to display conversations. Also runs on Openshift.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&quot;golang&quot;&gt;Golang&lt;/h3&gt;
 
-&lt;p&gt;There&amp;#8217;s nothing too magical going on in the code, so I won&amp;#8217;t bother talking about it. However, I have some new opinions on Go and Openshift that I wanted to write down.&lt;/p&gt;
+&lt;p&gt;Before getting started with Go, I’d seen a lot of folks complain about the more pedantic parts of the language.
+To me, this indicates some combination of:
+* disagreement with Google’s engineering culture
+* unfamiliarity with Go’s design goals&lt;/p&gt;
 
-&lt;h3 id='golang'&gt;Golang&lt;/h3&gt;
+&lt;p&gt;For example, unused imports in Go raise a compile error.
+This reflects both Google’s conservative engineering tendencies (they wouldn’t want such code checked in),
+and the goal of fast compilation (see &lt;a href=&quot;http://talks.golang.org/2012/splash.article#TOC_7.&quot;&gt;here&lt;/a&gt; for details). &lt;/p&gt;
 
-&lt;p&gt;Before getting started with Go, I&amp;#8217;d seen a lot of folks complain about the more pedantic parts of the language. To me, this indicates some combination of:&lt;/p&gt;
+&lt;p&gt;Maybe it’s last summer’s Google indoctrination speaking, but I’m fine with these parts of the language.
+That said, I still find Go’s error handling - which eschews exceptions for multi-value returns - a bit wonky.
+For those unfamiliar with the language, here’s the relevant part of the Go faq:&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;disagreement with Google&amp;#8217;s engineering culture&lt;/li&gt;
-
-&lt;li&gt;unfamiliarity with Go&amp;#8217;s design goals&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For example, unused imports in Go raise a compile error. This reflects both Google&amp;#8217;s conservative engineering tendencies (they wouldn&amp;#8217;t want such code checked in), and the goal of fast compilation (see &lt;a href='http://talks.golang.org/2012/splash.article#TOC_7.'&gt;here&lt;/a&gt; for details).&lt;/p&gt;
-
-&lt;p&gt;Maybe it&amp;#8217;s last summer&amp;#8217;s Google indoctrination speaking, but I&amp;#8217;m fine with these parts of the language. That said, I still find Go&amp;#8217;s error handling - which eschews exceptions for multi-value returns - a bit wonky. For those unfamiliar with the language, here&amp;#8217;s the relevant part of the Go faq:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;
 Why does Go not have exceptions?
@@ -104,40 +140,76 @@ It also tends to encourage programmers to label too many ordinary errors, such a
 
 &lt;p&gt;
 Go takes a different approach.
-For plain error handling, Go's multi-value returns make it easy to report an error without overloading the return value.
-A canonical error type, coupled with Go's other features, makes error handling pleasant but quite different from that in other languages.
+For plain error handling, Go&#39;s multi-value returns make it easy to report an error without overloading the return value.
+A canonical error type, coupled with Go&#39;s other features, makes error handling pleasant but quite different from that in other languages.
 &lt;/p&gt;
 
 &lt;p&gt;
 Go also has a couple of built-in functions to signal and recover from truly exceptional conditions.
-The recovery mechanism is executed only as part of a function's state being torn down after an error, which is sufficient to handle catastrophe but requires no extra control structures and, when used well, can result in clean error-handling code.
+The recovery mechanism is executed only as part of a function&#39;s state being torn down after an error, which is sufficient to handle catastrophe but requires no extra control structures and, when used well, can result in clean error-handling code.
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This means that the majority of function calls get wrapped in a conditional check on a returned error, which can seem verbose and tedious. While this certainly required some getting used to, it doesn&amp;#8217;t bother me anymore. After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
 
-&lt;p&gt;What does bother me is the loss of debugging information. For example, here&amp;#8217;s an error I received from Go&amp;#8217;s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;. The unclear message and lack of a stacktrace left me guessing: is my code broken? Is Go&amp;#8217;s? Maybe it was the server? I ended up reluctantly grepping the stdlib source, since I didn&amp;#8217;t even have a line number to go off of.&lt;/p&gt;
+&lt;p&gt;This means that the majority of function calls get wrapped in a conditional check on a returned error,
+which can seem verbose and tedious.
+While this certainly required some getting used to, it doesn’t bother me anymore.
+After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
 
-&lt;p&gt;Thankfully, there&amp;#8217;s enough to like in Go that I&amp;#8217;ll put up with some debugging annoyances. First off, goroutines and selection over channels make for really easy concurrent code. As somebody who was new to both Twisted- and CSP-style concurrency a month ago, I now greatly prefer the latter.&lt;/p&gt;
+&lt;p&gt;What does bother me is the loss of debugging information.
+For example, here’s an error I received from Go’s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;.
+The unclear message and lack of a stacktrace left me guessing: is my code broken?
+Is Go’s?
+Maybe it was the server?
+I ended up reluctantly grepping the stdlib source, since I didn’t even have a line number to go off of.&lt;/p&gt;
 
-&lt;p&gt;The stdlib is also pretty decent, even if it can feel somewhat inconsistent. For example, there&amp;#8217;s no deque implementation, but there is a one for &lt;a href='http://golang.org/pkg/index/suffixarray/'&gt;suffix arrays&lt;/a&gt;. I&amp;#8217;m willing to write this off as a combination of Python spoiling me and Go being relatively new.&lt;/p&gt;
+&lt;p&gt;Thankfully, there’s enough to like in Go that I’ll put up with some debugging annoyances.
+First off, goroutines and selection over channels make for really easy concurrent code.
+As somebody who was new to both Twisted- and CSP-style concurrency a month ago, I now greatly prefer the latter.&lt;/p&gt;
 
-&lt;p&gt;However, despite its youth, Go&amp;#8217;s community is fantastic. The &lt;a href='http://irc.lc/freenode/go-nuts'&gt;#go-nuts&lt;/a&gt; channel and &lt;a href='http://blog.golang.org/'&gt;official blog&lt;/a&gt; are informative and active, and &lt;a href='http://play.golang.org'&gt;play.golang.org&lt;/a&gt; makes sharing code a breeze.&lt;/p&gt;
+&lt;p&gt;The stdlib is also pretty decent, even if it can feel somewhat inconsistent.
+For example, there’s no deque implementation, but there is a one for &lt;a href=&quot;http://golang.org/pkg/index/suffixarray/&quot;&gt;suffix arrays&lt;/a&gt;.
+I’m willing to write this off as a combination of Python spoiling me and Go being relatively new.&lt;/p&gt;
 
-&lt;p&gt;Overall, I came away pleased with Go, and I&amp;#8217;ll definitely consider it for backend work in the future.&lt;/p&gt;
+&lt;p&gt;However, despite its youth, Go’s community is fantastic.
+The &lt;a href=&quot;http://irc.lc/freenode/go-nuts&quot;&gt;#go-nuts&lt;/a&gt; channel and &lt;a href=&quot;http://blog.golang.org/&quot;&gt;official blog&lt;/a&gt; are informative and active,
+and &lt;a href=&quot;http://play.golang.org&quot;&gt;play.golang.org&lt;/a&gt; makes sharing code a breeze.&lt;/p&gt;
 
-&lt;h3 id='openshift'&gt;Openshift&lt;/h3&gt;
+&lt;p&gt;Overall, I came away pleased with Go, and I’ll definitely consider it for backend work in the future.&lt;/p&gt;
 
-&lt;p&gt;Openshift, however, left me with mixed feelings. On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem. Rather than futz around with custom buildpacks, I just downloaded and compiled Nginx to host the &lt;a href='http://github.com/simon-weber/strangerbotting-frontend'&gt;Strangerbotting frontend&lt;/a&gt;. Their free tier is generous, too; I wouldn&amp;#8217;t have to pay for a three node host/reverse-proxy to redundant backend setup.&lt;/p&gt;
+&lt;h3 id=&quot;openshift&quot;&gt;Openshift&lt;/h3&gt;
 
-&lt;p&gt;However, there&amp;#8217;s not much else to like. In particular, their bizarre naming choices are a constant source of confusion. Apps are the top-level construct. They are made up of gears (VMs), which run cartridges (buildpacks).&lt;/p&gt;
+&lt;p&gt;Openshift, however, left me with mixed feelings.
+On one hand, I love the ability to ssh into a PaaS box and have a persistent filesystem.
+Rather than futz around with custom buildpacks,
+I just downloaded and compiled Nginx to host the &lt;a href=&quot;http://github.com/simon-weber/strangerbotting-frontend&quot;&gt;Strangerbotting frontend&lt;/a&gt;.
+Their free tier is generous, too;
+I wouldn’t have to pay for a three node host/reverse-proxy to redundant backend setup.&lt;/p&gt;
 
-&lt;p&gt;To run the three node architecture I referred to earlier, you don&amp;#8217;t make an application with three gears, though; that&amp;#8217;d be too easy. Instead, you need to make three applications, each with one gear. You see, you only get one &amp;#8220;web gear&amp;#8221; per application, which the other gears then support (by eg hosting a database or build system).&lt;/p&gt;
+&lt;p&gt;However, there’s not much else to like.
+In particular, their bizarre naming choices are a constant source of confusion.
+Apps are the top-level construct.
+They are made up of gears (VMs), which run cartridges (buildpacks).&lt;/p&gt;
 
-&lt;p&gt;Since their docs don&amp;#8217;t make any of this clear, expect to dig around the forums for answers. Be warned, they&amp;#8217;ve got a very &amp;#8220;googling for .NET answers on SO&amp;#8221; kind of vibe to them.&lt;/p&gt;
+&lt;p&gt;To run the three node architecture I referred to earlier, you don’t make an application with three gears, though;
+that’d be too easy.
+Instead, you need to make three applications, each with one gear.
+You see, you only get one “web gear” per application, which the other gears then support
+(by eg hosting a database or build system).&lt;/p&gt;
 
-&lt;p&gt;I ran into all sorts of other minor difficulties. For one, there&amp;#8217;s no official Go cartridge. There is a Red Hat community catridge, but that&amp;#8217;s been broken for months now, apparently. After spending a half a day trying to fix it and cursing at their slow cartridge development system, I gave up. I&amp;#8217;m currently deploying a binary over git, which I&amp;#8217;m not too happy about.&lt;/p&gt;
+&lt;p&gt;Since their docs don’t make any of this clear, 
+expect to dig around the forums for answers.
+Be warned, they’ve got a very “googling for .NET answers on SO” kind of vibe to them.&lt;/p&gt;
 
-&lt;p&gt;These kinds of problems left me with the impression that the service isn&amp;#8217;t quite there yet. So, while I won&amp;#8217;t be paying for Openshift any time soon, I will be rooting for them. An open source PaaS is a noble goal, and more I always welcome competition for my dollars.&lt;/p&gt;</content>
+&lt;p&gt;I ran into all sorts of other minor difficulties.
+For one, there’s no official Go cartridge.
+There is a Red Hat community catridge, but that’s been broken for months now, apparently.
+After spending a half a day trying to fix it and cursing at their slow cartridge development system, I gave up.
+I’m currently deploying a binary over git, which I’m not too happy about.&lt;/p&gt;
+
+&lt;p&gt;These kinds of problems left me with the impression that the service isn’t quite there yet.
+So, while I won’t be paying for Openshift any time soon, I will be rooting for them.
+An open source PaaS is a noble goal, and more I always welcome competition for my dollars.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -145,36 +217,52 @@ The recovery mechanism is executed only as part of a function's state being torn
    <link href="http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine.html"/>
    <updated>2013-06-18T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine</id>
-   <content type="html">&lt;h2 id='python_protobuf_on_google_app_engine'&gt;Python protobuf on Google App Engine&lt;/h2&gt;
-&lt;p class='meta'&gt;June 18 2013&lt;/p&gt;
-&lt;p&gt;Today, if you try to use Google Protocol Buffers on App Engine, you&amp;#8217;ll run into an error like this one:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='nn'&gt;google.protobuf&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='n'&gt;descriptor&lt;/span&gt; 
-&lt;span class='ne'&gt;ImportError&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;No&lt;/span&gt; &lt;span class='n'&gt;module&lt;/span&gt; &lt;span class='n'&gt;named&lt;/span&gt; &lt;span class='n'&gt;protobuf&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The problem is that Google&amp;#8217;s own App Engine apis also use the &lt;code&gt;google&lt;/code&gt; package namespace, and they don&amp;#8217;t include the protobuf package.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;python-protobuf-on-google-app-engine&quot;&gt;Python protobuf on Google App Engine&lt;/h2&gt;
 
-&lt;p&gt;Thankfully, there&amp;#8217;s a simple way to fix this. First, vendorize the library as you normally would. I just ripped the &lt;code&gt;site-packages&lt;/code&gt; folder from a virtualenv into the application root:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;app.py
+&lt;p class=&quot;meta&quot;&gt;June 18 2013&lt;/p&gt;
+
+&lt;p&gt;Today, if you try to use Google Protocol Buffers on App Engine, you’ll run into
+an error like this one:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;google.protobuf&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;descriptor&lt;/span&gt; 
+&lt;span class=&quot;ne&quot;&gt;ImportError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;named&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;protobuf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The problem is that Google’s own App Engine apis also use the &lt;code&gt;google&lt;/code&gt; package namespace,
+and they don’t include the protobuf package.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, there’s a simple way to fix this.
+First, vendorize the library as you normally would.
+I just ripped the &lt;code&gt;site-packages&lt;/code&gt; folder from a virtualenv into the application root:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;app.py
 app.yaml
 vendor
 ├── google
 │   └── protobuf...
 └── httplib2...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, just add your google directory to the google namespace, and add your vendor directory to the system path. I used this bit of code:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;os&lt;/span&gt;
-&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;sys&lt;/span&gt;
 
-&lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;google&lt;/span&gt;  &lt;span class='c'&gt;# provided by GAE&lt;/span&gt;
+&lt;p&gt;Then, just add your google directory to the google namespace, and add your
+vendor directory to the system path.
+I used this bit of code:&lt;/p&gt;
 
-&lt;span class='c'&gt;# add vendorized protobuf to google namespace package&lt;/span&gt;
-&lt;span class='n'&gt;vendor_dir&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;dirname&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;__file__&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;vendor&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;span class='n'&gt;google&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;__path__&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;append&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;vendor_dir&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;google&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;))&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
 
-&lt;span class='c'&gt;# add vendor path&lt;/span&gt;
-&lt;span class='n'&gt;sys&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;insert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;0&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;vendor_dir&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;google&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# provided by GAE&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# add vendorized protobuf to google namespace package&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;vendor&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__path__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;google&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# add vendor path&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That&amp;#8217;s it! There&amp;#8217;s no need for &lt;a href='https://code.google.com/p/protobuf-gae-hack'&gt;weird hacks&lt;/a&gt;.&lt;/p&gt;</content>
+
+&lt;p&gt;That’s it!
+There’s no need for &lt;a href=&quot;https://code.google.com/p/protobuf-gae-hack&quot;&gt;weird hacks&lt;/a&gt;.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -182,118 +270,145 @@ vendor
    <link href="http://www.simonmweber.com/2013/06/05/chrome-extension-hacks.html"/>
    <updated>2013-06-05T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2013/06/05/chrome-extension-hacks</id>
-   <content type="html">&lt;h2 id='chrome_extension_hacks_google_music_to_turntable'&gt;Chrome extension hacks: Google Music to turntable&lt;/h2&gt;
-&lt;p class='meta'&gt;June 5 2013&lt;/p&gt;
-&lt;p&gt;I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch. I use &lt;a href='http://turntable.fm'&gt;turntable.fm&lt;/a&gt; every now and then, which lets me dj music with friends. There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear. If turntable doesn&amp;#8217;t have a song, I can upload a file from my computer.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;chrome-extension-hacks-google-music-to-turntable&quot;&gt;Chrome extension hacks: Google Music to turntable&lt;/h2&gt;
 
-&lt;p&gt;However, I don&amp;#8217;t normally have music files on my laptop; my library is kept in Google Music. So, if turntable was missing a song, I used to:&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;June 5 2013&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;open Google Music and sign in&lt;/li&gt;
+&lt;p&gt;I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch.
+I use &lt;a href=&quot;http://turntable.fm&quot;&gt;turntable.fm&lt;/a&gt; every now and then, which lets me dj music with friends.
+There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear.
+If turntable doesn’t have a song, I can upload a file from my computer.&lt;/p&gt;
 
-&lt;li&gt;find and download the song&lt;/li&gt;
+&lt;p&gt;However, I don’t normally have music files on my laptop; my library is kept in Google Music.
+So, if turntable was missing a song, I used to:
+* open Google Music and sign in
+* find and download the song
+* switch to turntable and upload it
+* delete the file&lt;/p&gt;
 
-&lt;li&gt;switch to turntable and upload it&lt;/li&gt;
+&lt;p&gt;My extension lets me do this right in turntable.
+Now, all I do is click “Upload from Google Music”, find the song and hit upload.
+The extension does the same thing behind the scenes.&lt;/p&gt;
 
-&lt;li&gt;delete the file&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;If this sounds useful, you can get it here: &lt;a href=&quot;https://chrome.google.com/webstore/detail/turntable-uploader-for-go/akchbpaepakjnaihbgkdgjjgpdcckapb&quot;&gt;Turntable Uploader for Google Music™&lt;/a&gt;.
+But, this blog post isn’t about advertising: I wanted to document all the weird hacks that went into making this work.
+If you’re already a Chrome extension guru, you may already know this stuff;
+it’s intended as a post I would have wanted before writing a line of code.&lt;/p&gt;
 
-&lt;p&gt;My extension lets me do this right in turntable. Now, all I do is click “Upload from Google Music”, find the song and hit upload. The extension does the same thing behind the scenes.&lt;/p&gt;
+&lt;p&gt;First, a brief intro to Chrome extensions.
+If you’ve written one before, you can probably skip this part.&lt;/p&gt;
 
-&lt;p&gt;If this sounds useful, you can get it here: &lt;a href='https://chrome.google.com/webstore/detail/turntable-uploader-for-go/akchbpaepakjnaihbgkdgjjgpdcckapb'&gt;Turntable Uploader for Google Music™&lt;/a&gt;. But, this blog post isn&amp;#8217;t about advertising: I wanted to document all the weird hacks that went into making this work. If you&amp;#8217;re already a Chrome extension guru, you may already know this stuff; it&amp;#8217;s intended as a post I would have wanted before writing a line of code.&lt;/p&gt;
+&lt;h3 id=&quot;intro-to-chrome-extensions&quot;&gt;Intro to Chrome extensions&lt;/h3&gt;
 
-&lt;p&gt;First, a brief intro to Chrome extensions. If you&amp;#8217;ve written one before, you can probably skip this part.&lt;/p&gt;
+&lt;p&gt;Chrome extensions are just normal javascript and html, but with optional extra permissions.
+For example, cross domain requests and cookie access are kosher – you just need the user to approve them.&lt;/p&gt;
 
-&lt;h3 id='intro_to_chrome_extensions'&gt;Intro to Chrome extensions&lt;/h3&gt;
+&lt;p&gt;Your extension can be made up of two different kinds of scripts.
+The first is the &lt;em&gt;background script&lt;/em&gt; (or &lt;em&gt;event script&lt;/em&gt;; the same thing but not always running).
+This does the heavy lifting, since it gets access to special &lt;code&gt;chrome.*&lt;/code&gt; apis.
+These enable stuff like the cookie access I mentioned earlier.&lt;/p&gt;
 
-&lt;p&gt;Chrome extensions are just normal javascript and html, but with optional extra permissions. For example, cross domain requests and cookie access are kosher &amp;#8211; you just need the user to approve them.&lt;/p&gt;
+&lt;p&gt;You can also run a bunch of &lt;em&gt;content scripts&lt;/em&gt;.
+Unlike the background script, these are specific to a certain page.
+They get triggered when a tab matches a url pattern you specify (eg &lt;code&gt;http://turntable.com/*&lt;/code&gt;).
+They don’t get &lt;code&gt;chrome.*&lt;/code&gt; access.
+They can access the DOM, but run in an &lt;em&gt;isolated world&lt;/em&gt; –
+basically, they can modify the DOM, but can’t mess with other code running on the page.
+For example, my content script can’t remove an event handler that a turntable script has set up.&lt;/p&gt;
 
-&lt;p&gt;Your extension can be made up of two different kinds of scripts. The first is the &lt;em&gt;background script&lt;/em&gt; (or &lt;em&gt;event script&lt;/em&gt;; the same thing but not always running). This does the heavy lifting, since it gets access to special &lt;code&gt;chrome.*&lt;/code&gt; apis. These enable stuff like the cookie access I mentioned earlier.&lt;/p&gt;
+&lt;p&gt;At a first glance, content scripts sound pretty limited.
+However, you can get around all of the restrictions above with a bit of hackery.
+To access &lt;code&gt;chrome.*&lt;/code&gt; apis, there’s a two-way messaging interface to the background script:
+you just offload the work there.
+Anything json-encodable is fair game for transport.
+Even the isolated world isn’t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.&lt;/p&gt;
 
-&lt;p&gt;You can also run a bunch of &lt;em&gt;content scripts&lt;/em&gt;. Unlike the background script, these are specific to a certain page. They get triggered when a tab matches a url pattern you specify (eg &lt;code&gt;http://turntable.com/*&lt;/code&gt;). They don&amp;#8217;t get &lt;code&gt;chrome.*&lt;/code&gt; access. They can access the DOM, but run in an &lt;em&gt;isolated world&lt;/em&gt; &amp;#8211; basically, they can modify the DOM, but can&amp;#8217;t mess with other code running on the page. For example, my content script can&amp;#8217;t remove an event handler that a turntable script has set up.&lt;/p&gt;
+&lt;p&gt;My extension uses all three pieces mentioned above: background, content, and injected scripts.
+All together, they communicate like this:&lt;/p&gt;
 
-&lt;p&gt;At a first glance, content scripts sound pretty limited. However, you can get around all of the restrictions above with a bit of hackery. To access &lt;code&gt;chrome.*&lt;/code&gt; apis, there&amp;#8217;s a two-way messaging interface to the background script: you just offload the work there. Anything json-encodable is fair game for transport. Even the isolated world isn&amp;#8217;t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.&lt;/p&gt;
-
-&lt;p&gt;My extension uses all three pieces mentioned above: background, content, and injected scripts. All together, they communicate like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;our background script
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;our background script
      ^
-     |
-     |
-   &lt;span class='o'&gt;(&lt;/span&gt;chrome message passing&lt;span class='o'&gt;)&lt;/span&gt;
-     |
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;chrome message passing&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
      v
 our content script
      ^
-     |
-     |
-   &lt;span class='o'&gt;(&lt;/span&gt;the dom&lt;span class='o'&gt;)&lt;/span&gt;
-     |
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;the dom&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
      v
 our injected code
-     |
-     |
-   &lt;span class='o'&gt;(&lt;/span&gt;global namespace&lt;span class='o'&gt;)&lt;/span&gt;
-     |
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;global namespace&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
      v
 other code on the page
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now that we know what we have to work with, I&amp;#8217;ll go over how I addressed each of the big pieces of my solution.&lt;/p&gt;
 
-&lt;h3 id='getting_the_google_music_library_and_downloading_songs'&gt;Getting the Google Music library and downloading songs&lt;/h3&gt;
+&lt;p&gt;Now that we know what we have to work with, I’ll go over how I addressed each of the big pieces of my solution.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve spent far too much time with the Google Music protocol from my work on &lt;a href='http://github.com/simon-weber/Unofficial-Google-Music-API'&gt;gmusicapi&lt;/a&gt;, so I already knew which endpoints to hit.&lt;/p&gt;
+&lt;h3 id=&quot;getting-the-google-music-library-and-downloading-songs&quot;&gt;Getting the Google Music library and downloading songs&lt;/h3&gt;
 
-&lt;p&gt;Auth presented a hurdle, though, since it requires either plaintext credentials (yuck) or OAuth (annoying). I got around this with my extra Chrome host and cookies permissions: I just have the user open Google Music in another tab, then piggyback on that session. My requests will automatically send Google cookies, and I just have to grab an xsrf cookie for use in the url.&lt;/p&gt;
+&lt;p&gt;I’ve spent far too much time with the Google Music protocol from my work on &lt;a href=&quot;http://github.com/simon-weber/Unofficial-Google-Music-API&quot;&gt;gmusicapi&lt;/a&gt;, so I already knew which endpoints to hit.&lt;/p&gt;
 
-&lt;h3 id='uploading_to_turntable'&gt;Uploading to turntable&lt;/h3&gt;
+&lt;p&gt;Auth presented a hurdle, though, since it requires either plaintext credentials (yuck) or OAuth (annoying).
+I got around this with my extra Chrome host and cookies permissions:
+I just have the user open Google Music in another tab, then piggyback on that session.
+My requests will automatically send Google cookies, and I just have to grab an xsrf cookie for use in the url.&lt;/p&gt;
 
-&lt;p&gt;This was the toughest nut to crack. I considered reverse engineering the endpoints that turntable&amp;#8217;s client page used for uploading, but this had a number of disadvantages:&lt;/p&gt;
+&lt;h3 id=&quot;uploading-to-turntable&quot;&gt;Uploading to turntable&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;the user wouldn&amp;#8217;t see the upload in the turntable interface&lt;/li&gt;
+&lt;p&gt;This was the toughest nut to crack.
+I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:
+* the user wouldn’t see the upload in the turntable interface
+* I don’t have the javascript chops to implement a complicated upload protocol
+* future protocol changes would break stuff&lt;/p&gt;
 
-&lt;li&gt;I don&amp;#8217;t have the javascript chops to implement a complicated upload protocol&lt;/li&gt;
+&lt;p&gt;A better approach: tricking turntable’s own clientside code into believing the user had initiated a normal upload.
+This makes turntable do all the work, and is business as usual for the user.&lt;/p&gt;
 
-&lt;li&gt;future protocol changes would break stuff&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;After some quality time in the DevTools debugger, a friend of mine (thanks, &lt;a href=&quot;https://github.com/clehner&quot;&gt;Charlie&lt;/a&gt;!) figured out a way to do this.
+turntable uses a third party library called &lt;a href=&quot;http://plupload.com&quot;&gt;plupload&lt;/a&gt;.
+Unfortunately, a high level &lt;code&gt;window.plupload.upload(File)&lt;/code&gt; function isn’t accessible; it’s hidden inside turntable closures.
+However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like &lt;code&gt;$(&#39;..input[file]..&#39;).onchange.call(our_File)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;A better approach: tricking turntable&amp;#8217;s own clientside code into believing the user had initiated a normal upload. This makes turntable do all the work, and is business as usual for the user.&lt;/p&gt;
+&lt;p&gt;Since injected code gets around the isolated world restriction, this is totally possible:
+we just need to also inject an html5 File containing the desired mp3.&lt;/p&gt;
 
-&lt;p&gt;After some quality time in the DevTools debugger, a friend of mine (thanks, &lt;a href='https://github.com/clehner'&gt;Charlie&lt;/a&gt;!) figured out a way to do this. turntable uses a third party library called &lt;a href='http://plupload.com'&gt;plupload&lt;/a&gt;. Unfortunately, a high level &lt;code&gt;window.plupload.upload(File)&lt;/code&gt; function isn&amp;#8217;t accessible; it&amp;#8217;s hidden inside turntable closures. However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like &lt;code&gt;$(&amp;#39;..input[file]..&amp;#39;).onchange.call(our_File)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-a-file-from-a-blob&quot;&gt;Getting a File from a Blob&lt;/h3&gt;
 
-&lt;p&gt;Since injected code gets around the isolated world restriction, this is totally possible: we just need to also inject an html5 File containing the desired mp3.&lt;/p&gt;
+&lt;p&gt;Html5 Blobs are easy to create, and just represent binary data.
+Html5 Files, though, can only be created when a user interacts with a file input (here’s the &lt;a href=&quot;http://www.w3.org/TR/FileAPI/&quot;&gt;File api docs&lt;/a&gt;, if you want the details).&lt;/p&gt;
 
-&lt;h3 id='getting_a_file_from_a_blob'&gt;Getting a File from a Blob&lt;/h3&gt;
+&lt;p&gt;Luckily, Files aren’t much different from Blobs: they just add a filename and date of modification.
+Duck typing to the rescue!&lt;/p&gt;
 
-&lt;p&gt;Html5 Blobs are easy to create, and just represent binary data. Html5 Files, though, can only be created when a user interacts with a file input (here&amp;#8217;s the &lt;a href='http://www.w3.org/TR/FileAPI/'&gt;File api docs&lt;/a&gt;, if you want the details).&lt;/p&gt;
-
-&lt;p&gt;Luckily, Files aren&amp;#8217;t much different from Blobs: they just add a filename and date of modification. Duck typing to the rescue!&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='c1'&gt;//b is our Blob&lt;/span&gt;
-&lt;span class='nx'&gt;b&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;name&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;myfile.mp3&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;span class='nx'&gt;b&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;lastModifiedDate&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nb'&gt;Date&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
-&lt;span class='c1'&gt;// tada!&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//b is our Blob&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;myfile.mp3&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastModifiedDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// tada!&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id='putting_it_all_together'&gt;Putting it all together&lt;/h3&gt;
 
-&lt;p&gt;Those are the main hacks. Combining everything, this is about what happens when an upload is requested:&lt;/p&gt;
+&lt;h3 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;content script messages the background script with a file id to upload&lt;/li&gt;
+&lt;p&gt;Those are the main hacks. Combining everything, this is about what happens when an upload is requested:
+* content script messages the background script with a file id to upload
+* background script performs a cross domain request to Google and retrieves a Blob
+* background script encodes the Blob as a base64 dataurl
+* Blob dataurl (now json-compatible) is messaged back to the content script
+* content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done&lt;/p&gt;
 
-&lt;li&gt;background script performs a cross domain request to Google and retrieves a Blob&lt;/li&gt;
-
-&lt;li&gt;background script encodes the Blob as a base64 dataurl&lt;/li&gt;
-
-&lt;li&gt;Blob dataurl (now json-compatible) is messaged back to the content script&lt;/li&gt;
-
-&lt;li&gt;content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library. You can grab my ugly code on &lt;a href='https://github.com/simon-weber/Google-Music-Turntable-Uploader'&gt;my GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
+You can grab my ugly code on &lt;a href=&quot;https://github.com/simon-weber/Google-Music-Turntable-Uploader&quot;&gt;my GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I plan to write continue writing posts like these during my time at Hacker School, so if you dug this, Twitter or RSS are the best ways to get more.&lt;/p&gt;
 
-&lt;p&gt;Many thanks to my fellow Hacker Schoolers who read over this post: &lt;a href='http://lfranchi.com'&gt;Leo Franchi&lt;/a&gt; and &lt;a href='https://github.com/eriktaubeneck'&gt;Erik Taubeneck&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;p&gt;Many thanks to my fellow Hacker Schoolers who read over this post: &lt;a href=&quot;http://lfranchi.com&quot;&gt;Leo Franchi&lt;/a&gt; and &lt;a href=&quot;https://github.com/eriktaubeneck&quot;&gt;Erik Taubeneck&lt;/a&gt;.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -301,67 +416,85 @@ other code on the page
    <link href="http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective.html"/>
    <updated>2013-05-14T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective</id>
-   <content type="html">&lt;h2 id='gmusicapi_retrospective'&gt;gmusicapi retrospective&lt;/h2&gt;
-&lt;p class='meta'&gt;May 14 2013&lt;/p&gt;
-&lt;p&gt;gmusicapi has come a long way since I pushed my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a'&gt;first commit&lt;/a&gt; back in January 2012.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;gmusicapi-retrospective&quot;&gt;gmusicapi retrospective&lt;/h2&gt;
 
-&lt;p&gt;The project has grown more than usual during this semester, since &amp;#8211; for the first time &amp;#8211; I worked on it for school credit. Here&amp;#8217;s what I spent my time on:&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;May 14 2013&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;a number of big features: scan-and-match support, album art operations, Music Manager OAuth support, python 2.6 compatibility&amp;#8230;&lt;/li&gt;
+&lt;p&gt;gmusicapi has come a long way since I pushed my &lt;a href=&quot;https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a&quot;&gt;first commit&lt;/a&gt; back in January 2012.&lt;/p&gt;
 
-&lt;li&gt;a new dynamic testing system for my end-to-end tests&lt;/li&gt;
-
-&lt;li&gt;a huge rewrite to allow for more flexible protocol declarations&lt;/li&gt;
-
-&lt;li&gt;continuous integration that also catches protocol changes&lt;/li&gt;
-
-&lt;li&gt;documentation improvements and a new irc support channel&lt;/li&gt;
-
-&lt;li&gt;version 1.0!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/graphs'&gt;Github&amp;#8217;s graphs&lt;/a&gt; provide a quick overview of what I&amp;#8217;ve been up to. Here are a few other metrics:&lt;/p&gt;
+&lt;p&gt;The project has grown more than usual during this semester, since – for the first time – I worked on it for school credit.
+Here’s what I spent my time on:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;documentation visits x5, bounce rate halved&lt;/li&gt;
-
-&lt;li&gt;PyPi download rate x2&lt;/li&gt;
-
-&lt;li&gt;use in a couple of real-world products&lt;/li&gt;
+  &lt;li&gt;a number of big features: scan-and-match support, album art operations, Music Manager OAuth support, python 2.6 compatibility. . .&lt;/li&gt;
+  &lt;li&gt;a new dynamic testing system for my end-to-end tests&lt;/li&gt;
+  &lt;li&gt;a huge rewrite to allow for more flexible protocol declarations&lt;/li&gt;
+  &lt;li&gt;continuous integration that also catches protocol changes&lt;/li&gt;
+  &lt;li&gt;documentation improvements and a new irc support channel&lt;/li&gt;
+  &lt;li&gt;version 1.0!&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I figure this is a good chance to reflect on some of the decisions I&amp;#8217;ve made, both for my sake and for those who might come this way in the future.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/simon-weber/Unofficial-Google-Music-API/graphs&quot;&gt;Github’s graphs&lt;/a&gt; provide a quick overview of what I’ve been up to.
+Here are a few other metrics:&lt;/p&gt;
 
-&lt;h3 id='dont_count_out_endtoend_testing'&gt;Don&amp;#8217;t count out end-to-end testing&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;documentation visits x5, bounce rate halved&lt;/li&gt;
+  &lt;li&gt;PyPi download rate x2&lt;/li&gt;
+  &lt;li&gt;use in a couple of real-world products&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;I have a few unit tests, but the majority of my tests are end-to-end black-box tests that exercise my clients against actual Google servers. Naturally, they violate core unit test principles: they&amp;#8217;re stateful, cannot be run offline, and run slowly.&lt;/p&gt;
+&lt;p&gt;I figure this is a good chance to reflect on some of the decisions I’ve made, both for my sake and for those who might come this way in the future.&lt;/p&gt;
 
-&lt;p&gt;One thing I&amp;#8217;ve learned while coming to this solution: there&amp;#8217;s a lot of dogma surrounding test strategies.&lt;/p&gt;
+&lt;h3 id=&quot;dont-count-out-end-to-end-testing&quot;&gt;Don’t count out end-to-end testing&lt;/h3&gt;
 
-&lt;p&gt;It&amp;#8217;s not that I&amp;#8217;m against unit testing. I&amp;#8217;d love to have more unit tests! Unfortunately, writing them isn&amp;#8217;t free, and in my case, end-to-end tests offer more bang for my buck. I get more coverage with less code and get to test my expectations about Google&amp;#8217;s servers. gmusicapi is also pretty small, so the loss of granularity when bug-hunting isn&amp;#8217;t a huge deal.&lt;/p&gt;
+&lt;p&gt;I have a few unit tests, but the majority of my tests are end-to-end black-box tests that exercise my clients against actual Google servers.
+Naturally, they violate core unit test principles: they’re stateful, cannot be run offline, and run slowly.&lt;/p&gt;
 
-&lt;p&gt;Of course, there&amp;#8217;s some extra work required to make your end-to-end tests robust. Backend flakiness can be addressed with retry and backoff. Test dependence and state management can be handled with TestNG-like frameworks (I use &lt;a href='http://pythonhosted.org/proboscis/'&gt;Proboscis&lt;/a&gt;). Protocol changes can be caught by validating responses against a schema.&lt;/p&gt;
+&lt;p&gt;One thing I’ve learned while coming to this solution: there’s a lot of dogma surrounding test strategies.&lt;/p&gt;
 
-&lt;p&gt;Currently, I have a few Google accounts I use exclusively for testing, and I keep their credentials in TravisCI encrypted variables. There&amp;#8217;s one big downside to this: encrypted variables can&amp;#8217;t be used with other folks&amp;#8217; pull requests. In the future, I hope to figure out a way to safely manage a public test account (I think it&amp;#8217;s possible with 2-factor auth).&lt;/p&gt;
+&lt;p&gt;It’s not that I’m against unit testing.
+I’d love to have more unit tests!
+Unfortunately, writing them isn’t free, and in my case, end-to-end tests offer more bang for my buck.
+I get more coverage with less code and get to test my expectations about Google’s servers.
+gmusicapi is also pretty small, so the loss of granularity when bug-hunting isn’t a huge deal.&lt;/p&gt;
 
-&lt;h3 id='invest_in_support'&gt;Invest in support&lt;/h3&gt;
+&lt;p&gt;Of course, there’s some extra work required to make your end-to-end tests robust.
+Backend flakiness can be addressed with retry and backoff.
+Test dependence and state management can be handled with TestNG-like frameworks (I use &lt;a href=&quot;http://pythonhosted.org/proboscis/&quot;&gt;Proboscis&lt;/a&gt;).
+Protocol changes can be caught by validating responses against a schema.&lt;/p&gt;
 
-&lt;p&gt;I have trouble saying no to requests for help. Interestingly, gmusicapi also seems to attract many users who are new to Python. Because of these factors, I used to spend a fair amount of time answering support emails. I didn&amp;#8217;t mind this, but after receiving a few emails on the same topics, I figured it&amp;#8217;d be better to flesh out the &lt;a href='http://unofficial-google-music-api.readthedocs.org'&gt;gmusicapi documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Currently, I have a few Google accounts I use exclusively for testing, and I keep their credentials in TravisCI encrypted variables.
+There’s one big downside to this: encrypted variables can’t be used with other folks’ pull requests.
+In the future, I hope to figure out a way to safely manage a public test account (I think it’s possible with 2-factor auth).&lt;/p&gt;
 
-&lt;p&gt;Basic questions were addressed with installation and getting starting sections. These were no-brainers, and I should have added them earlier.&lt;/p&gt;
+&lt;h3 id=&quot;invest-in-support&quot;&gt;Invest in support&lt;/h3&gt;
 
-&lt;p&gt;I also added a section for a less obvious topic: people want the reverse-engineered protocols I&amp;#8217;m using. So far, I&amp;#8217;ve thrown together a hack that introspects my protocol declaration code, but I&amp;#8217;ve got plenty of room to improve this.&lt;/p&gt;
+&lt;p&gt;I have trouble saying no to requests for help.
+Interestingly, gmusicapi also seems to attract many users who are new to Python.
+Because of these factors, I used to spend a fair amount of time answering support emails.
+I didn’t mind this, but after receiving a few emails on the same topics, I figured it’d be better to flesh out the &lt;a href=&quot;http://unofficial-google-music-api.readthedocs.org&quot;&gt;gmusicapi documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href='http://webchat.freenode.net/?channels=gmusicapi'&gt;#gmusicapi irc channel on Freenode&lt;/a&gt; is another recent support addition. I wish I&amp;#8217;d set it up earlier! Recently, devs building on gmusicapi have started hanging out and answering questions, which has been a huge help.&lt;/p&gt;
+&lt;p&gt;Basic questions were addressed with installation and getting starting sections.
+These were no-brainers, and I should have added them earlier.&lt;/p&gt;
 
-&lt;p&gt;I still go the extra mile when I do direct support. Helping users out is its own reward, but I&amp;#8217;m also flattered to have received thank-you emails after irc chats, money, and &amp;#8211; once &amp;#8211; even a gift in the mail!&lt;/p&gt;
+&lt;p&gt;I also added a section for a less obvious topic: people want the reverse-engineered protocols I’m using.
+So far, I’ve thrown together a hack that introspects my protocol declaration code, but I’ve got plenty of room to improve this.&lt;/p&gt;
 
-&lt;h3 id='looking_forward'&gt;Looking forward&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&quot;http://webchat.freenode.net/?channels=gmusicapi&quot;&gt;#gmusicapi irc channel on Freenode&lt;/a&gt; is another recent support addition.
+I wish I’d set it up earlier!
+Recently, devs building on gmusicapi have started hanging out and answering questions, which has been a huge help.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;m very pleased with what I&amp;#8217;ve learned and accomplished so far. My next step is to get the project into a self-sustaining state. I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.&lt;/p&gt;
+&lt;p&gt;I still go the extra mile when I do direct support.
+Helping users out is its own reward, but I’m also flattered to have received thank-you emails after irc chats, money, and – once – even a gift in the mail!&lt;/p&gt;
 
-&lt;p&gt;Thankfully, I&amp;#8217;ll have plenty of time this summer at &lt;a href='http://hackerschool.com'&gt;Hacker School&lt;/a&gt;!&lt;/p&gt;</content>
+&lt;h3 id=&quot;looking-forward&quot;&gt;Looking forward&lt;/h3&gt;
+
+&lt;p&gt;I’m very pleased with what I’ve learned and accomplished so far.
+My next step is to get the project into a self-sustaining state.
+I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, I’ll have plenty of time this summer at &lt;a href=&quot;http://hackerschool.com&quot;&gt;Hacker School&lt;/a&gt;!&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -369,85 +502,154 @@ other code on the page
    <link href="http://www.simonmweber.com/2013/04/20/development-on-a-chromebook-an-opinionated-guide.html"/>
    <updated>2013-04-20T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2013/04/20/development-on-a-chromebook-an-opinionated-guide</id>
-   <content type="html">&lt;h2 id='development_on_a_chromebook_an_opinionated_guide'&gt;Development on a Chromebook: an opinionated guide&lt;/h2&gt;
-&lt;p class='meta'&gt;April 20 2013&lt;/p&gt;
-&lt;p&gt;I started using a &lt;a href='http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html'&gt;Samsung 550 Chromebook&lt;/a&gt; as my on-the-go machine two semesters ago. It worked nicely for taking notes, but I remained a skeptic: how could I ever write code from a glorified web browser?&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;development-on-a-chromebook-an-opinionated-guide&quot;&gt;Development on a Chromebook: an opinionated guide&lt;/h2&gt;
 
-&lt;p&gt;Fast forward 6 months: today, I love hacking on my Chromebook, and I have no problems working offline. It took some effort to get everything set up, so I’ve put together my recommendations to get other folks up to speed.&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;April 20 2013, updated April 17 2014&lt;/p&gt;
 
-&lt;p&gt;First, a disclaimer: the device was given to me as part of the &lt;a href='http://www.google.com/intl/en/jobs/students/proscho/programs/uscanada/ambassador/'&gt;Google Student Ambassador Program&lt;/a&gt;, and Google pays me for brand advocacy at my school. That said, I’m &lt;em&gt;not&lt;/em&gt; getting paid to write this, and this is my advice, not Google’s. I’m a hacker, not a shill (and I’ll even save hn the work of linking &lt;a href='http://www.paulgraham.com/submarine.html'&gt;pg’s submarine essay&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;I started using a
+&lt;a href=&quot;http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html&quot;&gt;Samsung 550 Chromebook&lt;/a&gt;
+as my on-the-go machine two semesters ago. It worked nicely for
+taking notes, but I remained a skeptic: how could I ever write code
+from a glorified web browser?&lt;/p&gt;
 
-&lt;p&gt;Anyway: let’s get started. It’s easiest to work over ssh, so I’ll cover this first. Later, I’ll get to working offline. I won’t talk about cloud development webapps (maybe check out &lt;a href='https://www.nitrous.io'&gt;Nitrous.IO&lt;/a&gt;?). Also, I don’t have any advice if you prefer heavy IDEs; my usual tools are a terminal and web browser.&lt;/p&gt;
+&lt;p&gt;Fast forward 6 months: today, I love hacking on my Chromebook, and
+I have no problems working offline. It took some effort to get
+everything set up, so I’ve put together my recommendations to get
+other folks up to speed.&lt;/p&gt;
 
-&lt;h3 id='for_when_you_have_a_good_connection'&gt;For when you have a good connection&lt;/h3&gt;
+&lt;p&gt;First, a disclaimer: the device was given to me as part of the
+&lt;a href=&quot;http://www.google.com/intl/en/jobs/students/proscho/programs/uscanada/ambassador/&quot;&gt;Google Student Ambassador Program&lt;/a&gt;,
+and Google pays me for brand advocacy at my school. That said, I’m
+&lt;em&gt;not&lt;/em&gt; getting paid to write this, and this is my advice, not
+Google’s. I’m a hacker, not a shill (and I’ll even save hn the work
+of linking
+&lt;a href=&quot;http://www.paulgraham.com/submarine.html&quot;&gt;pg’s submarine essay&lt;/a&gt;).&lt;/p&gt;
 
-&lt;h4 id='ssh'&gt;ssh&lt;/h4&gt;
+&lt;p&gt;Anyway: let’s get started. It’s easiest to work over ssh, so I’ll
+cover this first. Later, I’ll get to working offline. I won’t talk
+about cloud development webapps (maybe check out &lt;a href=&quot;https://www.nitrous.io&quot;&gt;Nitrous.IO&lt;/a&gt;?).
+Also, I don’t have any advice if you prefer heavy IDEs; my usual
+tools are a terminal and web browser.&lt;/p&gt;
 
-&lt;p&gt;You want &lt;a href='https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo'&gt;Secure Shell&lt;/a&gt; as your ssh client. It’s basically openssh wrapped for &lt;a href='https://developers.google.com/native-client/'&gt;NaCl&lt;/a&gt;, with &lt;a href='https://groups.google.com/a/chromium.org/group/chromium-hterm'&gt;hterm&lt;/a&gt; powering the ui.&lt;/p&gt;
+&lt;h3 id=&quot;for-when-you-have-a-good-connection&quot;&gt;For when you have a good connection&lt;/h3&gt;
 
-&lt;p&gt;It supports everything you’d expect, like key authentication, per-connection profiles, port forwarding, custom color schemes, and even your &lt;code&gt;~/.ssh/config&lt;/code&gt; file (well, probably; mine is simple).&lt;/p&gt;
+&lt;h4 id=&quot;ssh&quot;&gt;ssh&lt;/h4&gt;
 
-&lt;p&gt;The &lt;a href='http://goo.gl/RYHiK'&gt;chromium-hterm mailing list&lt;/a&gt; is where updates are posted. If you need an upcoming feature &lt;em&gt;now&lt;/em&gt;, there’s also a hidden &lt;a href='http://goo.gl/cFZlv'&gt;dev channel&lt;/a&gt; (you need to be logged into an account that’s on the mailing list for this link to work).&lt;/p&gt;
+&lt;p&gt;You want
+&lt;a href=&quot;https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo&quot;&gt;Secure Shell&lt;/a&gt;
+as your ssh client. It’s basically openssh wrapped for
+&lt;a href=&quot;https://developers.google.com/native-client/&quot;&gt;NaCl&lt;/a&gt;, with
+&lt;a href=&quot;https://groups.google.com/a/chromium.org/group/chromium-hterm&quot;&gt;hterm&lt;/a&gt;
+powering the ui.&lt;/p&gt;
 
-&lt;p&gt;A quick tip: set Secure Shell to ‘Open as Window’, otherwise Chrome will intercept keyboard shortcuts (which e.g. makes Control-W close your terminal). You’ll probably also want to set TERM to xterm. The FAQ (linked below) has the details and is worth reading through:&lt;/p&gt;
+&lt;p&gt;It supports everything you’d expect, like key authentication,
+per-connection profiles, port forwarding, custom color schemes, and
+even your &lt;code&gt;~/.ssh/config&lt;/code&gt; file (well, probably; mine is simple).&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://goo.gl/RYHiK&quot;&gt;chromium-hterm mailing list&lt;/a&gt; is where
+updates are posted. If you need an upcoming feature &lt;em&gt;now&lt;/em&gt;, there’s
+also a hidden &lt;a href=&quot;http://goo.gl/cFZlv&quot;&gt;dev channel&lt;/a&gt; (you need to be
+logged into an account that’s on the mailing list for this link to
+work).&lt;/p&gt;
+
+&lt;p&gt;A quick tip: set Secure Shell to ‘Open as Window’, otherwise Chrome
+will intercept keyboard shortcuts (which e.g. makes Control-W close
+your terminal). You’ll probably also want to set TERM to xterm. The
+FAQ (linked below) has the details and is worth reading through:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://goo.gl/3i5AJ'&gt;Secure Shell FAQ&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://gist.github.com/johnbender/5018685'&gt;Solarized colors&lt;/a&gt; (run the commands in a DevTools javascript console)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://goo.gl/3i5AJ&quot;&gt;Secure Shell FAQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/johnbender/5018685&quot;&gt;Solarized colors&lt;/a&gt;
+(run the commands in a DevTools javascript console)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='vpn'&gt;vpn&lt;/h4&gt;
+&lt;h4 id=&quot;vpn&quot;&gt;vpn&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href='http://support.google.com/chromeos/bin/answer.py?hl=en&amp;amp;answer=1282338'&gt;Legend has it&lt;/a&gt; that CrOS supports OpenVPN and L2TP/IPsec. However, I couldn’t get either to work. If you really need vpn as part of your workflow, be prepared to jump through some hoops.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://support.google.com/chromeos/bin/answer.py?hl=en&amp;amp;answer=1282338&quot;&gt;Legend has it&lt;/a&gt;
+that CrOS supports OpenVPN and L2TP/IPsec. However, they’re notoriously difficult
+to get working in some configurations; I never got mine working.&lt;/p&gt;
 
-&lt;p&gt;Granted, my attempts were a few months ago. The team is working on this, but I haven’t seen real progress; for OpenVPN updates, star &lt;a href='https://code.google.com/p/chromium/issues/detail?id=217624'&gt;this issue&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: I haven’t tried this for about a year, and it seems like 
+&lt;a href=&quot;https://code.google.com/p/chromium/issues/detail?id=217624&quot;&gt;the team is making progress&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id='remote_desktop'&gt;remote desktop&lt;/h4&gt;
+&lt;h4 id=&quot;remote-desktop&quot;&gt;remote desktop&lt;/h4&gt;
 
-&lt;p&gt;If you need a graphical environment, you can use &lt;a href='https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp'&gt;Chrome Remote Desktop&lt;/a&gt;. This provides vnc-like functionality across Windows, Mac and Linux, and can be set up for repeated or one-off access. Note that you cannot currently remote &lt;em&gt;into&lt;/em&gt; a Chromebook.&lt;/p&gt;
+&lt;p&gt;If you need a graphical environment, you can use
+&lt;a href=&quot;https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp&quot;&gt;Chrome Remote Desktop&lt;/a&gt;.
+This provides vnc-like functionality across Windows, Mac and Linux,
+and can be set up for repeated or one-off access. Note that you
+cannot currently remote &lt;em&gt;into&lt;/em&gt; a Chromebook.&lt;/p&gt;
 
 &lt;p&gt;I rarely need this.&lt;/p&gt;
 
-&lt;h4 id='crosh_window'&gt;Crosh Window&lt;/h4&gt;
+&lt;h4 id=&quot;crosh-window&quot;&gt;Crosh Window&lt;/h4&gt;
 
-&lt;p&gt;Crosh, the built-in CrOS shell, can (and should) usually be avoided. If you find yourself using it, &lt;a href='https://chrome.google.com/webstore/detail/crosh-window/nhbmpbdladcchdhkemlojfjdknjadhmh?hl=en-US'&gt;Crosh Window&lt;/a&gt; takes away some of the pain; it fixes the Control-W problem mentioned earlier and gets you an up-to-date version of hterm.&lt;/p&gt;
+&lt;p&gt;Crosh, the built-in CrOS shell, can (and should) usually be
+avoided. If you find yourself using it,
+&lt;a href=&quot;https://chrome.google.com/webstore/detail/crosh-window/nhbmpbdladcchdhkemlojfjdknjadhmh?hl=en-US&quot;&gt;Crosh Window&lt;/a&gt;
+takes away some of the pain; it fixes the Control-W problem
+mentioned earlier and gets you an up-to-date version of hterm.&lt;/p&gt;
 
-&lt;h3 id='for_when_youre_offline_or_on_a_terrible_connection'&gt;For when you’re offline or on a terrible connection&lt;/h3&gt;
+&lt;h3 id=&quot;for-when-youre-offline-or-on-a-terrible-connection&quot;&gt;For when you’re offline or on a terrible connection&lt;/h3&gt;
 
-&lt;h4 id='crouton'&gt;crouton&lt;/h4&gt;
+&lt;h4 id=&quot;crouton&quot;&gt;crouton&lt;/h4&gt;
 
-&lt;p&gt;For offline work, you’ll want root access to a local Linux install. &lt;a href='https://github.com/dnschneid/crouton'&gt;crouton&lt;/a&gt; is &lt;em&gt;by far&lt;/em&gt; the best way to go about this: it runs Ubuntu in a chroot. This has security implications (check the README), but you avoid the performance hit of virtualization, and keep all the CrOS functionality.&lt;/p&gt;
+&lt;p&gt;For offline work, you’ll want root access to a local Linux install.
+&lt;a href=&quot;https://github.com/dnschneid/crouton&quot;&gt;crouton&lt;/a&gt; is &lt;em&gt;by far&lt;/em&gt; the
+best way to go about this: it runs Ubuntu in a chroot. This has
+security implications (check the README), but you avoid the
+performance hit of virtualization, and keep all the CrOS
+functionality.&lt;/p&gt;
 
-&lt;p&gt;You’ll need to have your Chromebook in developer mode (i.e. rooted) to use it, which is easy: you flip a hardware switch and wipe your device. The specifics for going about this vary by model, so just search for instructions. Once in dev mode, you’ll want to hit Control-D on each boot to skip the “you’re in developer mode” warning (there’s a 30-second wait otherwise). Have faith: this isn’t nearly as annoying as it sounds.&lt;/p&gt;
+&lt;p&gt;You’ll need to have your Chromebook in developer mode (i.e. rooted)
+to use it, which is easy: I just flipped a hardware switch.
+The specifics for going about this vary by model, so just
+search for instructions. Once in dev mode, you’ll want to hit
+Control-D on each boot to skip the “you’re in developer mode”
+warning (there’s a 30-second wait otherwise). Have faith: this
+isn’t nearly as annoying as it sounds.&lt;/p&gt;
 
-&lt;p&gt;The crouton README has all the information you need to get started. Note that you can run a normal graphical environment (e.g. Xfce) alongside CrOS. I prefer using Secure Shell to ssh into localhost so I can keep my terminal customizations and stay in CrOS. If this sounds appealing, here’s what I did:&lt;/p&gt;
+&lt;p&gt;The crouton README has all the information you need to get started.
+Note that you can run a normal graphical environment (e.g. Xfce)
+alongside CrOS. I prefer using Secure Shell to ssh into localhost
+so I can keep my terminal customizations and stay in CrOS. If this
+sounds appealing, here’s what I did:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;used the crouton cli-extra target (eg &lt;code&gt;crouton -t cli-extra ...&lt;/code&gt;).&lt;/li&gt;
-
-&lt;li&gt;installed openssh in my chroot&lt;/li&gt;
-
-&lt;li&gt;start sshd, then use Secure Shell to connect to my-user@localhost&lt;/li&gt;
+  &lt;li&gt;used the crouton cli-extra target (eg
+&lt;code&gt;crouton -t cli-extra ...&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;installed openssh in my chroot&lt;/li&gt;
+  &lt;li&gt;start sshd, then use Secure Shell to connect to
+my-user@localhost&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To make life a bit easier, I stuck &lt;code&gt;/etc/init.d/ssh start&lt;/code&gt; into my chroot’s &lt;code&gt;/etc/rc.local&lt;/code&gt; (which crouton runs upon mounting). Now, when I want to work locally, I just Control-Alt-Forward to get my local shell, &lt;code&gt;$ sudo enter-chroot&lt;/code&gt;, Control-Alt-Back to CrOS and then run Secure Shell. You could probably get your chroot to mount and run sshd on boot if you use it all the time.&lt;/p&gt;
+&lt;p&gt;To make life a bit easier, I stuck &lt;code&gt;/etc/init.d/ssh start&lt;/code&gt; into my
+chroot’s &lt;code&gt;/etc/rc.local&lt;/code&gt; (which crouton runs upon mounting). Now,
+when I want to work locally, I just Control-Alt-Forward to get my
+local shell, &lt;code&gt;$ sudo enter-chroot&lt;/code&gt;, Control-Alt-Back to CrOS and
+then run Secure Shell. You could probably get your chroot to mount
+and run sshd on boot if you use it all the time.&lt;/p&gt;
 
-&lt;h4 id='mosh'&gt;mosh&lt;/h4&gt;
+&lt;h4 id=&quot;mosh&quot;&gt;mosh&lt;/h4&gt;
 
-&lt;p&gt;To deal with flaky connections, install &lt;a href='http://mosh.mit.edu/'&gt;mosh&lt;/a&gt; on your chroot. You might have to compile it from source to get the most recent features (e.g. &lt;code&gt;--ssh&lt;/code&gt;), but this isn’t a big deal. You’ll need to install it on your server, too (it doesn’t require root).&lt;/p&gt;
+&lt;p&gt;As an alternative to ssh on flaky connections, you can use &lt;a href=&quot;http://mosh.mit.edu/&quot;&gt;mosh&lt;/a&gt;.
+It’ll need to be installed on your server to use it.&lt;/p&gt;
 
-&lt;p&gt;You can use Secure Shell’s ‘SSH Arguments’ to save some typing if you often mosh into a particular machine.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: I used to recommend running it inside crouton, but
+there’s now a proper
+&lt;a href=&quot;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj?hl=en&quot;&gt;mosh Chrome packaged app&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;In the future, you probably won’t need crouton to use mosh: &lt;a href='https://github.com/davidben/mosh-chrome'&gt;there’s a NaCl port on GitHub&lt;/a&gt; that mostly works. I’m hoping to get it ready for Web Store deployment during &lt;a href='https://www.hackerschool.com/'&gt;Hacker School&lt;/a&gt; this summer.&lt;/p&gt;
+&lt;h3 id=&quot;parting-words&quot;&gt;Parting words&lt;/h3&gt;
 
-&lt;h3 id='parting_words'&gt;Parting words&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: &lt;a href=&quot;http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/&quot;&gt;zRAM&lt;/a&gt;
+is now enabled by default, so you don’t need to worry about turning it on yourself.&lt;/p&gt;
 
-&lt;p&gt;You probably want to &lt;a href='http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/'&gt;enable zRAM&lt;/a&gt;. This will prevent you from running out of memory. For the technical details, see &lt;a href='https://groups.google.com/d/msg/chromebook-central/r27r3ZcchhM/V8Y5S0fy4bAJ'&gt;this post&lt;/a&gt;; the feature will be enabled by default in r27.&lt;/p&gt;
+&lt;p&gt;If you’re a fellow Chromebook hacker and think I missed something,
+definitely let me know. I’ll do my best to keep this guide updated
+as better tools arrive.&lt;/p&gt;
 
-&lt;p&gt;If you’re a fellow Chromebook hacker and think I missed something, definitely let me know. I’ll do my best to keep this guide updated as better tools arrive.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: here&amp;#8217;s a link to the &lt;a href='https://news.ycombinator.com/item?id=5582531'&gt;hn discussion&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: here’s a link to the &lt;a href=&quot;https://news.ycombinator.com/item?id=5582531&quot;&gt;hn discussion&lt;/a&gt;.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -455,109 +657,120 @@ other code on the page
    <link href="http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story.html"/>
    <updated>2013-02-14T00:00:00-05:00</updated>
    <id>http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story</id>
-   <content type="html">&lt;h2 id='tough_cookies_a_debugging_story'&gt;Tough cookies: a debugging story&lt;/h2&gt;
-&lt;p class='meta'&gt;February 14 2012&lt;/p&gt;
-&lt;p&gt;I used to think of (web) cookies as simple key/value pairs. That was before I spent an hour tracking down a bug in &lt;a href='http://github.com/simon-weber/Unofficial-Google-Music-API'&gt;gmusicapi&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;tough-cookies-a-debugging-story&quot;&gt;Tough cookies: a debugging story&lt;/h2&gt;
 
-&lt;p&gt;The symptoms were simple. The user would successfully log in. Then, on their first request to a web service endpoint (eg music.google.com/loadalltracks), Google would reject their request and redirect them to a login page.&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;February 14 2012&lt;/p&gt;
 
-&lt;p&gt;The auth code was immediately suspect. However, there were a few complications:&lt;/p&gt;
+&lt;p&gt;I used to think of (web) cookies as simple key/value pairs.
+That was before I spent an hour tracking down a bug in &lt;a href=&quot;http://github.com/simon-weber/Unofficial-Google-Music-API&quot;&gt;gmusicapi&lt;/a&gt;.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;I could not recreate the issue&lt;/li&gt;
+&lt;p&gt;The symptoms were simple.
+The user would successfully log in.
+Then, on their first request to a web service endpoint (eg music.google.com/loadalltracks), Google would reject their request and redirect them to a login page.&lt;/p&gt;
 
-&lt;li&gt;that code hadn’t changed much since last known-good version&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The auth code was immediately suspect. However, there were a few complications:
+- I could not recreate the issue
+- that code hadn’t changed much since last known-good version&lt;/p&gt;
 
-&lt;p&gt;The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information. Here&amp;#8217;s what we found out:&lt;/p&gt;
+&lt;p&gt;The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information.
+Here’s what we found out:
+* the login was successful; calls to Music Manager endpoints succeeded
+* the user was outside of the US
+* normal login to music.google.com through a browser was fine
+* the bug did not depend on multiple login status, locale assumptions or current login status
+* the user had all the proper session cookies&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;the login was successful; calls to Music Manager endpoints succeeded&lt;/li&gt;
+&lt;p&gt;Throughout all this, I still could not recreate the issue.
+In a lucky guess, I used a test account from outside the US: bingo!
+This only affected non-US logins!&lt;/p&gt;
 
-&lt;li&gt;the user was outside of the US&lt;/li&gt;
+&lt;p&gt;Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it.
+Inside a function to take a &lt;a href=&quot;http://docs.python-requests.org/en/latest/&quot;&gt;requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
 
-&lt;li&gt;normal login to music.google.com through a browser was fine&lt;/li&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_xt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;li&gt;the bug did not depend on multiple login status, locale assumptions or current login status&lt;/li&gt;
+&lt;span class=&quot;c&quot;&gt;# web_cookies is a CookieJar&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;
 
-&lt;li&gt;the user had all the proper session cookies&lt;/li&gt;
-&lt;/ul&gt;
+&lt;span class=&quot;n&quot;&gt;prep_request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prepare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prep_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;Throughout all this, I still could not recreate the issue. In a lucky guess, I used a test account from outside the US: bingo! This only affected non-US logins!&lt;/p&gt;
-
-&lt;p&gt;Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it. Inside a function to take a &lt;a href='http://docs.python-requests.org/en/latest/'&gt;requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_xt&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_web_cookie&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-
-&lt;span class='c'&gt;# web_cookies is a CookieJar&lt;/span&gt;
-&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;
-
-&lt;span class='n'&gt;prep_request&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;prepare&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='n'&gt;s&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;requests&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;Session&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='n'&gt;res&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;prep_request&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-
-&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='n'&gt;res&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;and after:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;None&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{}&lt;/span&gt;
 
-&lt;span class='c'&gt;#Attach auth.&lt;/span&gt;
-&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_xt&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_web_cookie&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 
-&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_clientlogin&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;SID&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;client&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;get_sid_token&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Attach auth.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_xt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;send_sso&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
-    &lt;span class='c'&gt;#dict &amp;lt;- CookieJar&lt;/span&gt;
-    &lt;span class='n'&gt;web_cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;name&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;value&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt; &lt;span class='ow'&gt;in&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
-    &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;update&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_clientlogin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;SID&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_sid_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
-&lt;span class='n'&gt;prepped&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;prepare&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='n'&gt;s&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;requests&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;Session&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_sso&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#dict &amp;lt;- CookieJar&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class='n'&gt;res&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;prepped&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='o'&gt;**&lt;/span&gt;&lt;span class='n'&gt;session_options&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='n'&gt;res&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prepped&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prepare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prepped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The commit was some refactoring from two separate request-sending functions (eg send_web_request and send_musicmanager_request) to one. Do you see the bug? Here’s a hint, changing:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;name&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;value&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='n'&gt;c&lt;/span&gt; &lt;span class='ow'&gt;in&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
-&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;update&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+
+&lt;p&gt;The commit was some refactoring from two separate request-sending functions (eg send_web_request and send_musicmanager_request) to one.
+Do you see the bug?
+Here’s a hint, changing:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;to:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;cookies&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='bp'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;web_cookies&lt;/span&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;solves the problem (hackily, since then clientlogin and sso auth can’t be sent together, but that never happens anyway - and this will all be rewritten soon).&lt;/p&gt;
 
-&lt;p&gt;If you didn&amp;#8217;t figure it out, here&amp;#8217;s the issue: auth was stored in Python &lt;a href='http://docs.python.org/2/library/cookie.html#module-Cookie'&gt;Cookie objects&lt;/a&gt;, but I had attached them to the request as a name/value dictionary. In doing so, there was information loss:&lt;/p&gt;
+&lt;p&gt;If you didn’t figure it out, here’s the issue: auth was stored in Python &lt;a href=&quot;http://docs.python.org/2/library/cookie.html#module-Cookie&quot;&gt;Cookie objects&lt;/a&gt;, but I had attached them to the request as a name/value dictionary.
+In doing so, there was information loss:
+ * in the case of cookies with identical names, only one would be sent
+ * Cookie-specific fields like secure and domain were dropped&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;in the case of cookies with identical names, only one would be sent&lt;/li&gt;
+&lt;p&gt;In their Python form, Cookies are not simple name/value pairs!
+Attaching Cookies directly to the request kept all the relevant information and solved the problem.&lt;/p&gt;
 
-&lt;li&gt;Cookie-specific fields like secure and domain were dropped&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In their Python form, Cookies are not simple name/value pairs! Attaching Cookies directly to the request kept all the relevant information and solved the problem.&lt;/p&gt;
-
-&lt;p&gt;I’d like to thank Lukasa and SigmaVirus24 on #python-requests for pointing me to the relevant Requests internals, and for generally putting up with my mad raving. Lukasa also had what I thought was some sharp insight into the situation:&lt;/p&gt;
+&lt;p&gt;I’d like to thank Lukasa and SigmaVirus24 on #python-requests for pointing me to the relevant Requests internals, and for generally putting up with my mad raving.
+Lukasa also had what I thought was some sharp insight into the situation:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;simon_weber&lt;/strong&gt;: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies [using Requests]&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;simon_weber&lt;/strong&gt;: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies [using Requests]&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: I think more than that, we want to discourage it. Cookies are complicated and easy to get wrong (as this entire discussion shows)&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: I think more than that, we want to discourage it.
+Cookies are complicated and easy to get wrong
+(as this entire discussion shows)&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: And so we&amp;#8217;d rather that people use the known-good code in Requests&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Lukasa&lt;/strong&gt;: And so we’d rather that people use the known-good code in Requests&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;He’s exactly right, of course, and I already have an entry on my todo list for this (I’ve just got &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API/issues'&gt;a lot on my plate&lt;/a&gt; at the moment).&lt;/p&gt;
+&lt;p&gt;He’s exactly right, of course, and I already have an entry on my todo list for this (I’ve just got &lt;a href=&quot;https://github.com/simon-weber/Unofficial-Google-Music-API/issues&quot;&gt;a lot on my plate&lt;/a&gt; at the moment).&lt;/p&gt;
 
-&lt;p&gt;At least this story has a happy ending: despite the confusion, gmusicapi soldiers on with &lt;a href='https://twitter.com/thiloleibelt/status/302159032922296322'&gt;happy international users&lt;/a&gt;. As for me, having learned from this bug hunt, hopefully I’ll never be suckered into disrespecting the surprising complexity of the cookie - nor their internet cousins of the same name.&lt;/p&gt;</content>
+&lt;p&gt;At least this story has a happy ending: despite the confusion, gmusicapi soldiers on with &lt;a href=&quot;https://twitter.com/thiloleibelt/status/302159032922296322&quot;&gt;happy international users&lt;/a&gt;.
+As for me, having learned from this bug hunt, hopefully I’ll never be suckered into disrespecting the surprising complexity of the cookie - nor their internet cousins of the same name.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -565,47 +778,57 @@ other code on the page
    <link href="http://www.simonmweber.com/2012/09/07/whats-in-a-genre.html"/>
    <updated>2012-09-07T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/09/07/whats-in-a-genre</id>
-   <content type="html">&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'&gt;
-&lt;/script&gt;&lt;script type='text/javascript' src='https://www.google.com/jsapi'&gt;
-&lt;/script&gt;&lt;script type='text/javascript'&gt;
+   <content type="html">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js&quot;&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://www.google.com/jsapi&quot;&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
 $(document).ready(function(){
-  google.load('visualization', '1.0', {
-    'packages':['corechart'],
-    'callback': drawOccurrenceChart
+  google.load(&#39;visualization&#39;, &#39;1.0&#39;, {
+    &#39;packages&#39;:[&#39;corechart&#39;],
+    &#39;callback&#39;: drawOccurrenceChart
   });
 
   function drawOccurrenceChart(){
-    $.getJSON('/data/occurrences.json', function(data) {
-      data.unshift(['Word', 'Occurrences']);
+    $.getJSON(&#39;/data/occurrences.json&#39;, function(data) {
+      data.unshift([&#39;Word&#39;, &#39;Occurrences&#39;]);
       var table = google.visualization.arrayToDataTable(data);
       var options = { 
-        title: 'Frequency of words in genres',
-        backgroundColor: {fill:'transparent'}
+        title: &#39;Frequency of words in genres&#39;,
+        backgroundColor: {fill:&#39;transparent&#39;}
       };
 
-      var chart = new google.visualization.PieChart(document.getElementById('words_chart'));
+      var chart = new google.visualization.PieChart(document.getElementById(&#39;words_chart&#39;));
       chart.draw(table, options);
     });
   }
 });
 &lt;/script&gt;
-&lt;h2 id='whats_in_a_genre'&gt;What&amp;#8217;s in a genre?&lt;/h2&gt;
-&lt;p class='meta'&gt;September 07 2012&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;m taking a course on data mining this semester. Our first assignment: mine some data. The dataset and techniques don&amp;#8217;t matter; the point is to extract meaning in any way possible. I&amp;#8217;m greenhorn data miner; hopefully I&amp;#8217;ll be able to look back at this post and laugh at my own naivete.&lt;/p&gt;
 
-&lt;p&gt;For my dataset I chose my own Google Music library. It&amp;#8217;s unique, big enough (7600+ songs), and well organized. Plus, it&amp;#8217;s a cinch to access with my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API'&gt;Google Music api&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;whats-in-a-genre&quot;&gt;What’s in a genre?&lt;/h2&gt;
 
-&lt;p&gt;My analysis was simple: I investigated the occurrences of words in genres. I figured the most frequent words would be genres themselves (eg &amp;#8216;metal&amp;#8217; in &amp;#8216;power metal&amp;#8217;), but there was also the chance of exposing common adjectives (eg &amp;#8216;post&amp;#8217; in &amp;#8216;post-rock&amp;#8217; and &amp;#8216;post-metal&amp;#8217;).&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;September 07 2012&lt;/p&gt;
 
-&lt;p&gt;A few lines of Python later, and I had my results. The first thing I noticed: I listen to a lot of metal. A third of my songs are some kind of metal. If you put all the genre words into a hat, you&amp;#8217;d pick &amp;#8216;metal&amp;#8217; almost a quarter of the time. Next up: &amp;#8216;rock&amp;#8217; and &amp;#8216;jazz&amp;#8217;. Rounding out the top six are two adjectives - &amp;#8216;alternative&amp;#8217; and &amp;#8216;progressive&amp;#8217; - as well as &amp;#8216;accompaniment&amp;#8217; (as in &lt;a href='http://en.wikipedia.org/wiki/Jamey_Aebersold'&gt;Jamey Aebersold&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;I’m taking a course on data mining this semester. Our first assignment: mine some data. The dataset and techniques don’t matter; the point is to extract meaning in any way possible. I’m greenhorn data miner; hopefully I’ll be able to look back at this post and laugh at my own naivete.&lt;/p&gt;
 
-&lt;p&gt;Metal bands also claim the longest genres in my library. &lt;a href='http://en.wikipedia.org/wiki/Novembre_(band)'&gt;Novembre&lt;/a&gt; is the champion, boasting this mouthful: &amp;#8216;Progressive atmospheric doom metal&amp;#8217;.&lt;/p&gt;
+&lt;p&gt;For my dataset I chose my own Google Music library. It’s unique, big enough (7600+ songs), and well organized. Plus, it’s a cinch to access with my &lt;a href=&quot;https://github.com/simon-weber/Unofficial-Google-Music-API&quot;&gt;Google Music api&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now that we&amp;#8217;ve figured out I&amp;#8217;m a jazz-playing metalhead, let&amp;#8217;s take a look at the least common words. &amp;#8216;Country&amp;#8217; appears only once (and at the risk of sounding one-sided, it labels the fantastic &lt;a href='http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass'&gt;Slaughter of the Bluegrass&lt;/a&gt;). There&amp;#8217;s a bunch of mispellings, too, like &amp;#8216;reggaer&amp;#8217; and &amp;#8216;sountrack&amp;#8217;.&lt;/p&gt;
+&lt;p&gt;My analysis was simple: I investigated the occurrences of words in genres. I figured the most frequent words would be genres themselves (eg ‘metal’ in ‘power metal’), but there was also the chance of exposing common adjectives (eg ‘post’ in ‘post-rock’ and ‘post-metal’).&lt;/p&gt;
 
-&lt;p&gt;Here&amp;#8217;s a quick chart of all the words I found:&lt;/p&gt;
-&lt;div id='words_chart' class='eleven columns' style='height: 400px;'&gt; &lt;/div&gt;
-&lt;p&gt;This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I&amp;#8217;ve got the &lt;a href='https://github.com/simon-weber/Google-Music-genre-analysis'&gt;source on GitHub&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;p&gt;A few lines of Python later, and I had my results. The first thing I noticed: I listen to a lot of metal. A third of my songs are some kind of metal. If you put all the genre words into a hat, you’d pick ‘metal’ almost a quarter of the time. Next up: ‘rock’ and ‘jazz’. Rounding out the top six are two adjectives - ‘alternative’ and ‘progressive’ - as well as ‘accompaniment’ (as in &lt;a href=&quot;http://en.wikipedia.org/wiki/Jamey_Aebersold&quot;&gt;Jamey Aebersold&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Metal bands also claim the longest genres in my library. &lt;a href=&quot;http://en.wikipedia.org/wiki/Novembre_(band)&quot;&gt;Novembre&lt;/a&gt; is the champion, boasting this mouthful: ‘Progressive atmospheric doom metal’.&lt;/p&gt;
+
+&lt;p&gt;Now that we’ve figured out I’m a jazz-playing metalhead, let’s take a look at the least common words. ‘Country’ appears only once (and at the risk of sounding one-sided, it labels the fantastic &lt;a href=&quot;http://en.wikipedia.org/wiki/Slaughter_of_the_bluegrass&quot;&gt;Slaughter of the Bluegrass&lt;/a&gt;). There’s a bunch of mispellings, too, like ‘reggaer’ and ‘sountrack’.&lt;/p&gt;
+
+&lt;p&gt;Here’s a quick chart of all the words I found:&lt;/p&gt;
+
+&lt;div id=&quot;words_chart&quot; class=&quot;eleven columns&quot; style=&quot;height: 400px;&quot;&gt; &lt;/div&gt;
+
+&lt;p&gt;This assignment turned out to be a surprising amount of fun. For any other music lovers who want to take a dive into their libraries, I’ve got the &lt;a href=&quot;https://github.com/simon-weber/Google-Music-genre-analysis&quot;&gt;source on GitHub&lt;/a&gt;.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -613,22 +836,27 @@ $(document).ready(function(){
    <link href="http://www.simonmweber.com/2012/08/29/returning-to-the-east.html"/>
    <updated>2012-08-29T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/08/29/returning-to-the-east</id>
-   <content type="html">&lt;h2 id='returning_to_the_east'&gt;Returning to the east&lt;/h2&gt;
-&lt;p class='meta'&gt;August 29 2012&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;returning-to-the-east&quot;&gt;Returning to the east&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;August 29 2012&lt;/p&gt;
+
 &lt;p&gt;I spent the summer as a Google intern at their Mountain View headquarters. Having recently returned to the east, the California sun has now melted into Pennsylvania rain; it’s an anticlimactic end to an otherwise fantastic summer.&lt;/p&gt;
 
 &lt;p&gt;Google exceeded my expectations. I arrived skeptical, expecting to see their world-famous perks masking a typical BigCo™ culture - where engineers are codemonkeys, bureaucracy reigns, and nobody cares about users. I’m happy to report that this is far from the truth. While Google as a whole is definitely nothing like a startup - don’t let anyone tell you otherwise - the culture felt healthy. Googlers constantly stick up for their users, openly asking the hard questions of management.&lt;/p&gt;
 
-&lt;p&gt;Google’s also got an incredible amount of talent, which was reflected in those I worked with. My team was responsible for making Google’s call centers more efficient (yes, Google does pick up the phone, but only for paying customers). I was tasked with a webapp to provide real-time visualization of our call centers’ statuses. This allows managers to intelligently shuffle agents around to different call queues. The entire project was my responsibility: project management, frontend, backend, monitoring, deployment&amp;#8230;the works. I got to play with all kinds of internal secret-sauce, and despite ballooning requirements, my team and I were really pleased with what I shipped.&lt;/p&gt;
+&lt;p&gt;Google’s also got an incredible amount of talent, which was reflected in those I worked with. My team was responsible for making Google’s call centers more efficient (yes, Google does pick up the phone, but only for paying customers). I was tasked with a webapp to provide real-time visualization of our call centers’ statuses. This allows managers to intelligently shuffle agents around to different call queues. The entire project was my responsibility: project management, frontend, backend, monitoring, deployment. . .the works. I got to play with all kinds of internal secret-sauce, and despite ballooning requirements, my team and I were really pleased with what I shipped.&lt;/p&gt;
 
-&lt;p&gt;When I wasn’t banging out code, the Google perks didn’t disappoint. Tech talks and events: held daily (one of which &lt;a href='https://docs.google.com/presentation/d/1grp9hLaYnegWN0rfkZHSfqtYmBme9vtaAoinZmIIqKI/edit'&gt;I presented&lt;/a&gt;). The food: delicious. The booze: classy. Googlers are encouraged (expected?) to work hard and play hard. This seems to align with what I experienced at visits to other bay area companies: GitHub, Quora, LinkedIn, Stripe, Facebook, etc.&lt;/p&gt;
+&lt;p&gt;When I wasn’t banging out code, the Google perks didn’t disappoint. Tech talks and events: held daily (one of which &lt;a href=&quot;https://docs.google.com/presentation/d/1grp9hLaYnegWN0rfkZHSfqtYmBme9vtaAoinZmIIqKI/edit&quot;&gt;I presented&lt;/a&gt;). The food: delicious. The booze: classy. Googlers are encouraged (expected?) to work hard and play hard. This seems to align with what I experienced at visits to other bay area companies: GitHub, Quora, LinkedIn, Stripe, Facebook, etc.&lt;/p&gt;
 
-&lt;p&gt;Silicon Valley boasts perfect weather, but the best part was the people. I hung out with a posse of interns from various tech companies. I danced in Google’s SF Pride contingent. I watched classic demoscene while discussing phreaker war stories at &lt;a href='http://www.hackerdojo.com'&gt;Hacker Dojo&lt;/a&gt;. I ate donut burgers with Zuck, &lt;a href='http://www.youtube.com/watch?v=SNdcgVTTaS8'&gt;partied&lt;/a&gt; with PJ Hyett, and boogied with Alan Eustace.&lt;/p&gt;
-&lt;div class='figure'&gt;
-&lt;p&gt;&lt;img alt='Alan Eustace and Simon Weber dancing' src='/images/alan_eustace_dancing.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Silicon Valley boasts perfect weather, but the best part was the people. I hung out with a posse of interns from various tech companies. I danced in Google’s SF Pride contingent. I watched classic demoscene while discussing phreaker war stories at &lt;a href=&quot;http://www.hackerdojo.com&quot;&gt;Hacker Dojo&lt;/a&gt;. I ate donut burgers with Zuck, &lt;a href=&quot;http://www.youtube.com/watch?v=SNdcgVTTaS8&quot;&gt;partied&lt;/a&gt; with PJ Hyett, and boogied with Alan Eustace.&lt;/p&gt;
+
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/images/alan_eustace_dancing.jpg&quot; alt=&quot;Alan Eustace and Simon Weber dancing&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;No, seriously: this is Alan and me on the dance floor.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;All these people had a common feature: real passion for their work. Being around this energy has inspired me, so - with my Google legal restrictions lifted - I’m ready to jump into my side projects again. I’ll be maintaining my &lt;a href='https://github.com/simon-weber/Unofficial-Google-Music-API'&gt;Google Music api&lt;/a&gt;, but probably won’t implement any huge new features. Instead, my time will likely be spent dogfooding it in a project to sync 3rd party media players to Google Music. I’ve already finished a &lt;a href='https://github.com/simon-weber/Mirror-MediaMonkey-to-Google-Music'&gt;proof of concept&lt;/a&gt;; now it’s time to buckle down and ship something. That is, if this unacceptable (read: not absolutely perfect) east coast weather doesn’t kill me first.&lt;/p&gt;</content>
+
+&lt;p&gt;All these people had a common feature: real passion for their work. Being around this energy has inspired me, so - with my Google legal restrictions lifted - I’m ready to jump into my side projects again. I’ll be maintaining my &lt;a href=&quot;https://github.com/simon-weber/Unofficial-Google-Music-API&quot;&gt;Google Music api&lt;/a&gt;, but probably won’t implement any huge new features. Instead, my time will likely be spent dogfooding it in a project to sync 3rd party media players to Google Music. I’ve already finished a &lt;a href=&quot;https://github.com/simon-weber/Mirror-MediaMonkey-to-Google-Music&quot;&gt;proof of concept&lt;/a&gt;; now it’s time to buckle down and ship something. That is, if this unacceptable (read: not absolutely perfect) east coast weather doesn’t kill me first.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -636,14 +864,18 @@ $(document).ready(function(){
    <link href="http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack.html"/>
    <updated>2012-04-14T00:00:00-04:00</updated>
    <id>http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack</id>
-   <content type="html">&lt;h2 id='coldemail_a_vp_publish_in_phrack'&gt;Cold-email a VP, publish in Phrack&lt;/h2&gt;
-&lt;p class='meta'&gt;April 14 2012&lt;/p&gt;
-&lt;p&gt;In the popular sense of the word, I&amp;#8217;m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
-&lt;div class='figure'&gt;
-&lt;p&gt;&lt;img alt='Acid Burn (Hackers 1995) in a trench coat' src='/images/hackers-trenchcoat.jpg' /&gt;&lt;/p&gt;
-&lt;p&gt;My collection of sexy trenchcoats is also lacking. (&lt;a href='http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3'&gt;credit&lt;/a&gt;)&lt;/p&gt;
+   <content type="html">&lt;h2 id=&quot;cold-email-a-vp-publish-in-phrack&quot;&gt;Cold-email a VP, publish in Phrack&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;April 14 2012&lt;/p&gt;
+
+&lt;p&gt;In the popular sense of the word, I’m no super-hacker. While coding, my sunglasses and fingerless gloves stay on the desk.&lt;/p&gt;
+
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/images/hackers-trenchcoat.jpg&quot; alt=&quot;Acid Burn (Hackers 1995) in a trench coat&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;My collection of sexy trenchcoats is also lacking. (&lt;a href=&quot;http://www.news.com.au/technology/gallery-e6frflwi-1225878429415?page=3&quot;&gt;credit&lt;/a&gt;)&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Despite these disadvantages, back in September I discovered a &lt;a href='https://github.com/simon-weber/XSS-over-NBNS'&gt;vulnerability&lt;/a&gt; in the web interface of a Netgear wireless router. Now &lt;a href='http://www.phrack.com/issues.html?issue=68&amp;amp;id=4#article'&gt;published in Phrack&lt;/a&gt;, my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.&lt;/p&gt;
+
+&lt;p&gt;Despite these disadvantages, back in September I discovered a &lt;a href=&quot;https://github.com/simon-weber/XSS-over-NBNS&quot;&gt;vulnerability&lt;/a&gt; in the web interface of a Netgear wireless router. Now &lt;a href=&quot;http://www.phrack.com/issues.html?issue=68&amp;amp;id=4#article&quot;&gt;published in Phrack&lt;/a&gt;, my exploit code allowed for nasty things like stealing admin credentials and hiding network devices. I wanted to let Netgear know, so I wrote my first disclosure: a friendly email briefly describing myself, the flaw, and my intentions of publishing.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately, that was the easy part. A Netgear security email was nowhere to be found. In fact, I couldn’t even find a way to submit a support ticket (this has since changed).&lt;/p&gt;
 
@@ -653,9 +885,10 @@ $(document).ready(function(){
 
 &lt;p&gt;Ten more minutes of searching got me everything I needed: the direct emails of five random support staff, plus the most executive position I could muster: the VP of engineering. Brazenly dumping them all in the recipient box, I tried again.&lt;/p&gt;
 
-&lt;p&gt;Within 10 minutes, one of the support staff got back to me, eagerly CC&amp;#8217;ing his boss&amp;#8217;s boss. I apologized, and my ensuing communication with Netgear was pleasant and to the point.&lt;/p&gt;
+&lt;p&gt;Within 10 minutes, one of the support staff got back to me, eagerly CC’ing his boss’s boss. I apologized, and my ensuing communication with Netgear was pleasant and to the point.&lt;/p&gt;
 
-&lt;p&gt;My takeaway: it’s easier to beg for forgiveness than to ask for permission. Well, that, and don’t let a lack of fingerless gloves keep you from submitting to Phrack.&lt;/p&gt;</content>
+&lt;p&gt;My takeaway: it’s easier to beg for forgiveness than to ask for permission. Well, that, and don’t let a lack of fingerless gloves keep you from submitting to Phrack.&lt;/p&gt;
+</content>
  </entry>
  
  

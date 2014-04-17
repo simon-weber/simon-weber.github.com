@@ -55,67 +55,85 @@
 
         <div class="eleven columns offset-by-one content">
             <div id="post">
-    <h2 id='gmusicapi_retrospective'>gmusicapi retrospective</h2>
-<p class='meta'>May 14 2013</p>
-<p>gmusicapi has come a long way since I pushed my <a href='https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a'>first commit</a> back in January 2012.</p>
+    <h2 id="gmusicapi-retrospective">gmusicapi retrospective</h2>
 
-<p>The project has grown more than usual during this semester, since &#8211; for the first time &#8211; I worked on it for school credit. Here&#8217;s what I spent my time on:</p>
+<p class="meta">May 14 2013</p>
 
-<ul>
-<li>a number of big features: scan-and-match support, album art operations, Music Manager OAuth support, python 2.6 compatibility&#8230;</li>
+<p>gmusicapi has come a long way since I pushed my <a href="https://github.com/simon-weber/Unofficial-Google-Music-API/commit/880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a">first commit</a> back in January 2012.</p>
 
-<li>a new dynamic testing system for my end-to-end tests</li>
-
-<li>a huge rewrite to allow for more flexible protocol declarations</li>
-
-<li>continuous integration that also catches protocol changes</li>
-
-<li>documentation improvements and a new irc support channel</li>
-
-<li>version 1.0!</li>
-</ul>
-
-<p><a href='https://github.com/simon-weber/Unofficial-Google-Music-API/graphs'>Github&#8217;s graphs</a> provide a quick overview of what I&#8217;ve been up to. Here are a few other metrics:</p>
+<p>The project has grown more than usual during this semester, since – for the first time – I worked on it for school credit.
+Here’s what I spent my time on:</p>
 
 <ul>
-<li>documentation visits x5, bounce rate halved</li>
-
-<li>PyPi download rate x2</li>
-
-<li>use in a couple of real-world products</li>
+  <li>a number of big features: scan-and-match support, album art operations, Music Manager OAuth support, python 2.6 compatibility. . .</li>
+  <li>a new dynamic testing system for my end-to-end tests</li>
+  <li>a huge rewrite to allow for more flexible protocol declarations</li>
+  <li>continuous integration that also catches protocol changes</li>
+  <li>documentation improvements and a new irc support channel</li>
+  <li>version 1.0!</li>
 </ul>
 
-<p>I figure this is a good chance to reflect on some of the decisions I&#8217;ve made, both for my sake and for those who might come this way in the future.</p>
+<p><a href="https://github.com/simon-weber/Unofficial-Google-Music-API/graphs">Github’s graphs</a> provide a quick overview of what I’ve been up to.
+Here are a few other metrics:</p>
 
-<h3 id='dont_count_out_endtoend_testing'>Don&#8217;t count out end-to-end testing</h3>
+<ul>
+  <li>documentation visits x5, bounce rate halved</li>
+  <li>PyPi download rate x2</li>
+  <li>use in a couple of real-world products</li>
+</ul>
 
-<p>I have a few unit tests, but the majority of my tests are end-to-end black-box tests that exercise my clients against actual Google servers. Naturally, they violate core unit test principles: they&#8217;re stateful, cannot be run offline, and run slowly.</p>
+<p>I figure this is a good chance to reflect on some of the decisions I’ve made, both for my sake and for those who might come this way in the future.</p>
 
-<p>One thing I&#8217;ve learned while coming to this solution: there&#8217;s a lot of dogma surrounding test strategies.</p>
+<h3 id="dont-count-out-end-to-end-testing">Don’t count out end-to-end testing</h3>
 
-<p>It&#8217;s not that I&#8217;m against unit testing. I&#8217;d love to have more unit tests! Unfortunately, writing them isn&#8217;t free, and in my case, end-to-end tests offer more bang for my buck. I get more coverage with less code and get to test my expectations about Google&#8217;s servers. gmusicapi is also pretty small, so the loss of granularity when bug-hunting isn&#8217;t a huge deal.</p>
+<p>I have a few unit tests, but the majority of my tests are end-to-end black-box tests that exercise my clients against actual Google servers.
+Naturally, they violate core unit test principles: they’re stateful, cannot be run offline, and run slowly.</p>
 
-<p>Of course, there&#8217;s some extra work required to make your end-to-end tests robust. Backend flakiness can be addressed with retry and backoff. Test dependence and state management can be handled with TestNG-like frameworks (I use <a href='http://pythonhosted.org/proboscis/'>Proboscis</a>). Protocol changes can be caught by validating responses against a schema.</p>
+<p>One thing I’ve learned while coming to this solution: there’s a lot of dogma surrounding test strategies.</p>
 
-<p>Currently, I have a few Google accounts I use exclusively for testing, and I keep their credentials in TravisCI encrypted variables. There&#8217;s one big downside to this: encrypted variables can&#8217;t be used with other folks&#8217; pull requests. In the future, I hope to figure out a way to safely manage a public test account (I think it&#8217;s possible with 2-factor auth).</p>
+<p>It’s not that I’m against unit testing.
+I’d love to have more unit tests!
+Unfortunately, writing them isn’t free, and in my case, end-to-end tests offer more bang for my buck.
+I get more coverage with less code and get to test my expectations about Google’s servers.
+gmusicapi is also pretty small, so the loss of granularity when bug-hunting isn’t a huge deal.</p>
 
-<h3 id='invest_in_support'>Invest in support</h3>
+<p>Of course, there’s some extra work required to make your end-to-end tests robust.
+Backend flakiness can be addressed with retry and backoff.
+Test dependence and state management can be handled with TestNG-like frameworks (I use <a href="http://pythonhosted.org/proboscis/">Proboscis</a>).
+Protocol changes can be caught by validating responses against a schema.</p>
 
-<p>I have trouble saying no to requests for help. Interestingly, gmusicapi also seems to attract many users who are new to Python. Because of these factors, I used to spend a fair amount of time answering support emails. I didn&#8217;t mind this, but after receiving a few emails on the same topics, I figured it&#8217;d be better to flesh out the <a href='http://unofficial-google-music-api.readthedocs.org'>gmusicapi documentation</a>.</p>
+<p>Currently, I have a few Google accounts I use exclusively for testing, and I keep their credentials in TravisCI encrypted variables.
+There’s one big downside to this: encrypted variables can’t be used with other folks’ pull requests.
+In the future, I hope to figure out a way to safely manage a public test account (I think it’s possible with 2-factor auth).</p>
 
-<p>Basic questions were addressed with installation and getting starting sections. These were no-brainers, and I should have added them earlier.</p>
+<h3 id="invest-in-support">Invest in support</h3>
 
-<p>I also added a section for a less obvious topic: people want the reverse-engineered protocols I&#8217;m using. So far, I&#8217;ve thrown together a hack that introspects my protocol declaration code, but I&#8217;ve got plenty of room to improve this.</p>
+<p>I have trouble saying no to requests for help.
+Interestingly, gmusicapi also seems to attract many users who are new to Python.
+Because of these factors, I used to spend a fair amount of time answering support emails.
+I didn’t mind this, but after receiving a few emails on the same topics, I figured it’d be better to flesh out the <a href="http://unofficial-google-music-api.readthedocs.org">gmusicapi documentation</a>.</p>
 
-<p>The <a href='http://webchat.freenode.net/?channels=gmusicapi'>#gmusicapi irc channel on Freenode</a> is another recent support addition. I wish I&#8217;d set it up earlier! Recently, devs building on gmusicapi have started hanging out and answering questions, which has been a huge help.</p>
+<p>Basic questions were addressed with installation and getting starting sections.
+These were no-brainers, and I should have added them earlier.</p>
 
-<p>I still go the extra mile when I do direct support. Helping users out is its own reward, but I&#8217;m also flattered to have received thank-you emails after irc chats, money, and &#8211; once &#8211; even a gift in the mail!</p>
+<p>I also added a section for a less obvious topic: people want the reverse-engineered protocols I’m using.
+So far, I’ve thrown together a hack that introspects my protocol declaration code, but I’ve got plenty of room to improve this.</p>
 
-<h3 id='looking_forward'>Looking forward</h3>
+<p>The <a href="http://webchat.freenode.net/?channels=gmusicapi">#gmusicapi irc channel on Freenode</a> is another recent support addition.
+I wish I’d set it up earlier!
+Recently, devs building on gmusicapi have started hanging out and answering questions, which has been a huge help.</p>
 
-<p>I&#8217;m very pleased with what I&#8217;ve learned and accomplished so far. My next step is to get the project into a self-sustaining state. I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.</p>
+<p>I still go the extra mile when I do direct support.
+Helping users out is its own reward, but I’m also flattered to have received thank-you emails after irc chats, money, and – once – even a gift in the mail!</p>
 
-<p>Thankfully, I&#8217;ll have plenty of time this summer at <a href='http://hackerschool.com'>Hacker School</a>!</p>
+<h3 id="looking-forward">Looking forward</h3>
+
+<p>I’m very pleased with what I’ve learned and accomplished so far.
+My next step is to get the project into a self-sustaining state.
+I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.</p>
+
+<p>Thankfully, I’ll have plenty of time this summer at <a href="http://hackerschool.com">Hacker School</a>!</p>
+
 </div>
 
 <div id="post-footer">
