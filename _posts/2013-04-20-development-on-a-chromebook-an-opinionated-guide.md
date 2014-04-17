@@ -7,7 +7,7 @@ description: "My tips to set up a development environment on ChromeOS."
 {{ page.title }}
 ----------------
 
-<p class="meta">April 20 2013</p>
+<p class="meta">April 20 2013, updated April 17 2014</p>
 
 I started using a
 [Samsung 550 Chromebook](http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html)
@@ -67,13 +67,11 @@ FAQ (linked below) has the details and is worth reading through:
 #### vpn
 
 [Legend has it](http://support.google.com/chromeos/bin/answer.py?hl=en&answer=1282338)
-that CrOS supports OpenVPN and L2TP/IPsec. However, I couldn’t get
-either to work. If you really need vpn as part of your workflow, be
-prepared to jump through some hoops.
+that CrOS supports OpenVPN and L2TP/IPsec. However, they're notoriously difficult
+to get working in some configurations; I never got mine working.
 
-Granted, my attempts were a few months ago. The team is working on
-this, but I haven’t seen real progress; for OpenVPN updates, star
-[this issue](https://code.google.com/p/chromium/issues/detail?id=217624).
+_edit_: I haven't tried this for about a year, and it seems like 
+[the team is making progress](https://code.google.com/p/chromium/issues/detail?id=217624).
 
 #### remote desktop
 
@@ -105,8 +103,8 @@ performance hit of virtualization, and keep all the CrOS
 functionality.
 
 You’ll need to have your Chromebook in developer mode (i.e. rooted)
-to use it, which is easy: you flip a hardware switch and wipe your
-device. The specifics for going about this vary by model, so just
+to use it, which is easy: I just flipped a hardware switch.
+The specifics for going about this vary by model, so just
 search for instructions. Once in dev mode, you’ll want to hit
 Control-D on each boot to skip the “you’re in developer mode”
 warning (there’s a 30-second wait otherwise). Have faith: this
@@ -133,27 +131,18 @@ and run sshd on boot if you use it all the time.
 
 #### mosh
 
-To deal with flaky connections, install
-[mosh](http://mosh.mit.edu/) on your chroot. You might have to
-compile it from source to get the most recent features (e.g.
-`--ssh`), but this isn’t a big deal. You’ll need to install it on
-your server, too (it doesn’t require root).
+As an alternative to ssh on flaky connections, you can use [mosh](http://mosh.mit.edu/).
+It'll need to be installed on your server to use it.
 
-You can use Secure Shell’s ‘SSH Arguments’ to save some typing if
-you often mosh into a particular machine.
-
-In the future, you probably won’t need crouton to use mosh:
-[there’s a NaCl port on GitHub](https://github.com/davidben/mosh-chrome)
-that mostly works. I’m hoping to get it ready for Web Store
-deployment during [Hacker School](https://www.hackerschool.com/)
-this summer.
+_edit_: I used to recommend running it inside crouton, but
+there's now a proper
+[mosh Chrome packaged app](https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj?hl=en).
 
 
 ### Parting words
 
-You probably want to [enable zRAM](http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/).
-This will prevent you from running out of memory.
-For the technical details, see [this post](https://groups.google.com/d/msg/chromebook-central/r27r3ZcchhM/V8Y5S0fy4bAJ); the feature will be enabled by default in r27.
+_edit_: [zRAM](http://gigaom.com/2013/04/05/running-out-of-memory-on-a-chromebook-heres-a-30-second-solution/)
+is now enabled by default, so you don't need to worry about turning it on yourself.
 
 If you’re a fellow Chromebook hacker and think I missed something,
 definitely let me know. I’ll do my best to keep this guide updated
