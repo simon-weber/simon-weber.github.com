@@ -4,13 +4,32 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2014-04-17T10:24:18-04:00</updated>
+ <updated>2014-05-01T09:53:53-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>VCR.py at Venmo</title>
+   <link href="http://www.simonmweber.com/2014/05/01/vcrpy-at-venmo.html"/>
+   <updated>2014-05-01T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2014/05/01/vcrpy-at-venmo</id>
+   <content type="html">&lt;h2 id=&quot;vcrpy-at-venmo&quot;&gt;VCR.py at Venmo&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;May 1 2014&lt;/p&gt;
+
+&lt;p&gt;Recently at Venmo, I spent some time improving our Python test suite.
+It was in pretty bad shape when I arrived: builds took 45 minutes and tests were flaky.
+Now, builds take 6 minutes and are much more dependable.&lt;/p&gt;
+
+&lt;p&gt;I was asked to write up some blog posts describing our changes, and I decided to start with mocking external interactions.
+The full post is at the &lt;a href=&quot;http://venmo.github.io/blog/2014/04/30/vcrpy-at-venmo/&quot;&gt;Venmo engineering blog&lt;/a&gt;.
+Hopefully it’s helpful! Feel free to email me with questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Staying Busy</title>
