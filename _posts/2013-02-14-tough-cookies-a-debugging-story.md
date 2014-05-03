@@ -22,6 +22,7 @@ The auth code was immediately suspect. However, there were a few complications:
 
 The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information.
 Here's what we found out:
+
 * the login was successful; calls to Music Manager endpoints succeeded
 * the user was outside of the US
 * normal login to music.google.com through a browser was fine
@@ -96,6 +97,7 @@ solves the problem (hackily, since then clientlogin and sso auth can’t be sent
 
 If you didn't figure it out, here's the issue: auth was stored in Python [Cookie objects](http://docs.python.org/2/library/cookie.html#module-Cookie), but I had attached them to the request as a name/value dictionary.
 In doing so, there was information loss:
+
  * in the case of cookies with identical names, only one would be sent
  * Cookie-specific fields like secure and domain were dropped
 

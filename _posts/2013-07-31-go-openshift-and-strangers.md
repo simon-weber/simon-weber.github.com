@@ -22,6 +22,7 @@ The thing was, only folks in our channel could watch.
 To share this, I built [Strangerbotting](http://strangerbotting-simonmweber.rhcloud.com).
 It's written in Go, and runs on Openshift, Red Hat's newish open source PaaS.
 There are a couple of pieces to the app:
+
 * [gomegle](https://github.com/simon-weber/gomegle): a client library for Omegle
 * [gomarkov](https://github.com/simon-weber/gomarkov): simple, fast, in-memory markov chains for text generation
 * [strangerbotting-backend](https://github.com/simon-weber/strangerbotting-backend): manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.
@@ -34,6 +35,7 @@ However, I have some new opinions on Go and Openshift that I wanted to write dow
 
 Before getting started with Go, I'd seen a lot of folks complain about the more pedantic parts of the language.
 To me, this indicates some combination of:
+
 * disagreement with Google's engineering culture
 * unfamiliarity with Go's design goals
 

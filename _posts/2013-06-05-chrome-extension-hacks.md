@@ -16,6 +16,7 @@ If turntable doesn't have a song, I can upload a file from my computer.
 
 However, I don't normally have music files on my laptop; my library is kept in Google Music.
 So, if turntable was missing a song, I used to:
+
 * open Google Music and sign in
 * find and download the song
 * switch to turntable and upload it
@@ -99,6 +100,7 @@ My requests will automatically send Google cookies, and I just have to grab an x
 
 This was the toughest nut to crack.
 I considered reverse engineering the endpoints that turntable's client page used for uploading, but this had a number of disadvantages:
+
 * the user wouldn't see the upload in the turntable interface
 * I don't have the javascript chops to implement a complicated upload protocol
 * future protocol changes would break stuff
@@ -132,6 +134,7 @@ b.lastModifiedDate = new Date();
 ### Putting it all together
 
 Those are the main hacks. Combining everything, this is about what happens when an upload is requested:
+
 * content script messages the background script with a file id to upload
 * background script performs a cross domain request to Google and retrieves a Blob
 * background script encodes the Blob as a base64 dataurl
