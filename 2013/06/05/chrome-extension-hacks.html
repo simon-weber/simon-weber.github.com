@@ -9,6 +9,7 @@
     
     <meta name="description" content="Some of the hacks that went into my first Chrome extension." />
     
+    <link rel="canonical" href="http://www.simonmweber.com/2013/06/05/chrome-extension-hacks.html" />
     <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
     <title>Chrome extension hacks: Google Music to turntable</title>
 
@@ -65,11 +66,14 @@ There, I can search for a song, and if someone has previously uploaded it, queue
 If turntable doesn’t have a song, I can upload a file from my computer.</p>
 
 <p>However, I don’t normally have music files on my laptop; my library is kept in Google Music.
-So, if turntable was missing a song, I used to:
-* open Google Music and sign in
-* find and download the song
-* switch to turntable and upload it
-* delete the file</p>
+So, if turntable was missing a song, I used to:</p>
+
+<ul>
+  <li>open Google Music and sign in</li>
+  <li>find and download the song</li>
+  <li>switch to turntable and upload it</li>
+  <li>delete the file</li>
+</ul>
 
 <p>My extension lets me do this right in turntable.
 Now, all I do is click “Upload from Google Music”, find the song and hit upload.
@@ -148,10 +152,13 @@ My requests will automatically send Google cookies, and I just have to grab an x
 <h3 id="uploading-to-turntable">Uploading to turntable</h3>
 
 <p>This was the toughest nut to crack.
-I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:
-* the user wouldn’t see the upload in the turntable interface
-* I don’t have the javascript chops to implement a complicated upload protocol
-* future protocol changes would break stuff</p>
+I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:</p>
+
+<ul>
+  <li>the user wouldn’t see the upload in the turntable interface</li>
+  <li>I don’t have the javascript chops to implement a complicated upload protocol</li>
+  <li>future protocol changes would break stuff</li>
+</ul>
 
 <p>A better approach: tricking turntable’s own clientside code into believing the user had initiated a normal upload.
 This makes turntable do all the work, and is business as usual for the user.</p>
@@ -180,12 +187,15 @@ Duck typing to the rescue!</p>
 
 <h3 id="putting-it-all-together">Putting it all together</h3>
 
-<p>Those are the main hacks. Combining everything, this is about what happens when an upload is requested:
-* content script messages the background script with a file id to upload
-* background script performs a cross domain request to Google and retrieves a Blob
-* background script encodes the Blob as a base64 dataurl
-* Blob dataurl (now json-compatible) is messaged back to the content script
-* content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done</p>
+<p>Those are the main hacks. Combining everything, this is about what happens when an upload is requested:</p>
+
+<ul>
+  <li>content script messages the background script with a file id to upload</li>
+  <li>background script performs a cross domain request to Google and retrieves a Blob</li>
+  <li>background script encodes the Blob as a base64 dataurl</li>
+  <li>Blob dataurl (now json-compatible) is messaged back to the content script</li>
+  <li>content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done</li>
+</ul>
 
 <p>From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
 You can grab my ugly code on <a href="https://github.com/simon-weber/Google-Music-Turntable-Uploader">my GitHub</a>.</p>

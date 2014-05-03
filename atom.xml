@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2014-05-01T09:53:53-04:00</updated>
+ <updated>2014-05-03T11:52:31-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -155,11 +155,14 @@ The stranger had no way to know they were talking to a bot, and hilarity ensued.
 &lt;p&gt;The thing was, only folks in our channel could watch.
 To share this, I built &lt;a href=&quot;http://strangerbotting-simonmweber.rhcloud.com&quot;&gt;Strangerbotting&lt;/a&gt;.
 It’s written in Go, and runs on Openshift, Red Hat’s newish open source PaaS.
-There are a couple of pieces to the app:
-* &lt;a href=&quot;https://github.com/simon-weber/gomegle&quot;&gt;gomegle&lt;/a&gt;: a client library for Omegle
-* &lt;a href=&quot;https://github.com/simon-weber/gomarkov&quot;&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation
-* &lt;a href=&quot;https://github.com/simon-weber/strangerbotting-backend&quot;&gt;strangerbotting-backend&lt;/a&gt;: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.
-* &lt;a href=&quot;https://github.com/simon-weber/strangerbotting-frontend&quot;&gt;strangerbotting-frontend&lt;/a&gt;: a simple webclient to display conversations. Also runs on Openshift.&lt;/p&gt;
+There are a couple of pieces to the app:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/simon-weber/gomegle&quot;&gt;gomegle&lt;/a&gt;: a client library for Omegle&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/simon-weber/gomarkov&quot;&gt;gomarkov&lt;/a&gt;: simple, fast, in-memory markov chains for text generation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/simon-weber/strangerbotting-backend&quot;&gt;strangerbotting-backend&lt;/a&gt;: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/simon-weber/strangerbotting-frontend&quot;&gt;strangerbotting-frontend&lt;/a&gt;: a simple webclient to display conversations. Also runs on Openshift.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;There’s nothing too magical going on in the code, so I won’t bother talking about it.
 However, I have some new opinions on Go and Openshift that I wanted to write down.&lt;/p&gt;
@@ -167,9 +170,12 @@ However, I have some new opinions on Go and Openshift that I wanted to write dow
 &lt;h3 id=&quot;golang&quot;&gt;Golang&lt;/h3&gt;
 
 &lt;p&gt;Before getting started with Go, I’d seen a lot of folks complain about the more pedantic parts of the language.
-To me, this indicates some combination of:
-* disagreement with Google’s engineering culture
-* unfamiliarity with Go’s design goals&lt;/p&gt;
+To me, this indicates some combination of:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;disagreement with Google’s engineering culture&lt;/li&gt;
+  &lt;li&gt;unfamiliarity with Go’s design goals&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;For example, unused imports in Go raise a compile error.
 This reflects both Google’s conservative engineering tendencies (they wouldn’t want such code checked in),
@@ -331,11 +337,14 @@ There, I can search for a song, and if someone has previously uploaded it, queue
 If turntable doesn’t have a song, I can upload a file from my computer.&lt;/p&gt;
 
 &lt;p&gt;However, I don’t normally have music files on my laptop; my library is kept in Google Music.
-So, if turntable was missing a song, I used to:
-* open Google Music and sign in
-* find and download the song
-* switch to turntable and upload it
-* delete the file&lt;/p&gt;
+So, if turntable was missing a song, I used to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;open Google Music and sign in&lt;/li&gt;
+  &lt;li&gt;find and download the song&lt;/li&gt;
+  &lt;li&gt;switch to turntable and upload it&lt;/li&gt;
+  &lt;li&gt;delete the file&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;My extension lets me do this right in turntable.
 Now, all I do is click “Upload from Google Music”, find the song and hit upload.
@@ -414,10 +423,13 @@ My requests will automatically send Google cookies, and I just have to grab an x
 &lt;h3 id=&quot;uploading-to-turntable&quot;&gt;Uploading to turntable&lt;/h3&gt;
 
 &lt;p&gt;This was the toughest nut to crack.
-I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:
-* the user wouldn’t see the upload in the turntable interface
-* I don’t have the javascript chops to implement a complicated upload protocol
-* future protocol changes would break stuff&lt;/p&gt;
+I considered reverse engineering the endpoints that turntable’s client page used for uploading, but this had a number of disadvantages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the user wouldn’t see the upload in the turntable interface&lt;/li&gt;
+  &lt;li&gt;I don’t have the javascript chops to implement a complicated upload protocol&lt;/li&gt;
+  &lt;li&gt;future protocol changes would break stuff&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;A better approach: tricking turntable’s own clientside code into believing the user had initiated a normal upload.
 This makes turntable do all the work, and is business as usual for the user.&lt;/p&gt;
@@ -446,12 +458,15 @@ Duck typing to the rescue!&lt;/p&gt;
 
 &lt;h3 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h3&gt;
 
-&lt;p&gt;Those are the main hacks. Combining everything, this is about what happens when an upload is requested:
-* content script messages the background script with a file id to upload
-* background script performs a cross domain request to Google and retrieves a Blob
-* background script encodes the Blob as a base64 dataurl
-* Blob dataurl (now json-compatible) is messaged back to the content script
-* content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done&lt;/p&gt;
+&lt;p&gt;Those are the main hacks. Combining everything, this is about what happens when an upload is requested:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;content script messages the background script with a file id to upload&lt;/li&gt;
+  &lt;li&gt;background script performs a cross domain request to Google and retrieves a Blob&lt;/li&gt;
+  &lt;li&gt;background script encodes the Blob as a base64 dataurl&lt;/li&gt;
+  &lt;li&gt;Blob dataurl (now json-compatible) is messaged back to the content script&lt;/li&gt;
+  &lt;li&gt;content script injects the entire dataurl, along with code to do the Blob to File spoofing, trigger the plupload code, and clean up when done&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
 You can grab my ugly code on &lt;a href=&quot;https://github.com/simon-weber/Google-Music-Turntable-Uploader&quot;&gt;my GitHub&lt;/a&gt;.&lt;/p&gt;
@@ -724,12 +739,15 @@ Then, on their first request to a web service endpoint (eg music.google.com/load
 - that code hadn’t changed much since last known-good version&lt;/p&gt;
 
 &lt;p&gt;The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information.
-Here’s what we found out:
-* the login was successful; calls to Music Manager endpoints succeeded
-* the user was outside of the US
-* normal login to music.google.com through a browser was fine
-* the bug did not depend on multiple login status, locale assumptions or current login status
-* the user had all the proper session cookies&lt;/p&gt;
+Here’s what we found out:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the login was successful; calls to Music Manager endpoints succeeded&lt;/li&gt;
+  &lt;li&gt;the user was outside of the US&lt;/li&gt;
+  &lt;li&gt;normal login to music.google.com through a browser was fine&lt;/li&gt;
+  &lt;li&gt;the bug did not depend on multiple login status, locale assumptions or current login status&lt;/li&gt;
+  &lt;li&gt;the user had all the proper session cookies&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Throughout all this, I still could not recreate the issue.
 In a lucky guess, I used a test account from outside the US: bingo!
@@ -793,9 +811,12 @@ Here’s a hint, changing:&lt;/p&gt;
 &lt;p&gt;solves the problem (hackily, since then clientlogin and sso auth can’t be sent together, but that never happens anyway - and this will all be rewritten soon).&lt;/p&gt;
 
 &lt;p&gt;If you didn’t figure it out, here’s the issue: auth was stored in Python &lt;a href=&quot;http://docs.python.org/2/library/cookie.html#module-Cookie&quot;&gt;Cookie objects&lt;/a&gt;, but I had attached them to the request as a name/value dictionary.
-In doing so, there was information loss:
- * in the case of cookies with identical names, only one would be sent
- * Cookie-specific fields like secure and domain were dropped&lt;/p&gt;
+In doing so, there was information loss:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;in the case of cookies with identical names, only one would be sent&lt;/li&gt;
+  &lt;li&gt;Cookie-specific fields like secure and domain were dropped&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;In their Python form, Cookies are not simple name/value pairs!
 Attaching Cookies directly to the request kept all the relevant information and solved the problem.&lt;/p&gt;

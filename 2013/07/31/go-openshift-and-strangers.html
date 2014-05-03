@@ -9,6 +9,7 @@
     
     <meta name="description" content="My thoughts on Golang and Openshift after finishing Strangerbotting." />
     
+    <link rel="canonical" href="http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers.html" />
     <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
     <title>Strangers, Go, and Openshift</title>
 
@@ -71,11 +72,14 @@ The stranger had no way to know they were talking to a bot, and hilarity ensued.
 <p>The thing was, only folks in our channel could watch.
 To share this, I built <a href="http://strangerbotting-simonmweber.rhcloud.com">Strangerbotting</a>.
 It’s written in Go, and runs on Openshift, Red Hat’s newish open source PaaS.
-There are a couple of pieces to the app:
-* <a href="https://github.com/simon-weber/gomegle">gomegle</a>: a client library for Omegle
-* <a href="https://github.com/simon-weber/gomarkov">gomarkov</a>: simple, fast, in-memory markov chains for text generation
-* <a href="https://github.com/simon-weber/strangerbotting-backend">strangerbotting-backend</a>: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.
-* <a href="https://github.com/simon-weber/strangerbotting-frontend">strangerbotting-frontend</a>: a simple webclient to display conversations. Also runs on Openshift.</p>
+There are a couple of pieces to the app:</p>
+
+<ul>
+  <li><a href="https://github.com/simon-weber/gomegle">gomegle</a>: a client library for Omegle</li>
+  <li><a href="https://github.com/simon-weber/gomarkov">gomarkov</a>: simple, fast, in-memory markov chains for text generation</li>
+  <li><a href="https://github.com/simon-weber/strangerbotting-backend">strangerbotting-backend</a>: manages one bot-to-stranger conversation and streams it out over websockets. Runs on Openshift.</li>
+  <li><a href="https://github.com/simon-weber/strangerbotting-frontend">strangerbotting-frontend</a>: a simple webclient to display conversations. Also runs on Openshift.</li>
+</ul>
 
 <p>There’s nothing too magical going on in the code, so I won’t bother talking about it.
 However, I have some new opinions on Go and Openshift that I wanted to write down.</p>
@@ -83,9 +87,12 @@ However, I have some new opinions on Go and Openshift that I wanted to write dow
 <h3 id="golang">Golang</h3>
 
 <p>Before getting started with Go, I’d seen a lot of folks complain about the more pedantic parts of the language.
-To me, this indicates some combination of:
-* disagreement with Google’s engineering culture
-* unfamiliarity with Go’s design goals</p>
+To me, this indicates some combination of:</p>
+
+<ul>
+  <li>disagreement with Google’s engineering culture</li>
+  <li>unfamiliarity with Go’s design goals</li>
+</ul>
 
 <p>For example, unused imports in Go raise a compile error.
 This reflects both Google’s conservative engineering tendencies (they wouldn’t want such code checked in),

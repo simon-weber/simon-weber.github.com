@@ -9,6 +9,7 @@
     
     <meta name="description" content="How a simple oversight broke gmusicapi logins" />
     
+    <link rel="canonical" href="http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story.html" />
     <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
     <title>Tough cookies: a debugging story</title>
 
@@ -71,12 +72,15 @@ Then, on their first request to a web service endpoint (eg music.google.com/load
 - that code hadn’t changed much since last known-good version</p>
 
 <p>The user who reported the bug stopped by #gmusicapi on Freenode (thanks, Leonardo!) and humored my requests for debug information.
-Here’s what we found out:
-* the login was successful; calls to Music Manager endpoints succeeded
-* the user was outside of the US
-* normal login to music.google.com through a browser was fine
-* the bug did not depend on multiple login status, locale assumptions or current login status
-* the user had all the proper session cookies</p>
+Here’s what we found out:</p>
+
+<ul>
+  <li>the login was successful; calls to Music Manager endpoints succeeded</li>
+  <li>the user was outside of the US</li>
+  <li>normal login to music.google.com through a browser was fine</li>
+  <li>the bug did not depend on multiple login status, locale assumptions or current login status</li>
+  <li>the user had all the proper session cookies</li>
+</ul>
 
 <p>Throughout all this, I still could not recreate the issue.
 In a lucky guess, I used a test account from outside the US: bingo!
@@ -140,9 +144,12 @@ Here’s a hint, changing:</p>
 <p>solves the problem (hackily, since then clientlogin and sso auth can’t be sent together, but that never happens anyway - and this will all be rewritten soon).</p>
 
 <p>If you didn’t figure it out, here’s the issue: auth was stored in Python <a href="http://docs.python.org/2/library/cookie.html#module-Cookie">Cookie objects</a>, but I had attached them to the request as a name/value dictionary.
-In doing so, there was information loss:
- * in the case of cookies with identical names, only one would be sent
- * Cookie-specific fields like secure and domain were dropped</p>
+In doing so, there was information loss:</p>
+
+<ul>
+  <li>in the case of cookies with identical names, only one would be sent</li>
+  <li>Cookie-specific fields like secure and domain were dropped</li>
+</ul>
 
 <p>In their Python form, Cookies are not simple name/value pairs!
 Attaching Cookies directly to the request kept all the relevant information and solved the problem.</p>
