@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="Examples of best practices and gotchas in Python logging." />
+    
+    <link rel="canonical" href="http://www.simonmweber.com/2014/11/24/python-logging-traps.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Python Logging Traps</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon five-spaced row">
+                    <span><a href="http://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="http://www.linkedin.com/in/simonmweber"><img alt="LinkedIn" src="/images/linkedin.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"><img alt="Google+" src="/images/plus.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="python-logging-traps">Python Logging Traps</h2>
+
+<p class="meta">November 24 2014 <br />
+cross-posted at the <a href="http://engineering.venmo.com/blog/2014/11/24/python-logging-traps">Venmo Engineering blog</a>
+</p>
+
+<p>Python’s logging framework is powerful, but gives you plenty of ways to shoot yourself in the foot.
+To make matters worse, logging mistakes are subtle and slip through code review easily.</p>
+
+<p>In my time at Venmo, I’ve seen logging mistakes cause everything from unneeded debugging to application crashes.
+Here are the most common culprits:</p>
+
+<h3 id="manual-interpolation">Manual Interpolation</h3>
+
+<h4 id="bad">Bad:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">some_data</span><span class="p">)</span>
+<span class="c"># or, equivalently</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">some_data</span><span class="p">))</span></code></pre></div>
+
+<h4 id="good">Good:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">some_data</span><span class="p">)</span></code></pre></div>
+
+<p>This pushes the interpolation off to the logging framework:</p>
+
+<ul>
+  <li>interpolation overhead is skipped if info level is not enabled</li>
+  <li>encoding problems will not raise an exception (they’ll be logged instead)</li>
+  <li>tools like <a href="https://pypi.python.org/pypi/sentry">Sentry</a> will be able to aggregate log messages intelligently</li>
+</ul>
+
+<p>Pylint will detect this antipattern as <a href="https://bitbucket.org/logilab/pylint/src/default/checkers/logging.py">W1201 and W1202</a>.</p>
+
+<h3 id="loggererrore-in-exception-handlers">logger.error(…e) in exception handlers</h3>
+
+<h4 id="bad-1">Bad:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">FooException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Uh oh! Error: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></code></pre></div>
+
+<h4 id="good-1">Good:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">FooException</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">&quot;Uh oh!&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Formatting an exception throws away the traceback, which you usually want for debugging.
+<code>logger.exception</code> is a helper that calls <code>logger.error</code> but also logs the traceback.</p>
+
+<h3 id="implicitly-encoding-unicode-data">Implicitly encoding unicode data</h3>
+
+<h4 id="bad-2">Bad:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">checkmark</span> <span class="o">=</span> <span class="s">&#39;√&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></div>
+
+<h4 id="good-2">Good:</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></div>
+
+<p>Using <code>%s</code> with a unicode string will cause it to be encoded, which will cause an <code>EncodingError</code> unless your default encoding is utf-8.
+Using <code>%r</code> will format the unicode in \u-escaped repr format instead.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>
