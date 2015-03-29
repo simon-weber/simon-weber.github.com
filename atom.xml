@@ -4,13 +4,40 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2014-11-24T18:22:37-05:00</updated>
+ <updated>2015-03-29T18:18:53-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>python-libfaketime</title>
+   <link href="http://www.simonmweber.com/2015/03/29/libfaketime.html"/>
+   <updated>2015-03-29T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2015/03/29/libfaketime</id>
+   <content type="html">&lt;h2 id=&quot;python-libfaketime&quot;&gt;python-libfaketime&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;March 29, 2015&lt;/p&gt;
+
+&lt;p&gt;I recently released &lt;a href=&quot;https://github.com/simon-weber/python-libfaketime&quot;&gt;python-libfaketime&lt;/a&gt;, which makes it easy to mock the current time during tests.
+It’s also two orders of magnitude faster than &lt;a href=&quot;https://github.com/spulec/freezegun&quot;&gt;freezegun&lt;/a&gt; on my laptop.
+This is because instead of searching for and monkeypatching imported python stdlib modules, python-libfaketime uses &lt;a href=&quot;https://github.com/wolfcw/libfaketime&quot;&gt;libfaketime&lt;/a&gt; to intercept c standard library calls.&lt;/p&gt;
+
+&lt;p&gt;Here’s how it works:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the user sets an environment variable requesting that the dynamic linker prioritize libfaketime over the c standard library (eg LD_PRELOAD on linux)&lt;/li&gt;
+  &lt;li&gt;python-libfaketime communicates the datetime to libfaketime through another environment variable&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The second step is seamless to end users, but the first step can be annoying.
+To make this easier, python-libfaketime provides a function to modify the environment and re-exec the current process.&lt;/p&gt;
+
+&lt;p&gt;Give it a try if you notice slow tests while using freezegun – it made the Venmo test suite about 20% faster.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Python Logging Traps</title>
