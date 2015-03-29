@@ -11,7 +11,7 @@ description: My thoughts on Golang and Openshift after finishing Strangerbotting
 
 I've always liked the idea of [Omegle](http://omegle.com): one-on-one text chats with strangers.
 I also hang out in irc a lot, and thought it'd be fun to combine the two.
-This wasn't a new idea, but since Hacker School is all about learning by exploring,
+This wasn't a new idea, but since the Recurse Center is all about learning by exploring,
 I built an [Omegle to irc bridge](https://github.com/simon-weber/omegle-to-irc) with Twisted.
 
 When I hooked it up in [#rochack](http://rochack.org/),

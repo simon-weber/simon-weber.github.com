@@ -9,7 +9,7 @@ description: Some of the hacks that went into my first Chrome extension.
 
 <p class="meta">June 5 2013</p>
 
-I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch.
+I just shipped my first Recurse Center project: a Chrome extension that scratches a personal itch.
 I use [turntable.fm](http://turntable.fm) every now and then, which lets me dj music with friends.
 There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear.
 If turntable doesn't have a song, I can upload a file from my computer.
@@ -144,6 +144,6 @@ Those are the main hacks. Combining everything, this is about what happens when 
 From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
 You can grab my ugly code on [my GitHub](https://github.com/simon-weber/Google-Music-Turntable-Uploader).
 
-I plan to write continue writing posts like these during my time at Hacker School, so if you dug this, Twitter or RSS are the best ways to get more.
+I plan to write continue writing posts like these during my time at the Recurse Center, so if you dug this, Twitter or RSS are the best ways to get more.
 
-Many thanks to my fellow Hacker Schoolers who read over this post: [Leo Franchi](http://lfranchi.com) and [Erik Taubeneck](https://github.com/eriktaubeneck).
+Many thanks to my fellow Recursers who read over this post: [Leo Franchi](http://lfranchi.com) and [Erik Taubeneck](https://github.com/eriktaubeneck).

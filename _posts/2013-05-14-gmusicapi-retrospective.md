@@ -99,4 +99,4 @@ My next step is to get the project into a self-sustaining state.
 I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.
 
 
-Thankfully, I'll have plenty of time this summer at [Hacker School](http://hackerschool.com)!
+Thankfully, I'll have plenty of time this summer at the [Recurse Center](https://www.recurse.com)!
