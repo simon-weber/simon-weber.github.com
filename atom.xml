@@ -4,13 +4,88 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2015-03-29T18:18:53-04:00</updated>
+ <updated>2015-08-28T12:23:11-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Python linting at Venmo</title>
+   <link href="http://www.simonmweber.com/2015/08/28/python-linting-at-venmo.html"/>
+   <updated>2015-08-28T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2015/08/28/python-linting-at-venmo</id>
+   <content type="html">&lt;h2 id=&quot;python-linting-at-venmo&quot;&gt;Python linting at Venmo&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;August 28, 2015&lt;br /&gt;
+cross-posted at the &lt;a href=&quot;https://venmo-blog.squarespace.com/2015/8/26/python-linting-at-venmo&quot;&gt;Venmo blog&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Quick! What’s wrong with this (contrived) Python 2 code?&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NotFoundError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enforce_presence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Raise NotFoundError if key is not in entries.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+           &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;NotFoundError&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you said the unused import and missing &lt;code&gt;raise&lt;/code&gt; keyword, you’re right!
+But, if you took longer than a quarter of a second to answer, sorry: you were outperformed by my linting tools.&lt;/p&gt;
+
+&lt;p&gt;Don’t feel bad! Linting is designed to detect these problems more quickly and consistently than a human.
+There are two ways to make use of it: manually or automatically.
+The former is flexible but not robust, while the latter risks getting in the way.
+We lint automatically at Venmo; here’s how we strike a balance between flexibility and enforcement.&lt;/p&gt;
+
+&lt;p&gt;We use a collection of linting tools.
+Currently we use &lt;a href=&quot;https://flake8.readthedocs.org&quot;&gt;flake8&lt;/a&gt;, &lt;a href=&quot;http://www.pylint.org/&quot;&gt;pylint&lt;/a&gt; and a custom internal tool.
+They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing &lt;code&gt;raise&lt;/code&gt;), and our internal tool catches errors that are only relevant to Venmo.
+For easy use from the shell, we combine their output with &lt;a href=&quot;https://github.com/sk-/git-lint&quot;&gt;git-lint&lt;/a&gt; and a &lt;a href=&quot;https://gist.github.com/simon-weber/cfb1dcb3118135714abc&quot;&gt;short script&lt;/a&gt;.
+This setup catches a wide variety of errors and can easily accommodate new linters.
+Here’s what it looks like when run on the code from this post:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./lint example.py
+Linting file: example.py FAILURE
+line 1, col 1: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;F401&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;sys&amp;#39;&lt;/span&gt; imported but unused
+line 15, col 8: Warning: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;W0104&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: Statement seems to have no effect&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Linting happens in three places during our workflow: in-editor, pre-commit, and during builds.
+The first step varies for each of us since we don’t all use the same editor (though vim with &lt;a href=&quot;https://github.com/scrooloose/syntastic&quot;&gt;syntastic&lt;/a&gt; is a common choice).
+This is the step with the fastest feedback loop: if you don’t currently use linting, start with this.&lt;/p&gt;
+
+&lt;p&gt;The second step is implemented with a git &lt;a href=&quot;https://gist.github.com/simon-weber/b056db8cfa81e08ac67d&quot;&gt;pre-commit hook&lt;/a&gt;.
+It lints all the files about to be committed and aborts the commit if there are problems.
+Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in &lt;code&gt;--no-verify&lt;/code&gt; flag.&lt;/p&gt;
+
+&lt;p&gt;Finally, any errors that survive to a pull request will be caught during build linting on Jenkins.
+It’s similar to the pre-commit check, but runs on all files that have been changed in the feature branch.
+However, unlike the pre-commit check, our build script uses GitHub Enterprise’s &lt;a href=&quot;https://developer.github.com/v3/repos/commits/#compare-two-commits&quot;&gt;comparison api&lt;/a&gt; to find these files.
+This eliminates the need to download the repository’s history, allowing us to save bandwidth and disk space with a git shallow clone.&lt;/p&gt;
+
+&lt;p&gt;No matter when linting is run, we always operate it at the granularity of an entire file.
+This is necessary to catch problems such as unused imports or dead code; these aren’t localized to only modified lines.
+It also means that any file that’s been touched recently is free of problems, so it’s rare that we need to fix problems unrelated to our changes.&lt;/p&gt;
+
+&lt;p&gt;All of our configuration is checked into git, pinning our desired checks to a specific version of the codebase.
+Checks that we want to enable are whitelisted, allowing us to safely update our linters without worrying about accidentally enabling new, unwanted checks.&lt;/p&gt;
+
+&lt;p&gt;When enabling a new check, we also fix any existing violations.
+This avoids chilling effects: we don’t want to discourage small changes through fear of cleaning up lots of linting violations.
+It also incentivizes automated fixes, which saves engineering time compared to distributed manual editing.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, sharing our linting workflow helps save you some time as well!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>python-libfaketime</title>
@@ -268,7 +343,7 @@ I’ll definitely keep some timeslots open on the platform, and hope to have bet
 
 &lt;p&gt;I’ve always liked the idea of &lt;a href=&quot;http://omegle.com&quot;&gt;Omegle&lt;/a&gt;: one-on-one text chats with strangers.
 I also hang out in irc a lot, and thought it’d be fun to combine the two.
-This wasn’t a new idea, but since Hacker School is all about learning by exploring,
+This wasn’t a new idea, but since the Recurse Center is all about learning by exploring,
 I built an &lt;a href=&quot;https://github.com/simon-weber/omegle-to-irc&quot;&gt;Omegle to irc bridge&lt;/a&gt; with Twisted.&lt;/p&gt;
 
 &lt;p&gt;When I hooked it up in &lt;a href=&quot;http://rochack.org/&quot;&gt;#rochack&lt;/a&gt;,
@@ -451,7 +526,7 @@ There’s no need for &lt;a href=&quot;https://code.google.com/p/protobuf-gae-ha
 
 &lt;p class=&quot;meta&quot;&gt;June 5 2013&lt;/p&gt;
 
-&lt;p&gt;I just shipped my first Hacker School project: a Chrome extension that scratches a personal itch.
+&lt;p&gt;I just shipped my first Recurse Center project: a Chrome extension that scratches a personal itch.
 I use &lt;a href=&quot;http://turntable.fm&quot;&gt;turntable.fm&lt;/a&gt; every now and then, which lets me dj music with friends.
 There, I can search for a song, and if someone has previously uploaded it, queue it up for everyone to hear.
 If turntable doesn’t have a song, I can upload a file from my computer.&lt;/p&gt;
@@ -589,9 +664,9 @@ Duck typing to the rescue!&lt;/p&gt;
 &lt;p&gt;From there, I just added a bunch of messaging to get the ui working and a third party library to display the Google Music library.
 You can grab my ugly code on &lt;a href=&quot;https://github.com/simon-weber/Google-Music-Turntable-Uploader&quot;&gt;my GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I plan to write continue writing posts like these during my time at Hacker School, so if you dug this, Twitter or RSS are the best ways to get more.&lt;/p&gt;
+&lt;p&gt;I plan to write continue writing posts like these during my time at the Recurse Center, so if you dug this, Twitter or RSS are the best ways to get more.&lt;/p&gt;
 
-&lt;p&gt;Many thanks to my fellow Hacker Schoolers who read over this post: &lt;a href=&quot;http://lfranchi.com&quot;&gt;Leo Franchi&lt;/a&gt; and &lt;a href=&quot;https://github.com/eriktaubeneck&quot;&gt;Erik Taubeneck&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Many thanks to my fellow Recursers who read over this post: &lt;a href=&quot;http://lfranchi.com&quot;&gt;Leo Franchi&lt;/a&gt; and &lt;a href=&quot;https://github.com/eriktaubeneck&quot;&gt;Erik Taubeneck&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
@@ -677,7 +752,7 @@ Helping users out is its own reward, but I’m also flattered to have received t
 My next step is to get the project into a self-sustaining state.
 I figure this means knocking out todos, beefing up internal documentation, and refactoring all of the wonky bits that have accumulated over time.&lt;/p&gt;
 
-&lt;p&gt;Thankfully, I’ll have plenty of time this summer at &lt;a href=&quot;http://hackerschool.com&quot;&gt;Hacker School&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Thankfully, I’ll have plenty of time this summer at the &lt;a href=&quot;https://www.recurse.com&quot;&gt;Recurse Center&lt;/a&gt;!&lt;/p&gt;
 </content>
  </entry>
  

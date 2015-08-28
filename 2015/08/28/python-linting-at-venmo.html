@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="I go over our combination of Python linting tools." />
+    
+    <link rel="canonical" href="http://www.simonmweber.com/2015/08/28/python-linting-at-venmo.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Python linting at Venmo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon five-spaced row">
+                    <span><a href="http://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="http://www.linkedin.com/in/simonmweber"><img alt="LinkedIn" src="/images/linkedin.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"><img alt="Google+" src="/images/plus.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="python-linting-at-venmo">Python linting at Venmo</h2>
+
+<p class="meta">August 28, 2015<br />
+cross-posted at the <a href="https://venmo-blog.squarespace.com/2015/8/26/python-linting-at-venmo">Venmo blog</a>
+</p>
+
+<p>Quick! What’s wrong with this (contrived) Python 2 code?</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">NotFoundError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+   <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">enforce_presence</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">entries</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Raise NotFoundError if key is not in entries.&quot;&quot;&quot;</span>
+
+   <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+       <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="k">break</span>
+   <span class="k">else</span><span class="p">:</span>
+       <span class="n">NotFoundError</span></code></pre></div>
+
+<p>If you said the unused import and missing <code>raise</code> keyword, you’re right!
+But, if you took longer than a quarter of a second to answer, sorry: you were outperformed by my linting tools.</p>
+
+<p>Don’t feel bad! Linting is designed to detect these problems more quickly and consistently than a human.
+There are two ways to make use of it: manually or automatically.
+The former is flexible but not robust, while the latter risks getting in the way.
+We lint automatically at Venmo; here’s how we strike a balance between flexibility and enforcement.</p>
+
+<p>We use a collection of linting tools.
+Currently we use <a href="https://flake8.readthedocs.org">flake8</a>, <a href="http://www.pylint.org/">pylint</a> and a custom internal tool.
+They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing <code>raise</code>), and our internal tool catches errors that are only relevant to Venmo.
+For easy use from the shell, we combine their output with <a href="https://github.com/sk-/git-lint">git-lint</a> and a <a href="https://gist.github.com/simon-weber/cfb1dcb3118135714abc">short script</a>.
+This setup catches a wide variety of errors and can easily accommodate new linters.
+Here’s what it looks like when run on the code from this post:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./lint example.py
+Linting file: example.py FAILURE
+line 1, col 1: <span class="o">[</span>F401<span class="o">]</span>: <span class="s1">&#39;sys&#39;</span> imported but unused
+line 15, col 8: Warning: <span class="o">[</span>W0104<span class="o">]</span>: Statement seems to have no effect</code></pre></div>
+
+<p>Linting happens in three places during our workflow: in-editor, pre-commit, and during builds.
+The first step varies for each of us since we don’t all use the same editor (though vim with <a href="https://github.com/scrooloose/syntastic">syntastic</a> is a common choice).
+This is the step with the fastest feedback loop: if you don’t currently use linting, start with this.</p>
+
+<p>The second step is implemented with a git <a href="https://gist.github.com/simon-weber/b056db8cfa81e08ac67d">pre-commit hook</a>.
+It lints all the files about to be committed and aborts the commit if there are problems.
+Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in <code>--no-verify</code> flag.</p>
+
+<p>Finally, any errors that survive to a pull request will be caught during build linting on Jenkins.
+It’s similar to the pre-commit check, but runs on all files that have been changed in the feature branch.
+However, unlike the pre-commit check, our build script uses GitHub Enterprise’s <a href="https://developer.github.com/v3/repos/commits/#compare-two-commits">comparison api</a> to find these files.
+This eliminates the need to download the repository’s history, allowing us to save bandwidth and disk space with a git shallow clone.</p>
+
+<p>No matter when linting is run, we always operate it at the granularity of an entire file.
+This is necessary to catch problems such as unused imports or dead code; these aren’t localized to only modified lines.
+It also means that any file that’s been touched recently is free of problems, so it’s rare that we need to fix problems unrelated to our changes.</p>
+
+<p>All of our configuration is checked into git, pinning our desired checks to a specific version of the codebase.
+Checks that we want to enable are whitelisted, allowing us to safely update our linters without worrying about accidentally enabling new, unwanted checks.</p>
+
+<p>When enabling a new check, we also fix any existing violations.
+This avoids chilling effects: we don’t want to discourage small changes through fear of cleaning up lots of linting violations.
+It also incentivizes automated fixes, which saves engineering time compared to distributed manual editing.</p>
+
+<p>Hopefully, sharing our linting workflow helps save you some time as well!</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>
