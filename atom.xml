@@ -4,13 +4,31 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2015-08-28T12:23:11-04:00</updated>
+ <updated>2015-10-18T16:40:43-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Automatic Responses for Google Chat and Hangouts</title>
+   <link href="http://www.simonmweber.com/2015/10/18/automatic-responses-for-google-chat-and-hangouts.html"/>
+   <updated>2015-10-18T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2015/10/18/automatic-responses-for-google-chat-and-hangouts</id>
+   <content type="html">&lt;h2 id=&quot;automatic-responses-for-google-chat-and-hangouts&quot;&gt;Automatic Responses for Google Chat and Hangouts&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;October 18, 2015&lt;/p&gt;
+
+&lt;p&gt;Do you have Google accounts that forward email?
+If you never log into them, you might be missing Chat/Talk/Hangouts messages.&lt;/p&gt;
+
+&lt;p&gt;After missing an important message, I made &lt;a href=&quot;https://gchat.simon.codes&quot;&gt;https://gchat.simon.codes&lt;/a&gt;.
+It automatically replies to - and optionally forwards - the messages you’d otherwise miss.
+Check it out and let me know what you think; it’s free and open source!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Python linting at Venmo</title>
