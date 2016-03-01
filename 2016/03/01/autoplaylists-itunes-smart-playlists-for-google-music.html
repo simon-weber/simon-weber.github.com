@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="author" content="Simon Weber">
     
-    <meta name="description" content="The right way to add a vcs dependency (eg on github or bitbucket) to a pip requirements.txt." />
+    <meta name="description" content="Announcing a Chrome Extension that adds user-defined automatically-updating playlists to Google Music." />
     
-    <link rel="canonical" href="http://www.simonmweber.com/2014/11/23/git-pip-requirements.html" />
+    <link rel="canonical" href="http://www.simonmweber.com/2016/03/01/autoplaylists-itunes-smart-playlists-for-google-music.html" />
     <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
-    <title>Adding a vcs dependency to requirements.txt</title>
+    <title>Autoplaylists (iTunes smart playlists) for Google Music</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
 
@@ -56,20 +56,30 @@
 
         <div class="eleven columns offset-by-one content">
             <div id="post">
-    <h2 id="adding-a-vcs-dependency-to-requirementstxt">Adding a vcs dependency to requirements.txt</h2>
+    <h2 id="autoplaylists-itunes-smart-playlists-for-google-music">Autoplaylists (iTunes smart playlists) for Google Music</h2>
 
-<p class="meta">November 23 2014</p>
+<p class="meta">March 1, 2016</p>
 
-<p>It’s sometimes useful to point your requirements.txt at code not yet on the cheeseshop.
-For example, imagine you’ve just sent a bugfix PR to an existing dependency.
-Instead of waiting for the PR to be merged, you can just change your dependency to point at your fork.</p>
+<p>Autoplaylists - called “smart playlists” in iTunes - allow you to create playlists that always contain songs matching some set of rules.
+For example, you could create a playlist that contains only music you haven’t listened to recently, or your most-played songs of a certain genre.</p>
 
-<p>When adding the dependency line, there are two bits I don’t often see people use: the egg declaration and the version.
-Leaving these out will make <code>pip install -r</code>  reclone and reinstall your package every time, even if it hasn’t changed.
-Here’s an example of setting these when pointing to <a href="https://github.com/simon-weber/Unofficial-Google-Music-API">gmusicapi</a> 4.0.0 on Github:</p>
+<p>They’re one of my favorite ways to listen to music, but have never been available in <a href="https://play.google.com/music/listen">Google Music</a>.
+So, I’ve created a Chrome Extension to add them.
+Here’s an example of one of my autoplaylists:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git+https://github.com/simon-weber/Unofficial-Google-Music-API.git@4.0.0#egg<span class="o">=</span><span class="nv">gmusicapi</span><span class="o">==</span>4.0.0</code></pre></figure>
+<div class="figure">
+<p>
+<a href="https://autoplaylists.simon.codes">
+<img src="/images/autoplaylists-screenshot.jpg" alt="A screenshot of Autoplaylists for Google Music showing declaration of an autoplaylist." />
+</a>
+</p>
+</div>
 
+<p>If this is something you’ve also found Google Music lacking, you can download it at <a href="https://autoplaylists.simon.codes">https://autoplaylists.simon.codes</a>.
+There’s a free version limited to one playlist, and a paid version supporting unlimited playlists.</p>
+
+<p>The code is also open source, and can be found at <a href="https://github.com/simon-weber/Autoplaylists-for-Google-Music">https://github.com/simon-weber/Autoplaylists-for-Google-Music</a>.
+Check it out and let me know what you think!</p>
 
 </div>
 

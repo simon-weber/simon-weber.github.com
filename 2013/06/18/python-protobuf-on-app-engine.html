@@ -63,8 +63,8 @@
 <p>Today, if you try to use Google Protocol Buffers on App Engine, you’ll run into
 an error like this one:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">descriptor</span> 
-<span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">protobuf</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">descriptor</span> 
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">protobuf</span></code></pre></figure>
 
 <p>The problem is that Google’s own App Engine apis also use the <code>google</code> package namespace,
 and they don’t include the protobuf package.</p>
@@ -73,18 +73,18 @@ and they don’t include the protobuf package.</p>
 First, vendorize the library as you normally would.
 I just ripped the <code>site-packages</code> folder from a virtualenv into the application root:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">app.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">app.py
 app.yaml
 vendor
 ├── google
 │   └── protobuf...
-└── httplib2...</code></pre></div>
+└── httplib2...</code></pre></figure>
 
 <p>Then, just add your google directory to the google namespace, and add your
 vendor directory to the system path.
 I used this bit of code:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="kn">import</span> <span class="nn">google</span>  <span class="c"># provided by GAE</span>
@@ -94,7 +94,7 @@ I used this bit of code:</p>
 <span class="n">google</span><span class="o">.</span><span class="n">__path__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vendor_dir</span><span class="p">,</span> <span class="s">&#39;google&#39;</span><span class="p">))</span>
 
 <span class="c"># add vendor path</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vendor_dir</span><span class="p">)</span></code></pre></div>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vendor_dir</span><span class="p">)</span></code></pre></figure>
 
 <p>That’s it!
 There’s no need for <a href="https://code.google.com/p/protobuf-gae-hack">weird hacks</a>.</p>

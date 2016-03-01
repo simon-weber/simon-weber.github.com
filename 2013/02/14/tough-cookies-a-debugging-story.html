@@ -89,7 +89,7 @@ This only affected non-US logins!</p>
 <p>Now that I had a way to recreate the bug, I fired up git bisect to track down the commit that introduced it.
 Inside a function to take a <a href="http://docs.python-requests.org/en/latest/">requests.Request</a> and send it off to Google, here’s the relevant code before:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">send_xt</span><span class="p">:</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">send_xt</span><span class="p">:</span>
     <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;xt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_web_cookie</span><span class="p">(</span><span class="s">&#39;xt&#39;</span><span class="p">)</span>
 
@@ -100,11 +100,11 @@ Inside a function to take a <a href="http://docs.python-requests.org/en/latest/"
 <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep_request</span><span class="p">)</span>
 
-<span class="k">return</span> <span class="n">res</span></code></pre></div>
+<span class="k">return</span> <span class="n">res</span></code></pre></figure>
 
 <p>and after:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
     <span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c">#Attach auth.</span>
@@ -124,18 +124,18 @@ Inside a function to take a <a href="http://docs.python-requests.org/en/latest/"
 <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prepped</span><span class="p">,</span> <span class="o">**</span><span class="n">session_options</span><span class="p">)</span>
-<span class="k">return</span> <span class="n">res</span></code></pre></div>
+<span class="k">return</span> <span class="n">res</span></code></pre></figure>
 
 <p>The commit was some refactoring from two separate request-sending functions (eg send_web_request and send_musicmanager_request) to one.
 Do you see the bug?
 Here’s a hint, changing:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">web_cookies</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">web_cookies</span><span class="p">}</span>
-<span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">web_cookies</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">web_cookies</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">web_cookies</span><span class="p">}</span>
+<span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">web_cookies</span><span class="p">)</span></code></pre></figure>
 
 <p>to:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">web_cookies</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">web_cookies</span></code></pre></figure>
 
 <p>solves the problem (hackily, since then clientlogin and sso auth can’t be sent together, but that never happens anyway - and this will all be rewritten soon).</p>
 

@@ -1,61 +1,81 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-    <url>
-        <loc>http://www.simonmweber.com/2012/04/14/email-vps-and-publish-in-phrack.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2012/08/29/returning-to-the-east.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2012/09/07/whats-in-a-genre.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/02/14/tough-cookies-a-debugging-story.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.simonmweber.com/2013/04/20/development-on-a-chromebook-an-opinionated-guide.html
-        </loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/05/14/gmusicapi-retrospective.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/06/05/chrome-extension-hacks.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/06/18/python-protobuf-on-app-engine.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/07/31/go-openshift-and-strangers.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2013/11/07/google-helpouts-first-impressions.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2014/04/17/staying-busy.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/2014/05/01/vcrpy-at-venmo.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/404.html</loc>
-        <lastmod>2014-05-03T11:53:58-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.simonmweber.com/</loc>
-        <lastmod>2014-05-04T02:26:10-04:00</lastmod>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>/2016/03/01/autoplaylists-itunes-smart-playlists-for-google-music.html</loc>
+<lastmod>2016-03-01T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>/2015/10/18/automatic-responses-for-google-chat-and-hangouts.html</loc>
+<lastmod>2015-10-18T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2015/08/28/python-linting-at-venmo.html</loc>
+<lastmod>2015-08-28T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2015/03/29/libfaketime.html</loc>
+<lastmod>2015-03-29T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2014/11/24/python-logging-traps.html</loc>
+<lastmod>2014-11-24T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>/2014/11/23/git-pip-requirements.html</loc>
+<lastmod>2014-11-23T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>/2014/05/01/vcrpy-at-venmo.html</loc>
+<lastmod>2014-05-01T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2014/04/17/staying-busy.html</loc>
+<lastmod>2014-04-17T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/11/07/google-helpouts-first-impressions.html</loc>
+<lastmod>2013-11-07T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>/2013/07/31/go-openshift-and-strangers.html</loc>
+<lastmod>2013-07-31T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/06/18/python-protobuf-on-app-engine.html</loc>
+<lastmod>2013-06-18T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/06/05/chrome-extension-hacks.html</loc>
+<lastmod>2013-06-05T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/05/14/gmusicapi-retrospective.html</loc>
+<lastmod>2013-05-14T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/04/20/development-on-a-chromebook-an-opinionated-guide.html</loc>
+<lastmod>2013-04-20T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2013/02/14/tough-cookies-a-debugging-story.html</loc>
+<lastmod>2013-02-14T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>/2012/09/07/whats-in-a-genre.html</loc>
+<lastmod>2012-09-07T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2012/08/29/returning-to-the-east.html</loc>
+<lastmod>2012-08-29T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/2012/04/14/email-vps-and-publish-in-phrack.html</loc>
+<lastmod>2012-04-14T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/404.html</loc>
+</url>
+<url>
+<loc>/</loc>
+</url>
 </urlset>

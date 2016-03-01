@@ -115,7 +115,7 @@ Even the isolated world isn’t bulletproof: with DOM access, you can inject a s
 <p>My extension uses all three pieces mentioned above: background, content, and injected scripts.
 All together, they communicate like this:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">our background script
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">our background script
      ^
      <span class="p">|</span>
      <span class="p">|</span>
@@ -135,7 +135,7 @@ our injected code
    <span class="o">(</span>global namespace<span class="o">)</span>
      <span class="p">|</span>
      v
-other code on the page</code></pre></div>
+other code on the page</code></pre></figure>
 
 <p>Now that we know what we have to work with, I’ll go over how I addressed each of the big pieces of my solution.</p>
 
@@ -178,10 +178,10 @@ Html5 Files, though, can only be created when a user interacts with a file input
 <p>Luckily, Files aren’t much different from Blobs: they just add a filename and date of modification.
 Duck typing to the rescue!</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//b is our Blob</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//b is our Blob</span>
 <span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;myfile.mp3&#39;</span><span class="p">;</span>
 <span class="nx">b</span><span class="p">.</span><span class="nx">lastModifiedDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="c1">// tada!</span></code></pre></div>
+<span class="c1">// tada!</span></code></pre></figure>
 
 <h3 id="putting-it-all-together">Putting it all together</h3>
 
