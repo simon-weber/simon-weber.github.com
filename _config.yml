@@ -1,4 +1,6 @@
 description: The personal site of Simon Weber.
 canonical: www.simonmweber.com
-pygments: true
+highlighter: pygments
 markdown: kramdown
+gems:
+    - jekyll-sitemap
