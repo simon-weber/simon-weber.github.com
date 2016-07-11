@@ -4,13 +4,120 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2016-03-01T09:55:49-05:00</updated>
+ <updated>2016-07-10T22:11:22-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Publishing your first Chrome Extension, part 1: Taxes and Legal</title>
+   <link href="http://www.simonmweber.com/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html"/>
+   <updated>2016-07-11T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal</id>
+   <content type="html">&lt;h2 id=&quot;publishing-your-first-chrome-extension-part-1-taxes-and-legal&quot;&gt;Publishing your first Chrome Extension, part 1: Taxes and Legal&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;July 11 2016&lt;/p&gt;
+
+&lt;p&gt;Earlier this year, I launched my first paid Chrome extension: &lt;a href=&quot;https://autoplaylists.simon.codes/&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.
+The non-software work involved - like organizing a beta, wrangling paperwork, and finding users - was a bit daunting to handle solo.
+So, to help other first-timers publish their side projects, I’m writing up my experiences and making recommendations.&lt;/p&gt;
+
+&lt;p&gt;There’s too much to cover in one post, so I’ll start with the part that was scariest for me: dealing with the tax and legal implications of selling software.
+I’m effectively a small business owner that sells a product, so I’ve got to follow the rules or risk getting shut down (or worse).
+If yours is free, consider &lt;a href=&quot;http://feeds.feedburner.com/SimonWeber&quot;&gt;subscribing to my RSS feed&lt;/a&gt;.
+I’ll have advice for you in the coming weeks.&lt;/p&gt;
+
+&lt;p&gt;Finally, I want to give thanks to &lt;a href=&quot;http://www.kalzumeus.com/&quot;&gt;Patrick McKenzie&lt;/a&gt;.
+He generously gave me some pointers on the topics below.
+If you find yourself wrestling with something not covered here, do consider his &lt;a href=&quot;http://www.kalzumeus.com/standing-invitation/&quot;&gt;standing invitation to reach out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;tax-and-legal-considerations&quot;&gt;Tax and Legal Considerations&lt;/h3&gt;
+
+&lt;p&gt;Disclaimer time!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I am not a lawyer nor an accountant, so this post cannot be considered professional advice. Think of it as a starting point for your own research or conversations with professionals.&lt;/li&gt;
+  &lt;li&gt;this is largely specific to the US, though the themes may apply elsewhere.&lt;/li&gt;
+  &lt;li&gt;if you’re making real money, just pay someone to do all this for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With that out of the way, here are the main things I did before allowing sales:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;chose a business structure&lt;/li&gt;
+  &lt;li&gt;prepared to pay income tax&lt;/li&gt;
+  &lt;li&gt;prepared to pay sales tax&lt;/li&gt;
+  &lt;li&gt;handled Google’s merchant requirements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ll cover each separately.&lt;/p&gt;
+
+&lt;h4 id=&quot;business-structures&quot;&gt;business structures&lt;/h4&gt;
+
+&lt;p&gt;I’m running as a sole proprietorship, which is free and simple.
+Basically, it means there’s no legal distinction between me and the business.
+The only additional paperwork was applying for an Employer Identification Number, which I got just to avoid giving out my SSN.
+Despite the name, it’s applicable even though I have no employees.&lt;/p&gt;
+
+&lt;p&gt;Reasons to not use a sole prop include things like desire to raise investor money or concern about getting sued.
+In these cases, a C Corp or LLC are likely more appropriate, but you should definitely talk to a lawyer before deciding – you’re in territory my side project likely won’t see.&lt;/p&gt;
+
+&lt;h4 id=&quot;income-tax&quot;&gt;income tax&lt;/h4&gt;
+
+&lt;p&gt;I report income from my extension and pay taxes on that income.
+I include the income with my estimated tax, and next year I’ll file a Schedule C with the business’s total income and expenses.&lt;/p&gt;
+
+&lt;p&gt;If your extension makes little money and you typically receive a tax refund, estimated tax might be overkill.&lt;/p&gt;
+
+&lt;p&gt;Be sure to keep an excellent record of all your sales and business expenses.
+I’d recommend exporting both your earnings report and orders every month, as Google puts slightly different information in each.&lt;/p&gt;
+
+&lt;h4 id=&quot;sales-tax&quot;&gt;sales tax&lt;/h4&gt;
+
+&lt;p&gt;Unlike Apple’s App Store, Google’s Web Store makes you the merchant of record.
+This is both good and bad: it means Google’s cut is less than Apple’s, but it means you need to handle sales tax.
+How this works varies by state, but this is what I did for New York:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;determined that my extension qualified as “pre-made software” for sales tax purposes&lt;/li&gt;
+  &lt;li&gt;registered for a &lt;a href=&quot;https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/how_to_register_for_nys_sales_tax.htm&quot;&gt;Certificate of Authority&lt;/a&gt; a month before my first sale&lt;/li&gt;
+  &lt;li&gt;turned on automatic NY sales tax collection in the Payments Merchant Center&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When it’s time to file sales tax, I check for sales to NY residents, look up the tax rate based on their address, and file my return online.
+This is tedious, but don’t let it discourage you: I’m willing to bet New York’s requirements are among the worst to deal with.
+For example, these sales wouldn’t qualify for sales tax in California, and many other states have reporting minimums I’m not likely to hit.&lt;/p&gt;
+
+&lt;p&gt;If you publish internationally, you may have to deal with sales tax on a country-by-country basis as well.
+For example, there’s VAT for Europe (which Google mostly handles for you) and JCT for Japan.
+With the amount of money I’m making, it doesn’t make sense for me to put much effort into this.&lt;/p&gt;
+
+&lt;h4 id=&quot;googles-requirements&quot;&gt;Google’s requirements&lt;/h4&gt;
+
+&lt;p&gt;Compared to the government, appeasing Google is pretty straightforward. You’ll need:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;your EIN for tax purposes&lt;/li&gt;
+  &lt;li&gt;$5 for a one-time signup fee&lt;/li&gt;
+  &lt;li&gt;a business address and email you’re comfortable posting publicly&lt;/li&gt;
+  &lt;li&gt;your bank information for payouts&lt;/li&gt;
+  &lt;li&gt;a privacy policy hosted somewhere (I use a Github wiki page)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this you’ll create two accounts - a Payments merchant account and a Chrome developer account - and then link them together.
+Be sure to go through all the options in your merchant account: they include important settings like the name on users’ credit card statements.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This all may seem like a lot if you’re only making a few bucks a month.
+Still, I’d encourage you to go through with it: it took me only a few days in total, and the business experience has been super valuable.
+If you find yourself feeling overwhelmed, feel free to shoot me an email.
+While I’m far from an expert, I’m happy to help: &lt;a href=&quot;mailto:simon@simonmweber.com&quot;&gt;simon@simonmweber.com&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Autoplaylists (iTunes smart playlists) for Google Music</title>

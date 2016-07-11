@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="The first in series of posts with advice on publishing Chrome Extensions." />
+    
+    <link rel="canonical" href="http://www.simonmweber.com/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Publishing your first Chrome Extension, part 1: Taxes and Legal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon five-spaced row">
+                    <span><a href="http://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="http://www.linkedin.com/in/simonmweber"><img alt="LinkedIn" src="/images/linkedin.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"><img alt="Google+" src="/images/plus.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="publishing-your-first-chrome-extension-part-1-taxes-and-legal">Publishing your first Chrome Extension, part 1: Taxes and Legal</h2>
+
+<p class="meta">July 11 2016</p>
+
+<p>Earlier this year, I launched my first paid Chrome extension: <a href="https://autoplaylists.simon.codes/">Autoplaylists for Google Music</a>.
+The non-software work involved - like organizing a beta, wrangling paperwork, and finding users - was a bit daunting to handle solo.
+So, to help other first-timers publish their side projects, I’m writing up my experiences and making recommendations.</p>
+
+<p>There’s too much to cover in one post, so I’ll start with the part that was scariest for me: dealing with the tax and legal implications of selling software.
+I’m effectively a small business owner that sells a product, so I’ve got to follow the rules or risk getting shut down (or worse).
+If yours is free, consider <a href="http://feeds.feedburner.com/SimonWeber">subscribing to my RSS feed</a>.
+I’ll have advice for you in the coming weeks.</p>
+
+<p>Finally, I want to give thanks to <a href="http://www.kalzumeus.com/">Patrick McKenzie</a>.
+He generously gave me some pointers on the topics below.
+If you find yourself wrestling with something not covered here, do consider his <a href="http://www.kalzumeus.com/standing-invitation/">standing invitation to reach out</a>.</p>
+
+<h3 id="tax-and-legal-considerations">Tax and Legal Considerations</h3>
+
+<p>Disclaimer time!</p>
+
+<ul>
+  <li>I am not a lawyer nor an accountant, so this post cannot be considered professional advice. Think of it as a starting point for your own research or conversations with professionals.</li>
+  <li>this is largely specific to the US, though the themes may apply elsewhere.</li>
+  <li>if you’re making real money, just pay someone to do all this for you.</li>
+</ul>
+
+<p>With that out of the way, here are the main things I did before allowing sales:</p>
+
+<ul>
+  <li>chose a business structure</li>
+  <li>prepared to pay income tax</li>
+  <li>prepared to pay sales tax</li>
+  <li>handled Google’s merchant requirements</li>
+</ul>
+
+<p>I’ll cover each separately.</p>
+
+<h4 id="business-structures">business structures</h4>
+
+<p>I’m running as a sole proprietorship, which is free and simple.
+Basically, it means there’s no legal distinction between me and the business.
+The only additional paperwork was applying for an Employer Identification Number, which I got just to avoid giving out my SSN.
+Despite the name, it’s applicable even though I have no employees.</p>
+
+<p>Reasons to not use a sole prop include things like desire to raise investor money or concern about getting sued.
+In these cases, a C Corp or LLC are likely more appropriate, but you should definitely talk to a lawyer before deciding – you’re in territory my side project likely won’t see.</p>
+
+<h4 id="income-tax">income tax</h4>
+
+<p>I report income from my extension and pay taxes on that income.
+I include the income with my estimated tax, and next year I’ll file a Schedule C with the business’s total income and expenses.</p>
+
+<p>If your extension makes little money and you typically receive a tax refund, estimated tax might be overkill.</p>
+
+<p>Be sure to keep an excellent record of all your sales and business expenses.
+I’d recommend exporting both your earnings report and orders every month, as Google puts slightly different information in each.</p>
+
+<h4 id="sales-tax">sales tax</h4>
+
+<p>Unlike Apple’s App Store, Google’s Web Store makes you the merchant of record.
+This is both good and bad: it means Google’s cut is less than Apple’s, but it means you need to handle sales tax.
+How this works varies by state, but this is what I did for New York:</p>
+
+<ul>
+  <li>determined that my extension qualified as “pre-made software” for sales tax purposes</li>
+  <li>registered for a <a href="https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/how_to_register_for_nys_sales_tax.htm">Certificate of Authority</a> a month before my first sale</li>
+  <li>turned on automatic NY sales tax collection in the Payments Merchant Center</li>
+</ul>
+
+<p>When it’s time to file sales tax, I check for sales to NY residents, look up the tax rate based on their address, and file my return online.
+This is tedious, but don’t let it discourage you: I’m willing to bet New York’s requirements are among the worst to deal with.
+For example, these sales wouldn’t qualify for sales tax in California, and many other states have reporting minimums I’m not likely to hit.</p>
+
+<p>If you publish internationally, you may have to deal with sales tax on a country-by-country basis as well.
+For example, there’s VAT for Europe (which Google mostly handles for you) and JCT for Japan.
+With the amount of money I’m making, it doesn’t make sense for me to put much effort into this.</p>
+
+<h4 id="googles-requirements">Google’s requirements</h4>
+
+<p>Compared to the government, appeasing Google is pretty straightforward. You’ll need:</p>
+
+<ul>
+  <li>your EIN for tax purposes</li>
+  <li>$5 for a one-time signup fee</li>
+  <li>a business address and email you’re comfortable posting publicly</li>
+  <li>your bank information for payouts</li>
+  <li>a privacy policy hosted somewhere (I use a Github wiki page)</li>
+</ul>
+
+<p>With this you’ll create two accounts - a Payments merchant account and a Chrome developer account - and then link them together.
+Be sure to go through all the options in your merchant account: they include important settings like the name on users’ credit card statements.</p>
+
+<hr />
+
+<p>This all may seem like a lot if you’re only making a few bucks a month.
+Still, I’d encourage you to go through with it: it took me only a few days in total, and the business experience has been super valuable.
+If you find yourself feeling overwhelmed, feel free to shoot me an email.
+While I’m far from an expert, I’m happy to help: <a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a>.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        <a href="http://feeds.feedburner.com/SimonWeber"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>
