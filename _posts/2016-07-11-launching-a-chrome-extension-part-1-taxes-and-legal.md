@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Publishing your first Chrome Extension, part 1: Taxes and Legal"
-description: "The first in series of posts with advice on publishing Chrome Extensions."
+description: "The first in a series of posts with advice on publishing Chrome Extensions."
 ---
 
 {{ page.title }}
