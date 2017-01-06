@@ -7,7 +7,7 @@ description: "My tips to set up a development environment on ChromeOS."
 {{ page.title }}
 ----------------
 
-<p class="meta">April 20 2013, updated April 17 2014</p>
+<p class="meta">April 20 2013, last updated January 6 2017</p>
 
 I started using a
 [Samsung 550 Chromebook](http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html)
@@ -92,6 +92,15 @@ takes away some of the pain; it fixes the Control-W problem
 mentioned earlier and gets you an up-to-date version of hterm.
 
 ### For when you’re offline or on a terrible connection
+
+#### GalliumOS
+
+_edit_: <a href="https://galliumos.org/">GalliumOS</a> is a linux distribution that's designed for Chromebooks.
+For example, it supported my Pixel's keyboard layout and touchscreen out of the box.
+If you're comfortable maintaining your own linux install - or regularly work with VMs - I'd suggest it over crouton.
+
+My setup is a dual-boot installed with chrx, which you can find instructions for <a href="https://wiki.galliumos.org/Installing">here</a>.
+If you run into problems, <a href="https://wiki.galliumos.org/Community">the subreddit and irc channel </a> are quite active.
 
 #### crouton
 
