@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-01-06T13:53:34-05:00</updated>
+ <updated>2017-01-06T14:15:27-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -1027,7 +1027,7 @@ I figure this means knocking out todos, beefing up internal documentation, and r
    <id>http://www.simonmweber.com/2013/04/20/development-on-a-chromebook-an-opinionated-guide</id>
    <content type="html">&lt;h2 id=&quot;development-on-a-chromebook-an-opinionated-guide&quot;&gt;Development on a Chromebook: an opinionated guide&lt;/h2&gt;
 
-&lt;p class=&quot;meta&quot;&gt;April 20 2013, updated April 17 2014&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;April 20 2013, last updated January 6 2017&lt;/p&gt;
 
 &lt;p&gt;I started using a
 &lt;a href=&quot;http://www.google.com/intl/en/chrome/devices/chromebook-samsung-550.html&quot;&gt;Samsung 550 Chromebook&lt;/a&gt;
@@ -1114,6 +1114,15 @@ takes away some of the pain; it fixes the Control-W problem
 mentioned earlier and gets you an up-to-date version of hterm.&lt;/p&gt;
 
 &lt;h3 id=&quot;for-when-youre-offline-or-on-a-terrible-connection&quot;&gt;For when you’re offline or on a terrible connection&lt;/h3&gt;
+
+&lt;h4 id=&quot;galliumos&quot;&gt;GalliumOS&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: &lt;a href=&quot;https://galliumos.org/&quot;&gt;GalliumOS&lt;/a&gt; is a linux distribution that’s designed for Chromebooks.
+For example, it supported my Pixel’s keyboard layout and touchscreen out of the box.
+If you’re comfortable maintaining your own linux install - or regularly work with VMs - I’d suggest it over crouton.&lt;/p&gt;
+
+&lt;p&gt;My setup is a dual-boot installed with chrx, which you can find instructions for &lt;a href=&quot;https://wiki.galliumos.org/Installing&quot;&gt;here&lt;/a&gt;.
+If you run into problems, &lt;a href=&quot;https://wiki.galliumos.org/Community&quot;&gt;the subreddit and irc channel &lt;/a&gt; are quite active.&lt;/p&gt;
 
 &lt;h4 id=&quot;crouton&quot;&gt;crouton&lt;/h4&gt;
 
