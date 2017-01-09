@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="A look back on what I learned selling my own software in 2016." />
+    
+    <link rel="canonical" href="https://www.simonmweber.com/2017/01/09/side-project-income-2016-0-to-100.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Side project income 2016: 0 to $100/month</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon five-spaced row">
+                    <span><a href="https://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="https://www.linkedin.com/in/simonmweber"><img alt="LinkedIn" src="/images/linkedin.ico"></a></span>
+                    <span><a href="https://plus.google.com/103350848301234480355"><img alt="Google+" src="/images/plus.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="side-project-income-2016-0-to-100month">Side project income 2016: 0 to $100/month</h2>
+
+<p class="meta">January 9 2017</p>
+
+<p>In 2016, I set a goal to earn money from software I built.
+Being an employee or contractor wouldn’t count.
+I wanted the product and business experience of making something from the ground up.</p>
+
+<p>I’m pleased to have achieved this: as of December, my projects net about $100/month of (mostly) passive income.
+This post will lay out some of what I’ve learned and hopefully help others with similar goals.</p>
+
+<h3 id="the-products">The Products</h3>
+
+<p>I launched two consumer subscription products last year.
+They are:</p>
+
+<ul>
+  <li><a href="https://autoplaylists.simon.codes">Autoplaylists for Google Music</a>: iTunes-style smart playlists for Google Music, a $2/month Chrome Extension</li>
+  <li><a href="https://gchat.simon.codes">Autoresponder for Google Chat</a>: hosted auto-replies for Google Chat/Hangouts, a $2/month SaaS</li>
+</ul>
+
+<p>Why did I pick these particular products?
+Three reasons:</p>
+
+<ul>
+  <li>they solve a problem I had, so I identify easily with users</li>
+  <li>they let me use my expertise, so I’m well-positioned to execute</li>
+  <li>they target a niche audience, so there’s little competition</li>
+</ul>
+
+<p>The first two points make these projects work well, while the last one provides flexibility.
+I’ll use Autoplaylists as an example.
+Custom playlists like “my most-played metal not heard recently” were common in the days of local media players, and people like me missed them when migrating to hosted services.
+Other interested developers were turned off by the lack of an official api, but through my earlier work on <a href="https://github.com/simon-weber/gmusicapi">gmusicapi</a>, a reverse-engineered client library, I knew it could be done.
+And since only a small percent of Google Music users actually want this feature, the stakes are low and I don’t worry about competitors (including Google).</p>
+
+<p>It’s worth noting that both projects are also open source.
+This is partly for philosophical reasons, but also because a public Github repo is a productivity boost.
+For example, Autoplaylists uses Github’s hosting for the product site and wiki for the support site, in addition to the obvious issue tracking and version control offerings.
+The added complexity around things like contributions and secret management has been straightforward to manage so far.</p>
+
+<h3 id="the-business">The Business</h3>
+
+<p>Running a small business seemed daunting at first, but it turned out to be pretty simple in this case.
+I run both projects as a sole proprietorship, mostly because I’m not worried about getting sued and have no intention of raising money.
+This is the simplest option: there was no extra paperwork besides the Employee Identification Number I got (which I can give out instead of my SSN).
+Bookkeeping just takes a few minutes of spreadsheet work per month, and my taxes remain straightforward.
+Even PCI compliance was a breeze since my SaaS uses Braintree’s drop-in iframe;
+I just had to click through a set of checkboxes to affirm I wasn’t doing anything obviously insecure.
+The trickiest business puzzle was figuring out how New York’s sales tax rules applied to Autoplaylists.
+For the details, check out my post on the <a href="https://www.simonmweber.com/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html">tax and legal implication of launching a Chrome Extension</a>.</p>
+
+<p>Marketing, on the other hand, wasn’t so simple for me.
+I started the year out strong with the Autoplaylists launch.
+Here’s what I did, all of which I’d do again:</p>
+
+<ul>
+  <li>before launch, found passionate users for a beta and got them on a mailing list</li>
+  <li>at launch, reached out to tech journalists who’d written about Google Music. <a href="http://fieldguide.gizmodo.com/how-to-use-one-of-itunes-best-features-in-google-play-m-1766789374">Gizmodo’s article</a> landed tens of thousands of views for the cost of a few emails.</li>
+  <li>after launch, shared good autoplaylists to music-sharing communities</li>
+</ul>
+
+<p>Unfortunately, I fizzled out after that.
+Not continuing to push Autoplaylists users onto a mailing list was a mistake, and I didn’t put much effort at all into the Autoresponder launch.
+While organic search and word of mouth have provided some growth, I’m planning to double down on content marketing and media outreach this year.</p>
+
+<h3 id="whats-next">What’s Next?</h3>
+
+<p>2016 was a great start, and I’m proud to be a small business owner with happy customers.
+More importantly, I’ve now got the confidence for bigger ventures in 2017.
+Two things I’m considering are launching a product for small businesses and buying an existing product, each of which would present some interesting new challenges.</p>
+
+<p>Hopefully next year I’ll be writing a similar post!
+If you’d like to follow along, be sure to subscribe with the links below.
+Also, feel free to send an email if I can be of assistance; my inbox is always open.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        Subscribe to future posts via
+        <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
+        or
+        <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>

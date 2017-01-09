@@ -4,13 +4,96 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-01-06T14:15:27-05:00</updated>
+ <updated>2017-01-09T10:33:26-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Side project income 2016: 0 to $100/month</title>
+   <link href="http://www.simonmweber.com/2017/01/09/side-project-income-2016-0-to-100.html"/>
+   <updated>2017-01-09T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2017/01/09/side-project-income-2016-0-to-100</id>
+   <content type="html">&lt;h2 id=&quot;side-project-income-2016-0-to-100month&quot;&gt;Side project income 2016: 0 to $100/month&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;January 9 2017&lt;/p&gt;
+
+&lt;p&gt;In 2016, I set a goal to earn money from software I built.
+Being an employee or contractor wouldn’t count.
+I wanted the product and business experience of making something from the ground up.&lt;/p&gt;
+
+&lt;p&gt;I’m pleased to have achieved this: as of December, my projects net about $100/month of (mostly) passive income.
+This post will lay out some of what I’ve learned and hopefully help others with similar goals.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-products&quot;&gt;The Products&lt;/h3&gt;
+
+&lt;p&gt;I launched two consumer subscription products last year.
+They are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;: iTunes-style smart playlists for Google Music, a $2/month Chrome Extension&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gchat.simon.codes&quot;&gt;Autoresponder for Google Chat&lt;/a&gt;: hosted auto-replies for Google Chat/Hangouts, a $2/month SaaS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Why did I pick these particular products?
+Three reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;they solve a problem I had, so I identify easily with users&lt;/li&gt;
+  &lt;li&gt;they let me use my expertise, so I’m well-positioned to execute&lt;/li&gt;
+  &lt;li&gt;they target a niche audience, so there’s little competition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first two points make these projects work well, while the last one provides flexibility.
+I’ll use Autoplaylists as an example.
+Custom playlists like “my most-played metal not heard recently” were common in the days of local media players, and people like me missed them when migrating to hosted services.
+Other interested developers were turned off by the lack of an official api, but through my earlier work on &lt;a href=&quot;https://github.com/simon-weber/gmusicapi&quot;&gt;gmusicapi&lt;/a&gt;, a reverse-engineered client library, I knew it could be done.
+And since only a small percent of Google Music users actually want this feature, the stakes are low and I don’t worry about competitors (including Google).&lt;/p&gt;
+
+&lt;p&gt;It’s worth noting that both projects are also open source.
+This is partly for philosophical reasons, but also because a public Github repo is a productivity boost.
+For example, Autoplaylists uses Github’s hosting for the product site and wiki for the support site, in addition to the obvious issue tracking and version control offerings.
+The added complexity around things like contributions and secret management has been straightforward to manage so far.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-business&quot;&gt;The Business&lt;/h3&gt;
+
+&lt;p&gt;Running a small business seemed daunting at first, but it turned out to be pretty simple in this case.
+I run both projects as a sole proprietorship, mostly because I’m not worried about getting sued and have no intention of raising money.
+This is the simplest option: there was no extra paperwork besides the Employee Identification Number I got (which I can give out instead of my SSN).
+Bookkeeping just takes a few minutes of spreadsheet work per month, and my taxes remain straightforward.
+Even PCI compliance was a breeze since my SaaS uses Braintree’s drop-in iframe;
+I just had to click through a set of checkboxes to affirm I wasn’t doing anything obviously insecure.
+The trickiest business puzzle was figuring out how New York’s sales tax rules applied to Autoplaylists.
+For the details, check out my post on the &lt;a href=&quot;https://www.simonmweber.com/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html&quot;&gt;tax and legal implication of launching a Chrome Extension&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Marketing, on the other hand, wasn’t so simple for me.
+I started the year out strong with the Autoplaylists launch.
+Here’s what I did, all of which I’d do again:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;before launch, found passionate users for a beta and got them on a mailing list&lt;/li&gt;
+  &lt;li&gt;at launch, reached out to tech journalists who’d written about Google Music. &lt;a href=&quot;http://fieldguide.gizmodo.com/how-to-use-one-of-itunes-best-features-in-google-play-m-1766789374&quot;&gt;Gizmodo’s article&lt;/a&gt; landed tens of thousands of views for the cost of a few emails.&lt;/li&gt;
+  &lt;li&gt;after launch, shared good autoplaylists to music-sharing communities&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unfortunately, I fizzled out after that.
+Not continuing to push Autoplaylists users onto a mailing list was a mistake, and I didn’t put much effort at all into the Autoresponder launch.
+While organic search and word of mouth have provided some growth, I’m planning to double down on content marketing and media outreach this year.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-next&quot;&gt;What’s Next?&lt;/h3&gt;
+
+&lt;p&gt;2016 was a great start, and I’m proud to be a small business owner with happy customers.
+More importantly, I’ve now got the confidence for bigger ventures in 2017.
+Two things I’m considering are launching a product for small businesses and buying an existing product, each of which would present some interesting new challenges.&lt;/p&gt;
+
+&lt;p&gt;Hopefully next year I’ll be writing a similar post!
+If you’d like to follow along, be sure to subscribe with the links below.
+Also, feel free to send an email if I can be of assistance; my inbox is always open.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Publishing your first Chrome Extension, part 2: Analytics and Error Reporting</title>
