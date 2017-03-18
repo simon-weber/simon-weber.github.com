@@ -7,7 +7,9 @@ description: "A look back on what I learned selling my own software in 2016."
 {{ page.title }}
 ----------------
 
-<p class="meta">January 9 2017</p>
+<p class="meta">January 9 2017, updated March 18 2017</p>
+
+*If you're selling an extension, check out my project [Analytics for Google Payments Center](/2017/03/18/google-payments-center-analytics-extension.html).*
 
 In 2016, I set a goal to earn money from software I built.
 Being an employee or contractor wouldn't count.
