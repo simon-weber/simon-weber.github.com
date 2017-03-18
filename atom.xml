@@ -4,13 +4,65 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-01-09T10:33:26-05:00</updated>
+ <updated>2017-03-18T16:03:53-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Analytics for the Google Payments Center</title>
+   <link href="http://www.simonmweber.com/2017/03/18/google-payments-center-analytics-extension.html"/>
+   <updated>2017-03-18T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2017/03/18/google-payments-center-analytics-extension</id>
+   <content type="html">&lt;h2 id=&quot;analytics-for-the-google-payments-center&quot;&gt;Analytics for the Google Payments Center&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;March 18 2017&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;fill out this form for a beta invite&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you receive money from Google you’re surely familiar with the Google Payments Center.
+I deal with it in the context of my subscription Chrome Extension &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Its main interface is a list of orders:&lt;/p&gt;
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gpc_orders_redacted.png&quot; alt=&quot;example Google Payments Center orders&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;A screenshot from my account with full order numbers removed.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is largely useless for answering business reporting questions such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;how many new users purchased this month?&lt;/li&gt;
+  &lt;li&gt;how many subscriptions churned this month?&lt;/li&gt;
+  &lt;li&gt;what’s the net growth in subscriptions over time?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, I’ve created an analytics Chrome Extension to calculate these numbers.
+It lets me answer these questions at a glance, like Baremetrics or ChartMogul do for other processors.
+Here’s the graph it generates for me:&lt;/p&gt;
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gpc_graph.png&quot; alt=&quot;the graph generated from my orders&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;A screenshot of the extension. Each bar is a monthly breakdown with the trend line showing net growth.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;While it’s still rough around the edges, it’s already my favorite way to look at order trends.
+So, I’m opening it up for a free private beta.
+&lt;strong&gt;If you’d like to try it out, &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;fill out this form to sign up&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s a few more details:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;your order information never leaves your own computer&lt;/li&gt;
+  &lt;li&gt;subscription products will generate the best graph, but one-time purchases, in-app purchases, Android Apps, Youtube Fan Funding, ad payments, etc will also work&lt;/li&gt;
+  &lt;li&gt;more metrics are in the works, such as monthly recurring revenue (MRR), failed charges, and life time value (LTV)&lt;/li&gt;
+  &lt;li&gt;I’m interesting in addressing other pain points as well, such as bulk exporting of statements&lt;/li&gt;
+  &lt;li&gt;I plan to charge after leaving beta&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Side project income 2016: 0 to $100/month</title>
