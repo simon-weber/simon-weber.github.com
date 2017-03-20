@@ -73,6 +73,9 @@ landing page:
 .header-year{margin:20px 0 20px 0;}
 .landing-item ul,.landing-item p{margin-top:10px;}
 .landing-item ul li{text-align:left;margin-bottom:5px;}
+.post-date {
+    font-family: Consolas, monaco, monospace;
+}
 
 /*
 Posts:
