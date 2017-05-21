@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-04-18T22:44:02-04:00</updated>
+ <updated>2017-05-21T15:10:05-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -539,7 +539,7 @@ Here are the most common culprits:&lt;/p&gt;
   &lt;li&gt;tools like &lt;a href=&quot;https://pypi.python.org/pypi/sentry&quot;&gt;Sentry&lt;/a&gt; will be able to aggregate log messages intelligently&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Pylint will detect this antipattern as &lt;a href=&quot;https://bitbucket.org/logilab/pylint/src/default/checkers/logging.py&quot;&gt;W1201 and W1202&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pylint will detect this antipattern as &lt;a href=&quot;https://github.com/PyCQA/pylint/blob/master/pylint/checkers/logging.py&quot;&gt;W1201 and W1202&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;loggererrore-in-exception-handlers&quot;&gt;logger.error(…e) in exception handlers&lt;/h3&gt;
 
