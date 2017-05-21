@@ -39,7 +39,7 @@ This pushes the interpolation off to the logging framework:
 * encoding problems will not raise an exception (they'll be logged instead)
 * tools like [Sentry](https://pypi.python.org/pypi/sentry) will be able to aggregate log messages intelligently
 
-Pylint will detect this antipattern as [W1201 and W1202](https://bitbucket.org/logilab/pylint/src/default/checkers/logging.py).
+Pylint will detect this antipattern as [W1201 and W1202](https://github.com/PyCQA/pylint/blob/master/pylint/checkers/logging.py).
 
 
 ### logger.error(...e) in exception handlers
