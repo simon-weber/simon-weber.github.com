@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="How, when, and why to use executeScript instead of a manifest content script." />
+    
+    <link rel="canonical" href="https://www.simonmweber.com/2017/07/17/executescript-content-script-alternative-chrome-extension.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>tabs.executeScript as a content script alternative in Chrome Extensions</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon three-spaced row">
+                    <span><a href="https://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="tabsexecutescript-as-a-content-script-alternative-in-chrome-extensions">tabs.executeScript as a content script alternative in Chrome Extensions</h2>
+
+<p class="meta">July 17 2017</p>
+<p>I just updated <a href="https://autoplaylists.simon.codes">Autoplaylists for Google Music</a> so it uses <code>chrome.tabs.executeScript</code> instead of a manifest content script.
+It’s only been a few days, but so far it’s halved sync problems.
+Since I didn’t find similar recommendations elsewhere, this post explains what motivated the change and how I went about it.</p>
+
+<p>First, some context on Autoplaylists.
+It’s a Chrome Extension that adds iTunes-style “smart playlists” to Google Music.
+It runs entirely in the browser and makes money from a freemium subscription model (there’s more details in <a href="/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html">my</a> <a href="/2016/07/18/launching-a-chrome-extension-part-2-analytics-and-error-reporting.html">business-focused</a> <a href="/2017/01/09/side-project-income-2016-0-to-100.html">posts</a>).</p>
+
+<p>Since it uses unofficial apis, Autoplaylists depends on communication with a running Google Music tab.
+Specifically, it needs to:</p>
+
+<ul>
+  <li>retrieve the Google Music user id at startup</li>
+  <li>retrieve the cached library from Google’s IndexedDB at startup</li>
+  <li>retrieve Google’s xsrf cookie at startup, and on-demand (if it expires)</li>
+</ul>
+
+<p>To do this, Autoplaylists previously used a single long-running content script which sent its tab id to the background script after loading.
+The background script would use that tab id for any on-demand messages.</p>
+
+<p>This caused a few problems.
+First, a tab refresh was required after an install, upgrade, or reload, since the background script would lose the tab id and message passing channel.
+This was the worst issue: it’d interrupt syncing for no apparent reason, causing symptoms like <a href="https://github.com/simon-weber/Autoplaylists-for-Google-Music/issues/157">these</a>.
+Second, the background script had no way of knowing when tabs closed without messaging them.
+On-demand messages often ended up going into the void.</p>
+
+<p>My new setup fixes these problems.
+The notable changes are:</p>
+
+<ul>
+  <li>the background script has <code>tabs</code> permission</li>
+  <li>at startup or when detecting a tab opening, the background script will:
+    <ul>
+      <li>create a unique script id</li>
+      <li>add a new message listener that detaches itself after receiving a response with the script id</li>
+      <li>executeScript the former content script code (adapted for one-time use)</li>
+    </ul>
+  </li>
+  <li>the content script code sends responses as before, but includes the script id</li>
+</ul>
+
+<p>This moves the responsibility of running page code from Chrome into the background script.
+The added flexibility allows startup-time detection of tabs (after installs/upgrades/reloads), garbage collection of page code after one use, and easier handling of closed tabs for on-demand messages.</p>
+
+<p>It’s not a perfect solution.
+Aside from the added <a href="https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/page.js">complexity of script ids and dynamic event listeners</a>, adding the tabs permission turned out to be costly.
+Unexpectedly, it’s presented to users as allowing the extension to “view your browsing activity”, which is easily misinterpreted as access to history.
+Furthermore, Chrome prompts users for all the extension’s permissions when just adding one.
+The result was a lot of scary prompts and a few negative reviews.
+I’m working on setting up a mailing list so I can get in front of changes like these next time.</p>
+
+<p>Overall, though, the costs have been worth it.
+I’d recommend executeScript as a manifest content script alternative for extensions with long-running background scripts and on-demand page communication requirements.
+In case it’s helpful, you can find most of my relevant code in <a href="https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/page.js">page.js</a>, and the injected code in <a href="https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/querypage.js">querypage.js</a>.
+As always, feel free to reach out on GitHub or via email with questions.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        Subscribe to future posts via
+        <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
+        or
+        <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>

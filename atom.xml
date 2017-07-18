@@ -4,13 +4,79 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-05-21T15:10:05-04:00</updated>
+ <updated>2017-07-17T21:31:00-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>tabs.executeScript as a content script alternative in Chrome Extensions</title>
+   <link href="http://www.simonmweber.com/2017/07/17/executescript-content-script-alternative-chrome-extension.html"/>
+   <updated>2017-07-17T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2017/07/17/executescript-content-script-alternative-chrome-extension</id>
+   <content type="html">&lt;h2 id=&quot;tabsexecutescript-as-a-content-script-alternative-in-chrome-extensions&quot;&gt;tabs.executeScript as a content script alternative in Chrome Extensions&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;July 17 2017&lt;/p&gt;
+&lt;p&gt;I just updated &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt; so it uses &lt;code&gt;chrome.tabs.executeScript&lt;/code&gt; instead of a manifest content script.
+It’s only been a few days, but so far it’s halved sync problems.
+Since I didn’t find similar recommendations elsewhere, this post explains what motivated the change and how I went about it.&lt;/p&gt;
+
+&lt;p&gt;First, some context on Autoplaylists.
+It’s a Chrome Extension that adds iTunes-style “smart playlists” to Google Music.
+It runs entirely in the browser and makes money from a freemium subscription model (there’s more details in &lt;a href=&quot;/2016/07/11/launching-a-chrome-extension-part-1-taxes-and-legal.html&quot;&gt;my&lt;/a&gt; &lt;a href=&quot;/2016/07/18/launching-a-chrome-extension-part-2-analytics-and-error-reporting.html&quot;&gt;business-focused&lt;/a&gt; &lt;a href=&quot;/2017/01/09/side-project-income-2016-0-to-100.html&quot;&gt;posts&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Since it uses unofficial apis, Autoplaylists depends on communication with a running Google Music tab.
+Specifically, it needs to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;retrieve the Google Music user id at startup&lt;/li&gt;
+  &lt;li&gt;retrieve the cached library from Google’s IndexedDB at startup&lt;/li&gt;
+  &lt;li&gt;retrieve Google’s xsrf cookie at startup, and on-demand (if it expires)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To do this, Autoplaylists previously used a single long-running content script which sent its tab id to the background script after loading.
+The background script would use that tab id for any on-demand messages.&lt;/p&gt;
+
+&lt;p&gt;This caused a few problems.
+First, a tab refresh was required after an install, upgrade, or reload, since the background script would lose the tab id and message passing channel.
+This was the worst issue: it’d interrupt syncing for no apparent reason, causing symptoms like &lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-for-Google-Music/issues/157&quot;&gt;these&lt;/a&gt;.
+Second, the background script had no way of knowing when tabs closed without messaging them.
+On-demand messages often ended up going into the void.&lt;/p&gt;
+
+&lt;p&gt;My new setup fixes these problems.
+The notable changes are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the background script has &lt;code&gt;tabs&lt;/code&gt; permission&lt;/li&gt;
+  &lt;li&gt;at startup or when detecting a tab opening, the background script will:
+    &lt;ul&gt;
+      &lt;li&gt;create a unique script id&lt;/li&gt;
+      &lt;li&gt;add a new message listener that detaches itself after receiving a response with the script id&lt;/li&gt;
+      &lt;li&gt;executeScript the former content script code (adapted for one-time use)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;the content script code sends responses as before, but includes the script id&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This moves the responsibility of running page code from Chrome into the background script.
+The added flexibility allows startup-time detection of tabs (after installs/upgrades/reloads), garbage collection of page code after one use, and easier handling of closed tabs for on-demand messages.&lt;/p&gt;
+
+&lt;p&gt;It’s not a perfect solution.
+Aside from the added &lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/page.js&quot;&gt;complexity of script ids and dynamic event listeners&lt;/a&gt;, adding the tabs permission turned out to be costly.
+Unexpectedly, it’s presented to users as allowing the extension to “view your browsing activity”, which is easily misinterpreted as access to history.
+Furthermore, Chrome prompts users for all the extension’s permissions when just adding one.
+The result was a lot of scary prompts and a few negative reviews.
+I’m working on setting up a mailing list so I can get in front of changes like these next time.&lt;/p&gt;
+
+&lt;p&gt;Overall, though, the costs have been worth it.
+I’d recommend executeScript as a manifest content script alternative for extensions with long-running background scripts and on-demand page communication requirements.
+In case it’s helpful, you can find most of my relevant code in &lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/page.js&quot;&gt;page.js&lt;/a&gt;, and the injected code in &lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-for-Google-Music/blob/master/src/js/querypage.js&quot;&gt;querypage.js&lt;/a&gt;.
+As always, feel free to reach out on GitHub or via email with questions.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Analytics for the Google Payments Center</title>
