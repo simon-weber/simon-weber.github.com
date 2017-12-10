@@ -4,13 +4,40 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2017-07-17T21:31:00-04:00</updated>
+ <updated>2017-12-09T20:22:47-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Repominder</title>
+   <link href="http://www.simonmweber.com/2017/12/09/repominder.html"/>
+   <updated>2017-12-09T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2017/12/09/repominder</id>
+   <content type="html">&lt;h2 id=&quot;repominder&quot;&gt;Repominder&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;December 12 2017&lt;/p&gt;
+
+&lt;p&gt;I maintain a number of open source projects.
+Too often, something like this would happen:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I merge a pull request&lt;/li&gt;
+  &lt;li&gt;I promptly forget about it&lt;/li&gt;
+  &lt;li&gt;weeks later, the changes haven’t reached a package registry&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, I made &lt;a href=&quot;https://www.repominder.com&quot;&gt;Repominder&lt;/a&gt; to help OSS maintainers avoid this situation.
+Now when I forget about changes, I get a weekly email with diffs of affected projects.
+It also provides a badge showing the status of my projects (&lt;a href=&quot;https://github.com/simon-weber/gmusicapi#status-and-updates&quot;&gt;eg&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Feel free to &lt;a href=&quot;https://www.repominder.com&quot;&gt;sign up and monitor your own projects&lt;/a&gt;!
+It’s &lt;a href=&quot;https://github.com/simon-weber/repominder&quot;&gt;open source&lt;/a&gt;, and likely to remain free unless hosting becomes annoying.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>tabs.executeScript as a content script alternative in Chrome Extensions</title>
