@@ -4,13 +4,52 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-01-10T09:47:34-05:00</updated>
+ <updated>2018-01-26T23:29:02-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Analytics for the Google Payments Center: accounting data now supported</title>
+   <link href="http://www.simonmweber.com/2018/01/26/analytics-google-payments-center-accounting-upgrade.html"/>
+   <updated>2018-01-26T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2018/01/26/analytics-google-payments-center-accounting-upgrade</id>
+   <content type="html">&lt;h2 id=&quot;analytics-for-the-google-payments-center-accounting-data-now-supported&quot;&gt;Analytics for the Google Payments Center: accounting data now supported&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;January 26 2018&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;sign up for a beta invite&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Last year I launched the beta of &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for the Google Payments Center&lt;/a&gt;,
+a Chrome Extension to help Google merchants make sense of their business metrics.
+Today I’m announcing the first major change in a while: full support for accounting data.&lt;/p&gt;
+
+&lt;p&gt;Basically, Analytics used to only support order data.
+This was useful for tracking subscription metrics like net new subscribers or churn, but didn’t help with accounting.
+Now, Analytics has access to every transaction, earnings report and VAT invoice, meaning it can answer questions like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what’s my growth in profit over time?&lt;/li&gt;
+  &lt;li&gt;how much sales tax did I collect in the last reporting period?&lt;/li&gt;
+  &lt;li&gt;how much am I paying in Google fees?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s an example graph:&lt;/p&gt;
+
+&lt;div class=&quot;figure&quot;&gt;
+&lt;p&gt;&lt;img src=&quot;/images/gpc_earnings.png&quot; alt=&quot;the new earnings graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;A screenshot of the new earnings graph. Each bar is a monthly breakdown with the trend line showing net growth.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m also looking into supporting bulk exports of this new data.
+This would combine monthly documents like earnings reports for download all at once, rather than one at a time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To get in on the free beta, &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;sign up here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Side project income 2017</title>
