@@ -4,13 +4,54 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-01-26T23:29:02-05:00</updated>
+ <updated>2018-03-11T21:37:48-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Autoplaylists 2017 user survey results</title>
+   <link href="http://www.simonmweber.com/2018/03/11/autoplaylists-user-survey-results.html"/>
+   <updated>2018-03-11T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2018/03/11/autoplaylists-user-survey-results</id>
+   <content type="html">&lt;h2 id=&quot;autoplaylists-2017-user-survey-results&quot;&gt;Autoplaylists 2017 user survey results&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;March 11 2018&lt;/p&gt;
+
+&lt;p&gt;In early 2018 I sent out a user survey for &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.
+My goal was to get a general idea of user satisfaction, as well as figure out what I should focus on next.
+Here’s a quick summary of the results:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;~30% response rate from mailing list, representing ~5% of daily actives&lt;/li&gt;
+  &lt;li&gt;~6:4 representation of free vs paying users&lt;/li&gt;
+  &lt;li&gt;on average, users were likely to recommend it (NPS of 15)&lt;/li&gt;
+  &lt;li&gt;on average, users found it reliable (4+ on 5-point scale of “never works” to “almost always works”)&lt;/li&gt;
+  &lt;li&gt;common themes in feedback were:
+    &lt;ul&gt;
+      &lt;li&gt;syncing is opaque&lt;/li&gt;
+      &lt;li&gt;complex autoplaylist definitions are difficult to manage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I don’t want to read too much into this - especially with a low response rate and over-representation of paying users - but in general I’m pleased with the results.
+The reliability data is particularly relieving, since I had my doubts going by my user support work.&lt;/p&gt;
+
+&lt;p&gt;I’m hoping to address both the common pain points this year by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;adding a syncing dashboard with past syncs and their results&lt;/li&gt;
+  &lt;li&gt;adding a way to share common parts of playlists definitions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, here’s to a successful 2018!
+I’m excited to run a similar survey next year now that I have results to compare against.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Analytics for the Google Payments Center: accounting data now supported</title>
