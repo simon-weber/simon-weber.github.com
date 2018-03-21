@@ -34,5 +34,5 @@ Here's an explanation of each field:
 If the maintainer doesn't change package versions between releases, you'll want to change it on your branch so pip can tell the difference between your temporary release and the last release. For example, say you contribute a fix to version 1.2.3 of a library. To create your new version, you could:
 
 * branch from your feature branch
-* change the version to 1.2.4rc1, since it's a release candidate of the bugfixed 1.2.3 release
-* use a requirements line like `git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4rc1`
+* change the version to 1.2.4-rc.1, since it's a release candidate of the bugfixed 1.2.3 release
+* use a requirements line like `git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1`
