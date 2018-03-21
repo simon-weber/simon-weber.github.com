@@ -9,9 +9,9 @@ description: "Analytics now has access to transactions as well as orders."
 
 <p class="meta">January 26 2018</p>
 
-*tl;dr [sign up for a beta invite](https://goo.gl/forms/1E1pYXKm95QIdR7M2).*
+*tl;dr [install the extension here](https://analytics.simon.codes).*
 
-Last year I launched the beta of [Analytics for the Google Payments Center](/2017/03/18/google-payments-center-analytics-extension.html),
+Last year I launched the beta of [Analytics for the Google Payments](https://analytics.simon.codes),
 a Chrome Extension to help Google merchants make sense of their business metrics.
 Today I'm announcing the first major change in a while: full support for accounting data.
 
@@ -32,5 +32,3 @@ Here's an example graph:
 
 I'm also looking into supporting bulk exports of this new data.
 This would combine monthly documents like earnings reports for download all at once, rather than one at a time.
-
-**To get in on the free beta, [sign up here](https://goo.gl/forms/1E1pYXKm95QIdR7M2).**

@@ -31,7 +31,7 @@ I've already started collecting feedback from cancelled Autoresponder users, but
 
 Part of my coding effort went into two new yet-to-be-monetized projects.
 
-The first is [Analytics for Google Payments](/2017/03/18/google-payments-center-analytics-extension.html), which helps merchants calculate business metrics like the ones I presented earlier.
+The first is [Analytics for Google Payments](https://analytics.simon.codes), which helps merchants calculate business metrics like the ones I presented earlier.
 Motivated by my frustration getting that data for Autoplaylists, it's also similar behind the scenes:
 both are Chrome Extensions using reverse-engineered apis.
 While the market is crowded - Baremetrics and ChartMogul come to mind - nobody has bothered with Google Payments because of the lack of official apis.

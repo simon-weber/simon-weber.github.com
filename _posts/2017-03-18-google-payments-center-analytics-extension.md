@@ -9,7 +9,7 @@ description: "Announcing the private beta of a Chrome Extension for the Google P
 
 <p class="meta">March 18 2017</p>
 
-*tl;dr [fill out this form for a beta invite](https://goo.gl/forms/1E1pYXKm95QIdR7M2).*
+*tl;dr [install the extension here](https://analytics.simon.codes).*
 
 If you receive money from Google you're surely familiar with the Google Payments Center.
 I deal with it in the context of my subscription Chrome Extension [Autoplaylists for Google Music](https://autoplaylists.simon.codes).
@@ -36,7 +36,7 @@ Here's the graph it generates for me:
 
 While it's still rough around the edges, it's already my favorite way to look at order trends.
 So, I'm opening it up for a free private beta.
-**If you'd like to try it out, [fill out this form to sign up](https://goo.gl/forms/1E1pYXKm95QIdR7M2).**
+**If you'd like to try it out, [install it here](https://analytics.simon.codes).**
 
 Here's a few more details:
 

@@ -9,7 +9,7 @@ description: Some of the hacks that went into my first Chrome extension.
 
 <p class="meta">June 5 2013, updated March 18 2017</p>
 
-*If you're selling an extension, check out my project [Analytics for Google Payments Center](/2017/03/18/google-payments-center-analytics-extension.html).*
+*If you're selling an extension, check out my project [Analytics for Google Payments](https://analytics.simon.codes).*
 
 I just shipped my first Recurse Center project: a Chrome extension that scratches a personal itch.
 I use [turntable.fm](http://turntable.fm) every now and then, which lets me dj music with friends.

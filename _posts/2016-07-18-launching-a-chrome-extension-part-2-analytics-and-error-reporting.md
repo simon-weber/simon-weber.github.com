@@ -9,7 +9,7 @@ description: "The second in a series of posts with advice on publishing Chrome E
 
 <p class="meta">July 18 2016, updated March 18 2017</p>
 
-*If you're selling an extension, check out my project [Analytics for Google Payments Center](/2017/03/18/google-payments-center-analytics-extension.html).*
+*If you're selling an extension, check out my project [Analytics for Google Payments](https://analytics.simon.codes).*
 
 Earlier this year, I launched my first paid Chrome extension: [Autoplaylists for Google Music](https://autoplaylists.simon.codes/).
 The non-software work involved - like organizing a beta, wrangling paperwork, and finding users - was a bit daunting to handle solo.
