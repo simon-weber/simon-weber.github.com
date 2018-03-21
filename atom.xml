@@ -4,13 +4,30 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-03-11T21:37:48-04:00</updated>
+ <updated>2018-03-21T19:40:27-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Analytics for Google Payments: now in public beta</title>
+   <link href="http://www.simonmweber.com/2018/03/21/analytics-for-google-payments-public-beta.html"/>
+   <updated>2018-03-21T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2018/03/21/analytics-for-google-payments-public-beta</id>
+   <content type="html">&lt;h2 id=&quot;analytics-for-google-payments-now-in-public-beta&quot;&gt;Analytics for Google Payments: now in public beta&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;March 21 2018&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;,
+a Chrome Extension to help Google merchants make sense of their business metrics,
+is now in public beta.&lt;/p&gt;
+
+&lt;p&gt;To find out more and try it out, head to the new product site at &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;analytics.simon.codes&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Autoplaylists 2017 user survey results</title>
@@ -62,9 +79,9 @@ I’m excited to run a similar survey next year now that I have results to compa
 
 &lt;p class=&quot;meta&quot;&gt;January 26 2018&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;sign up for a beta invite&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;install the extension here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Last year I launched the beta of &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for the Google Payments Center&lt;/a&gt;,
+&lt;p&gt;Last year I launched the beta of &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for the Google Payments&lt;/a&gt;,
 a Chrome Extension to help Google merchants make sense of their business metrics.
 Today I’m announcing the first major change in a while: full support for accounting data.&lt;/p&gt;
 
@@ -87,8 +104,6 @@ Now, Analytics has access to every transaction, earnings report and VAT invoice,
 
 &lt;p&gt;I’m also looking into supporting bulk exports of this new data.
 This would combine monthly documents like earnings reports for download all at once, rather than one at a time.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To get in on the free beta, &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;sign up here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -125,7 +140,7 @@ I’ve already started collecting feedback from cancelled Autoresponder users, b
 
 &lt;p&gt;Part of my coding effort went into two new yet-to-be-monetized projects.&lt;/p&gt;
 
-&lt;p&gt;The first is &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for Google Payments&lt;/a&gt;, which helps merchants calculate business metrics like the ones I presented earlier.
+&lt;p&gt;The first is &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;, which helps merchants calculate business metrics like the ones I presented earlier.
 Motivated by my frustration getting that data for Autoplaylists, it’s also similar behind the scenes:
 both are Chrome Extensions using reverse-engineered apis.
 While the market is crowded - Baremetrics and ChartMogul come to mind - nobody has bothered with Google Payments because of the lack of official apis.
@@ -282,7 +297,7 @@ As always, feel free to reach out on GitHub or via email with questions.&lt;/p&g
 
 &lt;p class=&quot;meta&quot;&gt;March 18 2017&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;fill out this form for a beta invite&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tl;dr &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;install the extension here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;If you receive money from Google you’re surely familiar with the Google Payments Center.
 I deal with it in the context of my subscription Chrome Extension &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.&lt;/p&gt;
@@ -311,7 +326,7 @@ Here’s the graph it generates for me:&lt;/p&gt;
 
 &lt;p&gt;While it’s still rough around the edges, it’s already my favorite way to look at order trends.
 So, I’m opening it up for a free private beta.
-&lt;strong&gt;If you’d like to try it out, &lt;a href=&quot;https://goo.gl/forms/1E1pYXKm95QIdR7M2&quot;&gt;fill out this form to sign up&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;If you’d like to try it out, &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;install it here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Here’s a few more details:&lt;/p&gt;
 
@@ -334,7 +349,7 @@ So, I’m opening it up for a free private beta.
 
 &lt;p class=&quot;meta&quot;&gt;January 9 2017, updated March 18 2017&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for Google Payments Center&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In 2016, I set a goal to earn money from software I built.
 Being an employee or contractor wouldn’t count.
@@ -419,7 +434,7 @@ Also, feel free to send an email if I can be of assistance; my inbox is always o
 
 &lt;p class=&quot;meta&quot;&gt;July 18 2016, updated March 18 2017&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for Google Payments Center&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Earlier this year, I launched my first paid Chrome extension: &lt;a href=&quot;https://autoplaylists.simon.codes/&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.
 The non-software work involved - like organizing a beta, wrangling paperwork, and finding users - was a bit daunting to handle solo.
@@ -511,7 +526,7 @@ I’ve written  &lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-fo
 
 &lt;p class=&quot;meta&quot;&gt;July 11 2016, updated March 18 2017&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for Google Payments Center&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Earlier this year, I launched my first paid Chrome extension: &lt;a href=&quot;https://autoplaylists.simon.codes/&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;.
 The non-software work involved - like organizing a beta, wrangling paperwork, and finding users - was a bit daunting to handle solo.
@@ -870,8 +885,8 @@ Leaving some out can have unexpected effects, like pip installing a different ve
 
 &lt;ul&gt;
   &lt;li&gt;branch from your feature branch&lt;/li&gt;
-  &lt;li&gt;change the version to 1.2.4rc1, since it’s a release candidate of the bugfixed 1.2.3 release&lt;/li&gt;
-  &lt;li&gt;use a requirements line like &lt;code&gt;git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4rc1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;change the version to 1.2.4-rc.1, since it’s a release candidate of the bugfixed 1.2.3 release&lt;/li&gt;
+  &lt;li&gt;use a requirements line like &lt;code&gt;git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -1192,7 +1207,7 @@ There’s no need for &lt;a href=&quot;https://code.google.com/p/protobuf-gae-ha
 
 &lt;p class=&quot;meta&quot;&gt;June 5 2013, updated March 18 2017&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;/2017/03/18/google-payments-center-analytics-extension.html&quot;&gt;Analytics for Google Payments Center&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you’re selling an extension, check out my project &lt;a href=&quot;https://analytics.simon.codes&quot;&gt;Analytics for Google Payments&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;I just shipped my first Recurse Center project: a Chrome extension that scratches a personal itch.
 I use &lt;a href=&quot;http://turntable.fm&quot;&gt;turntable.fm&lt;/a&gt; every now and then, which lets me dj music with friends.
