@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="10k subscribers, 13 services, $0/month." />
+    
+    <link rel="canonical" href="https://www.simonmweber.com/2018/07/09/running-kleroteria-for-free-by-abusing-free-tiers.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Running Kleroteria for free by (ab)using free tiers</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon three-spaced row">
+                    <span><a href="https://www.facebook.com/simon.weber1"><img alt="Facebook" src="/images/facebook.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="https://twitter.com/#!/simonmweber"><img alt="Twitter" src="/images/twitter.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="running-kleroteria-for-free-by-abusing-free-tiers">Running Kleroteria for free by (ab)using free tiers</h2>
+
+<p class="meta">July 9 2018</p>
+
+<p><a href="https://www.kleroteria.org/">Kleroteria</a> is an email lottery: periodically, a random subscriber is chosen to write to everyone else.
+I built it to replace The Listserve, which recently shut down after providing years of advice, hundreds of personal stories, and one impromptu picnic.
+It was a fun and personal corner of the internet that I missed immediately.</p>
+
+<p>I suspect the creators of The Listserve just got tired of running it.
+First, it was high maintenance: the lottery and post sending was done by hand.
+Second, it was expensive: it was powered by MailChimp, which would have cost hundreds of dollars per month given their tens of thousands of subscribers.</p>
+
+<p>I’d need to address these in my replacement.
+I figured I could easily run it for little more than the cost of sending emails.
+But could I host the entire thing for free?
+I wasn’t sure, and figuring it out quickly became a personal challenge.</p>
+
+<p>After far too long digging through pricing docs, I came up with a serverless setup run on AWS’s indefinitely free tier.
+It’s illustrative of just how much Amazon gives away, but also how quickly a serverless architecture can get out of hand.</p>
+
+<p>This post lays out my ridiculous thirteen-service setup to inspire future free tier shenanigans.</p>
+
+<h3 id="infrastructure-shopping">Infrastructure shopping</h3>
+
+<p>My other side projects are run unceremoniously on cheap virtual private servers.
+<a href="https://gchat.simon.codes/">Autoresponder</a> and <a href="https://www.repominder.com/">repominder</a>, for example, run on &lt;$1/month deals from lowendbox.
+A comparable free offering is Google’s f1-micro instance, though I was concerned about bottlenecking on vcpu during signup spikes.</p>
+
+<p>So, I started looking at serverless options since the free tiers seemed generous.
+GCP looked promising, but Google’s free email offering was limited to a few thousand sends/month.
+I considered Azure as well, but was turned off by the lack of a free hosted database.
+AWS ended up providing roughly the same pieces as Google, but with the benefit of 62k free sends/month through SES.</p>
+
+<p>Things were starting to take shape.
+I could use Lambda for the backend, DynamoDB for storage (RDS is only free for a year), and SES for email.
+Most of the service limits weren’t an issue - I’ll never need 25GB of storage - but Dynamo throughput was a concern.
+It’s measured in “capacity units” which boil down to about 25 writes/second and 50 eventually-consistent reads/second.
+I needed to make sure I could stay under these limits.</p>
+
+<h3 id="dynamo-math">Dynamo math</h3>
+
+<p>Kleroteria stores two things: posts and subscribers.
+I decided to use random ids to prevent hot partitions.
+The full schemas ended up looking like this:</p>
+
+<ul>
+  <li>pending_posts table:
+    <ul>
+      <li>key: randomly-generated id</li>
+      <li>values: contents and status</li>
+    </ul>
+  </li>
+  <li>subscriber table:
+    <ul>
+      <li>key: randomly-generated id</li>
+      <li>values: email address</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Post contents are capped such that their rows are less than 4kb.
+Subscriber rows, on the other hand, are only ~32b on average.
+These row sizes are important, since capacity units are measured in 1kb chunks for writes and 4kb chunks for reads.</p>
+
+<p>For example, consider sending out a post.
+This requires a full scan of the subscriber table.
+With a table of 10k rows, each under 32b, read in perfect 4kb chunks, a sustained scan at one read capacity unit would require about 40 seconds.
+Using 5 rcus, it’d take ~8 seconds.
+Similarly, 100k subscribers could be handled in ~20 seconds with 20 rcus.</p>
+
+<p>Selecting a lottery winner is roughly the same thing: a full scan, then random selection.
+Originally, I avoided the scan by using a composite primary key.
+This involved a two-level index - partitioned by the first character of the id and sorted by the full id - and could select a random item in under two queries.
+It turned out not to be worth the trouble, though, since its distribution was biased and the AWS limit of 25 rcus allows for fast enough scans.</p>
+
+<p>The other operations are more straightforward.
+Subscribing and unsubscribing, for example, cost 1 wcu each.
+Processed synchronously, though, this could cause an issue: beyond 25 signups/second I’d start getting throttled (or start paying).
+I needed a way to spread out operations during spikes.</p>
+
+<h3 id="throttling-under-service-limits">Throttling under service limits</h3>
+
+<p>Kleroteria has the luxury of being entirely asynchronous, so I connected everything with SQS queues.
+This allows precise throttling by adjusting the queue polling rate.
+For example, if subscriptions were sent through a queue consumed 1 message/second, it’d never exceed 1 wcu.</p>
+
+<p>Dynamo’s capacity units aren’t the only limit in play, though.
+SQS and Lambda both allow only one million free requests/month.
+Lambda also constrains runtime and memory usage, and SES has a sending rate limit.
+To fit within all of these, I’m currently running:</p>
+
+<ul>
+  <li>1 scheduled lambda execution / minute</li>
+  <li>30 second limit / lambda execution</li>
+  <li>10 messages / SQS poll</li>
+  <li>10 second wait / SQS poll</li>
+</ul>
+
+<p>This puts me at ~40k executions/month, ~120k polls/month, ~1 wcu, and ~1 email/second, which is pretty conservative.
+I plan to increase the message limit once it’s been live for a while.</p>
+
+<p>Putting it all together, the pieces involved in subscription handling look like this:</p>
+
+<p>
+<pre style="font-family: monospace">
+      browser (AWS sdk + Cognito) --&gt; SQS                     
+                                       |                      
+                                       v                      
+      CloudWatch events -----------&gt; Lambda --&gt; Dynamo and SES
+</pre>
+</p>
+
+<p>Note that the frontend enqueues directly to SQS.
+This avoids API Gateway (which isn’t free) and per-request Lambda executions.
+It comes with a cost, though: javascript must be enabled to sign up, and I can’t give users feedback from serverside validation.
+I’m hoping this doesn’t matter too much in practice.</p>
+
+<h3 id="everything-else">Everything else</h3>
+
+<p>Astute readers will count six services mentioned so far, while I promised thirteen.
+The seventh is IAM, which is used for internal access control.
+It’s always free since it’s an essential part of AWS.</p>
+
+<p>The remaining six services aren’t from AWS.
+One is netlify, used to host the frontend assets.
+I’ve found it comparable to GitHub Pages - my usual choice - though I’ve noticed surprisingly flaky uptime according to New Relic Synthetics, my external monitoring tool.</p>
+
+<p>The remaining services are supporting bits that don’t require much commentary:</p>
+
+<ul>
+  <li>Sentry: error reporting (frontend + lambda)</li>
+  <li>Google Analytics: frontend analytics</li>
+  <li>BitBucket: private git repo</li>
+  <li>CloudFlare: dns (with cdn disabled, since netlify provides one)</li>
+</ul>
+
+<h3 id="whew">Whew</h3>
+
+<p>So, there you have it: thirteen services, tens of thousands of subscribers, $0 per month.
+Was it worth it?
+Probably not, from the context of a side project.
+Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what would have otherwise been a weekend project.
+That said, it was a fun challenge and the result is more robust than my usual vps setups.</p>
+
+<p><strong><a href="https://www.kleroteria.org/">Go join Kleroteria</a> so I can justify my effort!</strong>
+If you’re interested in hearing more about it - or getting notified if I open source it - consider subscribing with the links below.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        Subscribe to future posts via
+        <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
+        or
+        <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>,
+        or <a href="/">view all posts</a>.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>

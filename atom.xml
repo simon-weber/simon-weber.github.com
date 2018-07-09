@@ -4,13 +4,167 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-06-09T12:41:34-04:00</updated>
+ <updated>2018-07-08T23:15:36-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Running Kleroteria for free by (ab)using free tiers</title>
+   <link href="http://www.simonmweber.com/2018/07/09/running-kleroteria-for-free-by-abusing-free-tiers.html"/>
+   <updated>2018-07-09T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2018/07/09/running-kleroteria-for-free-by-abusing-free-tiers</id>
+   <content type="html">&lt;h2 id=&quot;running-kleroteria-for-free-by-abusing-free-tiers&quot;&gt;Running Kleroteria for free by (ab)using free tiers&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;July 9 2018&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.kleroteria.org/&quot;&gt;Kleroteria&lt;/a&gt; is an email lottery: periodically, a random subscriber is chosen to write to everyone else.
+I built it to replace The Listserve, which recently shut down after providing years of advice, hundreds of personal stories, and one impromptu picnic.
+It was a fun and personal corner of the internet that I missed immediately.&lt;/p&gt;
+
+&lt;p&gt;I suspect the creators of The Listserve just got tired of running it.
+First, it was high maintenance: the lottery and post sending was done by hand.
+Second, it was expensive: it was powered by MailChimp, which would have cost hundreds of dollars per month given their tens of thousands of subscribers.&lt;/p&gt;
+
+&lt;p&gt;I’d need to address these in my replacement.
+I figured I could easily run it for little more than the cost of sending emails.
+But could I host the entire thing for free?
+I wasn’t sure, and figuring it out quickly became a personal challenge.&lt;/p&gt;
+
+&lt;p&gt;After far too long digging through pricing docs, I came up with a serverless setup run on AWS’s indefinitely free tier.
+It’s illustrative of just how much Amazon gives away, but also how quickly a serverless architecture can get out of hand.&lt;/p&gt;
+
+&lt;p&gt;This post lays out my ridiculous thirteen-service setup to inspire future free tier shenanigans.&lt;/p&gt;
+
+&lt;h3 id=&quot;infrastructure-shopping&quot;&gt;Infrastructure shopping&lt;/h3&gt;
+
+&lt;p&gt;My other side projects are run unceremoniously on cheap virtual private servers.
+&lt;a href=&quot;https://gchat.simon.codes/&quot;&gt;Autoresponder&lt;/a&gt; and &lt;a href=&quot;https://www.repominder.com/&quot;&gt;repominder&lt;/a&gt;, for example, run on &amp;lt;$1/month deals from lowendbox.
+A comparable free offering is Google’s f1-micro instance, though I was concerned about bottlenecking on vcpu during signup spikes.&lt;/p&gt;
+
+&lt;p&gt;So, I started looking at serverless options since the free tiers seemed generous.
+GCP looked promising, but Google’s free email offering was limited to a few thousand sends/month.
+I considered Azure as well, but was turned off by the lack of a free hosted database.
+AWS ended up providing roughly the same pieces as Google, but with the benefit of 62k free sends/month through SES.&lt;/p&gt;
+
+&lt;p&gt;Things were starting to take shape.
+I could use Lambda for the backend, DynamoDB for storage (RDS is only free for a year), and SES for email.
+Most of the service limits weren’t an issue - I’ll never need 25GB of storage - but Dynamo throughput was a concern.
+It’s measured in “capacity units” which boil down to about 25 writes/second and 50 eventually-consistent reads/second.
+I needed to make sure I could stay under these limits.&lt;/p&gt;
+
+&lt;h3 id=&quot;dynamo-math&quot;&gt;Dynamo math&lt;/h3&gt;
+
+&lt;p&gt;Kleroteria stores two things: posts and subscribers.
+I decided to use random ids to prevent hot partitions.
+The full schemas ended up looking like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pending_posts table:
+    &lt;ul&gt;
+      &lt;li&gt;key: randomly-generated id&lt;/li&gt;
+      &lt;li&gt;values: contents and status&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;subscriber table:
+    &lt;ul&gt;
+      &lt;li&gt;key: randomly-generated id&lt;/li&gt;
+      &lt;li&gt;values: email address&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Post contents are capped such that their rows are less than 4kb.
+Subscriber rows, on the other hand, are only ~32b on average.
+These row sizes are important, since capacity units are measured in 1kb chunks for writes and 4kb chunks for reads.&lt;/p&gt;
+
+&lt;p&gt;For example, consider sending out a post.
+This requires a full scan of the subscriber table.
+With a table of 10k rows, each under 32b, read in perfect 4kb chunks, a sustained scan at one read capacity unit would require about 40 seconds.
+Using 5 rcus, it’d take ~8 seconds.
+Similarly, 100k subscribers could be handled in ~20 seconds with 20 rcus.&lt;/p&gt;
+
+&lt;p&gt;Selecting a lottery winner is roughly the same thing: a full scan, then random selection.
+Originally, I avoided the scan by using a composite primary key.
+This involved a two-level index - partitioned by the first character of the id and sorted by the full id - and could select a random item in under two queries.
+It turned out not to be worth the trouble, though, since its distribution was biased and the AWS limit of 25 rcus allows for fast enough scans.&lt;/p&gt;
+
+&lt;p&gt;The other operations are more straightforward.
+Subscribing and unsubscribing, for example, cost 1 wcu each.
+Processed synchronously, though, this could cause an issue: beyond 25 signups/second I’d start getting throttled (or start paying).
+I needed a way to spread out operations during spikes.&lt;/p&gt;
+
+&lt;h3 id=&quot;throttling-under-service-limits&quot;&gt;Throttling under service limits&lt;/h3&gt;
+
+&lt;p&gt;Kleroteria has the luxury of being entirely asynchronous, so I connected everything with SQS queues.
+This allows precise throttling by adjusting the queue polling rate.
+For example, if subscriptions were sent through a queue consumed 1 message/second, it’d never exceed 1 wcu.&lt;/p&gt;
+
+&lt;p&gt;Dynamo’s capacity units aren’t the only limit in play, though.
+SQS and Lambda both allow only one million free requests/month.
+Lambda also constrains runtime and memory usage, and SES has a sending rate limit.
+To fit within all of these, I’m currently running:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1 scheduled lambda execution / minute&lt;/li&gt;
+  &lt;li&gt;30 second limit / lambda execution&lt;/li&gt;
+  &lt;li&gt;10 messages / SQS poll&lt;/li&gt;
+  &lt;li&gt;10 second wait / SQS poll&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This puts me at ~40k executions/month, ~120k polls/month, ~1 wcu, and ~1 email/second, which is pretty conservative.
+I plan to increase the message limit once it’s been live for a while.&lt;/p&gt;
+
+&lt;p&gt;Putting it all together, the pieces involved in subscription handling look like this:&lt;/p&gt;
+
+&lt;p&gt;
+&lt;pre style=&quot;font-family: monospace&quot;&gt;
+      browser (AWS sdk + Cognito) --&amp;gt; SQS                     
+                                       |                      
+                                       v                      
+      CloudWatch events -----------&amp;gt; Lambda --&amp;gt; Dynamo and SES
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Note that the frontend enqueues directly to SQS.
+This avoids API Gateway (which isn’t free) and per-request Lambda executions.
+It comes with a cost, though: javascript must be enabled to sign up, and I can’t give users feedback from serverside validation.
+I’m hoping this doesn’t matter too much in practice.&lt;/p&gt;
+
+&lt;h3 id=&quot;everything-else&quot;&gt;Everything else&lt;/h3&gt;
+
+&lt;p&gt;Astute readers will count six services mentioned so far, while I promised thirteen.
+The seventh is IAM, which is used for internal access control.
+It’s always free since it’s an essential part of AWS.&lt;/p&gt;
+
+&lt;p&gt;The remaining six services aren’t from AWS.
+One is netlify, used to host the frontend assets.
+I’ve found it comparable to GitHub Pages - my usual choice - though I’ve noticed surprisingly flaky uptime according to New Relic Synthetics, my external monitoring tool.&lt;/p&gt;
+
+&lt;p&gt;The remaining services are supporting bits that don’t require much commentary:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sentry: error reporting (frontend + lambda)&lt;/li&gt;
+  &lt;li&gt;Google Analytics: frontend analytics&lt;/li&gt;
+  &lt;li&gt;BitBucket: private git repo&lt;/li&gt;
+  &lt;li&gt;CloudFlare: dns (with cdn disabled, since netlify provides one)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;whew&quot;&gt;Whew&lt;/h3&gt;
+
+&lt;p&gt;So, there you have it: thirteen services, tens of thousands of subscribers, $0 per month.
+Was it worth it?
+Probably not, from the context of a side project.
+Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what would have otherwise been a weekend project.
+That said, it was a fun challenge and the result is more robust than my usual vps setups.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.kleroteria.org/&quot;&gt;Go join Kleroteria&lt;/a&gt; so I can justify my effort!&lt;/strong&gt;
+If you’re interested in hearing more about it - or getting notified if I open source it - consider subscribing with the links below.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Analytics for Google Payments: now in public beta</title>
