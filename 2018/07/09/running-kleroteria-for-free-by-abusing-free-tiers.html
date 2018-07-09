@@ -131,14 +131,14 @@ It turned out not to be worth the trouble, though, since its distribution was bi
 
 <p>The other operations are more straightforward.
 Subscribing and unsubscribing, for example, cost 1 wcu each.
-Processed synchronously, though, this could cause an issue: beyond 25 signups/second I’d start getting throttled (or start paying).
+Processed synchronously, though, this could cause an issue: beyond 25 signups/second I’d start getting throttled (or worse, charged).
 I needed a way to spread out operations during spikes.</p>
 
 <h3 id="throttling-under-service-limits">Throttling under service limits</h3>
 
 <p>Kleroteria has the luxury of being entirely asynchronous, so I connected everything with SQS queues.
 This allows precise throttling by adjusting the queue polling rate.
-For example, if subscriptions were sent through a queue consumed 1 message/second, it’d never exceed 1 wcu.</p>
+For example, if subscriptions were sent through a queue consumed at 1 message/second, it’d never exceed 1 wcu.</p>
 
 <p>Dynamo’s capacity units aren’t the only limit in play, though.
 SQS and Lambda both allow only one million free requests/month.
@@ -147,7 +147,7 @@ To fit within all of these, I’m currently running:</p>
 
 <ul>
   <li>1 scheduled lambda execution / minute</li>
-  <li>30 second limit / lambda execution</li>
+  <li>30 seconds / lambda execution</li>
   <li>10 messages / SQS poll</li>
   <li>10 second wait / SQS poll</li>
 </ul>
@@ -173,7 +173,7 @@ I’m hoping this doesn’t matter too much in practice.</p>
 
 <h3 id="everything-else">Everything else</h3>
 
-<p>Astute readers will count six services mentioned so far, while I promised thirteen.
+<p>Astute readers will count six services so far, while I promised thirteen.
 The seventh is IAM, which is used for internal access control.
 It’s always free since it’s an essential part of AWS.</p>
 
@@ -181,7 +181,7 @@ It’s always free since it’s an essential part of AWS.</p>
 One is netlify, used to host the frontend assets.
 I’ve found it comparable to GitHub Pages - my usual choice - though I’ve noticed surprisingly flaky uptime according to New Relic Synthetics, my external monitoring tool.</p>
 
-<p>The remaining services are supporting bits that don’t require much commentary:</p>
+<p>The remaining services play supporting roles and don’t require much commentary:</p>
 
 <ul>
   <li>Sentry: error reporting (frontend + lambda)</li>
@@ -194,8 +194,8 @@ I’ve found it comparable to GitHub Pages - my usual choice - though I’ve not
 
 <p>So, there you have it: thirteen services, tens of thousands of subscribers, $0 per month.
 Was it worth it?
-Probably not, from the context of a side project.
-Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what would have otherwise been a weekend project.
+Probably not, at least in the context of a side project.
+Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what should have been a weekend project.
 That said, it was a fun challenge and the result is more robust than my usual vps setups.</p>
 
 <p><strong><a href="https://www.kleroteria.org/">Go join Kleroteria</a> so I can justify my effort!</strong>
