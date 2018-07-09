@@ -30,7 +30,7 @@ This post lays out my ridiculous thirteen-service setup to inspire future free t
 ### Infrastructure shopping
 
 My other side projects are run unceremoniously on cheap virtual private servers.
-[Autoresponder](https://gchat.simon.codes/) and [repominder](https://www.repominder.com/), for example, run on <$1/month deals from lowendbox.
+[Autoresponder](https://gchat.simon.codes/) and [Repominder](https://www.repominder.com/), for example, run on <$1/month deals from lowendbox.
 A comparable free offering is Google's f1-micro instance, though I was concerned about bottlenecking on vcpu during signup spikes. 
 
 So, I started looking at serverless options since the free tiers seemed generous.
