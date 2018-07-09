@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-07-08T23:15:36-04:00</updated>
+ <updated>2018-07-08T23:42:35-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -42,7 +42,7 @@ It’s illustrative of just how much Amazon gives away, but also how quickly a s
 &lt;h3 id=&quot;infrastructure-shopping&quot;&gt;Infrastructure shopping&lt;/h3&gt;
 
 &lt;p&gt;My other side projects are run unceremoniously on cheap virtual private servers.
-&lt;a href=&quot;https://gchat.simon.codes/&quot;&gt;Autoresponder&lt;/a&gt; and &lt;a href=&quot;https://www.repominder.com/&quot;&gt;repominder&lt;/a&gt;, for example, run on &amp;lt;$1/month deals from lowendbox.
+&lt;a href=&quot;https://gchat.simon.codes/&quot;&gt;Autoresponder&lt;/a&gt; and &lt;a href=&quot;https://www.repominder.com/&quot;&gt;Repominder&lt;/a&gt;, for example, run on &amp;lt;$1/month deals from lowendbox.
 A comparable free offering is Google’s f1-micro instance, though I was concerned about bottlenecking on vcpu during signup spikes.&lt;/p&gt;
 
 &lt;p&gt;So, I started looking at serverless options since the free tiers seemed generous.
