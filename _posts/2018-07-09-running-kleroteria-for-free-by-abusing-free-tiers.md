@@ -74,14 +74,14 @@ It turned out not to be worth the trouble, though, since its distribution was bi
 
 The other operations are more straightforward.
 Subscribing and unsubscribing, for example, cost 1 wcu each.
-Processed synchronously, though, this could cause an issue: beyond 25 signups/second I'd start getting throttled (or start paying).
+Processed synchronously, though, this could cause an issue: beyond 25 signups/second I'd start getting throttled (or worse, charged).
 I needed a way to spread out operations during spikes.
 
 ### Throttling under service limits
 
 Kleroteria has the luxury of being entirely asynchronous, so I connected everything with SQS queues.
 This allows precise throttling by adjusting the queue polling rate.
-For example, if subscriptions were sent through a queue consumed 1 message/second, it'd never exceed 1 wcu.
+For example, if subscriptions were sent through a queue consumed at 1 message/second, it'd never exceed 1 wcu.
 
 Dynamo's capacity units aren't the only limit in play, though.
 SQS and Lambda both allow only one million free requests/month.
@@ -89,7 +89,7 @@ Lambda also constrains runtime and memory usage, and SES has a sending rate limi
 To fit within all of these, I'm currently running:
 
 * 1 scheduled lambda execution / minute
-* 30 second limit / lambda execution
+* 30 seconds / lambda execution
 * 10 messages / SQS poll
 * 10 second wait / SQS poll
 
@@ -114,7 +114,7 @@ I'm hoping this doesn't matter too much in practice.
 
 ### Everything else
 
-Astute readers will count six services mentioned so far, while I promised thirteen.
+Astute readers will count six services so far, while I promised thirteen.
 The seventh is IAM, which is used for internal access control.
 It's always free since it's an essential part of AWS.
 
@@ -122,7 +122,7 @@ The remaining six services aren't from AWS.
 One is netlify, used to host the frontend assets.
 I've found it comparable to GitHub Pages - my usual choice - though I've noticed surprisingly flaky uptime according to New Relic Synthetics, my external monitoring tool.
 
-The remaining services are supporting bits that don't require much commentary:
+The remaining services play supporting roles and don't require much commentary:
 
 * Sentry: error reporting (frontend + lambda)
 * Google Analytics: frontend analytics
@@ -133,8 +133,8 @@ The remaining services are supporting bits that don't require much commentary:
 
 So, there you have it: thirteen services, tens of thousands of subscribers, $0 per month.
 Was it worth it?
-Probably not, from the context of a side project.
-Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what would have otherwise been a weekend project.
+Probably not, at least in the context of a side project.
+Reading pricing docs, planning Dynamo capacity, and setting up a local environment added days to what should have been a weekend project.
 That said, it was a fun challenge and the result is more robust than my usual vps setups.
 
 **[Go join Kleroteria](https://www.kleroteria.org/) so I can justify my effort!**
