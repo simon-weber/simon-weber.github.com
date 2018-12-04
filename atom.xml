@@ -4,13 +4,40 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2018-08-05T18:16:24-04:00</updated>
+ <updated>2018-12-03T21:32:25-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>MinMaxMeals: cheap, healthy, and fast cooking</title>
+   <link href="http://www.simonmweber.com/2018/12/03/minmaxmeals.html"/>
+   <updated>2018-12-03T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2018/12/03/minmaxmeals</id>
+   <content type="html">&lt;h2 id=&quot;minmaxmeals-cheap-healthy-and-fast-cooking&quot;&gt;MinMaxMeals: cheap, healthy, and fast cooking&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;December 3 2018&lt;/p&gt;
+
+&lt;p&gt;In a departure from my typical projects, I’ve launched a cooking site!
+&lt;a href=&quot;https://www.minmaxmeals.com/&quot;&gt;MinMaxMeals&lt;/a&gt; disregards culinary convention in favor of cost, health, and speed
+– typical meals call for $1 of ingredients and a few minutes in a microwave.&lt;/p&gt;
+
+&lt;p&gt;Here’s a bit on its origins from &lt;a href=&quot;https://www.minmaxmeals.com/about/&quot;&gt;the about page&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;While today I cook this way because it’s practical, it was originally out of necessity.
+I had suddenly become ill, and was put on a restricted diet to figure out what foods I could tolerate.
+Prepping all my own meals lead to my focus on speed, cost, and nutrition, while the limited ingredients ruled out most familiar dishes.
+As my health returned I added more ingredients, and later - after my cooking became a conversation starter - I decided to share what I’d learned.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If this sounds intriguing, check out my recipe for &lt;a href=&quot;https://www.minmaxmeals.com/recipes/garlic-oatmeal/&quot;&gt;oatmeal that tastes like garlic bread&lt;/a&gt;.
+Or, read about &lt;a href=&quot;https://www.minmaxmeals.com/ingredients/lentils/&quot;&gt;the different types of lentils&lt;/a&gt; and how they’re often cheaper under different names.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Running Kleroteria for free by (ab)using free tiers</title>
