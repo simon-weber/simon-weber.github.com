@@ -4,13 +4,36 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2019-01-28T13:26:45-05:00</updated>
+ <updated>2019-03-30T17:26:22-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>NYC Park Alerts</title>
+   <link href="http://www.simonmweber.com/2019/03/30/nyc-park-alerts.html"/>
+   <updated>2019-03-30T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2019/03/30/nyc-park-alerts</id>
+   <content type="html">&lt;h2 id=&quot;nyc-park-alerts&quot;&gt;NYC Park Alerts&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;March 30 2019&lt;/p&gt;
+
+&lt;p&gt;I work out at a city &lt;a href=&quot;https://www.nycgovparks.org/facilities/recreationcenters&quot;&gt;rec center&lt;/a&gt;, largely because the price - about $10/month - is hard to beat.&lt;/p&gt;
+
+&lt;p&gt;Schedule consistency is a downside, however.
+Due to events and maintenance I’ve sometimes shown up to find my location unexpectedly closed.&lt;/p&gt;
+
+&lt;p&gt;After some research, I found that the city does a pretty good job of &lt;a href=&quot;https://www.nycgovparks.org/news/notices&quot;&gt;posting schedule changes online&lt;/a&gt;.
+But, since there’s no way to subscribe to them, you need to check every time before visiting.&lt;/p&gt;
+
+&lt;p&gt;So, I built &lt;a href=&quot;https://parks.simon.codes/&quot;&gt;NYC Park Alerts&lt;/a&gt;.
+It lets you subscribe to locations of your choice, and will email you when updates are posted.
+Go sign up at &lt;a href=&quot;https://parks.simon.codes/&quot;&gt;parks.simon.codes&lt;/a&gt; if you’re also a rec center fan!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Side project income 2018</title>
