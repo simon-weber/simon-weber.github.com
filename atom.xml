@@ -4,13 +4,40 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2019-03-30T17:26:22-04:00</updated>
+ <updated>2019-04-26T16:16:29-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Leaving Venmo after five years</title>
+   <link href="http://www.simonmweber.com/2019/04/26/leaving-venmo-after-five-years.html"/>
+   <updated>2019-04-26T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2019/04/26/leaving-venmo-after-five-years</id>
+   <content type="html">&lt;h2 id=&quot;leaving-venmo-after-five-years&quot;&gt;Leaving Venmo after five years&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;April 26 2019&lt;/p&gt;
+
+&lt;p&gt;I left Venmo recently, after an eventful five and a half year stay.
+Over that time we increased quarterly payment volume by over 100x, grew from dozens to hundreds of employees, and were both acquired and spun off.
+I’d grown too: with the fourth longest tenure at Venmo, I was now leading a team and part of engineering-wide discussions.&lt;/p&gt;
+
+&lt;p&gt;Unsurprisingly, with increased responsibilities came increased stress.
+Upper management turnover was especially tough, as I found myself fighting the same political battles under each regime.
+My enthusiasm turned to jadedness, then cynicism, then anxiety.
+Eventually, despite a supportive manager and a sabbatical, I became concerned for my health and decided to make a change.&lt;/p&gt;
+
+&lt;p&gt;I’m now officially working for myself.
+After taking some time to recover, I plan to focus mostly on &lt;a href=&quot;/2019/01/07/side-project-income-2018.html&quot;&gt;my own software&lt;/a&gt; - which I suppose aren’t “side projects” anymore - and occasionally pick up consulting work.
+I also look forward to having time for &lt;a href=&quot;https://www.minmaxmeals.com/&quot;&gt;cooking&lt;/a&gt;, &lt;a href=&quot;https://www.twitch.tv/videos/416687233&quot;&gt;music&lt;/a&gt;, and engaging with the ever-growing &lt;a href=&quot;https://www.recurse.com/&quot;&gt;Recurse Center&lt;/a&gt; community.&lt;/p&gt;
+
+&lt;p&gt;Sign up below if you’d like to follow what I’m up to.
+Or, shoot me an email if you’re interested in part-time help, particularly around backend scaling, CI/CD, or python.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>NYC Park Alerts</title>
