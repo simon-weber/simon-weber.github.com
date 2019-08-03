@@ -107,7 +107,7 @@ Attaching Cookies directly to the request kept all the relevant information and 
 I’d like to thank Lukasa and SigmaVirus24 on #python-requests for pointing me to the relevant Requests internals, and for generally putting up with my mad raving.
 Lukasa also had what I thought was some sharp insight into the situation:
 
-> **simon_weber**: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies \[using Requests\]
+> **simon_weber**: I suppose it would be nice to be able to set both simple and Cookie cookies using Requests
 
 > **Lukasa**: I think more than that, we want to discourage it.
 > Cookies are complicated and easy to get wrong
