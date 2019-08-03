@@ -4,3 +4,8 @@ markdown: kramdown
 future: true
 gems:
     - jekyll-sitemap
+exclude:
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    - .gitignore
