@@ -72,10 +72,10 @@ Leaving some out can have unexpected effects, like pip installing a different ve
 <p>Here’s an explanation of each field:</p>
 
 <ul>
-  <li><code>git+https://...git</code>: the vcs type with the repo url appended. https (rather than ssh) is usually how you want to install public code, since it doesn’t require keys to be set up on the machine you’re running on.</li>
-  <li><code>@4.0.0</code>: the git ref to clone. This example points to <a href="https://github.com/simon-weber/gmusicapi/releases/tag/4.0.0">the 4.0.0 tag</a>. You don’t need to use a tag - pip will happily use anything that can be checked out, such as a feature branch - but I recommend it to avoid using a ref that will point somewhere else later (like <code>master</code> likely would).</li>
-  <li><code>egg=gmusicapi</code>: the name of the package. This is the name you’d give to <code>pip install</code> (which isn’t always the same name as the repo).</li>
-  <li><code>==4.0.0</code>: the version of the package. Without this field pip can’t tell what version to expect at the repo and will be forced to clone on every run (even if the package is up to date).</li>
+  <li><code class="highlighter-rouge">git+https://...git</code>: the vcs type with the repo url appended. https (rather than ssh) is usually how you want to install public code, since it doesn’t require keys to be set up on the machine you’re running on.</li>
+  <li><code class="highlighter-rouge">@4.0.0</code>: the git ref to clone. This example points to <a href="https://github.com/simon-weber/gmusicapi/releases/tag/4.0.0">the 4.0.0 tag</a>. You don’t need to use a tag - pip will happily use anything that can be checked out, such as a feature branch - but I recommend it to avoid using a ref that will point somewhere else later (like <code class="highlighter-rouge">master</code> likely would).</li>
+  <li><code class="highlighter-rouge">egg=gmusicapi</code>: the name of the package. This is the name you’d give to <code class="highlighter-rouge">pip install</code> (which isn’t always the same name as the repo).</li>
+  <li><code class="highlighter-rouge">==4.0.0</code>: the version of the package. Without this field pip can’t tell what version to expect at the repo and will be forced to clone on every run (even if the package is up to date).</li>
 </ul>
 
 <p>If the maintainer doesn’t change package versions between releases, you’ll want to change it on your branch so pip can tell the difference between your temporary release and the last release. For example, say you contribute a fix to version 1.2.3 of a library. To create your new version, you could:</p>
@@ -83,7 +83,7 @@ Leaving some out can have unexpected effects, like pip installing a different ve
 <ul>
   <li>branch from your feature branch</li>
   <li>change the version to 1.2.4-rc.1, since it’s a release candidate of the bugfixed 1.2.3 release</li>
-  <li>use a requirements line like <code>git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1</code></li>
+  <li>use a requirements line like <code class="highlighter-rouge">git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1</code></li>
 </ul>
 
 </div>

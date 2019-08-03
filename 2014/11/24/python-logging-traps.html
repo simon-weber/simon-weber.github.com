@@ -70,13 +70,13 @@ Here are the most common culprits:</p>
 
 <h4 id="bad">Bad:</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">some_data</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"My data: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">some_data</span><span class="p">)</span>
 <span class="c"># or, equivalently</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">some_data</span><span class="p">))</span></code></pre></figure>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"My data: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">some_data</span><span class="p">))</span></code></pre></figure>
 
 <h4 id="good">Good:</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">some_data</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"My data: </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">some_data</span><span class="p">)</span></code></pre></figure>
 
 <p>This pushes the interpolation off to the logging framework:</p>
 
@@ -95,31 +95,31 @@ Here are the most common culprits:</p>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="o">...</span>
 <span class="k">except</span> <span class="n">FooException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Uh oh! Error: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> </code></pre></figure>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"Uh oh! Error: </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> </code></pre></figure>
 
 <h4 id="good-1">Good:</h4>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="o">...</span>
 <span class="k">except</span> <span class="n">FooException</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">&quot;Uh oh!&quot;</span><span class="p">)</span> </code></pre></figure>
+    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">"Uh oh!"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Formatting an exception throws away the traceback, which you usually want for debugging.
-<code>logger.exception</code> is a helper that calls <code>logger.error</code> but also logs the traceback.</p>
+<code class="highlighter-rouge">logger.exception</code> is a helper that calls <code class="highlighter-rouge">logger.error</code> but also logs the traceback.</p>
 
 <h3 id="implicitly-encoding-unicode-data">Implicitly encoding unicode data</h3>
 
 <h4 id="bad-2">Bad:</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">checkmark</span> <span class="o">=</span> <span class="s">&#39;√&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">checkmark</span> <span class="o">=</span> <span class="s">'√'</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"My data: </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></figure>
 
 <h4 id="good-2">Good:</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;My data: </span><span class="si">%r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"My data: </span><span class="si">%</span><span class="s">r"</span><span class="p">,</span> <span class="n">checkmark</span><span class="p">)</span></code></pre></figure>
 
-<p>Using <code>%s</code> with a unicode string will cause it to be encoded, which will cause an <code>EncodingError</code> unless your default encoding is utf-8.
-Using <code>%r</code> will format the unicode in \u-escaped repr format instead.</p>
+<p>Using <code class="highlighter-rouge">%s</code> with a unicode string will cause it to be encoded, which will cause an <code class="highlighter-rouge">EncodingError</code> unless your default encoding is utf-8.
+Using <code class="highlighter-rouge">%r</code> will format the unicode in \u-escaped repr format instead.</p>
 
 </div>
 

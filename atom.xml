@@ -4,13 +4,61 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2019-04-26T16:16:29-04:00</updated>
+ <updated>2019-08-03T17:26:28-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Plugserv</title>
+   <link href="http://www.simonmweber.com/2019/08/03/plugserv.html"/>
+   <updated>2019-08-03T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2019/08/03/plugserv</id>
+   <content type="html">&lt;h2 id=&quot;plugserv&quot;&gt;Plugserv&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;August 3 2019&lt;/p&gt;
+
+&lt;script&gt;
+// empty script block so GA doesn&#39;t show up right next to Plugserv.
+&lt;/script&gt;
+
+&lt;p&gt;I’ve been creating websites for a while now.
+Some of these get consistent visitors, while some are nearly unknown.
+At some point I realized there was an opportunity here: my popular sites could advertise my other sites.
+So, I started manually adding small text ads to each.&lt;/p&gt;
+
+&lt;p&gt;This quickly became unwieldy.
+I’m closing in on ten active projects, and I got sick of updating all of them whenever I launched something new.
+I decided my next project would solve this problem.&lt;/p&gt;
+
+&lt;p&gt;I call it &lt;a href=&quot;https://www.plugserv.com/&quot;&gt;Plugserv&lt;/a&gt;, since it lets me shamelessly plug my websites.
+It’s an open source ad server: I configure it with all my ads and add a javascript snippet to each site.
+Plugserv then rotates my ads automatically and collects basic performance metrics.
+Here’s a live example of what this looks like:&lt;/p&gt;
+
+&lt;div id=&quot;plugserv-example&quot;&gt;
+&lt;p style=&quot;text-align: center&quot;&gt;
+    &lt;span id=&quot;example-plug&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;script&gt;
+  window.plugserv_config = {
+      elementId: &#39;example-plug&#39;,
+      endpoint: &#39;https://www.plugserv.com/serve/eb7e777e-9ec5-4323-acba-4e05f881cf42&#39;
+  };
+&lt;/script&gt;
+
+&lt;script async=&quot;&quot; src=&quot;https://www.plugserv.com/js/v1/plugserv.js&quot; integrity=&quot;sha384-Ngv41QqyGqgFyjzQseAmANPgTafxpqZ3fRcQXsShP02KwdzUy9VzIrp/ARgmFEql&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sign up at &lt;a href=&quot;https://www.plugserv.com/&quot;&gt;plugserv.com&lt;/a&gt; to run ads for your own sites!
+It’s free to use and &lt;a href=&quot;https://github.com/simon-weber/plugserv&quot;&gt;open source&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Leaving Venmo after five years</title>
@@ -539,7 +587,7 @@ It’s &lt;a href=&quot;https://github.com/simon-weber/repominder&quot;&gt;open 
    <content type="html">&lt;h2 id=&quot;tabsexecutescript-as-a-content-script-alternative-in-chrome-extensions&quot;&gt;tabs.executeScript as a content script alternative in Chrome Extensions&lt;/h2&gt;
 
 &lt;p class=&quot;meta&quot;&gt;July 17 2017&lt;/p&gt;
-&lt;p&gt;I just updated &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt; so it uses &lt;code&gt;chrome.tabs.executeScript&lt;/code&gt; instead of a manifest content script.
+&lt;p&gt;I just updated &lt;a href=&quot;https://autoplaylists.simon.codes&quot;&gt;Autoplaylists for Google Music&lt;/a&gt; so it uses &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome.tabs.executeScript&lt;/code&gt; instead of a manifest content script.
 It’s only been a few days, but so far it’s halved sync problems.
 Since I didn’t find similar recommendations elsewhere, this post explains what motivated the change and how I went about it.&lt;/p&gt;
 
@@ -569,7 +617,7 @@ On-demand messages often ended up going into the void.&lt;/p&gt;
 The notable changes are:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;the background script has &lt;code&gt;tabs&lt;/code&gt; permission&lt;/li&gt;
+  &lt;li&gt;the background script has &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt; permission&lt;/li&gt;
   &lt;li&gt;at startup or when detecting a tab opening, the background script will:
     &lt;ul&gt;
       &lt;li&gt;create a unique script id&lt;/li&gt;
@@ -1000,11 +1048,11 @@ cross-posted at the &lt;a href=&quot;https://venmo-blog.squarespace.com/2015/8/2
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NotFoundError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ne&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NotFoundError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enforce_presence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-   &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Raise NotFoundError if key is not in entries.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Raise NotFoundError if key is not in entries.&quot;&quot;&quot;&lt;/span&gt;
 
    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -1012,7 +1060,7 @@ cross-posted at the &lt;a href=&quot;https://venmo-blog.squarespace.com/2015/8/2
    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
        &lt;span class=&quot;n&quot;&gt;NotFoundError&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;If you said the unused import and missing &lt;code&gt;raise&lt;/code&gt; keyword, you’re right!
+&lt;p&gt;If you said the unused import and missing &lt;code class=&quot;highlighter-rouge&quot;&gt;raise&lt;/code&gt; keyword, you’re right!
 But, if you took longer than a quarter of a second to answer, sorry: you were outperformed by my linting tools.&lt;/p&gt;
 
 &lt;p&gt;Don’t feel bad! Linting is designed to detect these problems more quickly and consistently than a human.
@@ -1022,15 +1070,15 @@ We lint automatically at Venmo; here’s how we strike a balance between flexibi
 
 &lt;p&gt;We use a collection of linting tools.
 Currently we use &lt;a href=&quot;https://flake8.readthedocs.org&quot;&gt;flake8&lt;/a&gt;, &lt;a href=&quot;http://www.pylint.org/&quot;&gt;pylint&lt;/a&gt; and a custom internal tool.
-They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing &lt;code&gt;raise&lt;/code&gt;), and our internal tool catches errors that are only relevant to Venmo.
+They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing &lt;code class=&quot;highlighter-rouge&quot;&gt;raise&lt;/code&gt;), and our internal tool catches errors that are only relevant to Venmo.
 For easy use from the shell, we combine their output with &lt;a href=&quot;https://github.com/sk-/git-lint&quot;&gt;git-lint&lt;/a&gt; and a &lt;a href=&quot;https://gist.github.com/simon-weber/cfb1dcb3118135714abc&quot;&gt;short script&lt;/a&gt;.
 This setup catches a wide variety of errors and can easily accommodate new linters.
 Here’s what it looks like when run on the code from this post:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./lint example.py
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;./lint example.py
 Linting file: example.py FAILURE
-line 1, col 1: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;F401&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;sys&amp;#39;&lt;/span&gt; imported but unused
-line 15, col 8: Warning: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;W0104&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: Statement seems to have no effect&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+line 1, col 1: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;F401]: &lt;span class=&quot;s1&quot;&gt;&#39;sys&#39;&lt;/span&gt; imported but unused
+line 15, col 8: Warning: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;W0104]: Statement seems to have no effect&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Linting happens in three places during our workflow: in-editor, pre-commit, and during builds.
 The first step varies for each of us since we don’t all use the same editor (though vim with &lt;a href=&quot;https://github.com/scrooloose/syntastic&quot;&gt;syntastic&lt;/a&gt; is a common choice).
@@ -1038,7 +1086,7 @@ This is the step with the fastest feedback loop: if you don’t currently use li
 
 &lt;p&gt;The second step is implemented with a git &lt;a href=&quot;https://gist.github.com/simon-weber/b056db8cfa81e08ac67d&quot;&gt;pre-commit hook&lt;/a&gt;.
 It lints all the files about to be committed and aborts the commit if there are problems.
-Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in &lt;code&gt;--no-verify&lt;/code&gt; flag.&lt;/p&gt;
+Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in &lt;code class=&quot;highlighter-rouge&quot;&gt;--no-verify&lt;/code&gt; flag.&lt;/p&gt;
 
 &lt;p&gt;Finally, any errors that survive to a pull request will be caught during build linting on Jenkins.
 It’s similar to the pre-commit check, but runs on all files that have been changed in the feature branch.
@@ -1108,13 +1156,13 @@ Here are the most common culprits:&lt;/p&gt;
 
 &lt;h4 id=&quot;bad&quot;&gt;Bad:&lt;/h4&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# or, equivalently&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My data: {}&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;My data: {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;good&quot;&gt;Good:&lt;/h4&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This pushes the interpolation off to the logging framework:&lt;/p&gt;
 
@@ -1133,31 +1181,31 @@ Here are the most common culprits:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FooException&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Uh oh! Error: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Uh oh! Error: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;good-1&quot;&gt;Good:&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FooException&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Uh oh!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Uh oh!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Formatting an exception throws away the traceback, which you usually want for debugging.
-&lt;code&gt;logger.exception&lt;/code&gt; is a helper that calls &lt;code&gt;logger.error&lt;/code&gt; but also logs the traceback.&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;logger.exception&lt;/code&gt; is a helper that calls &lt;code class=&quot;highlighter-rouge&quot;&gt;logger.error&lt;/code&gt; but also logs the traceback.&lt;/p&gt;
 
 &lt;h3 id=&quot;implicitly-encoding-unicode-data&quot;&gt;Implicitly encoding unicode data&lt;/h3&gt;
 
 &lt;h4 id=&quot;bad-2&quot;&gt;Bad:&lt;/h4&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;√&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;√&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;good-2&quot;&gt;Good:&lt;/h4&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;My data: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Using &lt;code&gt;%s&lt;/code&gt; with a unicode string will cause it to be encoded, which will cause an &lt;code&gt;EncodingError&lt;/code&gt; unless your default encoding is utf-8.
-Using &lt;code&gt;%r&lt;/code&gt; will format the unicode in \u-escaped repr format instead.&lt;/p&gt;
+&lt;p&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;%s&lt;/code&gt; with a unicode string will cause it to be encoded, which will cause an &lt;code class=&quot;highlighter-rouge&quot;&gt;EncodingError&lt;/code&gt; unless your default encoding is utf-8.
+Using &lt;code class=&quot;highlighter-rouge&quot;&gt;%r&lt;/code&gt; will format the unicode in \u-escaped repr format instead.&lt;/p&gt;
 </content>
  </entry>
  
@@ -1184,10 +1232,10 @@ Leaving some out can have unexpected effects, like pip installing a different ve
 &lt;p&gt;Here’s an explanation of each field:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;git+https://...git&lt;/code&gt;: the vcs type with the repo url appended. https (rather than ssh) is usually how you want to install public code, since it doesn’t require keys to be set up on the machine you’re running on.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;@4.0.0&lt;/code&gt;: the git ref to clone. This example points to &lt;a href=&quot;https://github.com/simon-weber/gmusicapi/releases/tag/4.0.0&quot;&gt;the 4.0.0 tag&lt;/a&gt;. You don’t need to use a tag - pip will happily use anything that can be checked out, such as a feature branch - but I recommend it to avoid using a ref that will point somewhere else later (like &lt;code&gt;master&lt;/code&gt; likely would).&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;egg=gmusicapi&lt;/code&gt;: the name of the package. This is the name you’d give to &lt;code&gt;pip install&lt;/code&gt; (which isn’t always the same name as the repo).&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;==4.0.0&lt;/code&gt;: the version of the package. Without this field pip can’t tell what version to expect at the repo and will be forced to clone on every run (even if the package is up to date).&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git+https://...git&lt;/code&gt;: the vcs type with the repo url appended. https (rather than ssh) is usually how you want to install public code, since it doesn’t require keys to be set up on the machine you’re running on.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@4.0.0&lt;/code&gt;: the git ref to clone. This example points to &lt;a href=&quot;https://github.com/simon-weber/gmusicapi/releases/tag/4.0.0&quot;&gt;the 4.0.0 tag&lt;/a&gt;. You don’t need to use a tag - pip will happily use anything that can be checked out, such as a feature branch - but I recommend it to avoid using a ref that will point somewhere else later (like &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; likely would).&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;egg=gmusicapi&lt;/code&gt;: the name of the package. This is the name you’d give to &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install&lt;/code&gt; (which isn’t always the same name as the repo).&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;==4.0.0&lt;/code&gt;: the version of the package. Without this field pip can’t tell what version to expect at the repo and will be forced to clone on every run (even if the package is up to date).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If the maintainer doesn’t change package versions between releases, you’ll want to change it on your branch so pip can tell the difference between your temporary release and the last release. For example, say you contribute a fix to version 1.2.3 of a library. To create your new version, you could:&lt;/p&gt;
@@ -1195,7 +1243,7 @@ Leaving some out can have unexpected effects, like pip installing a different ve
 &lt;ul&gt;
   &lt;li&gt;branch from your feature branch&lt;/li&gt;
   &lt;li&gt;change the version to 1.2.4-rc.1, since it’s a release candidate of the bugfixed 1.2.3 release&lt;/li&gt;
-  &lt;li&gt;use a requirements line like &lt;code&gt;git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;use a requirements line like &lt;code class=&quot;highlighter-rouge&quot;&gt;git+https://github.com/me/lib.git@new_branch#egg=lib==1.2.4-rc.1&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -1401,7 +1449,7 @@ While this certainly required some getting used to, it doesn’t bother me anymo
 After all, I end up using a similar number of try/except blocks when writing robust Python code.&lt;/p&gt;
 
 &lt;p&gt;What does bother me is the loss of debugging information.
-For example, here’s an error I received from Go’s http client: &lt;code&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;.
+For example, here’s an error I received from Go’s http client: &lt;code class=&quot;highlighter-rouge&quot;&gt;Post http://front2.omegle.com/events: EOF&lt;/code&gt;.
 The unclear message and lack of a stacktrace left me guessing: is my code broken?
 Is Go’s?
 Maybe it was the server?
@@ -1470,14 +1518,14 @@ An open source PaaS is a noble goal, and more I always welcome competition for m
 an error like this one:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;google.protobuf&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;descriptor&lt;/span&gt; 
-&lt;span class=&quot;ne&quot;&gt;ImportError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;named&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;protobuf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;ImportError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;No&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;named&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;protobuf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The problem is that Google’s own App Engine apis also use the &lt;code&gt;google&lt;/code&gt; package namespace,
+&lt;p&gt;The problem is that Google’s own App Engine apis also use the &lt;code class=&quot;highlighter-rouge&quot;&gt;google&lt;/code&gt; package namespace,
 and they don’t include the protobuf package.&lt;/p&gt;
 
 &lt;p&gt;Thankfully, there’s a simple way to fix this.
 First, vendorize the library as you normally would.
-I just ripped the &lt;code&gt;site-packages&lt;/code&gt; folder from a virtualenv into the application root:&lt;/p&gt;
+I just ripped the &lt;code class=&quot;highlighter-rouge&quot;&gt;site-packages&lt;/code&gt; folder from a virtualenv into the application root:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;app.py
 app.yaml
@@ -1496,8 +1544,8 @@ I used this bit of code:&lt;/p&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;google&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# provided by GAE&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# add vendorized protobuf to google namespace package&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;vendor&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__path__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;google&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;vendor&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__path__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;google&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# add vendor path&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vendor_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1552,20 +1600,20 @@ For example, cross domain requests and cookie access are kosher – you just nee
 
 &lt;p&gt;Your extension can be made up of two different kinds of scripts.
 The first is the &lt;em&gt;background script&lt;/em&gt; (or &lt;em&gt;event script&lt;/em&gt;; the same thing but not always running).
-This does the heavy lifting, since it gets access to special &lt;code&gt;chrome.*&lt;/code&gt; apis.
+This does the heavy lifting, since it gets access to special &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome.*&lt;/code&gt; apis.
 These enable stuff like the cookie access I mentioned earlier.&lt;/p&gt;
 
 &lt;p&gt;You can also run a bunch of &lt;em&gt;content scripts&lt;/em&gt;.
 Unlike the background script, these are specific to a certain page.
-They get triggered when a tab matches a url pattern you specify (eg &lt;code&gt;http://turntable.com/*&lt;/code&gt;).
-They don’t get &lt;code&gt;chrome.*&lt;/code&gt; access.
+They get triggered when a tab matches a url pattern you specify (eg &lt;code class=&quot;highlighter-rouge&quot;&gt;http://turntable.com/*&lt;/code&gt;).
+They don’t get &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome.*&lt;/code&gt; access.
 They can access the DOM, but run in an &lt;em&gt;isolated world&lt;/em&gt; –
 basically, they can modify the DOM, but can’t mess with other code running on the page.
 For example, my content script can’t remove an event handler that a turntable script has set up.&lt;/p&gt;
 
 &lt;p&gt;At a first glance, content scripts sound pretty limited.
 However, you can get around all of the restrictions above with a bit of hackery.
-To access &lt;code&gt;chrome.*&lt;/code&gt; apis, there’s a two-way messaging interface to the background script:
+To access &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome.*&lt;/code&gt; apis, there’s a two-way messaging interface to the background script:
 you just offload the work there.
 Anything json-encodable is fair game for transport.
 Even the isolated world isn’t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.&lt;/p&gt;
@@ -1575,23 +1623,23 @@ All together, they communicate like this:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;our background script
      ^
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
+     |
    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;chrome message passing&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
      v
 our content script
      ^
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
+     |
    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;the dom&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
      v
 our injected code
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
+     |
    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;global namespace&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;
+     |
      v
 other code on the page&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1622,8 +1670,8 @@ This makes turntable do all the work, and is business as usual for the user.&lt;
 
 &lt;p&gt;After some quality time in the DevTools debugger, a friend of mine (thanks, &lt;a href=&quot;https://github.com/clehner&quot;&gt;Charlie&lt;/a&gt;!) figured out a way to do this.
 turntable uses a third party library called &lt;a href=&quot;http://plupload.com&quot;&gt;plupload&lt;/a&gt;.
-Unfortunately, a high level &lt;code&gt;window.plupload.upload(File)&lt;/code&gt; function isn’t accessible; it’s hidden inside turntable closures.
-However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like &lt;code&gt;$(&#39;..input[file]..&#39;).onchange.call(our_File)&lt;/code&gt;.&lt;/p&gt;
+Unfortunately, a high level &lt;code class=&quot;highlighter-rouge&quot;&gt;window.plupload.upload(File)&lt;/code&gt; function isn’t accessible; it’s hidden inside turntable closures.
+However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like &lt;code class=&quot;highlighter-rouge&quot;&gt;$(&#39;..input[file]..&#39;).onchange.call(our_File)&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Since injected code gets around the isolated world restriction, this is totally possible:
 we just need to also inject an html5 File containing the desired mp3.&lt;/p&gt;
@@ -1637,7 +1685,7 @@ Html5 Files, though, can only be created when a user interacts with a file input
 Duck typing to the rescue!&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//b is our Blob&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;myfile.mp3&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;myfile.mp3&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastModifiedDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// tada!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1795,7 +1843,7 @@ powering the ui.&lt;/p&gt;
 
 &lt;p&gt;It supports everything you’d expect, like key authentication,
 per-connection profiles, port forwarding, custom color schemes, and
-even your &lt;code&gt;~/.ssh/config&lt;/code&gt; file (well, probably; mine is simple).&lt;/p&gt;
+even your &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/config&lt;/code&gt; file (well, probably; mine is simple).&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;http://goo.gl/RYHiK&quot;&gt;chromium-hterm mailing list&lt;/a&gt; is where
 updates are posted. If you need an upcoming feature &lt;em&gt;now&lt;/em&gt;, there’s
@@ -1877,16 +1925,16 @@ sounds appealing, here’s what I did:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;used the crouton cli-extra target (eg
-&lt;code&gt;crouton -t cli-extra ...&lt;/code&gt;).&lt;/li&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;crouton -t cli-extra ...&lt;/code&gt;).&lt;/li&gt;
   &lt;li&gt;installed openssh in my chroot&lt;/li&gt;
   &lt;li&gt;start sshd, then use Secure Shell to connect to
 my-user@localhost&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To make life a bit easier, I stuck &lt;code&gt;/etc/init.d/ssh start&lt;/code&gt; into my
-chroot’s &lt;code&gt;/etc/rc.local&lt;/code&gt; (which crouton runs upon mounting). Now,
+&lt;p&gt;To make life a bit easier, I stuck &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/init.d/ssh start&lt;/code&gt; into my
+chroot’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/rc.local&lt;/code&gt; (which crouton runs upon mounting). Now,
 when I want to work locally, I just Control-Alt-Forward to get my
-local shell, &lt;code&gt;$ sudo enter-chroot&lt;/code&gt;, Control-Alt-Back to CrOS and
+local shell, &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo enter-chroot&lt;/code&gt;, Control-Alt-Back to CrOS and
 then run Secure Shell. You could probably get your chroot to mount
 and run sshd on boot if you use it all the time.&lt;/p&gt;
 
@@ -1951,8 +1999,8 @@ This only affected non-US logins!&lt;/p&gt;
 Inside a function to take a &lt;a href=&quot;http://docs.python-requests.org/en/latest/&quot;&gt;requests.Request&lt;/a&gt; and send it off to Google, here’s the relevant code before:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_xt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;u&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;xt&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;xt&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# web_cookies is a CookieJar&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_cookies&lt;/span&gt;
@@ -1970,11 +2018,11 @@ Inside a function to take a &lt;a href=&quot;http://docs.python-requests.org/en/
 
 &lt;span class=&quot;c&quot;&gt;#Attach auth.&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_xt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;u&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;xt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;u&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;xt&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_web_cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;xt&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_clientlogin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;SID&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_sid_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;SID&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_sid_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_sso&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;#dict &amp;lt;- CookieJar&lt;/span&gt;
@@ -2015,7 +2063,7 @@ Attaching Cookies directly to the request kept all the relevant information and 
 Lukasa also had what I thought was some sharp insight into the situation:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;simon_weber&lt;/strong&gt;: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies [using Requests]&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;simon_weber&lt;/strong&gt;: I suppose it would be nice to be able to set both simple and Cookie cookies using Requests&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;

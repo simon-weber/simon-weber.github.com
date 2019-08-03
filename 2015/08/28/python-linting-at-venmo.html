@@ -64,11 +64,11 @@ cross-posted at the <a href="https://venmo-blog.squarespace.com/2015/8/26/python
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="k">class</span> <span class="nc">NotFoundError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">NotFoundError</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
    <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">enforce_presence</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">entries</span><span class="p">):</span>
-   <span class="sd">&quot;&quot;&quot;Raise NotFoundError if key is not in entries.&quot;&quot;&quot;</span>
+   <span class="s">"""Raise NotFoundError if key is not in entries."""</span>
 
    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
        <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
@@ -76,7 +76,7 @@ cross-posted at the <a href="https://venmo-blog.squarespace.com/2015/8/26/python
    <span class="k">else</span><span class="p">:</span>
        <span class="n">NotFoundError</span></code></pre></figure>
 
-<p>If you said the unused import and missing <code>raise</code> keyword, you’re right!
+<p>If you said the unused import and missing <code class="highlighter-rouge">raise</code> keyword, you’re right!
 But, if you took longer than a quarter of a second to answer, sorry: you were outperformed by my linting tools.</p>
 
 <p>Don’t feel bad! Linting is designed to detect these problems more quickly and consistently than a human.
@@ -86,15 +86,15 @@ We lint automatically at Venmo; here’s how we strike a balance between flexibi
 
 <p>We use a collection of linting tools.
 Currently we use <a href="https://flake8.readthedocs.org">flake8</a>, <a href="http://www.pylint.org/">pylint</a> and a custom internal tool.
-They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing <code>raise</code>), and our internal tool catches errors that are only relevant to Venmo.
+They each address different needs: flake8 quickly catches simple errors (like the unused import), pylint slowly catches complex errors (like the missing <code class="highlighter-rouge">raise</code>), and our internal tool catches errors that are only relevant to Venmo.
 For easy use from the shell, we combine their output with <a href="https://github.com/sk-/git-lint">git-lint</a> and a <a href="https://gist.github.com/simon-weber/cfb1dcb3118135714abc">short script</a>.
 This setup catches a wide variety of errors and can easily accommodate new linters.
 Here’s what it looks like when run on the code from this post:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./lint example.py
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./lint example.py
 Linting file: example.py FAILURE
-line 1, col 1: <span class="o">[</span>F401<span class="o">]</span>: <span class="s1">&#39;sys&#39;</span> imported but unused
-line 15, col 8: Warning: <span class="o">[</span>W0104<span class="o">]</span>: Statement seems to have no effect</code></pre></figure>
+line 1, col 1: <span class="o">[</span>F401]: <span class="s1">'sys'</span> imported but unused
+line 15, col 8: Warning: <span class="o">[</span>W0104]: Statement seems to have no effect</code></pre></figure>
 
 <p>Linting happens in three places during our workflow: in-editor, pre-commit, and during builds.
 The first step varies for each of us since we don’t all use the same editor (though vim with <a href="https://github.com/scrooloose/syntastic">syntastic</a> is a common choice).
@@ -102,7 +102,7 @@ This is the step with the fastest feedback loop: if you don’t currently use li
 
 <p>The second step is implemented with a git <a href="https://gist.github.com/simon-weber/b056db8cfa81e08ac67d">pre-commit hook</a>.
 It lints all the files about to be committed and aborts the commit if there are problems.
-Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in <code>--no-verify</code> flag.</p>
+Sometimes we opt out of this check - maybe we know about the problems and plan to address them later - by using git’s built in <code class="highlighter-rouge">--no-verify</code> flag.</p>
 
 <p>Finally, any errors that survive to a pull request will be caught during build linting on Jenkins.
 It’s similar to the pre-commit check, but runs on all files that have been changed in the feature branch.

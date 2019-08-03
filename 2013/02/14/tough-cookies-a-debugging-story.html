@@ -88,8 +88,8 @@ This only affected non-US logins!</p>
 Inside a function to take a <a href="http://docs.python-requests.org/en/latest/">requests.Request</a> and send it off to Google, here’s the relevant code before:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">send_xt</span><span class="p">:</span>
-    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;xt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_web_cookie</span><span class="p">(</span><span class="s">&#39;xt&#39;</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">'u'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">'xt'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_web_cookie</span><span class="p">(</span><span class="s">'xt'</span><span class="p">)</span>
 
 <span class="c"># web_cookies is a CookieJar</span>
 <span class="n">request</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">web_cookies</span>
@@ -107,11 +107,11 @@ Inside a function to take a <a href="http://docs.python-requests.org/en/latest/"
 
 <span class="c">#Attach auth.</span>
 <span class="k">if</span> <span class="n">send_xt</span><span class="p">:</span>
-    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;u&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">&#39;xt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_web_cookie</span><span class="p">(</span><span class="s">&#39;xt&#39;</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">'u'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s">'xt'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_web_cookie</span><span class="p">(</span><span class="s">'xt'</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">send_clientlogin</span><span class="p">:</span>
-    <span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s">&#39;SID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_sid_token</span><span class="p">()</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s">'SID'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_sid_token</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="n">send_sso</span><span class="p">:</span>
     <span class="c">#dict &lt;- CookieJar</span>
@@ -152,7 +152,7 @@ Attaching Cookies directly to the request kept all the relevant information and 
 Lukasa also had what I thought was some sharp insight into the situation:</p>
 
 <blockquote>
-  <p><strong>simon_weber</strong>: I suppose it would be nice for tear-their-own-hair-out insane folks like me to be able to set both simple and Cookie cookies [using Requests]</p>
+  <p><strong>simon_weber</strong>: I suppose it would be nice to be able to set both simple and Cookie cookies using Requests</p>
 </blockquote>
 
 <blockquote>

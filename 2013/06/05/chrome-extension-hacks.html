@@ -94,20 +94,20 @@ For example, cross domain requests and cookie access are kosher – you just nee
 
 <p>Your extension can be made up of two different kinds of scripts.
 The first is the <em>background script</em> (or <em>event script</em>; the same thing but not always running).
-This does the heavy lifting, since it gets access to special <code>chrome.*</code> apis.
+This does the heavy lifting, since it gets access to special <code class="highlighter-rouge">chrome.*</code> apis.
 These enable stuff like the cookie access I mentioned earlier.</p>
 
 <p>You can also run a bunch of <em>content scripts</em>.
 Unlike the background script, these are specific to a certain page.
-They get triggered when a tab matches a url pattern you specify (eg <code>http://turntable.com/*</code>).
-They don’t get <code>chrome.*</code> access.
+They get triggered when a tab matches a url pattern you specify (eg <code class="highlighter-rouge">http://turntable.com/*</code>).
+They don’t get <code class="highlighter-rouge">chrome.*</code> access.
 They can access the DOM, but run in an <em>isolated world</em> –
 basically, they can modify the DOM, but can’t mess with other code running on the page.
 For example, my content script can’t remove an event handler that a turntable script has set up.</p>
 
 <p>At a first glance, content scripts sound pretty limited.
 However, you can get around all of the restrictions above with a bit of hackery.
-To access <code>chrome.*</code> apis, there’s a two-way messaging interface to the background script:
+To access <code class="highlighter-rouge">chrome.*</code> apis, there’s a two-way messaging interface to the background script:
 you just offload the work there.
 Anything json-encodable is fair game for transport.
 Even the isolated world isn’t bulletproof: with DOM access, you can inject a script tag to get at the global namespace.</p>
@@ -117,23 +117,23 @@ All together, they communicate like this:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">our background script
      ^
-     <span class="p">|</span>
-     <span class="p">|</span>
+     |
+     |
    <span class="o">(</span>chrome message passing<span class="o">)</span>
-     <span class="p">|</span>
+     |
      v
 our content script
      ^
-     <span class="p">|</span>
-     <span class="p">|</span>
+     |
+     |
    <span class="o">(</span>the dom<span class="o">)</span>
-     <span class="p">|</span>
+     |
      v
 our injected code
-     <span class="p">|</span>
-     <span class="p">|</span>
+     |
+     |
    <span class="o">(</span>global namespace<span class="o">)</span>
-     <span class="p">|</span>
+     |
      v
 other code on the page</code></pre></figure>
 
@@ -164,8 +164,8 @@ This makes turntable do all the work, and is business as usual for the user.</p>
 
 <p>After some quality time in the DevTools debugger, a friend of mine (thanks, <a href="https://github.com/clehner">Charlie</a>!) figured out a way to do this.
 turntable uses a third party library called <a href="http://plupload.com">plupload</a>.
-Unfortunately, a high level <code>window.plupload.upload(File)</code> function isn’t accessible; it’s hidden inside turntable closures.
-However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like <code>$('..input[file]..').onchange.call(our_File)</code>.</p>
+Unfortunately, a high level <code class="highlighter-rouge">window.plupload.upload(File)</code> function isn’t accessible; it’s hidden inside turntable closures.
+However, a similar function is stored directly as a handler on the main file input, meaning that we can spoof an upload with something like <code class="highlighter-rouge">$('..input[file]..').onchange.call(our_File)</code>.</p>
 
 <p>Since injected code gets around the isolated world restriction, this is totally possible:
 we just need to also inject an html5 File containing the desired mp3.</p>
@@ -179,7 +179,7 @@ Html5 Files, though, can only be created when a user interacts with a file input
 Duck typing to the rescue!</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//b is our Blob</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;myfile.mp3&#39;</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'myfile.mp3'</span><span class="p">;</span>
 <span class="nx">b</span><span class="p">.</span><span class="nx">lastModifiedDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 <span class="c1">// tada!</span></code></pre></figure>
 

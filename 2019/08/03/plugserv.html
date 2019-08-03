@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Simon Weber">
+    
+    <meta name="description" content="My newest project is an open source ad server for your own websites." />
+    
+    <link rel="canonical" href="https://www.simonmweber.com/2019/08/03/plugserv.html" />
+    <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
+    <title>Plugserv</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <div class="container">
+        <div class="four columns sidebar">
+            <ul>
+                <li><h3 id="logo"><a href="/index.html">Simon Weber</a></h3></li>
+                <li><a href="mailto:simon@simonmweber.com">simon@simonmweber.com</a></li>
+                <li>
+
+                <div class="favicon three-spaced row">
+                    <span><a href="https://www.facebook.com/simon.weber1"><img alt="My Facebook" src="/images/f.ico"></a></span>
+                    <span><a href="https://github.com/simon-weber"><img alt="My GitHub" src="/images/github.ico"></a></span>
+                    <span><a href="https://twitter.com/simonmweber/"><img alt="My Twitter" src="/images/t.ico"></a></span>
+                </div>
+                </li>
+            </ul>
+
+            &nbsp;
+        </div>
+
+
+        <div class="eleven columns offset-by-one content">
+            <div id="post">
+    <h2 id="plugserv">Plugserv</h2>
+
+<p class="meta">August 3 2019</p>
+
+<script>
+// empty script block so GA doesn't show up right next to Plugserv.
+</script>
+
+<p>I’ve been creating websites for a while now.
+Some of these get consistent visitors, while some are nearly unknown.
+At some point I realized there was an opportunity here: my popular sites could advertise my other sites.
+So, I started manually adding small text ads to each.</p>
+
+<p>This quickly became unwieldy.
+I’m closing in on ten active projects, and I got sick of updating all of them whenever I launched something new.
+I decided my next project would solve this problem.</p>
+
+<p>I call it <a href="https://www.plugserv.com/">Plugserv</a>, since it lets me shamelessly plug my websites.
+It’s an open source ad server: I configure it with all my ads and add a javascript snippet to each site.
+Plugserv then rotates my ads automatically and collects basic performance metrics.
+Here’s a live example of what this looks like:</p>
+
+<div id="plugserv-example">
+<p style="text-align: center">
+    <span id="example-plug"></span>
+</p>
+
+<script>
+  window.plugserv_config = {
+      elementId: 'example-plug',
+      endpoint: 'https://www.plugserv.com/serve/eb7e777e-9ec5-4323-acba-4e05f881cf42'
+  };
+</script>
+
+<script async="" src="https://www.plugserv.com/js/v1/plugserv.js" integrity="sha384-Ngv41QqyGqgFyjzQseAmANPgTafxpqZ3fRcQXsShP02KwdzUy9VzIrp/ARgmFEql" crossorigin="anonymous">
+</script>
+</div>
+
+<p>Sign up at <a href="https://www.plugserv.com/">plugserv.com</a> to run ads for your own sites!
+It’s free to use and <a href="https://github.com/simon-weber/plugserv">open source</a>.</p>
+
+</div>
+
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        Subscribe to future posts via
+        <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
+        or
+        <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>,
+        or <a href="/">view all posts</a>.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div><!-- container -->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29570993-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</body>
+</html>

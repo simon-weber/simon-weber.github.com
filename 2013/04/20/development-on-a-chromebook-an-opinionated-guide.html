@@ -96,7 +96,7 @@ powering the ui.</p>
 
 <p>It supports everything you’d expect, like key authentication,
 per-connection profiles, port forwarding, custom color schemes, and
-even your <code>~/.ssh/config</code> file (well, probably; mine is simple).</p>
+even your <code class="highlighter-rouge">~/.ssh/config</code> file (well, probably; mine is simple).</p>
 
 <p>The <a href="http://goo.gl/RYHiK">chromium-hterm mailing list</a> is where
 updates are posted. If you need an upcoming feature <em>now</em>, there’s
@@ -178,16 +178,16 @@ sounds appealing, here’s what I did:</p>
 
 <ul>
   <li>used the crouton cli-extra target (eg
-<code>crouton -t cli-extra ...</code>).</li>
+<code class="highlighter-rouge">crouton -t cli-extra ...</code>).</li>
   <li>installed openssh in my chroot</li>
   <li>start sshd, then use Secure Shell to connect to
 my-user@localhost</li>
 </ul>
 
-<p>To make life a bit easier, I stuck <code>/etc/init.d/ssh start</code> into my
-chroot’s <code>/etc/rc.local</code> (which crouton runs upon mounting). Now,
+<p>To make life a bit easier, I stuck <code class="highlighter-rouge">/etc/init.d/ssh start</code> into my
+chroot’s <code class="highlighter-rouge">/etc/rc.local</code> (which crouton runs upon mounting). Now,
 when I want to work locally, I just Control-Alt-Forward to get my
-local shell, <code>$ sudo enter-chroot</code>, Control-Alt-Back to CrOS and
+local shell, <code class="highlighter-rouge">$ sudo enter-chroot</code>, Control-Alt-Back to CrOS and
 then run Secure Shell. You could probably get your chroot to mount
 and run sshd on boot if you use it all the time.</p>
 

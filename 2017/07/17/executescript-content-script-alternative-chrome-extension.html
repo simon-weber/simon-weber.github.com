@@ -57,7 +57,7 @@
     <h2 id="tabsexecutescript-as-a-content-script-alternative-in-chrome-extensions">tabs.executeScript as a content script alternative in Chrome Extensions</h2>
 
 <p class="meta">July 17 2017</p>
-<p>I just updated <a href="https://autoplaylists.simon.codes">Autoplaylists for Google Music</a> so it uses <code>chrome.tabs.executeScript</code> instead of a manifest content script.
+<p>I just updated <a href="https://autoplaylists.simon.codes">Autoplaylists for Google Music</a> so it uses <code class="highlighter-rouge">chrome.tabs.executeScript</code> instead of a manifest content script.
 It’s only been a few days, but so far it’s halved sync problems.
 Since I didn’t find similar recommendations elsewhere, this post explains what motivated the change and how I went about it.</p>
 
@@ -87,7 +87,7 @@ On-demand messages often ended up going into the void.</p>
 The notable changes are:</p>
 
 <ul>
-  <li>the background script has <code>tabs</code> permission</li>
+  <li>the background script has <code class="highlighter-rouge">tabs</code> permission</li>
   <li>at startup or when detecting a tab opening, the background script will:
     <ul>
       <li>create a unique script id</li>

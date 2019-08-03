@@ -62,14 +62,14 @@
 an error like this one:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">descriptor</span> 
-<span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">protobuf</span></code></pre></figure>
+<span class="nb">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">protobuf</span></code></pre></figure>
 
-<p>The problem is that Google’s own App Engine apis also use the <code>google</code> package namespace,
+<p>The problem is that Google’s own App Engine apis also use the <code class="highlighter-rouge">google</code> package namespace,
 and they don’t include the protobuf package.</p>
 
 <p>Thankfully, there’s a simple way to fix this.
 First, vendorize the library as you normally would.
-I just ripped the <code>site-packages</code> folder from a virtualenv into the application root:</p>
+I just ripped the <code class="highlighter-rouge">site-packages</code> folder from a virtualenv into the application root:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">app.py
 app.yaml
@@ -88,8 +88,8 @@ I used this bit of code:</p>
 <span class="kn">import</span> <span class="nn">google</span>  <span class="c"># provided by GAE</span>
 
 <span class="c"># add vendorized protobuf to google namespace package</span>
-<span class="n">vendor_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&#39;vendor&#39;</span><span class="p">)</span>
-<span class="n">google</span><span class="o">.</span><span class="n">__path__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vendor_dir</span><span class="p">,</span> <span class="s">&#39;google&#39;</span><span class="p">))</span>
+<span class="n">vendor_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">'vendor'</span><span class="p">)</span>
+<span class="n">google</span><span class="o">.</span><span class="n">__path__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vendor_dir</span><span class="p">,</span> <span class="s">'google'</span><span class="p">))</span>
 
 <span class="c"># add vendor path</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vendor_dir</span><span class="p">)</span></code></pre></figure>
