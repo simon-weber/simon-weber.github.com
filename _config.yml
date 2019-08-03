@@ -1,6 +1,5 @@
 description: The personal site of Simon Weber.
 canonical: www.simonmweber.com
-highlighter: pygments
 markdown: kramdown
 future: true
 gems:
