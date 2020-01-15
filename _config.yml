@@ -5,6 +5,7 @@ future: true
 gems:
     - jekyll-sitemap
 exclude:
+    - Makefile
     - README.md
     - Gemfile
     - Gemfile.lock
