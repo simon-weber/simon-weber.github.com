@@ -2,6 +2,7 @@
 layout: post
 title: "Side project income 2017"
 description: "A look back on my second year of selling my own software."
+tags: "annual-summaries"
 ---
 
 {{ page.title }}

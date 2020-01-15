@@ -2,6 +2,7 @@
 layout: post
 title: "Side project income 2016: 0 to $100/month"
 description: "A look back on what I learned selling my own software in 2016."
+tags: "annual-summaries"
 ---
 
 {{ page.title }}
