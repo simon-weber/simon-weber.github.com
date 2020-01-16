@@ -4,13 +4,110 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2020-01-15T17:03:46-05:00</updated>
+ <updated>2020-01-15T19:35:35-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Side project income 2019</title>
+   <link href="http://www.simonmweber.com/2020/01/16/side-project-income-2019.html"/>
+   <updated>2020-01-16T00:00:00-05:00</updated>
+   <id>http://www.simonmweber.com/2020/01/16/side-project-income-2019</id>
+   <content type="html">&lt;h2 id=&quot;side-project-income-2019&quot;&gt;Side project income 2019&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;January 15 2020&lt;/p&gt;
+
+&lt;p&gt;2019 was my fourth year running my own small software business.
+I also &lt;a href=&quot;/2019/04/26/leaving-venmo-after-five-years.html&quot;&gt;quit my job&lt;/a&gt; in the spring!
+I’m now self-employed but spend most of my time consulting, so I still consider the business to be “on the side”.
+Here’s my active projects as of the end of the year:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://autoplaylists.simon.codes/&quot;&gt;Autoplaylists for Google Music&lt;/a&gt;: iTunes Smart Playlists for Google Music.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gchat.simon.codes/&quot;&gt;Autoresponder for Google Hangouts&lt;/a&gt;: vacation/out-of-office replies for Google Chat.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kleroteria.org/&quot;&gt;Kleroteria&lt;/a&gt;: an email lottery and spiritual successor to The Listserve.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.repominder.com/&quot;&gt;Repominder&lt;/a&gt;: release reminders for open source projects.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://parks.simon.codes/&quot;&gt;NYC Park Alerts&lt;/a&gt;:  closure notifications about NYC Parks locations.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.plugserv.com/&quot;&gt;Plugserv&lt;/a&gt;: an ad server for my own projects.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;financials&quot;&gt;Financials&lt;/h3&gt;
+
+&lt;p&gt;This was my first down year:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;annual revenue decreased from $3600 to $3330&lt;/li&gt;
+  &lt;li&gt;annual expenses grew slightly from $240 to $280&lt;/li&gt;
+  &lt;li&gt;monthly recurring revenue dropped substantially from $350 to $250&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Autoplaylists and Autoresponder - which make up nearly all my revenue - both extend Google products that are being shut down, so I had actually expected more of a decline.
+While I &lt;a href=&quot;/2019/01/07/side-project-income-2018.html&quot;&gt;began diversifying in 2018&lt;/a&gt;, those efforts haven’t yet impacted the bottom line.&lt;/p&gt;
+
+&lt;h3 id=&quot;new-projects&quot;&gt;New Projects&lt;/h3&gt;
+
+&lt;p&gt;I added two smaller projects last year.
+NYC Park Alerts was inspired by my gym habits, of all things.
+I work out at a local rec center and showed up a few times to find it unexpectedly closed.
+Looking into it, I found that the city posts updates online but with no way to subscribe to them.
+So, I set up a scraper that lets people receive emails when locations of their choice are affected.
+It’s got one user (besides me) and is more of a community service, so I don’t expect to ever make money off it.&lt;/p&gt;
+
+&lt;p&gt;
+My second new project was Plugserv.
+It&#39;s a tiny ad server that helps me shamelessly plug my projects across my own sites.
+Here&#39;s a live example of what it looks like: &quot;&lt;span id=&quot;example-plug&quot;&gt;&lt;/span&gt;&quot;
+Behind the scenes that copy is being retrieved from the Plugserv api, which handles rotation and tracking.
+It&#39;s performed better than I expected: in the six months it&#39;s been active it&#39;s served ~25k ads with a click through rate of over 1%, which beats most display ad benchmarks.
+Despite working well for me it hasn&#39;t picked up any other users; go &lt;a href=&quot;https://www.plugserv.com/&quot;&gt;check it out&lt;/a&gt; if you&#39;d like to run your own ads on your own sites!
+&lt;/p&gt;
+
+&lt;h3 id=&quot;existing-projects&quot;&gt;Existing Projects&lt;/h3&gt;
+
+&lt;p&gt;2019 was also the first year I stopped running any projects.
+I’m usually content to let projects run despite low usage because my expenses are so low.
+But, I made an exception for Analytics for Google Payments:
+despite being free to run and having potential with business customers, it was painful to maintain and targeted a much smaller market than I expected.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.minmaxmeals.com/&quot;&gt;MinMaxMeals&lt;/a&gt;, my cooking site, was more of a case of lost interest.
+Its recipes were heavily optimized for time, which isn’t as important to me now that I’m self-employed and work from home.
+It’s still a fun talking point, though, and I might return to it someday.&lt;/p&gt;
+
+&lt;p&gt;My remaining projects both grew slowly without my involvement.
+Repominder picked up a notable open source power user and Kleroteria added about 500 subscribers.&lt;/p&gt;
+
+&lt;p&gt;Though I didn’t do much marketing or feature work, I did spend some time on operational improvements.
+I consolidated my sundry virtual servers into a fleet of $2/month instances at &lt;a href=&quot;https://my.frantech.ca/aff.php?aff=3397&quot;&gt;BuyVM&lt;/a&gt;.
+Each runs a new NixOS+docker setup that’s generic enough to be cloned for new projects.
+I also upgraded everything to Python 3 and worked out a better way to route my custom-domain emails into Gmail for cheap (which I’ll write up eventually).&lt;/p&gt;
+
+&lt;h3 id=&quot;reflection&quot;&gt;Reflection&lt;/h3&gt;
+
+&lt;p&gt;2019 had its ups and downs, but now that I’m settled into my new lifestyle I’m feeling ready for 2020.
+I don’t expect it to be easy, though: Autoplaylists and Autoresponder are likely to shut down completely, and there’s a real chance I’ll find myself in the red.&lt;/p&gt;
+
+&lt;p&gt;So, hopefully my upcoming projects can prevent this.
+One of these - hosted server/application monitoring with unusually low operating costs - should launch soon, so sign up below if you’d like to get notified about it!&lt;/p&gt;
+
+&lt;p&gt;As always, thanks for following along and feel free to reach out with questions.
+If you’d like to read my previous annual summaries, they’re available &lt;a href=&quot;/annual-summaries&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script&gt;
+  window.plugserv_config = {
+    elementId: &#39;example-plug&#39;,
+    endpoint: &#39;https://www.plugserv.com/serve/eb7e777e-9ec5-4323-acba-4e05f881cf42&#39;
+  };
+&lt;/script&gt;
+
+&lt;script async=&quot;&quot; src=&quot;https://www.plugserv.com/js/v1/plugserv.js&quot; integrity=&quot;sha384-Ngv41QqyGqgFyjzQseAmANPgTafxpqZ3fRcQXsShP02KwdzUy9VzIrp/ARgmFEql&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/script&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Plugserv</title>
