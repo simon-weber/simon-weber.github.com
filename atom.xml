@@ -4,13 +4,44 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2020-06-22T20:43:23-04:00</updated>
+ <updated>2020-09-20T14:03:09-04:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
    <email>simon@simonmweber.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Opsgrid</title>
+   <link href="http://www.simonmweber.com/2020/09/20/opsgrid.html"/>
+   <updated>2020-09-20T00:00:00-04:00</updated>
+   <id>http://www.simonmweber.com/2020/09/20/opsgrid</id>
+   <content type="html">&lt;h2 id=&quot;opsgrid&quot;&gt;Opsgrid&lt;/h2&gt;
+
+&lt;p class=&quot;meta&quot;&gt;September 20 2020&lt;/p&gt;
+
+&lt;p&gt;I’ve built up a number of &lt;a href=&quot;https://simon.codes/2020/01/16/side-project-income-2019.html&quot;&gt;side projects&lt;/a&gt; over the years.
+The ones that require a backend are hosted on individual vms from &lt;a href=&quot;https://my.frantech.ca/aff.php?aff=3397&quot;&gt;BuyVM&lt;/a&gt;, which means I need to monitor about a half-dozen servers.&lt;/p&gt;
+
+&lt;p&gt;While there’s plenty of free Pingdom-style uptime monitoring options out there, cheap options to monitor metrics like cpu, ram, and disk are more rare.
+The big names usually have a free tier allowing one or two hosts with minimal data retention, then a big jump to a $10+/month per host paid tier.
+I can’t justify spending that when I only pay $2/month for the vms themselves!
+There’s also some smaller independent options out there, but they tend to require custom server agents and aren’t all that much cheaper.
+So, I decided to build my own.&lt;/p&gt;
+
+&lt;p&gt;I didn’t need anything fancy, just support for the usual metrics, user-defined alerting, and, ideally, reasonable retention of past data so I could identify trends.
+Like my other projects, it also needed to be operationally simple.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.opsgrid.net/&quot;&gt;Opsgrid&lt;/a&gt; is the result.
+It allows free server/application alerting with about 1 year of data retention per host.
+The trick is that Opsgrid doesn’t actually store historical metrics: instead, users connect a Google account, and it pushes data as rows to a Google Sheet per host.
+It also makes use of &lt;a href=&quot;https://github.com/influxdata/telegraf&quot;&gt;Telegraf&lt;/a&gt;, an open-source monitoring agent, to avoid dealing with metric collection code.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.opsgrid.net/&quot;&gt;Check it out&lt;/a&gt; if you also run your own servers!
+I plan to keep it free unless it attracts a significant number of users, but even then I should be able to price it about 5-10x lower than offerings like New Relic or Datadog.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Side project income 2019</title>

@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="author" content="Simon Weber">
     
-    <meta name="description" content="The personal site of Simon Weber." />
+    <meta name="description" content="Free server/application monitoring with retention in Google Sheets." />
     
-    <link rel="canonical" href="https://www.simonmweber.com/annual-summaries.html" />
+    <link rel="canonical" href="https://www.simonmweber.com/2020/09/20/opsgrid.html" />
     <link href="http://feeds.feedburner.com/SimonWeber" rel="alternate" title="Simon Weber" type="application/atom+xml" />
-    <title>Annual Summaries</title>
+    <title>Opsgrid</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=1">
 
@@ -53,101 +53,44 @@
 
 
         <div class="eleven columns offset-by-one content">
-            <div class="landing-item">
-  <h3>Annual Summaries</h3>
+            <div id="post">
+    <h2 id="opsgrid">Opsgrid</h2>
 
-<ul>
+<p class="meta">September 20 2020</p>
 
-  
+<p>I’ve built up a number of <a href="https://simon.codes/2020/01/16/side-project-income-2019.html">side projects</a> over the years.
+The ones that require a backend are hosted on individual vms from <a href="https://my.frantech.ca/aff.php?aff=3397">BuyVM</a>, which means I need to monitor about a half-dozen servers.</p>
 
-  
-  <li>
-    <a href="/2020/01/16/side-project-income-2019.html">Side project income 2019</a>
-  </li>
-  
+<p>While there’s plenty of free Pingdom-style uptime monitoring options out there, cheap options to monitor metrics like cpu, ram, and disk are more rare.
+The big names usually have a free tier allowing one or two hosts with minimal data retention, then a big jump to a $10+/month per host paid tier.
+I can’t justify spending that when I only pay $2/month for the vms themselves!
+There’s also some smaller independent options out there, but they tend to require custom server agents and aren’t all that much cheaper.
+So, I decided to build my own.</p>
 
-  
+<p>I didn’t need anything fancy, just support for the usual metrics, user-defined alerting, and, ideally, reasonable retention of past data so I could identify trends.
+Like my other projects, it also needed to be operationally simple.</p>
 
-  
+<p><a href="https://www.opsgrid.net/">Opsgrid</a> is the result.
+It allows free server/application alerting with about 1 year of data retention per host.
+The trick is that Opsgrid doesn’t actually store historical metrics: instead, users connect a Google account, and it pushes data as rows to a Google Sheet per host.
+It also makes use of <a href="https://github.com/influxdata/telegraf">Telegraf</a>, an open-source monitoring agent, to avoid dealing with metric collection code.</p>
 
-  
+<p><a href="https://www.opsgrid.net/">Check it out</a> if you also run your own servers!
+I plan to keep it free unless it attracts a significant number of users, but even then I should be able to price it about 5-10x lower than offerings like New Relic or Datadog.</p>
 
-  
-  <li>
-    <a href="/2019/01/07/side-project-income-2018.html">Side project income 2018</a>
-  </li>
-  
+</div>
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <li>
-    <a href="/2018/01/09/side-project-income-2017.html">Side project income 2017</a>
-  </li>
-  
-
-  
-
-  
-
-  
-
-  
-  <li>
-    <a href="/2017/01/09/side-project-income-2016-0-to-100.html">Side project income 2016: 0 to $100/month</a>
-  </li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</ul>
-
+<div id="post-footer">
+    <hr>
+    <div id="subscribe">
+        <p>
+        Subscribe to future posts via
+        <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
+        or
+        <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>,
+        or <a href="/">view all posts</a>.
+        </p>
+    </div>
 </div>
 
         </div>
