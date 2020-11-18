@@ -4,7 +4,7 @@
  <title>Simon Weber</title>
  <link href="http://www.simonmweber.com/atom.xml" rel="self"/>
  <link href="http://www.simonmweber.com/"/>
- <updated>2020-09-20T14:03:09-04:00</updated>
+ <updated>2020-11-18T13:43:49-05:00</updated>
  <id>http://www.simonmweber.com/</id>
  <author>
    <name>Simon Weber</name>
@@ -700,7 +700,7 @@ Too often, something like this would happen:&lt;/p&gt;
 
 &lt;p&gt;So, I made &lt;a href=&quot;https://www.repominder.com&quot;&gt;Repominder&lt;/a&gt; to help OSS maintainers avoid this situation.
 Now when I forget about changes, I get a weekly email with diffs of affected projects.
-It also provides a badge showing the status of my projects (&lt;a href=&quot;https://github.com/simon-weber/gmusicapi#status-and-updates&quot;&gt;eg&lt;/a&gt;).&lt;/p&gt;
+It also provides a badge showing the status of my projects (&lt;a href=&quot;https://github.com/simon-weber/Autoplaylists-for-Google-Music/#autoplaylists-for-google-music&quot;&gt;eg&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;Feel free to &lt;a href=&quot;https://www.repominder.com&quot;&gt;sign up and monitor your own projects&lt;/a&gt;!
 It’s &lt;a href=&quot;https://github.com/simon-weber/repominder&quot;&gt;open source&lt;/a&gt;, and likely to remain free unless hosting becomes annoying.&lt;/p&gt;
