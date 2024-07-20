@@ -2,6 +2,7 @@
 layout: post
 title: "Running Kleroteria for free by (ab)using free tiers"
 description: "10k subscribers, 13 services, $0/month."
+listed: true
 ---
 
 {{ page.title }}

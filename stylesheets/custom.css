@@ -56,8 +56,8 @@ nav ul li a:focus {
     list-style: none;
 }
 
-.three-spaced span{
-    width:31%;
+.two-spaced span{
+    width: 33%;
     display: inline-block;
     margin:0;padding:0;
 }

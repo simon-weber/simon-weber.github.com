@@ -2,6 +2,7 @@
 layout: post
 title: "Chrome extension hacks: Google Music to turntable"
 description: Some of the hacks that went into my first Chrome extension. 
+listed: true
 ---
 
 {{ page.title }}

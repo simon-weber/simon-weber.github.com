@@ -2,6 +2,7 @@
 layout: post
 title: "Leaving Venmo after five years"
 description: "I'm now working for myself."
+listed: true
 ---
 
 {{ page.title }}

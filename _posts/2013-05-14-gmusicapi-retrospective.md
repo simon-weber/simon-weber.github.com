@@ -2,6 +2,7 @@
 layout: post
 title: gmusicapi retrospective
 description: I look back on my work on gmusicapi.
+listed: true
 ---
 
 {{ page.title }}

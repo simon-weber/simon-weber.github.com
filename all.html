@@ -1,0 +1,15 @@
+---
+layout: default
+title: All posts
+---
+<div class="landing-item">
+    <h3>All blog posts</h3>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+        <span class="post-date">{{ post.date | date: "%Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+

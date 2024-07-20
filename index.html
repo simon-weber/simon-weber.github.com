@@ -3,9 +3,9 @@ layout: default
 title: Simon Weber
 ---
 <div class="landing-item">
-    I'm a software engineer hailing from Hershey, PA.
+    I'm a software engineer based in NYC.
     I attended the <a href="https://www.recurse.com/">Recurse Center</a> in summer 2013, then worked at Venmo through 2019.
-    Now I do consulting; <a href="/hire">reach out if you're interested in hiring me</a>.
+    Now I'm a freelancer; <a href="/hire">reach out if you're interested in working together</a>.
 </div>
 
 
@@ -37,16 +37,15 @@ title: Simon Weber
 <div class="landing-item">
     <h3>Blog</h3>
     <p>
-    Subscribe to future posts via
-    <a href="http://eepurl.com/cwwox1" target="_blank">email</a>
-    or
-    <a href="http://feeds.feedburner.com/SimonWeber" target="_blank">rss</a>,
+    I haven't been writing much recently. Here are a few old posts:
     </p>
     <ul>
         {% for post in site.posts %}
+        {% if post.listed %}
         <li>
         <span class="post-date">{{ post.date | date: "%Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
+        {% endif %}
         {% endfor %}
     </ul>
 </div>
